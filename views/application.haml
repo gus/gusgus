@@ -1,0 +1,26 @@
+!!! XML
+!!!
+%html
+  %head
+    %title
+      GusG.us
+      = (@directory || @article).title
+    %link{:href => "/reset-min.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/application.css", :rel => "stylesheet", :type => "text/css"}
+  %body
+    #container
+      #header
+        %img{:src => "/images/gus-logo.png"}
+        %span.nav
+          %a{:href => "/"} Home
+          %a{:href => "/life"} Life
+          %a{:href => "/work"} Work
+          %a{:href => "/code"} Code
+          %a{:href => "/code/ruby"} Ruby
+          %a{:href => "/code/erlang"} Erlang
+      = yield
+      #footer
+        &copy; 2007 -
+        = Time.now.year
+        Justin Knowlden,
+        %email gus at gusg dot us
