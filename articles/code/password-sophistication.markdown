@@ -2,12 +2,14 @@
 
 <cite>November 12th, 2007</cite>
 
+[excerpt]
 I went looking for one of those JavaScript, password strength meter things like you see on some signup pages (see [Google Signup](https://www.google.com/accounts/NewAccount)) which attempt to coerce you into believing the security of the password you are about to enroll with. I wanted to use it for a new site I am working on and I do think there are merits to forcing users to make a decision between accepting a _Secure_ versus an _Insecure_ password.
 
 While I am a developer and I know JavaScript, I didn't feel like implementing the _strength_ algorithm myself; so I went in search of an existing solution. In the course of the search for the right solution(s), I happened upon two learnings:
 
 1. The code for implementation was not _purty_; to be addressed in Findings
 1. I became hesitant to call the whole process a "strength" test
+[/excerpt]
 
 ## Sophistication
 

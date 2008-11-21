@@ -4,7 +4,7 @@
   %head
     %title
       GusG.us
-      = (@directory || @article).title
+      = title
     %link{:href => "/reset-min.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "/application.css", :rel => "stylesheet", :type => "text/css"}
   %body
@@ -19,8 +19,8 @@
           %a{:href => "/code/ruby"} Ruby
           %a{:href => "/code/erlang"} Erlang
       = yield
-      #footer
+      #footer.clear
         &copy; 2007 -
         = Time.now.year
         Justin Knowlden,
-        %email gus at gusg dot us
+        %span.email gus at gusg dot us

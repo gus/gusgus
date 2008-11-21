@@ -2,6 +2,7 @@
 
 <cite>January 17th, 2008</cite>
 
+[excerpt]
 I love the `Flash.now` mechanism. I love it with a weird passion. It really lets me DRY up my views in regards to message handling, while also allowing me to keep my controller code straight forward. I basically have one way to handle messages and all I have to do is add a `.now` to my `flash` reference when I don't want to do a redirect.
 
 But ... there's always a but ... I also love tests. I love tests with an even weirder passion than I love `Flash.now`. And if you know anything about `Flash.now` and Rails tests, then you know where I'm going with this; I can't test `Flash.now` variables in my functional tests!
@@ -9,6 +10,7 @@ But ... there's always a but ... I also love tests. I love tests with an even we
 You say, *"Say what?!"*
 
 I say, *"It's true."*
+[/excerpt]
 
 You say, *"Yeah, I know. It's also sad."* But wait, there's the article called [How to test flash.now](http://wiki.rubyonrails.org/rails/pages/HowToTestFlash.Now).
 

@@ -2,9 +2,11 @@
 
 <cite>January 8th, 2008</cite>
 
+[excerpt]
 I was coding along in Rails with security in mind using the simple [Assert Request](http://validaterequest.rubyforge.org/) plugin from [Scott A Woods](http://workingwithrails.com/person/5938-scott-woods) in my controllers and ran into a spot where I wanted to require the presence of a session variable before allowing the rest of an action to execute. The specific motivation was conceived when coding a controller for an invitation mechanism. Normally, a user invites another user to a system, the invited user comes to the system with their invite-code (probably from a link in an email), completes some form (let's call it invite-accept), and then submits the final request (invite-update).
 
 What I didn't want was an easy way for a user to be able to by-pass the invite-accept and go straight to invite-update. To prevent this, I wanted the invite-code to be available to invite-update, but not via a parameter. The quickest and safest way I could think was to require that it be in the session, which would theoretically force the user to first visit invite-accept. This way, only invited people can accept invites and they must go through invite-accept.
+[/excerpt]
 
 I also really liked the convention of using `assert_request` at the head of each of my actions (I even implemented an `assert_request_has_no_params` helper for most of them) and I didn't want to break from it to do a:
 

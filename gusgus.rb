@@ -2,13 +2,26 @@ require 'rubygems'
 require 'sinatra'
 require 'BlueCloth'
 require 'syntaxi'
+require 'ostruct'
 
 configure do
   Syntaxi.wrap_enabled = false
+  set_option :views, 
+  set(:public, "#{Sinatra.application.options.root}/public")
+  set(:views, "#{Sinatra.application.options.root}/views")
 end
 
 template(:layout) {:application}
-not_found {haml :not_found}
+not_found do
+  @article = OpenStruct.new(:title => "Not Found")
+  haml :not_found
+end
+
+helpers do
+  def title
+    (@directory || @article).title
+  end
+end
 
 get '/application.css' do
   sass :application
@@ -88,12 +101,17 @@ class Article
   def render
     article = @content
     if @options[:excerpt]
-      if article.length > 500
-        article = @content.scan(/^.+$/)[2..3].join("\n\n")
+      if article =~ /\[excerpt\].+\[\/excerpt\]/m
+        article = @content.scan(/\[excerpt\].+\[\/excerpt\]/m).first
       else
-        article = @content.scan(/.+\n/)[2..-1].join('')
+        if article.length > 500
+          article = @content.scan(/^.+$/)[2..3].join("\n\n")
+        else
+          article = @content.scan(/.+\n/)[2..-1].join('')
+        end
       end
     end
+    article.gsub!(/\[\/?excerpt\]/, '')
     BlueCloth.new(Syntaxi.new(article).process).to_html
   end
 end

@@ -2,11 +2,13 @@
 
 <cite>January 21st, 2008</cite>
 
+[excerpt]
 Had a *nice* email discussion amongst the [Centronians](http://techni.cal.ly) the other day about what beautiful code is. The discussion came about due to a challenge I put out to the team to improve a certain nested conditional branch in the [Identity Matcher](http://identity-matcher.googlecode.com/svn/trunk/lib/identity_matcher.rb) method, `match_foaf`.
 
 Seems as though there are some strong opinions from some that readability of code is secondary to the performance of code. I figured I would some up my thoughts and did so in the following matrix:
 
 <img src="/images/articles/code/code-perf-read.png">
+[/excerpt]
 
 To be clear, this is the code in question:
 
