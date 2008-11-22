@@ -1,0 +1,21 @@
+!!! XML
+
+%rss{"version" => "2.0"}
+  %channel
+  %title GusG.us
+  %description Riding the Long Bus
+  %link http://gusg.us/
+  %pubDate= Time.now.to_s
+
+  - @renderable.articles.each do |article|
+    %item
+      %title= article.title
+      %description
+        <![CDATA[
+        :preserve
+          #{article.render(:excerpt => true)}
+        %a{:href => article.urn} Keep reading ...
+        ]]>
+      %pubDate= Time.now.to_s
+      %link= 'http://gusg.us' + article.urn
+      %guid= 'http://gusg.us' + article.urn

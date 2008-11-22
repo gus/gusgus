@@ -33,6 +33,12 @@ get '/' do
   haml :directory
 end
 
+get '/feed.xml' do
+  content_type 'text/xml', :charset => 'utf-8'
+  @renderable = ArticleManifest.latest
+  haml :feed, :layout => false
+end
+
 get '*/:name' do
   path = params['splat'].first
   name = params['name']
