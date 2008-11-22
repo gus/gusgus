@@ -7,6 +7,7 @@
     %title
       GusG.us
       = @renderable.title
+    %link{:href => "/images/gusgus_icon.gif", :rel => "icon"}
     %link{:type => 'application/rss+xml', :href => url_to('/feed.xml'), :title => 'GusG.us', :rel => 'alternate'}
     %link{:href => "/reset-min.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "/application.css", :rel => "stylesheet", :type => "text/css"}
@@ -22,6 +23,8 @@
           %a{:href => "/code"} Code
           %a{:href => "/code/ruby"} Ruby
           %a{:href => "/code/erlang"} Erlang
+          %a{:href => "/feed.xml"}
+            %img{:src => "/images/feed.gif"}
       #articles
         = yield
       #footer.clear
