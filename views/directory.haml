@@ -1,6 +1,6 @@
 - @renderable.articles.each do |article|
   %h1.clear
-    %a{:href => article.urn}= article.title
+    %a{:href => url_to(article.urn)}= article.title
   :preserve
     #{article.render(:excerpt => true)}
-  %a{:href => article.urn} Keep reading ...
+  %a{:href => url_to(article.urn)} Keep reading ...
