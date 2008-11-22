@@ -19,7 +19,8 @@
           %a{:href => "/code"} Code
           %a{:href => "/code/ruby"} Ruby
           %a{:href => "/code/erlang"} Erlang
-      = yield
+      #articles
+        = yield
       #footer.clear
         &copy; 2007 -
         = Time.now.year

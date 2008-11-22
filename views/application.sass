@@ -1,3 +1,10 @@
+=link_helper
+  a
+    :background-color #f0f0ff
+    :color #458
+  a:visited
+    :background-color transparent
+
 body
   :width 100%
   :text-align center
@@ -6,153 +13,151 @@ body
   :background-color white
   :font normal 11pt Arial, sans-serif
 
-a
-  :background-color #f0f0ff
-  :color #458
-a:visited
-  :background-color transparent
-
-#header
-  img
-    :vertical-align middle
-  .nav
-    :padding 0 0 0 5em
-    :font normal 8pt Arial, sans-serif
-    :text-transform uppercase
-    :text-align center
-    a
-      :padding 0 1em
-      :color #458
-
-#footer
-  :margin 1em 0 0 0
-  :padding 1ex 0 1ex 0
-  :border-top 1px solid #ccc
-  :font normal 10pt Arial, sans-serif
-  :color #aaa
-
 #container
   :width 850px
   :margin 0 auto
   :text-align left
   :padding 0
 
-li
-  :list-style circle inside
-  :color #333
-  :padding 0 0 0 1ex
+  #header
+    img
+      :vertical-align middle
+    .nav
+      :padding 0 0 0 5em
+      :font normal 8pt Arial, sans-serif
+      :text-transform uppercase
+      :text-align center
+      +link_helper
+      a
+        :padding 0 1em
+        :color #458
 
-h1
-  :font normal 22pt Arial, sans-serif
-  :margin 1.5em 0 1em 0
-  :color #555
-  a
-    :color #555
+  #footer
+    :margin 1em 0 0 0
+    :padding 1ex 0 1ex 0
+    :border-top 1px solid #ccc
+    :font normal 10pt Arial, sans-serif
+    :color #aaa
 
-h2
-  :font normal 18pt Arial, sans-serif
-  :margin 1em 0
-  :color #248
-  :border-bottom 1px solid #eee
-  a
-    :color #248
+  #articles
+    +link_helper
 
-h3
-  :font normal 14pt Arial, sans-serif
-  :margin 1em 0
-  :color #295
-  a
-    :color #295
+    li
+      :list-style circle inside
+      :color #333
+      :padding 0 0 0 1ex
 
-h4
-  :font bold 11pt Arial, sans-serif
-  :margin 1ex 0
-  :color #555
-  a
-    :color #555
+    h1
+      :font normal 22pt Arial, sans-serif
+      :margin 1.5em 0 1em 0
+      :color #555
+      a
+        :color #555
 
-p
-  :margin 2ex 0
+    h2
+      :font normal 18pt Arial, sans-serif
+      :margin 1em 0
+      :color #248
+      :border-bottom 1px solid #eee
+      a
+        :color #248
 
-blockquote
-  :border-left 4px solid #eee
-  :margin 0
-  :padding 0 0 0 1ex
-  :color #555
+    h3
+      :font normal 14pt Arial, sans-serif
+      :margin 1em 0
+      :color #295
+      a
+        :color #295
 
-em
-  :font-style italic
+    h4
+      :font bold 11pt Arial, sans-serif
+      :margin 1ex 0
+      :color #555
+      a
+        :color #555
 
-.clear
-  :clear both
+    p
+      :margin 2ex 0
 
-cite
-  :font normal 10pt Georgia, serif
-  :font-variant small-caps
-  :color #999
+    blockquote
+      :border-left 4px solid #eee
+      :margin 0
+      :padding 0 0 0 1ex
+      :color #555
 
-.email
-  :color rgb(153, 204, 51)
-
-img.article
-  :margin 1ex
-  :padding 1ex
-  :border 1px solid #ccc
-
-hr
-  :border 1px dotted #ccc
-
-pre
-  :white-space pre-wrap
-  :white-space -moz-pre-wrap !important
-  :white-space -pre-wrap
-  :white-space -o-pre-wrap
-  :word-wrap break-word
-  :background-color #222
-  :overflow auto
-  :color #63FF00
-  :padding 1ex
-  :display block
-  code
-    :font normal 9pt "bitstream vera sans mono", "monaco", "lucida console", "courier new", courier, serif
-    :display inline
-    .normal
-    .attribute
-      :color #69B
-    .char
-      :color #F07
-    .class
-      :color #974
-    .comment
-      :color #777
+    em
       :font-style italic
-      :border none
-      :margin none
-    .constant
-      :color #A8A
-    .escape
-      :color #594
-    .expr
-      :color #DF9
-    .global
-      :color #69B
-    .ident
-      :color #FFF
-    .keyword
-      :color #CA5
-    .line_number
-      :color #BBB
-    .method
-      :color #974
-    .module
-      :color #974
-    .number
-      :color #D74
-    .punct
-      :color #DDD
-    .regex
-      :color #AC6
-    .string
-      :color #AC6
-    .symbol
-      :color #C52
+
+    .clear
+      :clear both
+
+    cite
+      :font normal 10pt Georgia, serif
+      :font-variant small-caps
+      :color #999
+
+    .email
+      :color rgb(153, 204, 51)
+
+    img.article
+      :margin 1ex
+      :padding 1ex
+      :border 1px solid #ccc
+
+    hr
+      :border 1px dotted #ccc
+
+    pre
+      :white-space pre-wrap
+      :white-space -moz-pre-wrap !important
+      :white-space -pre-wrap
+      :white-space -o-pre-wrap
+      :word-wrap break-word
+      :background-color #222
+      :overflow auto
+      :color #63FF00
+      :padding 1ex
+      :display block
+      code
+        :font normal 9pt "bitstream vera sans mono", "monaco", "lucida console", "courier new", courier, serif
+        :display inline
+        .normal
+        .attribute
+          :color #69B
+        .char
+          :color #F07
+        .class
+          :color #974
+        .comment
+          :color #777
+          :font-style italic
+          :border none
+          :margin none
+        .constant
+          :color #A8A
+        .escape
+          :color #594
+        .expr
+          :color #DF9
+        .global
+          :color #69B
+        .ident
+          :color #FFF
+        .keyword
+          :color #CA5
+        .line_number
+          :color #BBB
+        .method
+          :color #974
+        .module
+          :color #974
+        .number
+          :color #D74
+        .punct
+          :color #DDD
+        .regex
+          :color #AC6
+        .string
+          :color #AC6
+        .symbol
+          :color #C52
