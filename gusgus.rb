@@ -18,7 +18,7 @@ end
 
 helpers do
   def url_to(path)
-    host = (request.env['HTTP_HOST'] || request.env['SERVER_NAME'])
+    host = (request.env['HTTP_HOST'] || request.env['SERVER_NAME'] || 'gusg.us')
     request.env['rack.url_scheme'] + "://" + host + path
   end
 end
