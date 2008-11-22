@@ -22,7 +22,7 @@ helpers do
     request.env['rack.url_scheme'] + "://" + host + path
   end
   
-  def rfc822; Time.now.strftime("%a, %m %b %Y %H:%M:%S %Z"); end
+  def rfc822; Time.now.strftime("%a, %d %b %Y %H:%M:%S %Z"); end
 end
 
 template(:layout) {:application}
