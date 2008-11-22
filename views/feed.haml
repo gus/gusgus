@@ -7,7 +7,7 @@
     %title GusG.us
     %description Riding the Long Bus
     %link= url_to('/')
-    %pubDate= Time.now.to_s
+    %pubDate= rfc822
 
     - @renderable.articles.each do |article|
       %item
@@ -20,6 +20,6 @@
             #{article.render(:excerpt => true)}
           %a{:href => article.urn} Keep reading ...
           ]]>
-        %pubDate= Time.now.to_s
+        %pubDate= rfc822
         %link= url_to(article.urn)
         %guid= url_to(article.urn)

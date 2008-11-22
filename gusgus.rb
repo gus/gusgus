@@ -21,6 +21,8 @@ helpers do
     host = (request.env['HTTP_HOST'] || request.env['SERVER_NAME'] || 'gusg.us')
     request.env['rack.url_scheme'] + "://" + host + path
   end
+  
+  def rfc822; Time.now.strftime("%a, %m %b %Y %H:%M:%S %Z"); end
 end
 
 template(:layout) {:application}
