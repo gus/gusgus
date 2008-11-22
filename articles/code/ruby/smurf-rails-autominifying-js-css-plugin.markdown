@@ -1,4 +1,4 @@
-# Smurf - Rails Javascript & CSS Auto-minifying plugin
+# Smurf - Rails Javascript &amp; CSS Auto-minifying plugin
 
 <cite>November 8th, 2008</cite>
 
