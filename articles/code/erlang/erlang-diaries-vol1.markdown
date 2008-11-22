@@ -11,6 +11,7 @@ I'm starting a new diary for my forays into learning Erlang. Below are my first 
 * I want to write a Wator simulation in Erlang
 
 The reason for the final note can be traced back to a [Software Craftsmanship](http://groups.softwarecraftsmanship.org/) meeting on November 10, 2008. Uncle Bob was talking about the *Total Cost of a Mess* and showing off his old Java crapplet code for a Wator implementation. Dean Wampler then said, and I'm paraphrasing, it would be interesting [for Gus] to implement Wator in Erlang.
+
 [/excerpt]
 
 ### 11/11 @ 12:00
@@ -139,4 +140,4 @@ Love you! Ok, ba bye.
 
 PS: I added a great picture.
 
-<img src="http://www.tresfun.com/images/unicornbandaid.jpg">
+<img src="/images/articles/code/erlang/erlang-vol1-unicorn-bandaid.jpg">

@@ -4,13 +4,14 @@
   %head
     %title
       GusG.us
-      = title
+      = @renderable.title
     %link{:href => "/reset-min.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "/application.css", :rel => "stylesheet", :type => "text/css"}
   %body
     #container
       #header
-        %img{:src => "/images/gus-logo.png"}
+        %a{:href => "http://gusg.us"}
+          %img{:src => "/images/gus-logo.png"}
         %span.nav
           %a{:href => "/"} Home
           %a{:href => "/life"} Life
@@ -24,3 +25,11 @@
         = Time.now.year
         Justin Knowlden,
         %span.email gus at gusg dot us
+        %span.powered
+          \- Powered by
+          %a{:href => "http://sinatra.rubyforge.org/"} Sinatra
+          ,
+          %a{:href => "http://haml.hamptoncatlin.com/"} HAML
+          ,
+          %a{:href => "http://rubyforge.org/projects/syntaxi/"} Syntaxi
+          , and me
