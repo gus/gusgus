@@ -24,6 +24,7 @@ not_found do
 end
 
 get '/application.css' do
+  content_type 'text/css', :charset => 'utf-8'
   sass :application
 end
 
