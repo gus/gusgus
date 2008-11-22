@@ -4,7 +4,7 @@ end
 
 require 'rubygems'
 require 'sinatra'
-require 'BlueCloth'
+require 'bluecloth'
 require 'syntaxi'
 require 'ostruct'
 require_local_lib('lib/*.rb')
