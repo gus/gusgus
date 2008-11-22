@@ -16,6 +16,13 @@ configure do
   set(:views, "#{Sinatra.application.options.root}/views")
 end
 
+helpers do
+  def url_to(path)
+    host = (request.env['HTTP_HOST'] || request.env['SERVER_NAME'])
+    request.env['rack.url_scheme'] + "://" + host + path
+  end
+end
+
 template(:layout) {:application}
 
 not_found do

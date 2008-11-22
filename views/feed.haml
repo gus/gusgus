@@ -4,12 +4,14 @@
   %channel
     %title GusG.us
     %description Riding the Long Bus
-    %link http://gusg.us/
+    %link= url_to('/')
     %pubDate= Time.now.to_s
 
     - @renderable.articles.each do |article|
       %item
-        %title= article.title
+        %title
+          :escaped
+            #{article.title}
         %description
           <![CDATA[
           :preserve
@@ -17,5 +19,5 @@
           %a{:href => article.urn} Keep reading ...
           ]]>
         %pubDate= Time.now.to_s
-        %link= 'http://gusg.us' + article.urn
-        %guid= 'http://gusg.us' + article.urn
+        %link= url_to(article.urn)
+        %guid= url_to(article.urn)
