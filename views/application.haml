@@ -2,9 +2,12 @@
 !!!
 %html
   %head
+    %meta{"http-equiv" => 'X-UA-Compatible', :content => 'GROW UP'}
+    %meta{:name => 'viewport', :content => 'width=850'}
     %title
       GusG.us
       = @renderable.title
+    %link{:type => 'application/rss+xml', :href => url_to('/feed.xml'), :title => 'GusG.us', :rel => 'alternate'}
     %link{:href => "/reset-min.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "/application.css", :rel => "stylesheet", :type => "text/css"}
   %body
