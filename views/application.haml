@@ -23,8 +23,8 @@
           %a{:href => "/code"} Code
           %a{:href => "/code/ruby"} Ruby
           %a{:href => "/code/erlang"} Erlang
-        %a{:href => "/feed.xml"}
-          %img{:src => "/images/feed.gif"}
+        %a{:href => "http://feeds.feedburner.com/gusgus", :rel => "alternate", :type => "application/rss+xml"}
+          %img{:src => "http://www.feedburner.com/fb/images/pub/feed-icon16x16.png"}
       #articles
         = yield
       #footer.clear
