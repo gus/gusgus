@@ -20,6 +20,7 @@ class ArticleManifest
 end
 
 # Order is important here :)
+ArticleManifest.add('/life', 'larry-opens-bar')
 ArticleManifest.add('/life', 'obama-and-einstein')
 ArticleManifest.add('/code/ruby', 'rails-2_2-headaches-1')
 ArticleManifest.add('/code/erlang', 'erlang-diaries-vol1')
