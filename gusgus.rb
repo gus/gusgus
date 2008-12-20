@@ -11,7 +11,7 @@ require_local_lib('lib/*.rb')
 
 configure do
   Syntaxi.wrap_enabled = false
-  set_option :views, 
+  # set_option :views, 
   set(:public, "#{Sinatra.application.options.root}/public")
   set(:views, "#{Sinatra.application.options.root}/views")
 end

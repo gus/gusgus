@@ -1,6 +1,6 @@
 # Douglas Street Bar
 
-<cite>January 21st, 2008</cite>
+<cite>December 15th, 2008</cite>
 
 [excerpt]
 My old friend Larry Mazurkiewicz opened a bar in Elgin, IL last Thursday (12/11/2008). This can only spell trouble for me as it's 5 minutes away!
