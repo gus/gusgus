@@ -10,6 +10,8 @@ class Article
     @content = File.read(@filename)
   end
 
+  def commentable?; true; end
+
   def called?(path, name)
     [@path, @name] == [path, name]
   end

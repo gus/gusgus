@@ -1,9 +1,9 @@
-set :application, "gus_gus"
+set :application, "gusg.us"
 set :scm, :git
 set :branch, "master"
 set :deploy_via, :remote_cache
 set :git_enable_submodules, 1
-set :repository, "git://github.com/thumblemonks/evoke.git"
+set :repository, "git@github.com:jaknowlden/gusgus.git"
 
 set :deploy_to, "/home/justin/#{application}"
 set :user, "justin"

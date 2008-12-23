@@ -6,6 +6,8 @@ class ArticleDirectory
     @articles = articles
   end
 
+  def commentable?; false; end
+
   def title
     @name.gsub(/[_-]+/, ' ').split.map{|w| w.capitalize}.join(' ')
   end

@@ -7,14 +7,16 @@ require 'sinatra'
 require 'bluecloth'
 require 'syntaxi'
 require 'ostruct'
+require 'chicago'
 require_local_lib('lib/*.rb')
 
 configure do
   Syntaxi.wrap_enabled = false
-  # set_option :views, 
   set(:public, "#{Sinatra.application.options.root}/public")
   set(:views, "#{Sinatra.application.options.root}/views")
 end
+
+catch_all_css
 
 helpers do
   def url_to(path)
