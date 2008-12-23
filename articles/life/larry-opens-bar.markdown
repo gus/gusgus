@@ -15,4 +15,4 @@ My old friend Larry Mazurkiewicz opened a bar in Elgin, IL last Thursday (12/11/
 
 #### Update
 
-I'm saying Larry's old. I'm just saying he's a friend that goes way back :)
+I'm not saying Larry's old. I'm just saying he's a friend that goes way back :)
