@@ -1,4 +1,4 @@
-# Douglas Street Bar
+# Douglas Street Sports Bar & Grill
 
 <cite>December 15th, 2008</cite>
 
@@ -12,3 +12,7 @@ My old friend Larry Mazurkiewicz opened a bar in Elgin, IL last Thursday (12/11/
     Elgin IL 60120
 
 [/excerpt]
+
+#### Update
+
+I'm saying Larry's old. I'm just saying he's a friend that goes way back :)
