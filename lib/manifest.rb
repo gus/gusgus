@@ -21,6 +21,7 @@ end
 
 # Order is important here :)
 # ArticleManifest.add('/code/ruby', 'chicago-sinatra-runtime-testing-extensions')
+ArticleManifest.add('/code/ruby', 'load-model')
 ArticleManifest.add('/code/ruby', 'talking-to-god')
 ArticleManifest.add('/life', 'boring-bed-poem')
 ArticleManifest.add('/life', 'larry-opens-bar')

@@ -26,19 +26,23 @@ class Article
 
   def render(opts={})
     article = @content
-    if opts[:excerpt]
-      if article =~ /\[excerpt\].+\[\/excerpt\]/m
-        article = @content.scan(/\[excerpt\].+\[\/excerpt\]/m).first
-      else
-        if article.length > 500
-          article = @content.scan(/^.+$/)[2..3].join("\n\n")
-        else
-          article = @content.scan(/.+\n/)[2..-1].join('')
-        end
-      end
-    end
+    article = extract_excerpt(article) if opts[:excerpt]
     article.gsub!(/\[\/?excerpt\]/, '')
     BlueCloth.new(Syntaxi.new(article).process).to_html
   end
-end
 
+private
+  def extract_excerpt(article)
+    return @excerpt if @excerpt
+    if article =~ /\[excerpt\].+\[\/excerpt\]/m
+      article = @content.scan(/\[excerpt\].+\[\/excerpt\]/m).first
+    else
+      if article.length > 500
+        article = @content.scan(/^.+$/)[2..3].join("\n\n")
+      else
+        article = @content.scan(/.+\n/)[2..-1].join('')
+      end
+    end
+    @excerpt = article
+  end
+end
