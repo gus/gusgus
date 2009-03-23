@@ -11,6 +11,9 @@ require 'chicago'
 require_local_lib('lib/*.rb')
 
 class GusGus < Sinatra::Base
+  register Sinatra::ThumbleMonks::Base
+  helpers Sinatra::ThumbleMonks::Helpers
+
   configure do
     Syntaxi.wrap_enabled = false
   end
