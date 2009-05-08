@@ -1,0 +1,215 @@
+=link_helper
+  a
+    :background-color #f0f0ff
+    :color #458
+  a:visited
+    :background-color transparent
+
+body
+  :width 100%
+  :text-align center
+  :margin 1ex 0ex
+  :padding 0em
+  :background-color white
+  :font normal 11pt Arial, sans-serif
+
+.clear
+  :clear both
+
+.container
+  :width 850px
+  :margin 0 auto
+  :text-align left
+  :padding 0
+
+  #header
+    img
+      :vertical-align middle
+    .nav
+      :padding 0 0 0 5em
+      :font normal 8pt Arial, sans-serif
+      :text-transform uppercase
+      :text-align center
+      +link_helper
+      a
+        :padding 0 1em
+        :color #458
+
+  #footer
+    :margin 1em 0 0 0
+    :padding 1ex 0 1ex 0
+    :border-top 1px solid #ccc
+    :font normal 10pt Arial, sans-serif
+    :color #aaa
+    +link_helper
+    .email
+      :color rgb(153, 204, 51)
+
+  #articles
+    +link_helper
+
+    li
+      :list-style circle inside
+      :color #333
+      :padding 0 0 0 1ex
+
+    h1
+      :font normal 22pt Arial, sans-serif
+      :margin 1.5em 0 1em 0
+      :color #555
+      a
+        :color #555
+
+    h2
+      :font normal 18pt Arial, sans-serif
+      :margin 1em 0
+      :color #248
+      :border-bottom 1px solid #eee
+      a
+        :color #248
+
+    h3
+      :font normal 14pt Arial, sans-serif
+      :margin 1em 0
+      :color #295
+      a
+        :color #295
+
+    h4
+      :font bold 11pt Arial, sans-serif
+      :margin 1ex 0
+      :color #555
+      a
+        :color #555
+
+    p
+      :margin 2ex 0
+
+    blockquote
+      :border-left 4px solid #eee
+      :margin 0
+      :padding 0 0 0 1ex
+      :color #555
+
+    em
+      :font-style italic
+
+    cite
+      :font normal 10pt Georgia, serif
+      :font-variant small-caps
+      :color #999
+
+    img.article
+      :margin 1ex
+      :padding 1ex
+      :border 1px solid #ccc
+
+    hr
+      :border 1px dotted #ccc
+
+    pre
+      :white-space pre-wrap
+      :white-space -moz-pre-wrap !important
+      :white-space -pre-wrap
+      :white-space -o-pre-wrap
+      :word-wrap break-word
+      :background-color #222
+      :overflow auto
+      :color #63FF00
+      :padding 1ex
+      :display block
+      code
+        :font normal 9pt "bitstream vera sans mono", "monaco", "lucida console", "courier new", courier, serif
+        :display inline
+        .normal
+        .attribute
+          :color #69B
+        .char
+          :color #F07
+        .class
+          :color #974
+        .comment
+          :color #777
+          :font-style italic
+          :border none
+          :margin none
+        .constant
+          :color #A8A
+        .escape
+          :color #594
+        .expr
+          :color #DF9
+        .global
+          :color #69B
+        .ident
+          :color #FFF
+        .keyword
+          :color #CA5
+        .line_number
+          :color #BBB
+        .method
+          :color #974
+        .module
+          :color #974
+        .number
+          :color #D74
+        .punct
+          :color #DDD
+        .regex
+          :color #AC6
+        .string
+          :color #AC6
+        .symbol
+          :color #C52
+
+#grumble
+  :margin 1em 0
+  :padding 1em 0
+  :background-color #f5f5f5
+  h4
+    :font normal 12pt "Helvetica Neue", Arial, sans-serif
+    :text-transform uppercase
+    :margin 1ex 0
+    :color #555
+  li.comment
+    :list-style none
+    :padding 0
+    :padding 1em 0
+    :font-family "georgia", "times", serif
+    .subject
+      :font-size 14pt
+    .grumbler
+      :float left
+      :width 125px
+      :padding 8px 0 1em 0
+      :border-top 2px solid #86d125
+      &:after
+        :color #888
+        :content " says:"
+    .body
+      :border-top 2px solid #ddd
+      :width 716px
+      :float left
+      :text-align left
+      :padding 10px 0 1em 1ex
+
+  form
+    :font-size 10pt
+    :border-top 3px double #ddd
+    div
+      :padding 1ex 0
+    label
+      :text-transform uppercase
+      :color #555
+      :display block
+      :font-size 9pt
+      :letter-spacing 1px
+      :padding 0 0 .5ex 0
+    input, textarea
+      :font-size 12pt
+
+#ribbon
+  :position absolute
+  :top 0
+  :right 0
+  :border 0
