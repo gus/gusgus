@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='GROW UP' http-equiv='X-UA-Compatible' />
+    <meta content='width=850' name='viewport' />
+    <title>
+      GusG.us
+      Riding The Long Bus
+    </title>
+    <link href='/images/gusgus_icon.gif' rel='icon' />
+    <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/rss+xml' />
+    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div id='header'>
+        <a href='http://gusg.us'>
+          <img src='/images/gus-logo.png' />
+        </a>
+        <span class='nav'>
+          <a href='/'>Home</a>
+          <a href='/life'>Life</a>
+          <a href='/work'>Work</a>
+          <a href='/code'>Code</a>
+          <a href='/code/ruby'>Ruby</a>
+          <a href='/code/erlang'>Erlang</a>
+        </span>
+        <a href='http://feeds.feedburner.com/gusgus' rel='alternate' type='application/rss+xml'>
+          <img src='http://www.feedburner.com/fb/images/pub/feed-icon16x16.png' />
+        </a>
+      </div>
+
+      <div id="article">
+  <h1>Full on Errors</h1>
+  <em>Rails plugin to get the full error message for a specific ActiveRecord attribute</em>
+  <cite>Fri Dec 21 00:00:00 -0600 2007</cite>
+  <p>ActiveRecord&#8217;s <code>full\_messages</code> method is a useful one for many reasons. I like using it as a message for tests that fail for strange reasons. I like it for displaying error messages in a view, which is simpler than modifying how <code>error\_messages\_for</code> displays. However, I have always found it annoying that I cannot ask an <code>ActiveRecord</code> object for the full-messages on a specific attribute &#8230; until now.</p>
+
+<p>To remedy this, I wrote the <strong><code>full\_on\_errors</code></strong> plugin which simply adds a <code>full\_on</code> method to the <code>Errors</code> class of an <code>ActiveRecord</code> instance. It&#8217;s use is simple; simply call <code>full_on</code> and pass the attribute for which you would like the full messages for.</p>
+
+<h2 id='example'>Example</h2>
+
+<p>In fact, it&#8217;s so simple that examples are coming in the third paragraph. Let&#8217;s say you have a User model that looks like the following:</p>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>User</span> <span class='o'>&lt;</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Base</span>
+  <span class='n'>validates_presence_of</span> <span class='ss'>:name</span>
+  <span class='n'>validates_presence_of</span> <span class='ss'>:email</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>Ignoring the fact that you could one-line the validation, if you were to validate a new instance of User that does not provide <code>name</code> or <code>email</code>, you would receive two error messages. With <em><code>full\_messages</code></em>, what would return would look like the following:</p>
+<div class='highlight'><pre><span class='n'>user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>new</span>
+<span class='n'>user</span><span class='o'>.</span><span class='n'>valid?</span>
+<span class='o'>=&gt;</span> <span class='kp'>false</span>
+<span class='n'>user</span><span class='o'>.</span><span class='n'>errors</span><span class='o'>.</span><span class='n'>full_messages</span>
+<span class='o'>=&gt;</span> <span class='o'>[</span><span class='s2'>&quot;Name can&#39;t be blank&quot;</span><span class='p'>,</span> <span class='s2'>&quot;Email can&#39;t be blank&quot;</span><span class='o'>]</span>
+</pre>
+</div>
+<p>But, what if you wanted the full-messages for just the <code>name</code> attribute? You could look for those errors that start with name; you could live with <code>user.errors.on(:name)</code> returning an array of partial error message; or you could do the following:</p>
+<div class='highlight'><pre><span class='n'>user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>new</span>
+<span class='n'>user</span><span class='o'>.</span><span class='n'>valid?</span>
+<span class='o'>=&gt;</span> <span class='kp'>false</span>
+<span class='n'>user</span><span class='o'>.</span><span class='n'>errors</span><span class='o'>.</span><span class='n'>full_on</span><span class='p'>(</span><span class='ss'>:name</span><span class='p'>)</span>
+<span class='o'>=&gt;</span> <span class='o'>[</span><span class='s2'>&quot;Name can&#39;t be blank&quot;</span><span class='o'>]</span>
+</pre>
+</div>
+<h2 id='installation'>Installation</h2>
+
+<p><em>Step 1:</em> install the Rails plugin:</p>
+<div class='highlight'><pre>$RAILS_ROOT&gt; ./script/plugin install \
+  http://glomp.rubyforge.org/svn/plugins/full_on_errors
+</pre>
+</div>
+<p><em>Step 2:</em> Start using it</p>
+
+<h2 id='code'>Code</h2>
+
+<p>The code is extremely simple and is - oddly enough - based on <code>Errors.full\_messages</code>. I have simplified the <code>full\_messages</code> code to focus on one attribute, to do less, and to look better (according to Gus Aesthetics):</p>
+<div class='highlight'><pre><span class='k'>module</span> <span class='nn'>Glomp</span> <span class='c1'>#:nodoc:</span>
+  <span class='k'>module</span> <span class='nn'>FullOnErrors</span> <span class='c1'>#:nodoc:</span>
+    <span class='k'>def</span> <span class='nf'>full_on</span><span class='p'>(</span><span class='n'>attr_name</span><span class='p'>)</span>
+      <span class='kp'>attr</span> <span class='o'>=</span> <span class='n'>attr_name</span><span class='o'>.</span><span class='n'>to_s</span>
+      <span class='n'>errs</span> <span class='o'>=</span> <span class='n'>on</span><span class='p'>(</span><span class='kp'>attr</span><span class='p'>)</span><span class='o'>.</span><span class='n'>to_a</span>
+      <span class='k'>return</span> <span class='n'>errs</span> <span class='k'>if</span> <span class='kp'>attr</span> <span class='o'>==</span> <span class='s1'>&#39;base&#39;</span>
+      <span class='n'>human_name</span> <span class='o'>=</span> <span class='vi'>@base</span><span class='o'>.</span><span class='n'>class</span><span class='o'>.</span><span class='n'>human_attribute_name</span><span class='p'>(</span><span class='kp'>attr</span><span class='p'>)</span>
+      <span class='n'>errs</span><span class='o'>.</span><span class='n'>map</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>msg</span><span class='o'>|</span> <span class='s2'>&quot;</span><span class='si'>#{</span><span class='n'>human_name</span><span class='si'>}</span><span class='s2'> </span><span class='si'>#{</span><span class='n'>msg</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>}</span>
+    <span class='k'>end</span>
+  <span class='k'>end</span> <span class='c1'># FullOnErrors</span>
+<span class='k'>end</span> <span class='c1'># Glomp</span>
+
+<span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Errors</span><span class='o'>.</span><span class='n'>send</span><span class='p'>(</span><span class='ss'>:include</span><span class='p'>,</span> <span class='no'>Glomp</span><span class='o'>::</span><span class='no'>FullOnErrors</span><span class='p'>)</span>
+</pre>
+</div>
+<p>For comparison&#8217;s sake, here is the <code>full\_messages</code> code from the Errors class:</p>
+<div class='highlight'><pre><span class='c1'># Returns all the full error messages in an array.</span>
+<span class='k'>def</span> <span class='nf'>full_messages</span>
+  <span class='n'>full_messages</span> <span class='o'>=</span> <span class='o'>[]</span>
+
+  <span class='vi'>@errors</span><span class='o'>.</span><span class='n'>each_key</span> <span class='k'>do</span> <span class='o'>|</span><span class='kp'>attr</span><span class='o'>|</span>
+    <span class='vi'>@errors</span><span class='o'>[</span><span class='kp'>attr</span><span class='o'>].</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>msg</span><span class='o'>|</span>
+      <span class='k'>next</span> <span class='k'>if</span> <span class='n'>msg</span><span class='o'>.</span><span class='n'>nil?</span>
+
+      <span class='k'>if</span> <span class='kp'>attr</span> <span class='o'>==</span> <span class='s2'>&quot;base&quot;</span>
+        <span class='n'>full_messages</span> <span class='o'>&lt;&lt;</span> <span class='n'>msg</span>
+      <span class='k'>else</span>
+        <span class='n'>full_messages</span> <span class='o'>&lt;&lt;</span> <span class='vi'>@base</span><span class='o'>.</span><span class='n'>class</span><span class='o'>.</span><span class='n'>human_attribute_name</span><span class='p'>(</span><span class='kp'>attr</span><span class='p'>)</span> <span class='o'>+</span> <span class='s2'>&quot; &quot;</span> <span class='o'>+</span> <span class='n'>msg</span>
+      <span class='k'>end</span>
+    <span class='k'>end</span>
+  <span class='k'>end</span>
+  <span class='n'>full_messages</span>
+<span class='k'>end</span>
+</pre>
+</div>
+</div>
+ 
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>05 Jan 2009</span> &raquo; <a href="/life/thumbly-going-on.html">Thumbly Going On</a></li>
+    
+      <li><span>03 Jan 2009</span> &raquo; <a href="/code/ruby/load-model.html">Load Model</a></li>
+    
+      <li><span>20 Dec 2008</span> &raquo; <a href="/life/boring-bed-poem.html">Poem - Boring Bed</a></li>
+    
+  </ul>
+</div>
+
+
+    </div>
+    <div class='container'>
+      <div class='clear' id='footer'>
+        &copy; 2007 - 2009 Justin Knowlden,
+        <span class='email'>gus at gusg dot us</span>
+        <span class='powered'>
+          - Powered by <a href=''>Jekyll</a>,
+          <a href=''>Markdown</a>,
+          <a href='http://rubyforge.org/projects/syntaxi/'>Syntaxi</a>, and me
+        </span>
+      </div>
+    </div>
+    <a href='http://github.com/jaknowlden'>
+      <img alt='Fork me on GitHub' id='ribbon' src='http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png' />
+    </a>
+    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="http://grumble.annealer.org/javascripts/grumbler/api.js" type="text/javascript"></script>
+    <script src="/javascripts/grumble_support.js" type="text/javascript"></script>
+  </body>
+</html>

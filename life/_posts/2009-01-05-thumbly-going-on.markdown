@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Thumbly Going On
-summary: Breaking my thumb in softball
+summary: Taking "break one off" to the next level
 ---
 
 ["Nooooow, this' a little story I got to tell ..."](http://www.youtube.com/watch?v=tEM3dW2oWW4)

@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='GROW UP' http-equiv='X-UA-Compatible' />
+    <meta content='width=850' name='viewport' />
+    <title>
+      GusG.us
+      Riding The Long Bus
+    </title>
+    <link href='/images/gusgus_icon.gif' rel='icon' />
+    <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/rss+xml' />
+    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div id='header'>
+        <a href='http://gusg.us'>
+          <img src='/images/gus-logo.png' />
+        </a>
+        <span class='nav'>
+          <a href='/'>Home</a>
+          <a href='/life'>Life</a>
+          <a href='/work'>Work</a>
+          <a href='/code'>Code</a>
+          <a href='/code/ruby'>Ruby</a>
+          <a href='/code/erlang'>Erlang</a>
+        </span>
+        <a href='http://feeds.feedburner.com/gusgus' rel='alternate' type='application/rss+xml'>
+          <img src='http://www.feedburner.com/fb/images/pub/feed-icon16x16.png' />
+        </a>
+      </div>
+
+      <div id="article">
+  <h1>Flashback - Test your flash.now</h1>
+  <em>Testing flash.now the right way</em>
+  <cite>Thu Jan 17 00:00:00 -0600 2008</cite>
+  <h4 id='update'>Update</h4>
+
+<ul>
+<li>This is old news. Rails 2.x makes this a moot point.</li>
+</ul>
+<hr />
+<p>I love the <code>Flash.now</code> mechanism. I love it with a weird passion. It really lets me DRY up my views in regards to message handling, while also allowing me to keep my controller code straight forward. I basically have one way to handle messages and all I have to do is add a <code>.now</code> to my <code>flash</code> reference when I don&#8217;t want to do a redirect.</p>
+
+<p>But &#8230; there&#8217;s always a but &#8230; I also love tests. I love tests with an even weirder passion than I love <code>Flash.now</code>. And if you know anything about <code>Flash.now</code> and Rails tests, then you know where I&#8217;m going with this; I can&#8217;t test <code>Flash.now</code> variables in my functional tests!</p>
+
+<p>You say, <em>&#8220;Say what?!&#8221;</em></p>
+
+<p>I say, <em>&#8220;It&#8217;s true.&#8221;</em></p>
+
+<p>You say, <em>&#8220;Yeah, I know. It&#8217;s also sad.&#8221;</em> But wait, there&#8217;s the article called <a href='http://wiki.rubyonrails.org/rails/pages/HowToTestFlash.Now'>How to test flash.now</a>.</p>
+
+<p>I say, <em>&#8220;Yeah, but that&#8217;s dumb.&#8221;</em> Why should I have to test a seemingly isomorphic mechanism in two different ways?</p>
+
+<p>You might say, <em>&#8220;Because Flash.now basically discards variables passed into it so that at the end of the request, the get swept-up by the chain of sweepers.&#8221;</em></p>
+
+<p>I <strong>know</strong> I would say, &#8220;True. But I don&#8217;t really care. These are tests.&#8221; And anyways, I hate, hate, hate using <code>assert_tag</code> in functional tests. Save it for integration tests.</p>
+
+<p>Finally, I would say, <em>&#8220;I wrote this fancy plugin called Flashback which solves my problem.&#8221;</em></p>
+
+<p>You say, <em>&#8220;Oh.&#8221;</em></p>
+
+<h2 id='interpretation'>Interpretation</h2>
+
+<p><code>Flashback</code> is four useful lines of magic and wonder rolled into a big ball of <strong>plugin</strong>. I went through many iterations in my head for how I wanted to implement it, but I went with the following for my objectives:</p>
+
+<ol>
+<li>The solution should only have effect in tests. It should not implicitly weave its way into production behavior.</li>
+
+<li>I should be conscious when the behavior is in affect.</li>
+
+<li>It should require very little effort on my part to enable the feature</li>
+
+<li>It should be simple</li>
+</ol>
+
+<p>With that in mind, I hit the court and started playing. Of course, I knew it was going to be a plugin, so I just went ahead and created the plugin. Being a tester, I wrote several functional tests for how I wanted it to work. They looked something like this:</p>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FlashersControllerTest</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>TestCase</span>
+  <span class='k'>def</span> <span class='nf'>test_flash_available_after_request</span>
+    <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;hello&#39;</span>
+    <span class='n'>assert_equal</span> <span class='s1'>&#39;hello&#39;</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>[</span><span class='ss'>:actual_flash</span><span class='o'>]</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>test_flash_now_not_available_after_request</span>
+    <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash_now</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;world&#39;</span>
+    <span class='n'>assert_nil</span> <span class='n'>flash</span><span class='o'>.</span><span class='n'>now</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>test_flash_now_is_available_after_request_via_flashed</span>
+    <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash_now</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;world&#39;</span>
+    <span class='n'>assert_equal</span> <span class='s1'>&#39;world&#39;</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>Three erroring tests. Oh, joy! I love errors when they come immediately after writing my test code. Notice the <code>flashed</code> method call in test 3. That&#8217;s my contribution to the world of <code>Flash</code>. I want it to mean, give me the variables that were flashed (or flushed) during the request. Like a flash of light; fizzled and forgotten.</p>
+
+<p>Guess I should implement the faux Controller:</p>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FlashersController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+  <span class='k'>def</span> <span class='nf'>index</span>
+    <span class='n'>flash</span><span class='o'>[</span><span class='ss'>:actual_flash</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>params</span><span class='o'>[</span><span class='ss'>:actual_flash</span><span class='o'>]</span>
+    <span class='n'>flash</span><span class='o'>.</span><span class='n'>now</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>params</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span>
+    <span class='n'>render</span> <span class='ss'>:text</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;blah&#39;</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>Two passing tests, and an erroring test. Yippee! Just need to make that <code>flashed</code> do something. Here, I went through many, many trials and tribulations. For like, almost 30 minutes. That is, until I figured, <em>&#8220;Why not just insert my own Flash hash into the session for the request?&#8221;</em> Like so:</p>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FlashedHash</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Flash</span><span class='o'>::</span><span class='no'>FlashHash</span>
+  <span class='k'>def</span> <span class='nf'>flashed</span>
+    <span class='vi'>@flashed</span> <span class='o'>||=</span> <span class='p'>{}</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>discard</span><span class='p'>(</span><span class='n'>k</span><span class='o'>=</span><span class='kp'>nil</span><span class='p'>)</span>
+    <span class='n'>flashed</span><span class='o'>[</span><span class='n'>k</span><span class='o'>]</span> <span class='o'>=</span> <span class='nb'>self</span><span class='o'>[</span><span class='n'>k</span><span class='o'>]</span>
+    <span class='k'>super</span><span class='p'>(</span><span class='n'>k</span><span class='p'>)</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>Hmmm &#8230; and to accomplish objective (2), I would need to set that up somehow. Objective (3) says it should be easy to use. So, I settled on a little method that would be available in <code>Test::Unit::TestCase</code>, that is dependent on there being a <code>TestRequest</code> instance assigned to a <code>@request</code> instance variable (which there always is for functional tests), and that would be named &#8230; <code>flashback</code>.</p>
+<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>flashback</span>
+  <span class='vi'>@request</span><span class='o'>.</span><span class='n'>session</span><span class='o'>[</span><span class='s1'>&#39;flash&#39;</span><span class='o'>]</span> <span class='o'>=</span> <span class='no'>FlashedHash</span><span class='o'>.</span><span class='n'>new</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>This, however, required a drastic change in my test; which went from two lines, to three.</p>
+
+<p>And, I had to write another test to be sure that <code>flashed</code> was not available when <code>flashback</code> wasn&#8217;t called:</p>
+<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_no_flashback_means_flash_now_not_available_after_request_via_flashed</span>
+  <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash_now</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;world&#39;</span>
+  <span class='n'>assert_raise</span><span class='p'>(</span><span class='no'>NoMethodError</span><span class='p'>)</span> <span class='p'>{</span><span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span><span class='p'>}</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>I wrote a couple of other tests, but you get the point. Call <code>flashback</code> before you test your action and after <code>@request</code> is defined, and Bob&#8217;s your uncle!</p>
+
+<h2 id='application'>Application</h2>
+
+<p>You might not believe this, but I had an actual use for this little plugin immediately after writing it. In a certain Rails application I am working on, I have controllers with actions that render a page when an error occurs.</p>
+
+<p><em>&#8220;Amazing&#8221;</em>, you say.</p>
+
+<p>It&#8217;s the standard <code>new -&gt; create</code> or <code>edit -&gt; update</code> paradigm. When an error occurs in the create/update actions, I put errors in the flash.now hash as &#8230; can you guess it &#8230; <code>:errors</code>. Whenever <code>flash[:errors]</code> exists while rendering a view, I do something special with it; like display it &#8230; <em>&#8220;Oooooooooo&#8221;</em>, say the martians.</p>
+
+<p>So, I want to test my <code>flash.now</code> variables. I like the idea of setting <code>flashback</code> when I need it, versus all the time with a <code>setup</code>.</p>
+
+<p>Here&#8217;s the first place I used it; an action for creating <code>Stickies</code>, which are kind of like user-to-user comments, but different &#8230; sort of.</p>
+<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_create_should_flash_error_on_failure</span>
+  <span class='n'>user</span> <span class='o'>=</span> <span class='n'>users</span><span class='p'>(</span><span class='ss'>:quentin</span><span class='p'>)</span>
+  <span class='n'>sticker</span> <span class='o'>=</span> <span class='n'>users</span><span class='p'>(</span><span class='ss'>:aaron</span><span class='p'>)</span>
+  <span class='n'>login_as</span><span class='p'>(</span><span class='n'>sticker</span><span class='p'>)</span>
+  <span class='n'>flashback</span>
+  <span class='n'>post</span> <span class='ss'>:create</span><span class='p'>,</span> <span class='ss'>:user_id</span> <span class='o'>=&gt;</span> <span class='n'>user</span><span class='o'>.</span><span class='n'>id</span><span class='p'>,</span> <span class='ss'>:sticky</span> <span class='o'>=&gt;</span> <span class='p'>{</span><span class='ss'>:message</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;blah&#39;</span><span class='p'>}</span>
+  <span class='n'>assert_match</span><span class='sr'> /Problems .+ Sticky/</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:error</span><span class='o'>]</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>Here&#8217;s what the important part of create looks like in the controller:</p>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>StickiesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+  <span class='k'>def</span> <span class='nf'>create</span>
+    <span class='c1'># ...</span>
+  <span class='k'>rescue</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>RecordInvalid</span> <span class='o'>=&gt;</span> <span class='n'>e</span>
+    <span class='n'>flash</span><span class='o'>.</span><span class='n'>now</span><span class='o'>[</span><span class='ss'>:error</span><span class='o'>]</span> <span class='o'>=</span> <span class='s2'>&quot;Problems erupted while saving the Sticky&quot;</span>
+    <span class='n'>render</span> <span class='ss'>:action</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;new&#39;</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<h2 id='installation'>Installation</h2>
+
+<p>Simple and easy:</p>
+
+<p><a href='http://glomp.rubyforge.org/flashback'>Documentation</a> is served from <a href='http://rubyforge.org/projects/glomp'>RubyForge</a>, just like the plugin itself.</p>
+</div>
+ 
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+      <li><span>05 Jan 2009</span> &raquo; <a href="/life/thumbly-going-on.html">Thumbly Going On</a></li>
+    
+      <li><span>03 Jan 2009</span> &raquo; <a href="/code/ruby/load-model.html">Load Model</a></li>
+    
+      <li><span>20 Dec 2008</span> &raquo; <a href="/life/boring-bed-poem.html">Poem - Boring Bed</a></li>
+    
+  </ul>
+</div>
+
+
+    </div>
+    <div class='container'>
+      <div class='clear' id='footer'>
+        &copy; 2007 - 2009 Justin Knowlden,
+        <span class='email'>gus at gusg dot us</span>
+        <span class='powered'>
+          - Powered by <a href=''>Jekyll</a>,
+          <a href=''>Markdown</a>,
+          <a href='http://rubyforge.org/projects/syntaxi/'>Syntaxi</a>, and me
+        </span>
+      </div>
+    </div>
+    <a href='http://github.com/jaknowlden'>
+      <img alt='Fork me on GitHub' id='ribbon' src='http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png' />
+    </a>
+    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="http://grumble.annealer.org/javascripts/grumbler/api.js" type="text/javascript"></script>
+    <script src="/javascripts/grumble_support.js" type="text/javascript"></script>
+  </body>
+</html>

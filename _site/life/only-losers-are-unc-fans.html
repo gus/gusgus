@@ -35,20 +35,36 @@
       </div>
 
       <div id="article">
-  <h1>Douglas Street Sports Bar & Grill</h1>
-  <em>My buddy opens a bar - and I go to it</em>
-  <cite>Mon Dec 15 00:00:00 -0600 2008</cite>
-  <p>My old friend Larry Mazurkiewicz opened a bar in Elgin, IL last Thursday (12/11/2008). This can only spell trouble for me as it&#8217;s 5 minutes away!</p>
+  <h1>Only Losers are UNC Fans - With Tests</h1>
+  <em>It's not JUST a game, man!</em>
+  <cite>Wed Feb 06 00:00:00 -0600 2008</cite>
+  <p>I&#8217;m a Duke basketball fan; there, I admitted it. I didn&#8217;t always like them, though. I have loved Kentucky since I was a little kid; in large part because of Rick Pitino and because they were just plain good and because I grew up in Ohio when there weren&#8217;t any good teams.</p>
 
-<p><a href='http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=231+Douglas+Ave,+Elgin,+IL+60120&amp;sll=42.03337,-88.236344&amp;sspn=0.009371,0.015149&amp;g=231+Douglas+Ave,+Elgin,+IL+60120&amp;ie=UTF8&amp;t=h&amp;z=16&amp;iwloc=addr'>Address</a></p>
+<p>In that time, Duke beat Kentucky on many occasions causing me much angst. But as I got older I began to respect Duke if only for Coach K. He&#8217;s such a damn good coach. He can take any rag-tag team of somebody&#8217;s and turn them into an even better team.</p>
 
-<pre><code>Douglas Street Bar
-231 Douglas Ave
-Elgin IL 60120</code></pre>
+<p>My mistake was telling a few UNC fans (and I do mean Duke&#8217;s neighbor) at work that I was a Duke fan. All hell broke loose.</p>
 
-<h4 id='update'>Update</h4>
+<p><em>&#8220;Duke sucks&#8221;</em> was the consistent mantra of the group. And lonely me; sitting there &#8230; having to take it &#8230; because I&#8217;m just oh so humble and non-confrontational.</p>
 
-<p>I&#8217;m not saying Larry&#8217;s old. I&#8217;m just saying he&#8217;s a friend that goes way back :)</p>
+<p>They went so far as to tell me in code how they felt about it:</p>
+<div class='highlight'><pre><span class='c'># This test is guaranteed to pass! </span>
+def test_justin_is_a_nancy
+  <span class='nv'>justin</span> <span class='o'>=</span> HoopsFan.find<span class='o'>(</span>:nancy <span class='o'>=</span>&gt; <span class='nb'>true</span><span class='o'>)</span> 
+  assert_equal “Fairweather Nancy”, justin.real_name 
+end
+</pre>
+</div>
+<p>So, of course it is my Pride&#8217;s duty to respond. Here is the proof that all UNC fans are also losers:</p>
+<div class='highlight'><pre>def test_only_losers_are_unc_fans
+  <span class='nv'>losers</span> <span class='o'>=</span> HoopNuts.find<span class='o'>(</span>:all, :conditions <span class='o'>=</span>&gt; <span class='o'>[</span><span class='s1'>&#39;kast = ?&#39;</span>, <span class='s1'>&#39;loser&#39;</span><span class='o'>])</span>
+  <span class='nv'>unc_fans</span> <span class='o'>=</span> HoopNuts.find<span class='o'>(</span>:all, :conditions <span class='o'>=</span>&gt; <span class='o'>[</span><span class='s1'>&#39;team = ?&#39;</span>, <span class='s1'>&#39;UNC&#39;</span><span class='o'>])</span>
+
+  assert_same losers, unc_fans
+  assert losers.length &gt; 0
+end
+</pre>
+</div>
+<p><em>If you don&#8217;t know already, it&#8217;s Ruby with ActiveRecord sprinklings.</em></p>
 </div>
  
 <div id="related">

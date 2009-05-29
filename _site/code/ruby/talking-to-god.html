@@ -34,11 +34,10 @@
         </a>
       </div>
 
-      
-<cite></cite>
-
-<div id="article">
+      <div id="article">
   <h1>Ruby - Talking to God should be easier</h1>
+  <em>A look into one way to talk to God</em>
+  <cite>Sat Dec 20 00:00:00 -0600 2008</cite>
   <p>I recently started writing my <a href='http://github.com/thumblemonks/evoke'>Evoke</a> service (a nice, little <a href='http://sinatra.rubyforge.org/'>Sinatra</a> app). Part of the Evoke service is actually delivering on the promise of calling a stored URL back, which I achieved by storing a runner as a <a href='http://github.com/tobi/delayed_job'>delayed job</a>. Only half the battle is writing the consumer, though. The other half is ensuring that the runner is daemonized and that the daemon is restarted if ever it were to die. This is where <a href='http://god.rubyforge.org/'>god</a> enters the picture.</p>
 
 <p>For the Evoke consumer, I wrote a little god script that I package with the Evoke bundle. This script is easily configured to run from the command like so (relative to the evoke source code):</p>
