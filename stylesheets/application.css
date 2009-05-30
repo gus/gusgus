@@ -1,7 +1,8 @@
 body {
   text-align: center;
   padding: 0em;
-  background-color: transparent;
+  background: #fff url('/images/grey-linen-bg.jpg') repeat top left;
+/*  background-color: transparent;*/
   font: normal 11pt Arial, sans-serif; }
 
 .clear {
