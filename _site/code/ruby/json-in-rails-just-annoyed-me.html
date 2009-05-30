@@ -32,9 +32,12 @@
       </div>
 
       <div id="article">
-  <h1>JSON in Rails Just Annoyed Me</h1>
-  <em>Seriously, things just shouldn't be as hard as they are</em>
-  <cite>Sun May 25 00:00:00 -0500 2008</cite>
+  <div class="header">
+    <h1>JSON in Rails Just Annoyed Me</h1>
+    <div class="date"><cite>May 25, 2008</cite></div>
+    <div class="summary">Seriously, things just shouldn't be as hard as they are</div>
+    <div class="clear"></div>
+  </div>
   <p>Man. I was really having fun coding up JSON responses in one of my Rails apps. Until, that is, I wanted to do something custom.</p>
 
 <p>Now, you might ask, <em>&#8220;Why would you want to do something custom?&#8221;</em></p>
@@ -42,7 +45,7 @@
 <p>To which I would reply, <em>&#8220;Sigh. Because I&#8217;m just that way.&#8221;</em></p>
 
 <h2 id='get_on_with_it'>Get on with it</h2>
-<img class='article' src='http://farm1.static.flickr.com/191/503535890_b929f73b2e_m.jpg' align='right' />
+
 <p>Ok, I&#8217;ve got this <code>ActiveRecord</code> model called <code>Fact</code>. <code>Fact</code> has attributes <code>:key</code> and <code>:value</code> along with the other normal columns (i.e. <code>:id</code>, <code>:created_at</code>, etc.).</p>
 
 <p>I want to use <code>Fact</code> in one of my views and I export it to JSON. I only care about the <code>:key</code> and <code>:value</code> and the obvious solution is to:</p>
@@ -79,19 +82,6 @@
 <h2 id='whatchu_goan_do'>Whatchu goan do?</h2>
 
 <p>I don&#8217;t know yet. I&#8217;ll repost when I figure it out. I just wanted to post my annoyance. I am very, very annoyed.</p>
-</div>
- 
-<div id="related">
-  <h3>Related Posts</h3>
-  <ul class="posts">
-    
-      <li><span>05 Jan 2009</span> &raquo; <a href="/life/thumbly-going-on.html">Thumbly Going On</a></li>
-    
-      <li><span>03 Jan 2009</span> &raquo; <a href="/code/ruby/load-model.html">Load Model</a></li>
-    
-      <li><span>20 Dec 2008</span> &raquo; <a href="/life/boring-bed-poem.html">Poem - Boring Bed</a></li>
-    
-  </ul>
 </div>
 
 

@@ -32,9 +32,12 @@
       </div>
 
       <div id="article">
-  <h1>Assert Session</h1>
-  <em>Extending Assert Request</em>
-  <cite>Tue Jan 08 00:00:00 -0600 2008</cite>
+  <div class="header">
+    <h1>Assert Session</h1>
+    <div class="date"><cite>Jan 08, 2008</cite></div>
+    <div class="summary">Extending Assert Request</div>
+    <div class="clear"></div>
+  </div>
   <p>I was coding along in Rails with security in mind using the simple <a href='http://validaterequest.rubyforge.org/'>Assert Request</a> plugin from <a href='http://workingwithrails.com/person/5938-scott-woods'>Scott A Woods</a> in my controllers and ran into a spot where I wanted to require the presence of a session variable before allowing the rest of an action to execute. The specific motivation was conceived when coding a controller for an invitation mechanism. Normally, a user invites another user to a system, the invited user comes to the system with their invite-code (probably from a link in an email), completes some form (let&#8217;s call it invite-accept), and then submits the final request (invite-update).</p>
 
 <p>What I didn&#8217;t want was an easy way for a user to be able to by-pass the invite-accept and go straight to invite-update. To prevent this, I wanted the invite-code to be available to invite-update, but not via a parameter. The quickest and safest way I could think was to require that it be in the session, which would theoretically force the user to first visit invite-accept. This way, only invited people can accept invites and they must go through invite-accept.</p>
@@ -189,19 +192,6 @@
 </pre>
 </div>
 <p>Tests are available upon request.</p>
-</div>
- 
-<div id="related">
-  <h3>Related Posts</h3>
-  <ul class="posts">
-    
-      <li><span>05 Jan 2009</span> &raquo; <a href="/life/thumbly-going-on.html">Thumbly Going On</a></li>
-    
-      <li><span>03 Jan 2009</span> &raquo; <a href="/code/ruby/load-model.html">Load Model</a></li>
-    
-      <li><span>20 Dec 2008</span> &raquo; <a href="/life/boring-bed-poem.html">Poem - Boring Bed</a></li>
-    
-  </ul>
 </div>
 
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Ruby: Dumb SMTP - The Reaffirming SMTP Server"
-summary: Why SMTP does not have to be hard
+title: Dumb SMTP
+summary: The Reaffirming SMTP Server
 ---
 
 I saw this post about a [Mock SMTP](http://d.hatena.ne.jp/koseki2/20081030/mocksmtpd) server off of [RubyFlow](http://rubyflow.com) today and it scared the living crap out of me. You bet it did! Is that what a mock of something is considered to be?

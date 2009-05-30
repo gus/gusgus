@@ -32,9 +32,12 @@
       </div>
 
       <div id="article">
-  <h1>Sinatra: auto-handling any CSS</h1>
-  <em>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</em>
-  <cite>Thu Aug 28 00:00:00 -0500 2008</cite>
+  <div class="header">
+    <h1>Sinatra: auto-handling any CSS</h1>
+    <div class="date"><cite>Aug 28, 2008</cite></div>
+    <div class="summary">If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</div>
+    <div class="clear"></div>
+  </div>
   <h4 id='update'>Update</h4>
 
 <ol>
@@ -103,19 +106,6 @@
 <div class='highlight'><pre><span class='n'>get</span><span class='p'>(</span><span class='s1'>&#39;/*.css&#39;</span><span class='p'>)</span> <span class='p'>{</span> <span class='n'>sass</span> <span class='n'>params</span><span class='o'>[</span><span class='s2'>&quot;splat&quot;</span><span class='o'>].</span><span class='n'>first</span><span class='o'>.</span><span class='n'>to_sym</span> <span class='p'>}</span>
 </pre>
 </div>
-</div>
- 
-<div id="related">
-  <h3>Related Posts</h3>
-  <ul class="posts">
-    
-      <li><span>05 Jan 2009</span> &raquo; <a href="/life/thumbly-going-on.html">Thumbly Going On</a></li>
-    
-      <li><span>03 Jan 2009</span> &raquo; <a href="/code/ruby/load-model.html">Load Model</a></li>
-    
-      <li><span>20 Dec 2008</span> &raquo; <a href="/life/boring-bed-poem.html">Poem - Boring Bed</a></li>
-    
-  </ul>
 </div>
 
 

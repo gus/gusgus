@@ -33,7 +33,7 @@ I want to turn away, buuutttt ... yeah, I'm still curious. How inhumane is this 
 * *"Have good scents"* - something about not wearing too much perfume
 * *"Hit the right tune"* - try not to play your music too loud? Okay, DUH!
 * *"Ask before borrowing"* - what grade is this?
-* *"Curb casual conversation"* - or [shut-up and work you underpaid chimps]
+* *"Curb casual conversation"* - or \[shut-up and work you underpaid chimps\]
 * *"Be a courteous guest"*, *"knock before entering"* - it's a f\*&$ing cubicle for crying out loud. Knock on what? *Ugh, excuse me. I knocked on your imaginary friggin' door and you did not answer! So I decided to come in. Okay?*
 
 Blood pressure rising thanks to the coffee I had just before leaving.

@@ -16,13 +16,13 @@ Needless to say, called an ambulance. Paramedics were ticked because they didn't
 
 ---
 
-*Side note: It's actually really hard to describe this injury. If you're ever in this situation, take a picture. I did and it's the only thing that connects the dots for people. No, I will **NOT** post the picture.*
+> Side note: It's actually really hard to describe this injury. If you're ever in this situation, take a picture. I did and it's the only thing that connects the dots for people. No, I will **NOT** post the picture.
 
 ---
 
 Got the hospital; Loyola Medical, luckily. But not without some delay on the paramedics part. They just sat us there at the field in the ambulance for like 20 minutes. I passively aggressively mentioned to them several times that my thumb was no longer connected to myself like it used to be. But no, I was not in pain and therefore, paperwork first. I should also say that people in the ER certainly take their time when they think you only have a dislocated thumb.
 
-While in the ER, an x-ray machine operator came by with her roaming x-ray machine to take some ... x-rays. Like everyone else, she did not get the nature of the injury. She asked me to do some crazy stuff with my hand, including turning it over so the back side of my hand could rest on the machine because "[she had] to get the x-ray". Well excuse me! My thumb needed to stay attached, lady! Needless to say, we didn't like each other much. Me the nuisance, her the torturer. It was a little bit like a showdown at the OK corral.
+While in the ER, an x-ray machine operator came by with her roaming x-ray machine to take some ... x-rays. Like everyone else, she did not get the nature of the injury. She asked me to do some crazy stuff with my hand, including turning it over so the back side of my hand could rest on the machine because "\[she had\] to get the x-ray". Well excuse me! My thumb needed to stay attached, lady! Needless to say, we didn't like each other much. Me the nuisance, her the torturer. It was a little bit like a showdown at the OK corral.
 
 I eyed her. She eyed me. I flinched. Damn!
 
@@ -30,13 +30,13 @@ After several other curious nurses and aids came by - who all acted like they we
 
 Fortunately for me, the really laid back resident and his intern did such an awesome job lining the joint back up (which happened to be broken in two places) and sewing everything back together that I have never needed surgery. I was subsequently told this process was called a reduction, to which the dictionary concurs:
 
-> The act of remedying a dislocation or fracture by returning the affected part of the body to its original [host]
+> The act of remedying a dislocation or fracture by returning the affected part of the body to its original \[host\]
 
 Felt more like a relief to me.
 
 ---
 
-*Side note: I had to receive a local anesthetic in my hand - apparently called a digital block, which made me giggle to no end. Well, when your thumb is not attached, the unattached portion does not receive this so-called numbing nectar. So, when they finally start sewing your thumb on, you can ... uhhhh ... feel everything. Okay, enough.*
+> Side note: I had to receive a local anesthetic in my hand - apparently called a digital block, which made me giggle to no end. Well, when your thumb is not attached, the unattached portion does not receive this so-called numbing nectar. So, when they finally start sewing your thumb on, you can ... uhhhh ... feel everything. Okay, enough.
 
 ---
 

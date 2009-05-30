@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Erlang Diaries - Vol 1 - Brought to you by the lower-case letter 'c'
-summary: Forays into erlangs
+title: Erlang Diaries - Vol 1
+summary: Brought to you by the lower-case letter 'c'
 ---
 
 I'm starting a new diary for my forays into learning Erlang. Below are my first entries. I basically want to learn Erlang for a couple of reasons:
@@ -11,7 +11,7 @@ I'm starting a new diary for my forays into learning Erlang. Below are my first 
 * I enjoy agent-based modeling and simulation
 * I want to write a Wator simulation in Erlang
 
-The reason for the final note can be traced back to a [Software Craftsmanship](http://groups.softwarecraftsmanship.org/) meeting on November 10, 2008. Uncle Bob was talking about the *Total Cost of a Mess* and showing off his old Java crapplet code for a Wator implementation. Dean Wampler then said, and I'm paraphrasing, it would be interesting [for Gus] to implement Wator in Erlang.
+The reason for the final note can be traced back to a [Software Craftsmanship](http://groups.softwarecraftsmanship.org/) meeting on November 10, 2008. Uncle Bob was talking about the *Total Cost of a Mess* and showing off his old Java crapplet code for a Wator implementation. Dean Wampler then said, and I'm paraphrasing, it would be interesting \[for Gus\] to implement Wator in Erlang.
 
 ### 11/11 @ 12:00
 
@@ -19,11 +19,11 @@ Some tests were running while I was at work so I installed the Erlang Mac port. 
 
 I also downloaded some documentation. Namely:
 
-* Erlang Book - Part 1; [EB]
-* Design Patterns for Simulations in Erlang/OTP; [PhD]
+* Erlang Book - Part 1; \[EB\]
+* Design Patterns for Simulations in Erlang/OTP; \[PhD\]
 * Program Development Using Erlang - 
-Programming Rules and Conventions, from Ericsson; [Zzzz]
-* HTML Documentation provided with the port, same as on the site; [erl]
+Programming Rules and Conventions, from Ericsson; \[Zzzz\]
+* HTML Documentation provided with the port, same as on the site; \[erl\]
 
 I haven't written or compiled a lick of code yet, haven't even really looked at the language. I know from past experiences that getting started is the slowest part of learning a language and that having documentation at your fingertips is the key to resolving it.
 
@@ -35,7 +35,7 @@ I didn't get much sleep last night. Nothing to do with Erlang. I hit snooze like
 
 Thusly, I had about 50 minutes to spare before the 8:55a train, which you know is not going to get there on time because American train systems suck and never get anywhere when they're supposed to; unless I'm running almost late and get to the train a few minutes ahead only to find that that the smart train conductors were thinking kindly and got the train there ahead of me.
 
-All that said, time to spare. I "opened" [EB] and read through the Introduction. I really did this time. I'll prove it: Erlang was designed for use in concurrent, real-time systems. It was designed pragmatically while some phone geeks were putting together a phone system. The language only contains what is needed and it doesn't contain any of that gobbelty-gook sugar that sequential logic programming languages have. And it's fast.
+All that said, time to spare. I "opened" \[EB\] and read through the Introduction. I really did this time. I'll prove it: Erlang was designed for use in concurrent, real-time systems. It was designed pragmatically while some phone geeks were putting together a phone system. The language only contains what is needed and it doesn't contain any of that gobbelty-gook sugar that sequential logic programming languages have. And it's fast.
 
 Next, I started chapter 1 entitled *Programming*. Awwweeesuuummm. First page, code; to wit:
 
@@ -57,17 +57,17 @@ Looking around for the next step; the running-it step.
 
 Still looking.
 
-[EB], help! Anything? What's that you say [EB]?
+\[EB\], help! Anything? What's that you say \[EB\]?
 
-> [EB]: How the code for factorial was compiled and loaded into the Erlang system is a local issue.
+> \[EB\]: How the code for factorial was compiled and loaded into the Erlang system is a local issue.
 
 > Gus: WTF does that mean?
 
-> [EB]: By ‘local issue’ we mean that the details of how a particular operation is performed is system-dependent and is not covered in this book.
+> \[EB\]: By ‘local issue’ we mean that the details of how a particular operation is performed is system-dependent and is not covered in this book.
 
 > Gus: Uh huh ...
 
-*[EB; page 10]*
+*\[EB; page 10\]*
 
 Well ... that's not very helpful. What the hell is NOT system-dependent? Diary, Erlang made me so mad! I could have just poked it in the eye; but not too hard.
 
@@ -114,7 +114,7 @@ Almost to the train station. Had a thought:
 
 Diary,
 
-I finally got Erlang to compile something. It was our little factorial program and I did it on the way home today ... on the train not in the car. It all started when I did some digging into the docs that can be found with the port and ran across "Getting Started With Erlang" [GS]. With an unlikely name like that, it's no wonder I couldn't figure it out.
+I finally got Erlang to compile something. It was our little factorial program and I did it on the way home today ... on the train not in the car. It all started when I did some digging into the docs that can be found with the port and ran across "Getting Started With Erlang" \[GS\]. With an unlikely name like that, it's no wonder I couldn't figure it out.
 
 Anyways, seems like I was almost there. I was missing one f'ing character in this whole mess. The lower-case letter 'c'. What does it do? Well, look at this:
 

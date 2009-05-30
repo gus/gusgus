@@ -32,9 +32,12 @@
       </div>
 
       <div id="article">
-  <h1>Makin' Mash</h1>
-  <em>A Map to Hash implementation in Ruby</em>
-  <cite>Sat May 31 00:00:00 -0500 2008</cite>
+  <div class="header">
+    <h1>Makin' Mash</h1>
+    <div class="date"><cite>May 31, 2008</cite></div>
+    <div class="summary">A Map to Hash implementation in Ruby</div>
+    <div class="clear"></div>
+  </div>
   <p>We all know and love the <code>map</code> method in Ruby (and other functional-ish languages). Given some list of objects, we get back an equal-sized array of potentially different objects. In Ruby we can <code>map</code> against arrays, hashes, sets, etc.; basically, anything that is <code>Enumerable</code>.</p>
 
 <p>From time-to-time, though, I need to convert some list of object into a hash. Ergo, I need to <code>map-to-hash</code> or <code>mash</code>.</p>
@@ -71,19 +74,6 @@
 <ol>
 <li><a href='http://snippets.dzone.com/posts/show/4805'>Map array to hash</a> - There are actually one too many loops in <a href='http://snippets.dzone.com/user/vinterbleg'>vinterbleg&#8217;s</a> implementation. And it&#8217;s Array specific where it should be Enumerable generic.</li>
 </ol>
-</div>
- 
-<div id="related">
-  <h3>Related Posts</h3>
-  <ul class="posts">
-    
-      <li><span>05 Jan 2009</span> &raquo; <a href="/life/thumbly-going-on.html">Thumbly Going On</a></li>
-    
-      <li><span>03 Jan 2009</span> &raquo; <a href="/code/ruby/load-model.html">Load Model</a></li>
-    
-      <li><span>20 Dec 2008</span> &raquo; <a href="/life/boring-bed-poem.html">Poem - Boring Bed</a></li>
-    
-  </ul>
 </div>
 
 

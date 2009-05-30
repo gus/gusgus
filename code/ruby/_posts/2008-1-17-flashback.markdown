@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Flashback - Test your flash.now
-summary: Testing flash.now the right way
+title: Flashback
+summary: Test your flash and I mean .now
 ---
 
 #### Update

@@ -162,7 +162,7 @@ Following is an excerpt of how to use it:
 
 So, the important part is the initialization of the meter via the PasswordSophistication object. The PasswordSophistication constructor expects two DOM Id's:
 
-1. First, is the Id pointing to the password field; 'user_password' in this case
+1. First, is the Id pointing to the password field; 'user\_password' in this case
 1. Second, is the prefix of the DOM Id that represent the meter __bar__ and __text__
 
 The use of the prefix for the fields is the same implementation as that originally defined in the Code & Coffee article.

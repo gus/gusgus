@@ -10,7 +10,7 @@ body {
   clear: both; }
 
 .container {
-  width: 850px;
+  width: 900px;
   margin: 0 auto;
   text-align: left;
   padding: 0; }
@@ -52,11 +52,27 @@ body {
     color: #333;
     padding: 0 0 0 1ex; }
   .container #article h1 {
-    font: normal 22pt Arial, sans-serif;
-    margin: 1.5em 0 1em 0;
+    font: normal 22pt Georgia, serif;
     color: #555; }
     .container #article h1 a {
-      color: #555; }
+      color: #222; }
+    .container #article .header {
+      font-family: Georgia, serif;
+      margin: 1em 0; }
+    .container #article .header h1 {
+      padding-bottom: .5ex;
+      border-bottom: 4px double #ccc; }
+    .container #article .header .summary {
+      float: left;
+      width: 740px;
+      padding: 1ex 0 1ex 1ex;
+      border-left: 1px solid #ccc;
+      color: #111; }
+    .container #article .header .date {
+      float: left;
+      width: 120px;
+      color: #777;
+      padding: 1ex 0; }
   .container #article h2 {
     font: normal 18pt Arial, sans-serif;
     margin: 1em 0;
@@ -85,10 +101,6 @@ body {
     color: #555; }
   .container #article em {
     font-style: italic; }
-  .container #article cite {
-    font: normal 10pt Georgia, serif;
-    font-variant: small-caps;
-    color: #999; }
   .container #article img.article {
     margin: 1ex;
     padding: 1ex;

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Ruby - Talking to God should be easier
-summary: A look into one way to talk to God
+title: Talking to God
+summary: It should just be easier
 ---
 
 I recently started writing my [Evoke](http://github.com/thumblemonks/evoke) service (a nice, little [Sinatra](http://sinatra.rubyforge.org/) app). Part of the Evoke service is actually delivering on the promise of calling a stored URL back, which I achieved by storing a runner as a [delayed job](http://github.com/tobi/delayed_job). Only half the battle is writing the consumer, though. The other half is ensuring that the runner is daemonized and that the daemon is restarted if ever it were to die. This is where [god](http://god.rubyforge.org/) enters the picture.

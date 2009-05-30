@@ -12,8 +12,6 @@ To which I would reply, *"Sigh. Because I'm just that way."*
 
 ## Get on with it
 
-<img src="http://farm1.static.flickr.com/191/503535890_b929f73b2e_m.jpg" align="right" class="article"/>
-
 Ok, I've got this `ActiveRecord` model called `Fact`. `Fact` has attributes `:key` and `:value` along with the other normal columns (i.e. `:id`, `:created_at`, etc.).
 
 I want to use `Fact` in one of my views and I export it to JSON. I only care about the `:key` and `:value` and the obvious solution is to:
