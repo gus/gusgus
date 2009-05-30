@@ -8,7 +8,10 @@ body {
   clear: both; }
 
 a, a:visited {
+  text-decoration: none;
   color: rgb(125, 179, 30); }
+a:hover {
+  text-decoration: underline; }
 .container {
   width: 900px;
   margin: 0 auto;
@@ -34,6 +37,9 @@ a, a:visited {
     text-align: right; }
     .container #nav a {
       padding: 0 1em; }
+
+  /* Footer */
+
   .container #footer {
     margin: 1em 0 0 0;
     padding: 1ex 0 1ex 0;
@@ -42,6 +48,18 @@ a, a:visited {
     color: #aaa; }
     .container #footer .email {
       color: #458; }
+
+  /* Articles */
+
+  .container #articles {
+    float: left;
+    width: auto; }
+  .container #sketches {
+    float: left;
+    width: 300px; }
+
+  /* Article */
+
   .container #article li {
     list-style: circle inside;
     color: #333;
@@ -116,6 +134,8 @@ a, a:visited {
     .container #article pre code {
       font: normal 9pt "bitstream vera sans mono", "monaco", "lucida console", "courier new", courier, serif;
       display: inline; }
+
+/* Grumble */
 
 #grumble {
   margin: 1em 0;
