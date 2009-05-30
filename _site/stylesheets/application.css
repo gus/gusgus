@@ -1,63 +1,56 @@
 body {
-  width: 100%;
   text-align: center;
-  margin: 1ex 0ex;
   padding: 0em;
-  background-color: white;
+  background-color: transparent;
   font: normal 11pt Arial, sans-serif; }
 
 .clear {
   clear: both; }
 
+a, a:visited {
+  color: rgb(125, 179, 30); }
 .container {
   width: 900px;
   margin: 0 auto;
   text-align: left;
   padding: 0; }
-  .container #header img {
-    vertical-align: middle; }
-  .container #header .nav {
-    padding: 0 0 0 5em;
-    font: normal 8pt Arial, sans-serif;
+  .container #header {
+    color: #fff;
+    padding: 15px;
     text-transform: uppercase;
-    text-align: center; }
-    .container #header .nav a {
-      background-color: #f0f0ff;
-      color: #458; }
-    .container #header .nav a:visited {
-      background-color: transparent; }
-    .container #header .nav a {
-      padding: 0 1em;
-      color: #458; }
+    text-align: right;
+    font-size: 32pt;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background-color: #333; }
+    .container #header h1 {
+      float: right;
+      padding-left: 15px;
+      border-left: 4px solid #fff;
+      width: 100px; }
+  .container #nav {
+    padding: 1ex 0;
+    text-transform: uppercase;
+    text-align: right; }
+    .container #nav a {
+      padding: 0 1em; }
   .container #footer {
     margin: 1em 0 0 0;
     padding: 1ex 0 1ex 0;
-    border-top: 1px solid #ccc;
+    border-top: 4px double #ccc;
     font: normal 10pt Arial, sans-serif;
     color: #aaa; }
-    .container #footer a {
-      background-color: #f0f0ff;
-      color: #458; }
-    .container #footer a:visited {
-      background-color: transparent; }
     .container #footer .email {
-      color: rgb(153, 204, 51); }
-  .container a {
-    background-color: #f0f0ff;
-    color: #458; }
-  .container a:visited {
-    background-color: transparent; }
+      color: #458; }
   .container #article li {
     list-style: circle inside;
     color: #333;
     padding: 0 0 0 1ex; }
   .container #article h1 {
-    font: normal 22pt Georgia, serif;
-    color: #555; }
-    .container #article h1 a {
-      color: #222; }
+    font: normal 22pt Arial, sans-serif;
+    font-weight: bold;
+    color: #000; }
     .container #article .header {
-      font-family: Georgia, serif;
       margin: 1em 0; }
     .container #article .header h1 {
       padding-bottom: .5ex;
@@ -75,15 +68,17 @@ body {
       padding: 1ex 0; }
   .container #article h2 {
     font: normal 18pt Arial, sans-serif;
+    font-weight: bold;
     margin: 1em 0;
-    color: #248;
-    border-bottom: 1px solid #eee; }
+    color: #111;
+    border-bottom: 1px solid #ddd; }
     .container #article h2 a {
       color: #248; }
   .container #article h3 {
     font: normal 14pt Arial, sans-serif;
+    font-weight: bold;
     margin: 1em 0;
-    color: #295; }
+    color: #333; }
     .container #article h3 a {
       color: #295; }
   .container #article h4 {
@@ -121,45 +116,6 @@ body {
     .container #article pre code {
       font: normal 9pt "bitstream vera sans mono", "monaco", "lucida console", "courier new", courier, serif;
       display: inline; }
-      .container #article pre code .attribute {
-        color: #69B; }
-      .container #article pre code .char {
-        color: #F07; }
-      .container #article pre code .class {
-        color: #974; }
-      .container #article pre code .comment {
-        color: #777;
-        font-style: italic;
-        border: none;
-        margin: none; }
-      .container #article pre code .constant {
-        color: #A8A; }
-      .container #article pre code .escape {
-        color: #594; }
-      .container #article pre code .expr {
-        color: #DF9; }
-      .container #article pre code .global {
-        color: #69B; }
-      .container #article pre code .ident {
-        color: #FFF; }
-      .container #article pre code .keyword {
-        color: #CA5; }
-      .container #article pre code .line_number {
-        color: #BBB; }
-      .container #article pre code .method {
-        color: #974; }
-      .container #article pre code .module {
-        color: #974; }
-      .container #article pre code .number {
-        color: #D74; }
-      .container #article pre code .punct {
-        color: #DDD; }
-      .container #article pre code .regex {
-        color: #AC6; }
-      .container #article pre code .string {
-        color: #AC6; }
-      .container #article pre code .symbol {
-        color: #C52; }
 
 #grumble {
   margin: 1em 0;
@@ -205,9 +161,3 @@ body {
       padding: 0 0 .5ex 0; }
     #grumble form input, #grumble form textarea {
       font-size: 12pt; }
-
-#ribbon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 0; }
