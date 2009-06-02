@@ -1,43 +1,50 @@
+/*
+ * DARK PURPLE: rgb(71, 56, 79)
+ */
 body {
   text-align: center;
   padding: 0em;
-  background: #fff url('/images/grey-linen-bg.jpg') repeat top left;
-/*  background-color: transparent;*/
   font: normal 11pt Arial, sans-serif; }
 
-.clear {
-  clear: both; }
+.clear { clear: both; }
 
 a, a:visited {
   text-decoration: none;
   color: rgb(125, 179, 30); }
 a:hover {
   text-decoration: underline; }
+
 .container {
   width: 900px;
   margin: 0 auto;
   text-align: left;
   padding: 0; }
+
+  .container h4 {
+    font: bold 11pt Arial, sans-serif;
+    margin: 1ex 0;
+    color: #555; }
+    .container h4 a {
+      color: #555; }
+
   .container #header {
-    color: #fff;
-    padding: 15px;
-    text-transform: uppercase;
-    text-align: right;
-    font-size: 32pt;
-    letter-spacing: 2px;
-    font-weight: bold;
-    background-color: #333; }
-    .container #header h1 {
-      float: right;
-      padding-left: 15px;
-      border-left: 4px solid #fff;
-      width: 100px; }
-  .container #nav {
-    padding: 1ex 0;
-    text-transform: uppercase;
-    text-align: right; }
-    .container #nav a {
-      padding: 0 1em; }
+    background: transparent url('/images/gus-logo.png') no-repeat top left;
+    margin-bottom: 20px;
+    color: rgb(71, 56, 79);
+    font-family: Georgia, serif;
+    font-size: 12pt;
+    font-style: italic; }
+  .container #header #nav {
+    float: right;
+    margin-bottom: 5px; }
+    .container #header #nav ul {
+      list-style-type: none; }
+      .container #header #nav ul li {
+        float: left;
+        padding: 20px 15px 5px 15px; }
+    .container #header #nav a {
+      color: rgb(71, 56, 79) }
+  .container #header #slogan { text-align: right; }
 
   /* Footer */
 
@@ -50,14 +57,21 @@ a:hover {
     .container #footer .email {
       color: #458; }
 
-  /* Articles */
+  /* Main view */
 
   .container #articles {
     float: left;
-    width: auto; }
+    width: 600px; }
   .container #sketches {
     float: left;
-    width: 300px; }
+    margin-left: 15px;
+    width: auto; }
+    .container #sketches h3 {
+      font: normal italic 14pt Georgia, serif;
+      background-color: rgb(71, 56, 79);
+      color: #fff;
+      padding: 1ex;
+      margin: 0 0 1ex 0; }
 
   /* Article */
 
@@ -66,25 +80,27 @@ a:hover {
     color: #333;
     padding: 0 0 0 1ex; }
   .container #article h1 {
-    font: normal 22pt Arial, sans-serif;
-    font-weight: bold;
-    color: #000; }
+    margin: 0;
+    font: normal 22pt Georgia, serif;
+    color: rgb(71, 56, 79);
+    font-weight: bold; }
+    .container #article h1 a { color: rgb(71, 56, 79); }
     .container #article .header {
+      font-family: Georgia, serif;
       margin: 1em 0; }
-    .container #article .header h1 {
-      padding-bottom: .5ex;
-      border-bottom: 4px double #ccc; }
-    .container #article .header .summary {
-      float: left;
-      width: 740px;
-      padding: 1ex 0 1ex 1ex;
-      border-left: 1px solid #ccc;
-      color: #111; }
+      .container #article .header h1 { padding-bottom: .5ex; }
     .container #article .header .date {
       float: left;
       width: 120px;
       color: #777;
       padding: 1ex 0; }
+    .container #article .header .summary {
+      float: left;
+      width: auto;
+      padding: 1ex 0 1ex 1ex;
+      border-left: 1px solid #ccc;
+      font-style: italic;
+      color: #222; }
   .container #article h2 {
     font: normal 18pt Arial, sans-serif;
     font-weight: bold;
@@ -100,12 +116,6 @@ a:hover {
     color: #333; }
     .container #article h3 a {
       color: #295; }
-  .container #article h4 {
-    font: bold 11pt Arial, sans-serif;
-    margin: 1ex 0;
-    color: #555; }
-    .container #article h4 a {
-      color: #555; }
   .container #article p {
     margin: 2ex 0; }
   .container #article blockquote {
