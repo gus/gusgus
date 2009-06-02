@@ -15,7 +15,7 @@ title: Call me the Bus Driver ...
     {{ latest_post.content }}
   </li>
 
-  <h4>Other Recent Posts</h4>
+  <h4>Recent Posts</h4>
   {% for post in site.posts limit:5 offset:1 %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
@@ -24,7 +24,7 @@ title: Call me the Bus Driver ...
   {% endfor %}
 </ul>
 
-<ul id="sketches">
+<ul id="sidebar">
   <h3>Sketches</h3>
-  <li>Something</li>
+
 </ul>

@@ -37,13 +37,15 @@ a:hover {
   .container #header #nav {
     float: right;
     margin-bottom: 5px; }
-    .container #header #nav ul {
-      list-style-type: none; }
+    .container #header #nav ul { list-style-type: none; }
       .container #header #nav ul li {
         float: left;
         padding: 20px 15px 5px 15px; }
-    .container #header #nav a {
-      color: rgb(71, 56, 79) }
+        .container #header #nav ul li:hover {
+          background-color: rgb(71, 56, 79);
+          color: #fff;}
+        .container #header #nav ul li:hover a { color: #fff;}
+    .container #header #nav a { color: rgb(71, 56, 79) }
   .container #header #slogan { text-align: right; }
 
   /* Footer */
@@ -62,16 +64,16 @@ a:hover {
   .container #articles {
     float: left;
     width: 600px; }
-  .container #sketches {
+  .container #sidebar {
     float: left;
     margin-left: 15px;
-    width: auto; }
-    .container #sketches h3 {
+    width: 285px; }
+    .container #sidebar h3 {
       font: normal italic 14pt Georgia, serif;
       background-color: rgb(71, 56, 79);
       color: #fff;
       padding: 1ex;
-      margin: 0 0 1ex 0; }
+      margin: 1em 0; }
 
   /* Article */
 
