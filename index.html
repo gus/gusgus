@@ -1,0 +1,46 @@
+---
+layout: default
+title: Call me the Bus Driver ...
+---
+
+<ul id="articles">
+  {% assign latest_post = site.posts.first %}
+  <li id="article">
+    <div class="header">
+      <h1><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h1>
+      <div class="date"><cite>{{ latest_post.date | date: "%b %d, %Y" }}</cite></div>
+      <div class="summary">{{ latest_post.summary }}</div>
+      <div class="clear"></div>
+    </div>
+    {{ latest_post.content }}
+  </li>
+
+  <ul class="recent_articles">
+    <h4>Recent Posts</h4>
+    {% for post in site.posts limit:5 offset:1 %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.summary }}</p>
+      </li>
+    {% endfor %}  
+  </ul>
+</ul>
+
+<ul id="sidebar">
+  <h3>Sketches</h3>
+  <li>
+    <a href="/images/sketches/doodles-1-legs.jpg"><img src="/images/sketches/doodles-1-legs.jpg" title="Doodles 1 - Legs" class="sketch"></a>
+  </li>
+  <li>
+    <a href="/images/sketches/doodles-1.jpg"><img src="/images/sketches/doodles-1.jpg" title="Doodles 1" class="sketch"></a>
+  </li>
+  <li>
+    <a href="/images/sketches/lego-my-heado.jpg"><img src="/images/sketches/lego-my-heado.jpg" title="Lego my Heado" class="sketch"></a>
+  </li>
+  <li>
+    <a href="/images/sketches/ball-bearer.jpg"><img src="/images/sketches/ball-bearer.jpg" title="Ball Bearer" class="sketch"></a>
+  </li>
+  <li>
+    <a href="/images/sketches/capn-confused.jpg"><img src="/images/sketches/capn-confused.jpg" title="Cap'n Confused" class="sketch"></a>
+  </li>
+</ul>

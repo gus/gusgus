@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='GROW UP' http-equiv='X-UA-Compatible' />
+    <meta content='width=850' name='viewport' />
+    <title>GusG.us - Dumb SMTP</title>
+    <link href='/images/gusgus_icon.gif' rel='icon' />
+    <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
+    <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
+    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div id='header'>
+        <div id='nav'>
+          <ul>
+            <li><a href='/'>Home</a></li>
+            <li class=""><a href='/life'>Life</a></li>
+            <li><a href='/work'>Work</a></li>
+            <li><a href='/code'>Code</a></li>
+            <li><a href='/code/ruby'>Ruby</a></li>
+          </ul>
+        </div>
+        <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
+      </div>
+
+      <div id="article">
+  <div class="header">
+    <h1>Dumb SMTP</h1>
+    <div class="date"><cite>Nov 08, 2008</cite></div>
+    <div class="summary">The Reaffirming SMTP Server</div>
+    <div class="clear"></div>
+  </div>
+  <p>I saw this post about a <a href='http://d.hatena.ne.jp/koseki2/20081030/mocksmtpd'>Mock SMTP</a> server off of <a href='http://rubyflow.com'>RubyFlow</a> today and it scared the living crap out of me. You bet it did! Is that what a mock of something is considered to be?</p>
+
+<p>In response, I&#8217;m attaching the code for a dumb SMTP server that I wrote in less than two hours that I have used in my Rails applications to test what and to whom was getting mailed. All this little server does is respond with kind words; as in, it says <code>OK</code> to everything it can. It&#8217;s an eager server that will reaffirm everything you may have thought about SMTP.</p>
+
+<p>It also wouldn&#8217;t be to hard to ask it to store the emails for grabbing later. It would certainly be a lot less code and a lot friggin&#8217; easier to read.</p>
+<div class='highlight'><pre><span class='c1'>#!/usr/bin/env ruby</span>
+
+<span class='c1'># I am a stupid SMTP server. Though I speak SMTP, all I do is regurgitate what</span>
+<span class='c1'># the sender sends me. Use me for doing manual testing of SMTP clients that have</span>
+<span class='c1'># simple needs.</span>
+<span class='c1'>#</span>
+<span class='c1'># Example usage:</span>
+<span class='c1'>#   dumb-smtp.rb localhost 25252</span>
+<span class='c1'>#</span>
+<span class='c1'># Then, have your client try and send email to localhost:25252 and watch the</span>
+<span class='c1'># STDOUT of dumb-smtp. Theoretically, your client will think it actually sent</span>
+<span class='c1'># the email and you can observe what your client actually sent.</span>
+<span class='c1'>#</span>
+<span class='c1'># Feel free to keep me simple by leaving me alone; unless you have some cool </span>
+<span class='c1'># ideas.</span>
+<span class='c1'>#</span>
+<span class='c1'># I have been known to work extremely well with ActionMailer :)</span>
+<span class='c1'>#</span>
+<span class='nb'>require</span> <span class='s1'>&#39;socket&#39;</span>
+
+<span class='k'>class</span> <span class='nc'>SmtpResponder</span>
+  <span class='k'>def</span> <span class='nf'>initialize</span>
+    <span class='vi'>@data</span> <span class='o'>=</span> <span class='kp'>false</span>
+    <span class='vi'>@closed</span> <span class='o'>=</span> <span class='kp'>false</span>
+    <span class='vi'>@domain</span> <span class='o'>=</span> <span class='s1'>&#39;&#39;</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>handle</span><span class='p'>(</span><span class='n'>line</span><span class='p'>)</span>
+    <span class='n'>line</span> <span class='o'>=</span> <span class='n'>line</span><span class='o'>.</span><span class='n'>strip</span>
+    <span class='k'>return</span> <span class='n'>more_data</span><span class='p'>(</span><span class='n'>line</span><span class='p'>)</span> <span class='k'>if</span> <span class='vi'>@data</span>
+
+    <span class='n'>command</span><span class='p'>,</span> <span class='n'>data</span> <span class='o'>=</span> <span class='o'>*</span><span class='n'>line</span><span class='o'>.</span><span class='n'>split</span><span class='p'>(</span><span class='s1'>&#39; &#39;</span><span class='p'>,</span> <span class='mi'>2</span><span class='p'>)</span>
+    <span class='n'>command</span> <span class='o'>=</span> <span class='n'>command</span><span class='o'>.</span><span class='n'>downcase</span><span class='o'>.</span><span class='n'>gsub</span><span class='p'>(</span><span class='sr'>/ +/</span><span class='p'>,</span> <span class='s1'>&#39;_&#39;</span><span class='p'>)</span><span class='o'>.</span><span class='n'>to_sym</span>
+    <span class='nb'>self</span><span class='o'>.</span><span class='n'>send</span><span class='p'>(</span><span class='n'>command</span><span class='p'>,</span> <span class='n'>data</span><span class='p'>)</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>ehlo</span><span class='p'>(</span><span class='n'>domain</span><span class='p'>)</span> <span class='vi'>@domain</span> <span class='o'>=</span> <span class='n'>domain</span><span class='p'>;</span> <span class='s2'>&quot;250 OK </span><span class='si'>#{</span><span class='n'>domain</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>;</span> <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>ok</span><span class='p'>(</span><span class='n'>info</span><span class='p'>)</span> <span class='s2'>&quot;250 OK </span><span class='si'>#{</span><span class='n'>info</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>;</span> <span class='k'>end</span>
+  <span class='k'>alias</span> <span class='ss'>:mail</span> <span class='ss'>:ok</span>
+  <span class='k'>alias</span> <span class='ss'>:rcpt</span> <span class='ss'>:ok</span>
+
+  <span class='k'>def</span> <span class='nf'>data</span><span class='p'>(</span><span class='n'>info</span><span class='p'>)</span>
+    <span class='vi'>@data</span> <span class='o'>=</span> <span class='kp'>true</span>
+    <span class='s2'>&quot;354 Start mail input; end with &lt;CRLF&gt;.&lt;CRLF&gt;&quot;</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>more_data</span><span class='p'>(</span><span class='n'>data</span><span class='p'>)</span>
+    <span class='k'>return</span> <span class='kp'>nil</span> <span class='k'>unless</span> <span class='n'>data</span> <span class='o'>==</span> <span class='s2'>&quot;.&quot;</span>
+    <span class='vi'>@data</span> <span class='o'>=</span> <span class='kp'>false</span>
+    <span class='s2'>&quot;250 OK data received&quot;</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>quit</span><span class='p'>(</span><span class='n'>data</span><span class='p'>)</span>
+    <span class='vi'>@closed</span> <span class='o'>=</span> <span class='kp'>true</span>
+    <span class='s2'>&quot;221 </span><span class='si'>#{</span><span class='vi'>@domain</span><span class='si'>}</span><span class='s2'> Service closing transmission channel&quot;</span>
+  <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>closed?</span><span class='p'>;</span> <span class='vi'>@closed</span><span class='p'>;</span> <span class='k'>end</span>
+
+  <span class='k'>def</span> <span class='nf'>method_missing</span><span class='p'>(</span><span class='n'>methodname</span><span class='p'>,</span> <span class='o'>*</span><span class='n'>args</span><span class='p'>)</span>
+    <span class='s2'>&quot;500 Syntax error, command unrecognized&quot;</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+
+<span class='n'>server</span> <span class='o'>=</span> <span class='no'>TCPServer</span><span class='o'>.</span><span class='n'>open</span><span class='p'>(</span><span class='no'>ARGV</span><span class='o'>[</span><span class='mi'>0</span><span class='o'>]</span><span class='p'>,</span> <span class='no'>ARGV</span><span class='o'>[</span><span class='mi'>1</span><span class='o'>]</span><span class='p'>)</span>
+<span class='k'>while</span> <span class='p'>(</span><span class='n'>socket</span> <span class='o'>=</span> <span class='n'>server</span><span class='o'>.</span><span class='n'>accept</span><span class='p'>)</span>
+  <span class='n'>socket</span><span class='o'>.</span><span class='n'>puts</span><span class='p'>(</span><span class='s2'>&quot;220 dumb-smtp.foo Service ready&quot;</span><span class='p'>)</span>
+  <span class='n'>responder</span> <span class='o'>=</span> <span class='no'>SmtpResponder</span><span class='o'>.</span><span class='n'>new</span>
+  <span class='n'>socket</span><span class='o'>.</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>line</span><span class='o'>|</span>
+    <span class='vg'>$stdout</span><span class='o'>.</span><span class='n'>puts</span><span class='p'>(</span><span class='s2'>&quot;-- </span><span class='si'>#{</span><span class='n'>line</span><span class='o'>.</span><span class='n'>strip</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>)</span>
+    <span class='n'>response</span> <span class='o'>=</span> <span class='n'>responder</span><span class='o'>.</span><span class='n'>handle</span><span class='p'>(</span><span class='n'>line</span><span class='p'>)</span>
+    <span class='k'>if</span> <span class='n'>response</span>
+      <span class='vg'>$stdout</span><span class='o'>.</span><span class='n'>puts</span><span class='p'>(</span><span class='s2'>&quot;&lt;&lt; </span><span class='si'>#{</span><span class='n'>response</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>)</span>
+      <span class='n'>socket</span><span class='o'>.</span><span class='n'>puts</span><span class='p'>(</span><span class='n'>response</span><span class='p'>)</span>
+    <span class='k'>end</span>
+    <span class='k'>break</span> <span class='k'>if</span> <span class='n'>responder</span><span class='o'>.</span><span class='n'>closed?</span>
+  <span class='k'>end</span>
+  <span class='n'>socket</span><span class='o'>.</span><span class='n'>close</span>
+<span class='k'>end</span>
+<span class='n'>server</span><span class='o'>.</span><span class='n'>close</span>
+</pre>
+</div>
+<p>If you do as the comments say, you&#8217;re golden. You can even tell your appropriate Rails configuration file to talk to the port you reference and it will work. You could do that like so in your <code>development.rb</code>:</p>
+<div class='highlight'><pre><span class='no'>ActionMailer</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>delivery_method</span> <span class='o'>=</span> <span class='ss'>:smtp</span>
+<span class='no'>ActionMailer</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>smtp_settings</span> <span class='o'>=</span> <span class='p'>{</span>
+  <span class='ss'>:address</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;localhost&#39;</span><span class='p'>,</span> <span class='ss'>:port</span> <span class='o'>=&gt;</span> <span class='mi'>25252</span><span class='p'>,</span> <span class='ss'>:domain</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;foo.bar&#39;</span>
+<span class='p'>}</span>
+</pre>
+</div>
+<p>Now, I should note that I wrote this while <a href='http://centro.net'>working for Centro</a> &#8230; my ex-employer, silly.</p>
+</div>
+
+
+    </div>
+    <div class='container'>
+      <div class='clear' id='footer'>
+        &copy; 2007 - 2009 Justin Knowlden,
+        <span class='email'>gus at gusg dot us</span>
+        <span class='powered'>
+          - Powered by <a href=''>Jekyll</a>,
+          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
+          <a href='http://pygments.org/'>Pygments</a>, and me
+        </span>
+        <!-- <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
+          <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a> -->
+      </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="http://grumble.annealer.org/javascripts/grumbler/api.js" type="text/javascript"></script>
+    <script src="/javascripts/grumble_support.js" type="text/javascript"></script>
+  </body>
+</html>
