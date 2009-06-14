@@ -4,7 +4,7 @@
   <head>
     <meta content='GROW UP' http-equiv='X-UA-Compatible' />
     <meta content='width=850' name='viewport' />
-    <title>GusG.us - {{ page.title }}</title>
+    <title>GusG.us - Active Record Modeling Life</title>
     <link href='/images/gusgus_icon.gif' rel='icon' />
     <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
     <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
@@ -28,7 +28,22 @@
         <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
       </div>
 
-      {{ content }}
+      <div id="article">
+  <div class="header">
+    <h1>Active Record Modeling Life</h1>
+    <div class="date"><cite>Jan 18, 2008</cite></div>
+    <div class="summary">Code and Life intertwined ... ewwwwww</div>
+    <div class="clear"></div>
+  </div>
+  <p>A quick observation I made about how <code>ActiveRecord</code> can be used to model life.</p>
+<div class='highlight'><pre>class Life &lt; ActiveRecord::Base
+  has_many :causes
+  has_many :effects, :through <span class='o'>=</span>&gt; :causes
+end
+</pre>
+</div>
+</div>
+
 
     </div>
     <div class='container'>

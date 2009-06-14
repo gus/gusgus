@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta content='GROW UP' http-equiv='X-UA-Compatible' />
+    <meta content='width=850' name='viewport' />
+    <title>GusG.us - Session Testing in Rails 2.1</title>
+    <link href='/images/gusgus_icon.gif' rel='icon' />
+    <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
+    <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
+    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <div class='container'>
+      <div id='header'>
+        <div id='nav'>
+          <ul>
+            <li><a href='/'>Home</a></li>
+            <li class=""><a href='/life'>Life</a></li>
+            <li><a href='/work'>Work</a></li>
+            <li><a href='/code'>Code</a></li>
+            <li><a href='/code/ruby'>Ruby</a></li>
+          </ul>
+        </div>
+        <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
+      </div>
+
+      <div id="article">
+  <div class="header">
+    <h1>Session Testing in Rails 2.1</h1>
+    <div class="date"><cite>Aug 18, 2008</cite></div>
+    <div class="summary">This hash gives a crap</div>
+    <div class="clear"></div>
+  </div>
+  <p>I upgraded one of my Rails apps recently from Rails pre 2.1 to Rails 2.1. I had a couple of expected caveats that needed my attention; like:</p>
+
+<ul>
+<li>I was able to remove the use of my <a href='/2008/1/18/flashback-to-flash-now'>Flashback</a> plugin because <code>Flash.now</code> became testable</li>
+
+<li>I was able to use named_scope instead of has_finder</li>
+
+<li>et al</li>
+</ul>
+
+<p>However, there was one little hitch in my tests that I was not expecting. One of my controller tests was adding a session variable and the controller was looking for that value. Problem was, it kept failing. But &#8230; it used to pass.</p>
+
+<p>Here&#8217;s what my test code did look like:</p>
+<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_update_should_clear_invite_code_from_session_on_success</span>
+  <span class='vi'>@request</span><span class='o'>.</span><span class='n'>session</span><span class='o'>[</span><span class='ss'>:invite_code</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>invite_code</span>
+  <span class='n'>post</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
+  <span class='n'>assert_nil</span> <span class='n'>session</span><span class='o'>[</span><span class='ss'>:invite_code</span><span class='o'>]</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>And then I was using it with my <a href='/2008/1/9/assertsession'>AssertSession</a> plugin that I&#8217;m waiting for <a href='http://workingwithrails.com/person/5938-scott-woods'>Scott Woods</a> to add into <a href='http://validaterequest.rubyforge.org/'>AssertRequest</a> (since he emailed me that he would &#8230; ahem):</p>
+<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>update</span>
+  <span class='n'>assert_session</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>s</span><span class='o'>|</span> <span class='n'>s</span><span class='o'>.</span><span class='n'>must_have</span><span class='p'>(</span><span class='ss'>:invite_code</span><span class='p'>);</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span> <span class='p'>}</span>
+  <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
+  <span class='vi'>@user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find_invited</span><span class='p'>(</span><span class='n'>session</span><span class='o'>[</span><span class='ss'>:invite_code</span><span class='o'>]</span><span class='p'>)</span>
+  <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
+<span class='k'>end</span>
+</pre>
+</div>
+<p>Notice here that the reference to <code>invite_code</code> is a symbol. As long I only try to access <code>invite_code</code> using <code>Session</code>&#8217;s square-bracket method (<code>def \[\]\(key\)</code>) &#8230; then no problems; thanks to <code>HashWithIndifferentAccess</code>. My <code>AssertSession</code> plugin, however accesses <code>Session</code>&#8217;s <code>data</code> function. It seems that <code>Session</code> (or maybe just <code>TestSession</code>) has turned all keys to strings. Thus, <code>AssertSession</code> cannot match a symbol to a string.</p>
+
+<p>Well okay. I switched every one of the session keys to strings and - sadly - my tests are passing. Ho hum.</p>
+
+<p>For clarity&#8217;s sake, here is the new code:</p>
+<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_update_should_clear_invite_code_from_session_on_success</span>
+  <span class='vi'>@request</span><span class='o'>.</span><span class='n'>session</span><span class='o'>[</span><span class='s2'>&quot;invite_code&quot;</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>invite_code</span>
+  <span class='n'>post</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
+  <span class='n'>assert_nil</span> <span class='n'>session</span><span class='o'>[</span><span class='s2'>&quot;invite_code&quot;</span><span class='o'>]</span>
+<span class='k'>end</span>
+</pre>
+</div><div class='highlight'><pre><span class='k'>def</span> <span class='nf'>update</span>
+  <span class='n'>assert_session</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>s</span><span class='o'>|</span> <span class='n'>s</span><span class='o'>.</span><span class='n'>must_have</span><span class='p'>(</span><span class='s2'>&quot;invite_code&quot;</span><span class='p'>);</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span> <span class='p'>}</span>
+  <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
+  <span class='vi'>@user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find_invited</span><span class='p'>(</span><span class='n'>session</span><span class='o'>[</span><span class='s2'>&quot;invite_code&quot;</span><span class='o'>]</span><span class='p'>)</span>
+  <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
+<span class='k'>end</span>
+</pre>
+</div>
+</div>
+
+
+    </div>
+    <div class='container'>
+      <div class='clear' id='footer'>
+        &copy; 2007 - 2009 Justin Knowlden,
+        <span class='email'>gus at gusg dot us</span>
+        <span class='powered'>
+          - Powered by <a href=''>Jekyll</a>,
+          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
+          <a href='http://pygments.org/'>Pygments</a>, and me
+        </span>
+        <!-- <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
+          <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a> -->
+      </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+    <script src="/javascripts/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <script src="http://grumble.annealer.org/javascripts/grumbler/api.js" type="text/javascript"></script>
+    <script src="/javascripts/grumble_support.js" type="text/javascript"></script>
+  </body>
+</html>

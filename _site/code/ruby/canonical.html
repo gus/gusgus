@@ -4,7 +4,7 @@
   <head>
     <meta content='GROW UP' http-equiv='X-UA-Compatible' />
     <meta content='width=850' name='viewport' />
-    <title>GusG.us - {{ page.title }}</title>
+    <title>GusG.us - Canonical</title>
     <link href='/images/gusgus_icon.gif' rel='icon' />
     <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
     <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
@@ -28,7 +28,32 @@
         <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
       </div>
 
-      {{ content }}
+      <div id="article">
+  <div class="header">
+    <h1>Canonical</h1>
+    <div class="date"><cite>Nov 08, 2008</cite></div>
+    <div class="summary">Rails ActionMailer extension for substituting inline email addresses</div>
+    <div class="clear"></div>
+  </div>
+  <p>I and a co-worker (Eric Schwartz) wrote <a href='http://github.com/centro/canonical/tree/master'>Canonical</a> for <a href='http://centro.net'>Centro</a> - my current employer. Canonical does for your Rails app what Postfix&#8217;s <a href='http://www.postfix.org/canonical.5.html'>canonical</a> would do for your sys-admin. But now, you have the control! Ha ha!</p>
+
+<p>Check out the README for everything you need to know.</p>
+<hr />
+<p>Alright fine, Canonical is an ActionMailer extension that acts just like the Postfix utility of the same name. Essentially, Canonical lets you substitute the To, CC, and/or BCC email destinations with one of many replacements via a rule. It can be great for your integration and testing environments to direct all mail so that it is sent to a QA email address or something.</p>
+
+<p>You may add a canonical rule like the following to send any email from the system to any address to the QA email distribution list:</p>
+
+<pre><code>TMail::Mail.add_canonical_override(/.*/, &#39;qa@foo.bar&#39;)</code></pre>
+
+<p>Assuming you are working at Foo Bar, that rule will match any destination address that has any character in it - meaning, it matches everything - and will substitute the matched email with qa@foo.bar. This is the same as saying the following in Postfix’s canonical file:</p>
+
+<pre><code>/.*/, qa@foo.bar</code></pre>
+
+<p>What you should notice is that canonical expects to see a regular expression as the first argument. Passing in anything that does not respond to =~ will result in an error.</p>
+
+<p>Have fun!</p>
+</div>
+
 
     </div>
     <div class='container'>
