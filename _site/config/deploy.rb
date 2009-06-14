@@ -5,7 +5,7 @@ set :deploy_via, :remote_cache
 set :git_enable_submodules, 1
 set :repository, "git@github.com:jaknowlden/gusgus.git"
 
-set :deploy_to, "/home/justin/#{application}"
+set :deploy_to, "/var/app/#{application}"
 set :user, "justin"
 set :use_sudo, false
 set :runner, nil
@@ -15,12 +15,8 @@ role :web, "gusg.us"
 role :db,  "gusg.us", :primary => true
 
 namespace :deploy do
-  desc "Restart Application"
+  desc "Restart Application - doesn't do anything in our case :)"
   task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
     puts "love."
   end
 end
-
-set :cold_deploy, false
-before("deploy:cold") { set :cold_deploy, true }
