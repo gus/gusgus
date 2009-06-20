@@ -14,6 +14,8 @@ a, a:visited {
 a:hover {
   text-decoration: underline; }
 
+strong { font-weight: bold; }
+
 .container {
   width: 900px;
   margin: 0 auto;
@@ -80,7 +82,7 @@ a:hover {
       padding: 1ex;
       margin: 1em 0; }
     .container #sidebar img.sketch {
-      width: 280px; }
+      width: 100%; }
 
   /* Article */
 

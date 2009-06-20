@@ -4,13 +4,31 @@
  <title>GusG.us</title>
  <link href="http://gusg.us/feed.xml" rel="self"/>
  <link href="http://gusg.us/"/>
- <updated>2009-06-14T16:00:33-05:00</updated>
+ <updated>2009-06-19T21:43:08-05:00</updated>
  <id>http://gusg.us/</id>
  <author>
    <name>Justin Knowlden</name>
    <email>gus@gusg.us</email>
  </author>
 
+ 
+ <entry>
+   <title>Genesis</title>
+   <link href="http://gusg.us/life/genesis.html"/>
+   <updated>2009-06-17T00:00:00-05:00</updated>
+   <id>http://gusg.us/life/genesis</id>
+   <content type="html">&lt;p&gt;&lt;strong&gt;In the beginning there was the word and that word was Dog&lt;/strong&gt;. We&amp;#8217;re not sure why it was Dog or where even words came from at the time. For instance, no one spoke in the beginning &amp;#8230; really. Well, it&amp;#8217;s not what we would call speaking anyways. And for that matter there was no written language, so how could anyone have said this word was the word in written form or otherwise?&lt;/p&gt;
+
+&lt;p&gt;Nonetheless, &lt;strong&gt;the word was Dog&lt;/strong&gt;. &lt;em&gt;Sigh&lt;/em&gt; &amp;#8230; or so we&amp;#8217;ve been told. It could have been that others believed there was another word or maybe even other words. Perhaps maybe even no word at all; an interesting thought if ever one was thunk. If the case were that other options did exist, why is it then that this is the word of words that did survive to be mentioned as being the word? Were there more in quantity who did hear this word? Did this word simply resonate with the majority; like a measure of quality? Was there another word that was the word until this word came along and showed why the other word was not as good as this word?&lt;/p&gt;
+
+&lt;p&gt;And what happened to those that may not have had any word at all? Where are they? What is their fate? Outsiders looking in? Looking in on what? Does not having a word or words preclude one from being a part of worded universe?&lt;/p&gt;
+
+&lt;p&gt;And of the nature of this word or words or even no-words, how was their meaning intended whence conceived or not-conceived? Did one have the word with them or was the word there for one to receive? In the case of no-words, was no word chosen, unchosen, or ilchosen?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Anyways&lt;/em&gt;, &lt;strong&gt;the word was Dog and the Dog was strong&lt;/strong&gt;. Neigh, not strong. The word was a hunter. This Dog did hunt. Have Dog must hunt. Of prey there were many. Of remains there were few. The size of the word doth not shadow the size of the mouth that speak it. All did succumb like krill in the ballooning mouth of an endlessly swimming whale. A whale through a void of people. Dog was a whale of a word.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Coming neverly soon: the mitosis of the word.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Thumbly Going On</title>
@@ -275,22 +293,6 @@
  </entry>
  
  <entry>
-   <title>Poem - Boring Bed</title>
-   <link href="http://gusg.us/life/boring-bed-poem.html"/>
-   <updated>2008-12-20T00:00:00-06:00</updated>
-   <id>http://gusg.us/life/boring-bed-poem</id>
-   <content type="html">&lt;pre&gt;&lt;code&gt;Boring bed
-empty spread
-One lays down
-nothing said
-
-A beast waits long
-for their soul to return
-Until that time
-no fire shall burn&lt;/code&gt;&lt;/pre&gt;</content>
- </entry>
- 
- <entry>
    <title>Talking to God</title>
    <link href="http://gusg.us/code/ruby/talking-to-god.html"/>
    <updated>2008-12-20T00:00:00-06:00</updated>
@@ -337,6 +339,22 @@ no fire shall burn&lt;/code&gt;&lt;/pre&gt;</content>
 &lt;p&gt;Come on god! Get with the program!&lt;/p&gt;
 
 &lt;p&gt;Anyways, I intend to fix god so that I can do that. Hopefully, the master of god will accept?!?! I may be way out of my mind here and there may be a much easier way to do this. If so, shoot me an email (see address in the footer) with the solution.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Poem - Boring Bed</title>
+   <link href="http://gusg.us/life/boring-bed-poem.html"/>
+   <updated>2008-12-20T00:00:00-06:00</updated>
+   <id>http://gusg.us/life/boring-bed-poem</id>
+   <content type="html">&lt;pre&gt;&lt;code&gt;Boring bed
+empty spread
+One lays down
+nothing said
+
+A beast waits long
+for their soul to return
+Until that time
+no fire shall burn&lt;/code&gt;&lt;/pre&gt;</content>
  </entry>
  
  <entry>
@@ -748,30 +766,6 @@ Eshell V5.6.2  (abort with ^G)
  </entry>
  
  <entry>
-   <title>Canonical</title>
-   <link href="http://gusg.us/code/ruby/canonical.html"/>
-   <updated>2008-11-08T00:00:00-06:00</updated>
-   <id>http://gusg.us/code/ruby/canonical</id>
-   <content type="html">&lt;p&gt;I and a co-worker (Eric Schwartz) wrote &lt;a href='http://github.com/centro/canonical/tree/master'&gt;Canonical&lt;/a&gt; for &lt;a href='http://centro.net'&gt;Centro&lt;/a&gt; - my current employer. Canonical does for your Rails app what Postfix&amp;#8217;s &lt;a href='http://www.postfix.org/canonical.5.html'&gt;canonical&lt;/a&gt; would do for your sys-admin. But now, you have the control! Ha ha!&lt;/p&gt;
-
-&lt;p&gt;Check out the README for everything you need to know.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Alright fine, Canonical is an ActionMailer extension that acts just like the Postfix utility of the same name. Essentially, Canonical lets you substitute the To, CC, and/or BCC email destinations with one of many replacements via a rule. It can be great for your integration and testing environments to direct all mail so that it is sent to a QA email address or something.&lt;/p&gt;
-
-&lt;p&gt;You may add a canonical rule like the following to send any email from the system to any address to the QA email distribution list:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;TMail::Mail.add_canonical_override(/.*/, &amp;#39;qa@foo.bar&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Assuming you are working at Foo Bar, that rule will match any destination address that has any character in it - meaning, it matches everything - and will substitute the matched email with qa@foo.bar. This is the same as saying the following in Postfix’s canonical file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/.*/, qa@foo.bar&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What you should notice is that canonical expects to see a regular expression as the first argument. Passing in anything that does not respond to =~ will result in an error.&lt;/p&gt;
-
-&lt;p&gt;Have fun!&lt;/p&gt;</content>
- </entry>
- 
- <entry>
    <title>Dumb SMTP</title>
    <link href="http://gusg.us/code/ruby/dumb-smtp.html"/>
    <updated>2008-11-08T00:00:00-06:00</updated>
@@ -872,6 +866,30 @@ Eshell V5.6.2  (abort with ^G)
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Now, I should note that I wrote this while &lt;a href='http://centro.net'&gt;working for Centro&lt;/a&gt; &amp;#8230; my ex-employer, silly.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Canonical</title>
+   <link href="http://gusg.us/code/ruby/canonical.html"/>
+   <updated>2008-11-08T00:00:00-06:00</updated>
+   <id>http://gusg.us/code/ruby/canonical</id>
+   <content type="html">&lt;p&gt;I and a co-worker (Eric Schwartz) wrote &lt;a href='http://github.com/centro/canonical/tree/master'&gt;Canonical&lt;/a&gt; for &lt;a href='http://centro.net'&gt;Centro&lt;/a&gt; - my current employer. Canonical does for your Rails app what Postfix&amp;#8217;s &lt;a href='http://www.postfix.org/canonical.5.html'&gt;canonical&lt;/a&gt; would do for your sys-admin. But now, you have the control! Ha ha!&lt;/p&gt;
+
+&lt;p&gt;Check out the README for everything you need to know.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Alright fine, Canonical is an ActionMailer extension that acts just like the Postfix utility of the same name. Essentially, Canonical lets you substitute the To, CC, and/or BCC email destinations with one of many replacements via a rule. It can be great for your integration and testing environments to direct all mail so that it is sent to a QA email address or something.&lt;/p&gt;
+
+&lt;p&gt;You may add a canonical rule like the following to send any email from the system to any address to the QA email distribution list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;TMail::Mail.add_canonical_override(/.*/, &amp;#39;qa@foo.bar&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Assuming you are working at Foo Bar, that rule will match any destination address that has any character in it - meaning, it matches everything - and will substitute the matched email with qa@foo.bar. This is the same as saying the following in Postfix’s canonical file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/.*/, qa@foo.bar&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What you should notice is that canonical expects to see a regular expression as the first argument. Passing in anything that does not respond to =~ will result in an error.&lt;/p&gt;
+
+&lt;p&gt;Have fun!&lt;/p&gt;</content>
  </entry>
  
  <entry>
