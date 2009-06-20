@@ -43,3 +43,9 @@ Felt more like a relief to me.
 After 3 months of healing and "therapy", I now (as of today) have 4/7'ths the range of motion in my knuckle that I once did. That's 40 degrees of movement at the left knuckle compared to 70 degrees in my perfectly fine right knuckle. This is of course assuming the two knuckles were at one point equals. For whatever reasons, I did not do a baseline measurement before I severed the thumb. The doc says "six months is the point at which you'll see no more healing".
 
 Speaking of healing, I actually took pictures once a week (or there abouts) to capture a timeline of the healing process. I will likely post these as an update in the near future here.
+
+---
+
+### Update
+
+Surprise! I lied. I'm not going to post the pictures here. I posted them to [my Flickr account](http://flickr.com/jaknowlden), but you have to be my friend to see them. If you're not my friend, then you know why ... don't you?!
