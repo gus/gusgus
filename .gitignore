@@ -1,4 +1,5 @@
 log/*
 _site/Capfile
 _site/README.markdown
+_site/Rakefile
 .DS_Store
