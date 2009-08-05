@@ -2,7 +2,7 @@
 layout: post
 title: The Gus Bus has a Flat
 summary: Recent life experience
-published: false
+published: true
 ---
 
 Recognized two lessons I had learned in life:
