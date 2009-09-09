@@ -32,7 +32,7 @@ var grumbleClient = new Grumble.Client(document.location.href, {
   }
 });
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
   grumbleClient.fetchTarget();
   grumbleClient.fetchGrumbles();
   

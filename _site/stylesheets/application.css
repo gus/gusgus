@@ -80,9 +80,11 @@ strong { font-weight: bold; }
       background-color: rgb(71, 56, 79);
       color: #fff;
       padding: 1ex;
-      margin: 1em 0; }
-    .container #sidebar img.sketch {
-      width: 100%; }
+      margin: 1em 0; } 
+    .container #sidebar.flickr li {
+      float: left; padding: 10px;}
+      .container #sidebar.flickr li img {
+        width: 75px; height: 75px;}
 
   /* Article */
 
