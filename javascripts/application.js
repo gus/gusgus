@@ -6,7 +6,6 @@ function jsonFlickrFeed(data) {
     var link = new Element("a", {href: item.link}).update(image);
     var list_item = new Element("li").update(link);
     list.insert({bottom: list_item});
-    console.log(list_item);
   });
 };
 
