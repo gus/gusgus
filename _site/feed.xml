@@ -4,13 +4,59 @@
  <title>GusG.us</title>
  <link href="http://gusg.us/feed.xml" rel="self"/>
  <link href="http://gusg.us/"/>
- <updated>2009-09-23T01:02:50-05:00</updated>
+ <updated>2009-10-07T01:01:54-05:00</updated>
  <id>http://gusg.us/</id>
  <author>
    <name>Justin Knowlden</name>
    <email>gus@gusg.us</email>
  </author>
 
+ 
+ <entry>
+   <title>Affirmation of a programmer</title>
+   <link href="http://gusg.us/code/affirmation-of-a-programmer.html"/>
+   <updated>2009-10-06T00:00:00-05:00</updated>
+   <id>http://gusg.us/code/affirmation-of-a-programmer</id>
+   <content type="html">&lt;p&gt;Yesterday, a friend of mine came to the &lt;a href='http://github.com/thumblemonks'&gt;Thumble Monks&lt;/a&gt; office. His name is Kurt. His mission was to be a programmer for the day. This is an odd event because Kurt has no computer background. He only just recently received his BA with a major in music. So why is he coming in to play make believe programmer?&lt;/p&gt;
+
+&lt;p&gt;Turns out, the job market sucks. And it&amp;#8217;s especially sucking for new graduates. It&amp;#8217;s an employers market at the moment. This doesn&amp;#8217;t mean Kurt suddenly wants to be a programmer. He doesn&amp;#8217;t. Instead, what Kurt is doing is &lt;a href='http://my-unemployment-challenge.blogspot.com/'&gt;trying something new every day&lt;/a&gt; in the hopes that he has fun, takes his mind of the shit, and perhaps even attracts some attention. After all, Kurt&amp;#8217;s not a dumby. He&amp;#8217;s a really smart dude. Right now, however, there&amp;#8217;s a global warming of unemployment. The ocean of employables is rising. And with so many different size fish out there, how can Kurt stand out?&lt;/p&gt;
+
+&lt;h3 id='it_really_made_me_think'&gt;It really made me think.&lt;/h3&gt;
+
+&lt;p&gt;The first and really only introspective thing I thunk was &lt;em&gt;&amp;#8220;why am I so fucking whiney?&amp;#8221;&lt;/em&gt; Seriously! How can I be so &lt;a href='/life/random-thoughts-ed-1.html'&gt;fucking&lt;/a&gt; &lt;a href='/life/the-path.html'&gt;whiney&lt;/a&gt;? I&amp;#8217;ve got a good job. I&amp;#8217;ve had a good job for 12+ years. I&amp;#8217;ve had a terrific boss or two for that entire time. I&amp;#8217;ve been able to work with good people. I&amp;#8217;ve been able to grow personally and professionally. I&amp;#8217;ve been able to get raises. I&amp;#8217;m able to work on my own side projects and have hobbies (which means I&amp;#8217;m pretty stable). I&amp;#8217;m now working out of my own office which is 3 miles from home for a small start-up that I&amp;#8217;ve helped get off the ground because it&amp;#8217;s what &lt;strong&gt;I&lt;/strong&gt; wanted to do.&lt;/p&gt;
+
+&lt;p&gt;Really, why am I whining when there are lots of people like Kurt out there who want some of that, but aren&amp;#8217;t being given a chance?&lt;/p&gt;
+
+&lt;p&gt;I don&amp;#8217;t know. But, my perspective has changed.&lt;/p&gt;
+
+&lt;h3 id='but_i_digress'&gt;But I digress&lt;/h3&gt;
+
+&lt;p&gt;The second thing I thunk bubbled up after Kurt left. The thing I thunk was &lt;em&gt;&amp;#8220;that was pretty impressive&amp;#8221;&lt;/em&gt;. Though Kurt &lt;a href='http://my-unemployment-challenge.blogspot.com/2009/10/speaking-in-code.html'&gt;summed up his day&lt;/a&gt; pretty well on his own, my summary of the day is this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ability to ask questions&lt;/li&gt;
+
+&lt;li&gt;ability to see the tree and the forest&lt;/li&gt;
+
+&lt;li&gt;ability to question the status quo&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are not obvious things, especially for someone completely foreign to the environment and the practices. But, Kurt jumped right in by asking a boat load of questions about everything: how the company was organized, how do we run things, yada yada yada. Into the daily stand he noticed some typos on a page we had all been staring at for a day.&lt;/p&gt;
+
+&lt;p&gt;At one point Kurt questioned - and I&amp;#8217;m paraphrasing - why we had to jump through so many hoops to program something that seems so obvious and has been done for 100s of years. The scenario being: we have a pretty long list of HTML checkboxes whose labels were sorted alphabetically (20 or so). We were distributing these across 2 columns, but were doing it left-to-right, which is a simple exercise. Instead, we were asked to display these in vertical columns distributed evenly. Not such an easy exercise. But to Kurt, it should have been. After all, we&amp;#8217;ve been doing this same thing with newspapers, books, periodicals, etc. for centuries; displaying content across multiple columns. Geez!&lt;/p&gt;
+
+&lt;p&gt;It never really occurred to me to question this as I had already accepted the fact that code needed to be written. It impressed me that Kurt didn&amp;#8217;t hesitate to point out the ridiculousness of this fact.&lt;/p&gt;
+
+&lt;p&gt;I have to say, though, that the thing that really struck me was that Kurt was able to help me code without having knowledge of the language itself or even how to assemble software in general. When stuck, Kurt was able to ask questions that helped to simplify or crystalize decisions for me, with phrases like: &lt;em&gt;&amp;#8220;why don&amp;#8217;t you just &amp;#8230;&amp;#8221;&lt;/em&gt; and &lt;em&gt;&amp;#8220;why do yo need to &amp;#8230;&amp;#8221;&lt;/em&gt;. This was quite an affirmation for me. While it is certainly true that Kurt is an intelligent person, it is also true that I had to explain or talk through what I was doing more. This in turn helped Kurt to ask questions and us to get to a meaningful decision efficiently.&lt;/p&gt;
+
+&lt;p&gt;The affirmation came by way of recognizing just how effective pair programming is and why we should be doing it more often than we pretend we are. It&amp;#8217;s just sort of obvious that open dialogue is a necessity for anything. When we have open dialogue we are able to adjust our beliefs and alter our trainings. With open dialogue, everyone can be a critic and you must learn to trust. With open dialogue comes feedback from all walks of life.&lt;/p&gt;
+
+&lt;p&gt;We should also not limit our discussions to those who are just like us. We all know this, but how often do we practice it? If you&amp;#8217;re a liberal, how often do you go to a republican and simply have an open discussion of the issues? I don&amp;#8217;t &amp;#8230; ever. I either make a joke, avoid the discussion outright (probably for lack of knowledge, but more for lack of want to appear ilinformed), or I get defensive. I could actually have an open discussion, but it has to start with me.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m not really certain what any of this means. I guess it could mean that if you&amp;#8217;re at work and you can&amp;#8217;t find a programmer to pair with then grab the office manager, grab the overworked accountant, grab the HR person who&amp;#8217;s not doing anything anyways. Just grab someone and see if it makes a difference.&lt;/p&gt;
+
+&lt;p&gt;It could also mean other things and for those, I&amp;#8217;m open to discussion.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Our Path</title>
@@ -583,6 +629,30 @@ end&lt;/code&gt;&lt;/pre&gt;
  </entry>
  
  <entry>
+   <title>History Blog Meme</title>
+   <link href="http://gusg.us/code/history-blog-meme.html"/>
+   <updated>2008-11-12T00:00:00-06:00</updated>
+   <id>http://gusg.us/code/history-blog-meme</id>
+   <content type="html">&lt;p&gt;As seen on &lt;a href='http://objo.com/'&gt;Joe O&amp;#8217;Brien&amp;#8217;s&lt;/a&gt; blog, a &lt;a href='http://objo.com/2008/4/19/history-blog-meme'&gt;history blog meme&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;justin@gus:~&amp;gt; history 1000 | awk &amp;#39;{a[$2]++}END{for(i in a){print a[i] &amp;quot; &amp;quot; i}}&amp;#39; | sort -rn | head
+109 rake
+74 rakef
+52 cl
+48 hg
+40 git
+30 rakeu
+25 cd
+21 l
+15 ri
+11 erl&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Proof that I run tests more than I do anything else; e.g. &lt;code&gt;rake&lt;/code&gt;, &lt;code&gt;rakef&lt;/code&gt; (&lt;code&gt;rake test:functionals&lt;/code&gt;), and &lt;code&gt;rakeu&lt;/code&gt; (&lt;code&gt;rake test:units&lt;/code&gt;)!&lt;/p&gt;
+
+&lt;p&gt;Having found &lt;code&gt;Cmd+k&lt;/code&gt; on my Mac, the &lt;code&gt;cl&lt;/code&gt; (aka &lt;code&gt;clear&lt;/code&gt;) call will stop.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Erlang Diaries - Vol 1</title>
    <link href="http://gusg.us/code/erlang/erlang-diaries-vol1.html"/>
    <updated>2008-11-12T00:00:00-06:00</updated>
@@ -746,30 +816,6 @@ Eshell V5.6.2  (abort with ^G)
 &lt;ol&gt;
 &lt;li&gt;I no longer work at the place I did when I wrote this article.&lt;/li&gt;
 &lt;/ol&gt;</content>
- </entry>
- 
- <entry>
-   <title>History Blog Meme</title>
-   <link href="http://gusg.us/code/history-blog-meme.html"/>
-   <updated>2008-11-12T00:00:00-06:00</updated>
-   <id>http://gusg.us/code/history-blog-meme</id>
-   <content type="html">&lt;p&gt;As seen on &lt;a href='http://objo.com/'&gt;Joe O&amp;#8217;Brien&amp;#8217;s&lt;/a&gt; blog, a &lt;a href='http://objo.com/2008/4/19/history-blog-meme'&gt;history blog meme&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;justin@gus:~&amp;gt; history 1000 | awk &amp;#39;{a[$2]++}END{for(i in a){print a[i] &amp;quot; &amp;quot; i}}&amp;#39; | sort -rn | head
-109 rake
-74 rakef
-52 cl
-48 hg
-40 git
-30 rakeu
-25 cd
-21 l
-15 ri
-11 erl&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Proof that I run tests more than I do anything else; e.g. &lt;code&gt;rake&lt;/code&gt;, &lt;code&gt;rakef&lt;/code&gt; (&lt;code&gt;rake test:functionals&lt;/code&gt;), and &lt;code&gt;rakeu&lt;/code&gt; (&lt;code&gt;rake test:units&lt;/code&gt;)!&lt;/p&gt;
-
-&lt;p&gt;Having found &lt;code&gt;Cmd+k&lt;/code&gt; on my Mac, the &lt;code&gt;cl&lt;/code&gt; (aka &lt;code&gt;clear&lt;/code&gt;) call will stop.&lt;/p&gt;</content>
  </entry>
  
  <entry>
