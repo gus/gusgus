@@ -15,16 +15,8 @@ layout: default
   <h4 class="count"></h4>
   <ul></ul>
 
-  <form id="new_comment">
-    <input type="hidden" name="subject" value="{{ page.title }}"/>
-    <div>
-      <label>Name:</label>
-      <input type="text" name="anon_grumbler_name" size="52"/>
-    </div>
-    <div>
-      <label>Grumble:</label>
-      <textarea name="body" rows="6" cols="50"></textarea>
-    </div>
-    <input type="submit" value="Grumble!"/>
-  </form>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
+  <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
 </div>
