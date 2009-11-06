@@ -4,13 +4,35 @@
  <title>GusG.us</title>
  <link href="http://gusg.us/feed.xml" rel="self"/>
  <link href="http://gusg.us/"/>
- <updated>2009-10-07T01:01:54-05:00</updated>
+ <updated>2009-11-05T19:12:31-06:00</updated>
  <id>http://gusg.us/</id>
  <author>
    <name>Justin Knowlden</name>
    <email>gus@gusg.us</email>
  </author>
 
+ 
+ <entry>
+   <title>DailyJS.com</title>
+   <link href="http://gusg.us/code/daily-js.html"/>
+   <updated>2009-11-05T00:00:00-06:00</updated>
+   <id>http://gusg.us/code/daily-js</id>
+   <content type="html">&lt;p&gt;A few days ago &lt;a href='http://alexyoung.org/'&gt;Alex Young&lt;/a&gt; and &lt;a href='http://www.ricroberts.com/'&gt;Ric &amp;#8220;Swirrly&amp;#8221; Roberts&lt;/a&gt; started a news blog called &lt;a href='http://dailyjs.com/'&gt;Daily JS&lt;/a&gt; (aka Daily JavaScript). As you can imagine, it&amp;#8217;s news and stuff about &amp;#8230; JavaScript. Terrificly enough, they invited me to contribute (probably because I update &lt;em&gt;THIS&lt;/em&gt; blog so often ;) Anyways, I will-be/have-been contributing it and you should-be/will-be reading it. Right?&lt;/p&gt;
+
+&lt;p&gt;We already have quite a few thoughts in the queue about interesting things we want to post about; so long as we can make it fit into 3 paragraphs; of which Alex has broken his own rules at least two times.&lt;/p&gt;
+
+&lt;p&gt;I actually think grabbing the Daily*.com series of domains was a stroke of genius. It&amp;#8217;s so simple, yet I never even thought about it. Well &amp;#8230; now I&amp;#8217;ve thought about it and I think it would be great if someone (read: me) started a &lt;a href='http://dailyqa.com'&gt;DailyQA.com&lt;/a&gt;. I have the &lt;a href='/work/i-hired-him.html'&gt;perfect candidate&lt;/a&gt; in mind to do the contributing ;)&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>I went and hired him</title>
+   <link href="http://gusg.us/work/i-hired-him.html"/>
+   <updated>2009-11-04T00:00:00-06:00</updated>
+   <id>http://gusg.us/work/i-hired-him</id>
+   <content type="html">&lt;p&gt;So, do you remember when I &lt;a href='/code/affirmation-of-a-programmer.html'&gt;talked about my friend&lt;/a&gt; &lt;a href='http://my-unemployment-challenge.blogspot.com/'&gt;Kurt&lt;/a&gt; who came in to play programmer for a day? Well, I was so impressed with his skills, I figured &amp;#8220;Why not hire him on part-time to do our QA at &lt;a href='http://carerunner.com'&gt;CareRunner&lt;/a&gt;?&amp;#8221; Because I&amp;#8217;ve never mentioned it, I&amp;#8217;m leading the technology department for CareRunner, which is a small start-up. Anyways, it&amp;#8217;s been two weeks, he has no idea what QA exactly is yet, but he&amp;#8217;s doing a great job of finding the superficial problems we developers are no good at. He&amp;#8217;s already learning how unrelated actions in performed in tandem can create unexpected results. His keen eye doubles as a typo magnet as well.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ve also tasked him with understanding what QA is, learning advanced testing techniques, and how he can go about automating his job. Selenium being the first obvious choice for automation. I&amp;#8217;m really interested to see how well his music background helps in this area; specifically, that of composing a symphony of tests and suites. Finding patterns and what not. He&amp;#8217;s also pretty aggravated that he can&amp;#8217;t find any good educational material yet, which is great. Necessity is the mother of invention.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Affirmation of a programmer</title>
@@ -411,22 +433,6 @@
  </entry>
  
  <entry>
-   <title>Poem - Boring Bed</title>
-   <link href="http://gusg.us/life/boring-bed-poem.html"/>
-   <updated>2008-12-20T00:00:00-06:00</updated>
-   <id>http://gusg.us/life/boring-bed-poem</id>
-   <content type="html">&lt;pre&gt;&lt;code&gt;Boring bed
-empty spread
-One lays down
-nothing said
-
-A beast waits long
-for their soul to return
-Until that time
-no fire shall burn&lt;/code&gt;&lt;/pre&gt;</content>
- </entry>
- 
- <entry>
    <title>Talking to God</title>
    <link href="http://gusg.us/code/ruby/talking-to-god.html"/>
    <updated>2008-12-20T00:00:00-06:00</updated>
@@ -473,6 +479,22 @@ no fire shall burn&lt;/code&gt;&lt;/pre&gt;</content>
 &lt;p&gt;Come on god! Get with the program!&lt;/p&gt;
 
 &lt;p&gt;Anyways, I intend to fix god so that I can do that. Hopefully, the master of god will accept?!?! I may be way out of my mind here and there may be a much easier way to do this. If so, shoot me an email (see address in the footer) with the solution.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Poem - Boring Bed</title>
+   <link href="http://gusg.us/life/boring-bed-poem.html"/>
+   <updated>2008-12-20T00:00:00-06:00</updated>
+   <id>http://gusg.us/life/boring-bed-poem</id>
+   <content type="html">&lt;pre&gt;&lt;code&gt;Boring bed
+empty spread
+One lays down
+nothing said
+
+A beast waits long
+for their soul to return
+Until that time
+no fire shall burn&lt;/code&gt;&lt;/pre&gt;</content>
  </entry>
  
  <entry>
@@ -884,6 +906,74 @@ Eshell V5.6.2  (abort with ^G)
  </entry>
  
  <entry>
+   <title>Smurf</title>
+   <link href="http://gusg.us/code/ruby/smurf-rails-autominifying-js-css-plugin.html"/>
+   <updated>2008-11-08T00:00:00-06:00</updated>
+   <id>http://gusg.us/code/ruby/smurf-rails-autominifying-js-css-plugin</id>
+   <content type="html">&lt;img src='/images/articles/code/ruby/mini-thor.jpg' align='left' height='250' width='250' /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href='http://github.com/thumblemonks/smurf'&gt;Smurf&lt;/a&gt; can be found on Git Hub :)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;You know how Rails 2.x has this cool feature for bundling sets of Javascript or CSS files? Yeah, they call it something like &amp;#8230; &lt;code&gt;cache&lt;/code&gt;. Crazy. I know. It&amp;#8217;s cool and all, but why does not it also minify that content? I mean, it&amp;#8217;s not like the content is going to change. You&amp;#8217;re only really going to be using this caching approach in production. Why couldn&amp;#8217;t it just do the minification on the big, concatenated file before it saved it?&lt;/p&gt;
+
+&lt;p&gt;Not understanding it, I went in search of those plugins which would do just what I want. I just knew they were out there. They were:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Not going to make me do anything else than use &lt;code&gt;:cache&lt;/code&gt; in my &lt;code&gt;include&lt;/code&gt; and &lt;code&gt;link&lt;/code&gt; tags&lt;/li&gt;
+
+&lt;li&gt;Not going make me turn any features on or setup any configuration do-hickeys&lt;/li&gt;
+
+&lt;li&gt;Would minify Javascript and CSS&lt;/li&gt;
+
+&lt;li&gt;Just going to minify content&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Yeah. No. Nothing to meet that criteria. I did find a &lt;a href='http://github.com/sbecker/asset_packager/tree/master'&gt;few&lt;/a&gt; &lt;a href='http://github.com/timcharper/bundle-fu/tree/master'&gt;implementations&lt;/a&gt;. A &lt;a href='http://sneer.org'&gt;friend&lt;/a&gt; also turned me onto a &lt;a href='http://github.com/lucianopanaro/rack-javascript-minifier/tree/master'&gt;Rack minifier&lt;/a&gt; which does make a lot of sense, if you&amp;#8217;re running Rack. But, nothing that just did what I wanted.&lt;/p&gt;
+
+&lt;p&gt;So, as I&amp;#8217;ve told others, if you&amp;#8217;re going to be a critic you should at least try to do better. Ergo, &lt;a href='http://github.com/thumblemonks/smurf'&gt;Smurf&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id='what_does_it_do'&gt;What does it do?&lt;/h2&gt;
+
+&lt;p&gt;I did a little digging into Rails to find out how I could get what I want. It didn&amp;#8217;t take all that long. Just look in &lt;code&gt;ActionView::Helpers::AssetTagHelper&lt;/code&gt; for a private method called &lt;code&gt;join_asset_file_contents&lt;/code&gt;. This is the method that takes a list of files, joins their contents together and returns the concatenated content.&lt;/p&gt;
+
+&lt;p&gt;Whoa. That&amp;#8217;s what I want! All of the content together. In one stream. With that, I can just run the combined content through an appropriate minifier.&lt;/p&gt;
+
+&lt;p&gt;And I did. I found Uladzislau Latynski&amp;#8217;s &lt;a href='http://javascript.crockford.com/jsmin.rb'&gt;jsmin.rb&lt;/a&gt;, which is a port of Douglas Crockford&amp;#8217;s &lt;a href='http://javascript.crockford.com/jsmin.c'&gt;jsmin.c&lt;/a&gt; library. I adapted Uladzislau&amp;#8217;s code a little and suddenly had a JS minifier.&lt;/p&gt;
+
+&lt;p&gt;But, what about a CSS minifier? I looked around a little, but nothing stood out as elegant, so I rolled my own. It may not be the best, but it&amp;#8217;s short and I can actually read what it&amp;#8217;s doing. For example, here&amp;#8217;s how I compress a stream of CSS:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;content.compress_whitespace.remove_comments.remove_spaces_outside_block.
+  remove_spaces_inside_block.trim_last_semicolon&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;#8217;ll just have to &lt;a href='http://github.com/thumblemonks/smurf/tree/master/lib/smurf/stylesheet.rb'&gt;look at the code&lt;/a&gt; to see how I do it. SPOILER ALERT: I do it with regular expressions! &lt;em&gt;(use your high-pitched theatrical voice for that part)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Because I Hijack (that&amp;#8217;s my contribution to software patterns &amp;#8230; Hijacking) the nifty Rails method that returns content and just return minified content, I don&amp;#8217;t need to do any friggin&amp;#8217; thing else. And neither do you.&lt;/p&gt;
+
+&lt;p&gt;Install the plugin and you&amp;#8217;re done. Hell yeah!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./script/plugin install git://github.com/thumblemonks/smurf.git&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Make sure you have this in at least your &lt;code&gt;production.rb&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;config.action_controller.perform_caching = true&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then make sure you are using the &lt;code&gt;:cache&lt;/code&gt; option with your &lt;code&gt;javascript_include_tag&lt;/code&gt; and &lt;code&gt;stylesheet_link_tag&lt;/code&gt; statements.&lt;/p&gt;
+
+&lt;h2 id='miscellany'&gt;Miscellany&lt;/h2&gt;
+
+&lt;p&gt;I suggest &lt;a href='http://maintainable.com/articles/rails_asset_cache'&gt;this&lt;/a&gt; approach for cleaning up cached files if you need to do it for testing.&lt;/p&gt;
+
+&lt;p&gt;However, a simple &lt;code&gt;cap deploy&lt;/code&gt; will &amp;#8220;get rid of&amp;#8221; of any cached files you have in production.&lt;/p&gt;
+
+&lt;h2 id='references'&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href='http://www.robertcasumbal.com/blog/?p=114'&gt;Mini Thor&lt;/a&gt; - Drawing by &lt;a href='http://www.robertcasumbal.com/'&gt;Robert Casumbal&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>The Me Me Meme</title>
    <link href="http://gusg.us/life/me-me-meme.html"/>
    <updated>2008-11-08T00:00:00-06:00</updated>
@@ -902,30 +992,6 @@ Eshell V5.6.2  (abort with ^G)
 
 &lt;li&gt;Post these instructions with your picture&lt;/li&gt;
 &lt;/ol&gt;</content>
- </entry>
- 
- <entry>
-   <title>Canonical</title>
-   <link href="http://gusg.us/code/ruby/canonical.html"/>
-   <updated>2008-11-08T00:00:00-06:00</updated>
-   <id>http://gusg.us/code/ruby/canonical</id>
-   <content type="html">&lt;p&gt;I and a co-worker (Eric Schwartz) wrote &lt;a href='http://github.com/centro/canonical/tree/master'&gt;Canonical&lt;/a&gt; for &lt;a href='http://centro.net'&gt;Centro&lt;/a&gt; - my current employer. Canonical does for your Rails app what Postfix&amp;#8217;s &lt;a href='http://www.postfix.org/canonical.5.html'&gt;canonical&lt;/a&gt; would do for your sys-admin. But now, you have the control! Ha ha!&lt;/p&gt;
-
-&lt;p&gt;Check out the README for everything you need to know.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Alright fine, Canonical is an ActionMailer extension that acts just like the Postfix utility of the same name. Essentially, Canonical lets you substitute the To, CC, and/or BCC email destinations with one of many replacements via a rule. It can be great for your integration and testing environments to direct all mail so that it is sent to a QA email address or something.&lt;/p&gt;
-
-&lt;p&gt;You may add a canonical rule like the following to send any email from the system to any address to the QA email distribution list:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;TMail::Mail.add_canonical_override(/.*/, &amp;#39;qa@foo.bar&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Assuming you are working at Foo Bar, that rule will match any destination address that has any character in it - meaning, it matches everything - and will substitute the matched email with qa@foo.bar. This is the same as saying the following in Postfix’s canonical file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/.*/, qa@foo.bar&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What you should notice is that canonical expects to see a regular expression as the first argument. Passing in anything that does not respond to =~ will result in an error.&lt;/p&gt;
-
-&lt;p&gt;Have fun!&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -1032,71 +1098,27 @@ Eshell V5.6.2  (abort with ^G)
  </entry>
  
  <entry>
-   <title>Smurf</title>
-   <link href="http://gusg.us/code/ruby/smurf-rails-autominifying-js-css-plugin.html"/>
+   <title>Canonical</title>
+   <link href="http://gusg.us/code/ruby/canonical.html"/>
    <updated>2008-11-08T00:00:00-06:00</updated>
-   <id>http://gusg.us/code/ruby/smurf-rails-autominifying-js-css-plugin</id>
-   <content type="html">&lt;img src='/images/articles/code/ruby/mini-thor.jpg' height='250' align='left' width='250' /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&lt;a href='http://github.com/thumblemonks/smurf'&gt;Smurf&lt;/a&gt; can be found on Git Hub :)&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+   <id>http://gusg.us/code/ruby/canonical</id>
+   <content type="html">&lt;p&gt;I and a co-worker (Eric Schwartz) wrote &lt;a href='http://github.com/centro/canonical/tree/master'&gt;Canonical&lt;/a&gt; for &lt;a href='http://centro.net'&gt;Centro&lt;/a&gt; - my current employer. Canonical does for your Rails app what Postfix&amp;#8217;s &lt;a href='http://www.postfix.org/canonical.5.html'&gt;canonical&lt;/a&gt; would do for your sys-admin. But now, you have the control! Ha ha!&lt;/p&gt;
 
-&lt;p&gt;You know how Rails 2.x has this cool feature for bundling sets of Javascript or CSS files? Yeah, they call it something like &amp;#8230; &lt;code&gt;cache&lt;/code&gt;. Crazy. I know. It&amp;#8217;s cool and all, but why does not it also minify that content? I mean, it&amp;#8217;s not like the content is going to change. You&amp;#8217;re only really going to be using this caching approach in production. Why couldn&amp;#8217;t it just do the minification on the big, concatenated file before it saved it?&lt;/p&gt;
+&lt;p&gt;Check out the README for everything you need to know.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Alright fine, Canonical is an ActionMailer extension that acts just like the Postfix utility of the same name. Essentially, Canonical lets you substitute the To, CC, and/or BCC email destinations with one of many replacements via a rule. It can be great for your integration and testing environments to direct all mail so that it is sent to a QA email address or something.&lt;/p&gt;
 
-&lt;p&gt;Not understanding it, I went in search of those plugins which would do just what I want. I just knew they were out there. They were:&lt;/p&gt;
+&lt;p&gt;You may add a canonical rule like the following to send any email from the system to any address to the QA email distribution list:&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;Not going to make me do anything else than use &lt;code&gt;:cache&lt;/code&gt; in my &lt;code&gt;include&lt;/code&gt; and &lt;code&gt;link&lt;/code&gt; tags&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;TMail::Mail.add_canonical_override(/.*/, &amp;#39;qa@foo.bar&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;Not going make me turn any features on or setup any configuration do-hickeys&lt;/li&gt;
+&lt;p&gt;Assuming you are working at Foo Bar, that rule will match any destination address that has any character in it - meaning, it matches everything - and will substitute the matched email with qa@foo.bar. This is the same as saying the following in Postfix’s canonical file:&lt;/p&gt;
 
-&lt;li&gt;Would minify Javascript and CSS&lt;/li&gt;
+&lt;pre&gt;&lt;code&gt;/.*/, qa@foo.bar&lt;/code&gt;&lt;/pre&gt;
 
-&lt;li&gt;Just going to minify content&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;What you should notice is that canonical expects to see a regular expression as the first argument. Passing in anything that does not respond to =~ will result in an error.&lt;/p&gt;
 
-&lt;p&gt;Yeah. No. Nothing to meet that criteria. I did find a &lt;a href='http://github.com/sbecker/asset_packager/tree/master'&gt;few&lt;/a&gt; &lt;a href='http://github.com/timcharper/bundle-fu/tree/master'&gt;implementations&lt;/a&gt;. A &lt;a href='http://sneer.org'&gt;friend&lt;/a&gt; also turned me onto a &lt;a href='http://github.com/lucianopanaro/rack-javascript-minifier/tree/master'&gt;Rack minifier&lt;/a&gt; which does make a lot of sense, if you&amp;#8217;re running Rack. But, nothing that just did what I wanted.&lt;/p&gt;
-
-&lt;p&gt;So, as I&amp;#8217;ve told others, if you&amp;#8217;re going to be a critic you should at least try to do better. Ergo, &lt;a href='http://github.com/thumblemonks/smurf'&gt;Smurf&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id='what_does_it_do'&gt;What does it do?&lt;/h2&gt;
-
-&lt;p&gt;I did a little digging into Rails to find out how I could get what I want. It didn&amp;#8217;t take all that long. Just look in &lt;code&gt;ActionView::Helpers::AssetTagHelper&lt;/code&gt; for a private method called &lt;code&gt;join_asset_file_contents&lt;/code&gt;. This is the method that takes a list of files, joins their contents together and returns the concatenated content.&lt;/p&gt;
-
-&lt;p&gt;Whoa. That&amp;#8217;s what I want! All of the content together. In one stream. With that, I can just run the combined content through an appropriate minifier.&lt;/p&gt;
-
-&lt;p&gt;And I did. I found Uladzislau Latynski&amp;#8217;s &lt;a href='http://javascript.crockford.com/jsmin.rb'&gt;jsmin.rb&lt;/a&gt;, which is a port of Douglas Crockford&amp;#8217;s &lt;a href='http://javascript.crockford.com/jsmin.c'&gt;jsmin.c&lt;/a&gt; library. I adapted Uladzislau&amp;#8217;s code a little and suddenly had a JS minifier.&lt;/p&gt;
-
-&lt;p&gt;But, what about a CSS minifier? I looked around a little, but nothing stood out as elegant, so I rolled my own. It may not be the best, but it&amp;#8217;s short and I can actually read what it&amp;#8217;s doing. For example, here&amp;#8217;s how I compress a stream of CSS:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;content.compress_whitespace.remove_comments.remove_spaces_outside_block.
-  remove_spaces_inside_block.trim_last_semicolon&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You&amp;#8217;ll just have to &lt;a href='http://github.com/thumblemonks/smurf/tree/master/lib/smurf/stylesheet.rb'&gt;look at the code&lt;/a&gt; to see how I do it. SPOILER ALERT: I do it with regular expressions! &lt;em&gt;(use your high-pitched theatrical voice for that part)&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Because I Hijack (that&amp;#8217;s my contribution to software patterns &amp;#8230; Hijacking) the nifty Rails method that returns content and just return minified content, I don&amp;#8217;t need to do any friggin&amp;#8217; thing else. And neither do you.&lt;/p&gt;
-
-&lt;p&gt;Install the plugin and you&amp;#8217;re done. Hell yeah!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./script/plugin install git://github.com/thumblemonks/smurf.git&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Make sure you have this in at least your &lt;code&gt;production.rb&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;config.action_controller.perform_caching = true&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And then make sure you are using the &lt;code&gt;:cache&lt;/code&gt; option with your &lt;code&gt;javascript_include_tag&lt;/code&gt; and &lt;code&gt;stylesheet_link_tag&lt;/code&gt; statements.&lt;/p&gt;
-
-&lt;h2 id='miscellany'&gt;Miscellany&lt;/h2&gt;
-
-&lt;p&gt;I suggest &lt;a href='http://maintainable.com/articles/rails_asset_cache'&gt;this&lt;/a&gt; approach for cleaning up cached files if you need to do it for testing.&lt;/p&gt;
-
-&lt;p&gt;However, a simple &lt;code&gt;cap deploy&lt;/code&gt; will &amp;#8220;get rid of&amp;#8221; of any cached files you have in production.&lt;/p&gt;
-
-&lt;h2 id='references'&gt;References&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href='http://www.robertcasumbal.com/blog/?p=114'&gt;Mini Thor&lt;/a&gt; - Drawing by &lt;a href='http://www.robertcasumbal.com/'&gt;Robert Casumbal&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;p&gt;Have fun!&lt;/p&gt;</content>
  </entry>
  
  <entry>
@@ -1510,7 +1532,7 @@ Eshell V5.6.2  (abort with ^G)
    <link href="http://gusg.us/work/joy-is-no-cubicles.html"/>
    <updated>2008-06-02T00:00:00-05:00</updated>
    <id>http://gusg.us/work/joy-is-no-cubicles</id>
-   <content type="html">&lt;img class='article' src='/images/articles/work/red-stapler.jpg' height='300' align='right' width='400' /&gt;
+   <content type="html">&lt;img class='article' src='/images/articles/work/red-stapler.jpg' align='right' height='300' width='400' /&gt;
 &lt;p&gt;So &amp;#8230; I&amp;#8217;m sitting on the train, top shelf of a two &amp;#8220;story&amp;#8221; train. It&amp;#8217;s the end of the day and I&amp;#8217;m waiting for the train to move out of &lt;a href='http://tinyurl.com/3lnpl7'&gt;Union Station&lt;/a&gt; so I can go home.&lt;/p&gt;
 
 &lt;p&gt;Someone sits next me. Ugh.&lt;/p&gt;
