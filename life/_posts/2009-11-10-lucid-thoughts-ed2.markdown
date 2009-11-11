@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Random Thoughts, ed. 2
+title: Lucid Thoughts, ed. 1
 summary: I couldn't sleep again, again
 published: true
 ---
