@@ -3,295 +3,302 @@
   
   <url>
     <loc>http://gusg.us</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
  
   
   <url>
+    <loc>http://gusg.us/life/random-thoughts-ed2.html</loc>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://gusg.us/code/daily-js.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/work/i-hired-him.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/affirmation-of-a-programmer.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/the-path.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/random-thoughts-ed-1.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/genesis.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/gusbus-has-a-flat.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/thumbly-going-on.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/load-model.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/talking-to-god.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/boring-bed-poem.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/larry-opens-bar.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/obama-and-einstein.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/rails-2_2-headaches-1.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/history-blog-meme.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/erlang/erlang-diaries-vol1.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/shoulda-making-dry-even-dryier.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/smurf-rails-autominifying-js-css-plugin.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/me-me-meme.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/dumb-smtp.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/canonical.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/i-voted-2008.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/call-for-less-process.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/psa-illinois-sticker-renewal.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/rails-2-1-1-address-inflection.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/install-mysql-gem-on-mac.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/universal-quotes.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/sinatra-autohandling-css.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/rails-2-1-session-testing.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/summer-reading-08.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/work/joy-is-no-cubicles.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/map-to-hash.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/json-in-rails-just-annoyed-me.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/only-losers-are-unc-fans.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/multiplexing-delegator.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/beautiful-code-readability-performance.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/life/active-record-modeling-life.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/flashback.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/assert-session-extending-assert-request.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/ruby/full-on-errors.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://gusg.us/code/password-sophistication.html</loc>
-    <lastmod>2009-11-06T08:35:12-06:00</lastmod>
+    <lastmod>2009-11-10T22:54:02-06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.2</priority>
   </url>
