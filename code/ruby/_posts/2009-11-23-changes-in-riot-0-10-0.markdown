@@ -27,6 +27,8 @@ module My
 
   end
 end
+
+Riot::Assertion.instance_eval { include My::AssertionMacros }
 {% endhighlight %}
 
 you're going to write them like this:
