@@ -4,13 +4,124 @@
  <title>GusG.us</title>
  <link href="http://gusg.us/feed.xml" rel="self"/>
  <link href="http://gusg.us/"/>
- <updated>2009-11-10T23:06:03-06:00</updated>
+ <updated>2009-11-24T01:01:25-06:00</updated>
  <id>http://gusg.us/</id>
  <author>
    <name>Justin Knowlden</name>
    <email>gus@gusg.us</email>
  </author>
 
+ 
+ <entry>
+   <title>Changes in Riot 0.10</title>
+   <link href="http://gusg.us/code/ruby/changes-in-riot-0-10-0.html"/>
+   <updated>2009-11-23T00:00:00-06:00</updated>
+   <id>http://gusg.us/code/ruby/changes-in-riot-0-10-0</id>
+   <content type="html">&lt;p&gt;Though I&amp;#8217;ve never blogged about &lt;a href='http://github.com/thumblemonks/riot'&gt;Riot&lt;/a&gt;, it received some awesome and much unexpected attention from &lt;a href='http://alexyoung.org/2009/10/26/riot-testing/'&gt;Alex Young&lt;/a&gt; (a super-awesome dude), &lt;a href='http://www.rubyinside.com/riot-for-fast-expressive-and-focused-unit-tests-2669.html'&gt;Ruby Inside&lt;/a&gt; via &lt;a href='http://www.ricroberts.com/'&gt;Ric Roberts&lt;/a&gt; (another super-awesome dude), &lt;a href='http://railsenvy.com/2009/10/28/episode-098'&gt;Rails Envy&lt;/a&gt;, and &lt;a href='http://ruby5.envylabs.com/episodes/24-episode-23-october-30-2009/stories/186-riot-testing-framework'&gt;Ruby5&lt;/a&gt;. I was overcome to say the least, partly because I wasn&amp;#8217;t happy with where Riot was at that moment, but mostly because I wrote Riot for me and didn&amp;#8217;t think anyone (except for &lt;a href='http://toothrot.net/'&gt;toothrot&lt;/a&gt; and &lt;a href='http://github.com/jonpliske'&gt;jonpliske&lt;/a&gt;) would actually think Riot was for them.&lt;/p&gt;
+
+&lt;p&gt;I was wrong.&lt;/p&gt;
+
+&lt;p&gt;In the short period of time between then and now I have received a lot of positive feedback and only vicariously have seen some negative feedback &amp;#8230; which I will ignore because - as I said before - I wrote Riot for me. Also in that time I have received some of that famous help from the open-source community. &lt;a href='http://annealer.org'&gt;annealer&lt;/a&gt; and &lt;a href='http://github.com/brianc'&gt;brianc&lt;/a&gt; (also the lead singer of &lt;a href='http://deadblackhearts.com/'&gt;Dead Black Hearts&lt;/a&gt; - which is awesome) helped me to narrow in on what Riot was trying to accomplish and to do it with a more efficient engine. I&amp;#8217;m happy to say I&amp;#8217;m much happier with how Riot is implemented today than I was when &lt;a href='http://gemcutter.org/gems/riot/versions/0.9.12'&gt;0.9.12&lt;/a&gt; was released.&lt;/p&gt;
+
+&lt;p&gt;&amp;#8220;Whatever! The changes, Jabberjaw&amp;#8221;, you exclaim. Fine. In terms of DSL, there aren&amp;#8217;t many changes.&lt;/p&gt;
+
+&lt;h4 id='assertion_macros'&gt;Assertion macros&lt;/h4&gt;
+
+&lt;p&gt;The biggest observable change by far is in the way you write assertion macros, such as: &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;raises&lt;/code&gt;, &lt;code&gt;kind_of&lt;/code&gt;, etc. You won&amp;#8217;t need to do this very often, but when you do you won&amp;#8217;t be defining a new method that can be included into &lt;code&gt;Riot::Assertion&lt;/code&gt;. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the &lt;code&gt;exists&lt;/code&gt; macros like this:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;My&lt;/span&gt;
+  &lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;AssertionMacros&lt;/span&gt;
+
+    &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+      &lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of?&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='o'&gt;||&lt;/span&gt; &lt;span class='nb'&gt;fail&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;expected kind of &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;, not &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inspect&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+    &lt;span class='k'&gt;end&lt;/span&gt;
+
+  &lt;span class='k'&gt;end&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;you&amp;#8217;re going to write them like this:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Riot&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Assertion&lt;/span&gt;
+
+  &lt;span class='n'&gt;assertion&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:kind_of&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
+    &lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of?&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;?&lt;/span&gt; &lt;span class='n'&gt;pass&lt;/span&gt; &lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;fail&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;expected kind of &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;, not &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inspect&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+  &lt;span class='k'&gt;end&lt;/span&gt;
+
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Why? That has a lot to do with the under-the-hood changes. Important to note are a few things:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The obvious closure&lt;/li&gt;
+
+&lt;li&gt;The &lt;code&gt;actual&lt;/code&gt; value is getting provided-to and no longer requested-by the assertion macro&lt;/li&gt;
+
+&lt;li&gt;The &lt;code&gt;pass&lt;/code&gt; and &lt;code&gt;fail&lt;/code&gt; signals which are required to be returned from any assertion macro&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Not listed here is an &lt;code&gt;error&lt;/code&gt; signal, but you shouldn&amp;#8217;t need to worry about that.&lt;/p&gt;
+
+&lt;h4 id='shortcut_assertion_for_the_topic'&gt;Shortcut assertion for the topic&lt;/h4&gt;
+
+&lt;p&gt;The assertion shortcut &lt;code&gt;topic&lt;/code&gt; has been renamed to &lt;code&gt;asserts_topic&lt;/code&gt;, which brianc so elegantly suggested as a better name. Thus, instead of this:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+  &lt;span class='n'&gt;setup&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;mom&amp;quot;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+  &lt;span class='n'&gt;topic&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;String&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;# This will no longer work&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;you would now do the following:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+  &lt;span class='n'&gt;setup&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;mom&amp;quot;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+  &lt;span class='n'&gt;asserts_topic&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;String&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;brianc added another shortcut for doing the same thing, which also allows you to have a custom description. You could write the above example like so:&lt;/p&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+  &lt;span class='n'&gt;setup&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;mom&amp;quot;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+  &lt;span class='n'&gt;asserts&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;the topic is&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;String&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;span class='k'&gt;end&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h4 id='story_output'&gt;Story output&lt;/h4&gt;
+
+&lt;p&gt;After looking at what Alex Young &lt;a href='http://alexyoung.org/2009/11/04/riotjs/'&gt;did for output&lt;/a&gt; in his implementation of &lt;a href='http://github.com/alexyoung/riotjs'&gt;Riot for JavaScript&lt;/a&gt;, I fell in love. So, this is now the default output format for Riot and what I&amp;#8217;m calling the Story Report since the output kind of reads like a story.&lt;/p&gt;
+&lt;img src='/images/articles/code/ruby/riot-0-10-1-story-terminal.png' alt='Riot terminal output, story report' /&gt;
+&lt;p&gt;Who doesn&amp;#8217;t like pictures?&lt;/p&gt;
+
+&lt;h4 id='under_the_hood'&gt;Under the hood&lt;/h4&gt;
+
+&lt;p&gt;Oh man, everything is a little different. In essence, it&amp;#8217;s a complete re-write. This re-write was going after a few things:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Riot needed to be faster. Twice as fast as Shoulda is not compelling.&lt;/li&gt;
+
+&lt;li&gt;Riot should keep less state (be more functional), because state is a terrible thing to change&lt;/li&gt;
+
+&lt;li&gt;Riot should not run the tests while also parsing the DSL (this REALLY bugged me)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In order to accomplish (1) and (3), annealer actually did some &lt;a href='http://github.com/thumblemonks/riot/blob/7cf674c257fbb2e465116ad31b7721c5cba9b23a/lib/riot/experiment.rb'&gt;crazy spiking&lt;/a&gt; on what we called the experimental approach. Essentially, anonymous classes, &lt;code&gt;define_method&lt;/code&gt;s, and meta-programming galore. And it was good.&lt;/p&gt;
+
+&lt;p&gt;But, it did not get me (2) in a way that I thought was most readable. Experimental was a bit too magical for even me and that&amp;#8217;s probably because I&amp;#8217;m not that smart. So, we applied the learnings from experimental with an approach that never changed the state of a Context, Assertion, or Situation and we came up with the hybrid approach. I should say that Context, Assertion, and Situation have state, but the intention is for it not to change while the tests are running. Instead, state should be defined when initializing (or setting up) the respective element.&lt;/p&gt;
+
+&lt;p&gt;All of this combined into some really readable code that is now Riot &lt;code&gt;0.10&lt;/code&gt;. There are more changes, but you should read the code to discover them. The &lt;a href='http://gist.github.com/240353'&gt;benchmarks&lt;/a&gt; are pretty awesome, too. Especially those for Ruby 1.9. If you ask me, there&amp;#8217;s no reason to use mini-test when writing new tests for 1.9. Just switch to Riot ;)&lt;/p&gt;
+
+&lt;p&gt;As an aside, the instance that does change state over the course of running a test-suite is the test reporter. I can live with it for now, but it&amp;#8217;d be pretty awesome if the reporter could go stateless. It would also be pretty sweet if someone would run Riot contexts through one of the parallel test distributors out there. The performance gains would be outrageous. If annealer ever finishes his implementation of Jenga, I wouldn&amp;#8217;t have to ask. Ahem!&lt;/p&gt;
+
+&lt;h2 id='riot_rails'&gt;Riot Rails&lt;/h2&gt;
+
+&lt;p&gt;I would really like some help building out Riot to have custom support for Rails. I started &lt;a href='http://github.com/thumblemonks/riot_rails'&gt;Riot Rails&lt;/a&gt; and am slowly adding things as I&amp;#8217;m working on a custom Rails app, but the progress is slow. The progress is slow mainly because I have also side-tracked myself with learning Clojure. I want to learn Clojure because a) I like Lisp, b) I like functional languages, and c) I want to re-write &lt;a href='http://github.com/thumblemonks/evoke'&gt;Evoke&lt;/a&gt; with &lt;a href='http://github.com/weavejester/compojure'&gt;Compojure&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now, re-writing Evoke in Clojure is a simple enough task (except for the delayed job processing which I&amp;#8217;ll have port over), but Clojure is a JVM language. This means Compojure is dependent on Java libraries like: jetty, apache commons, clojure-contrib, etc. Being dependent on so many libraries is just begging for package management and I suppose Maven provides that, but I dislike Maven and Ant for all of their XML horrificness (I used to be a Java programmer). I just hate it. Makes me want to barf. What I do like is Ruby Gems. I really like Ruby Gems. Turns out, annealer hates Maven and likes Ruby Gems as well. So &amp;#8230; what do you think we did?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='http://javagems.org'&gt;JavaGems&lt;/a&gt;, that&amp;#8217;s what. We up and &lt;a href='http://github.com/javagems'&gt;did it&lt;/a&gt; and there will be a LOT more to say about that. However, all of this side-trackiness has kept me from finishing Riot Rails which is not all that hard of a thing to do, it just takes time and as I have already shown I can lose that very quickly.&lt;/p&gt;
+
+&lt;p&gt;Thusly and therefore, I&amp;#8217;m calling all arms. Let&amp;#8217;s get Riot Rails finished. It&amp;#8217;ll accomplish what I set out to do, make functional tests in Rails faster. That&amp;#8217;s right! Slowness of Shoulda + Factory Girl + functional-tests made me write Riot. That&amp;#8217;s why Riot only calls &lt;code&gt;setup&lt;/code&gt; once per Context. That&amp;#8217;s why finishing Riot Rails will make me oh so very happy.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;d like to help, but not sure how, hop into the &lt;code&gt;#riot&lt;/code&gt; room on irc.freenode.net. Ohhhhh &amp;#8230; the riot room, that&amp;#8217;s funny. I know, it&amp;#8217;s really a channel, but whatever! If you don&amp;#8217;t want to do that, just fork and fix.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Lucid Thoughts, ed. 1</title>
