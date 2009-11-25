@@ -15,7 +15,7 @@ In the short period of time between then and now I have received a lot of positi
 
 #### Assertion macros
 
-The biggest observable change by far is in the way you write assertion macros, such as: `equals`, `raises`, `kind_of`, etc. You won't need to do this very often, but when you do you won't be defining a new method that can be included into `Riot::Assertion`. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the `exists` macros like this:
+The biggest observable change by far is in the way you write assertion macros, such as: `equals`, `raises`, `kind_of`, etc. You won't need to do this very often, but when you do you won't be defining a new method that can be included into `Riot::Assertion`. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the `kind_of` macros like this:
 
 {% highlight ruby %}
 module My

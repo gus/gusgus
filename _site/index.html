@@ -48,7 +48,7 @@
 
 <h4 id='assertion_macros'>Assertion macros</h4>
 
-<p>The biggest observable change by far is in the way you write assertion macros, such as: <code>equals</code>, <code>raises</code>, <code>kind_of</code>, etc. You won&#8217;t need to do this very often, but when you do you won&#8217;t be defining a new method that can be included into <code>Riot::Assertion</code>. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the <code>exists</code> macros like this:</p>
+<p>The biggest observable change by far is in the way you write assertion macros, such as: <code>equals</code>, <code>raises</code>, <code>kind_of</code>, etc. You won&#8217;t need to do this very often, but when you do you won&#8217;t be defining a new method that can be included into <code>Riot::Assertion</code>. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the <code>kind_of</code> macros like this:</p>
 <div class='highlight'><pre><span class='k'>module</span> <span class='nn'>My</span>
   <span class='k'>module</span> <span class='nn'>AssertionMacros</span>
 
