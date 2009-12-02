@@ -5,24 +5,27 @@ title: What are ... "Things you do at work", Alex
 
 {% assign other_posts = site.categories.work %}
 {% assign latest_post = other_posts.first %}
-<ul id="articles">
-  <li id="article">
-    <div class="header">
+<div id="articles" class="grid_8 alpha">
+  <div id="article">
+    <div class="header cleafix">
       <h1><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h1>
-      <div class="date"><cite>{{ latest_post.date | date: "%b %d, %Y" }}</cite></div>
-      <div class="summary">{{ latest_post.summary }}</div>
-      <div class="clear"></div>
+      <div id="info">
+        <span class="date"><cite>{{ latest_post.date | date: "%b %d, %Y" }}</cite></span>
+        <span class="summary"><em>{{ latest_post.summary }}</em></span>
+      </div>
     </div>
     {{ latest_post.content }}
-  </li>
-</ul>
+  </div>
+</div>
 
-<ul id="sidebar" class="recent_articles">
-  <h3>Other Articles</h3>
-  {% for post in other_posts offset:1 %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <p>{{ post.summary }}</p>
-    </li>
-  {% endfor %}
-</ul>
+<div id="sidebar" class="grid_4 omega">
+  <ul id="recent_articles">
+    <h3>Other Articles</h3>
+    {% for post in other_posts offset:1 %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <p>{{ post.summary }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

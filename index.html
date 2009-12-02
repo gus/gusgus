@@ -3,19 +3,20 @@ layout: default
 title: Call me the Bus Driver ...
 ---
 
-<ul id="articles">
+<div id="articles" class="grid_8 alpha">
   {% assign latest_post = site.posts.first %}
-  <li id="article">
-    <div class="header">
+  <div id="article">
+    <div class="header clearfix">
       <h1><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h1>
-      <div class="date"><cite>{{ latest_post.date | date: "%b %d, %Y" }}</cite></div>
-      <div class="summary">{{ latest_post.summary }}</div>
-      <div class="clear"></div>
+      <div id="info">
+        <span class="date"><cite>{{ latest_post.date | date: "%b %d, %Y" }}</cite></span>
+        <span class="summary"><em>{{ latest_post.summary }}</em></span>
+      </div>
     </div>
     {{ latest_post.content }}
-  </li>
+  </div>
 
-  <ul class="recent_articles">
+  <ul id="recent_articles">
     <h4>Recent Posts</h4>
     {% for post in site.posts limit:5 offset:1 %}
       <li>
@@ -24,8 +25,10 @@ title: Call me the Bus Driver ...
       </li>
     {% endfor %}  
   </ul>
-</ul>
+</div>
 
-<ul id="sidebar" class="flickr" data-url="http://api.flickr.com/services/feeds/photoset.gne?set=72157620922420806&amp;nsid=11308528@N05&amp;lang=en-us&amp;format=json">
-  <h3>Sketches</h3>
-</ul>
+<div class="grid_4 omega">
+  <ul id="sidebar" class="flickr" data-url="http://api.flickr.com/services/feeds/photoset.gne?set=72157620922420806&amp;nsid=11308528@N05&amp;lang=en-us&amp;format=json">
+    <h3>Sketches</h3>
+  </ul>
+</div>

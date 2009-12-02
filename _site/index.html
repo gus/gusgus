@@ -8,35 +8,42 @@
     <link href='/images/gusgus_icon.gif' rel='icon' />
     <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
     <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
-    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/reset.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/960.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/text.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
   </head>
 
   <body>
-    <div class='container'>
-      <div id='header'>
-        <div id='nav'>
+
+    <div class='container_12'>
+      <div id='header' class='grid_12 alpha omega'>
+        <div id='logo'>
+          <img src="/images/gus-logo.png" alt="gusg.us">
+        </div>
+        <div id='nav' class="prefix_5 alpha grid_7 omega">
           <ul>
-            <li><a href='/'>Home</a></li>
-            <li class=""><a href='/life'>Life</a></li>
-            <li><a href='/work'>Work</a></li>
             <li><a href='/code'>Code</a></li>
             <li><a href='/code/ruby'>Ruby</a></li>
+            <li><a href='/work'>Work</a></li>
+            <li><a href='/life'>Life</a></li>
+            <li><a href='/'>Home</a></li>
           </ul>
         </div>
-        <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
       </div>
 
-      
-<ul id="articles">
+      <div class='grid_12 alpha omega'>
+        
+<div id="articles" class="grid_8 alpha">
   
-  <li id="article">
-    <div class="header">
+  <div id="article">
+    <div class="header clearfix">
       <h1><a href="/life/narcissus.html">Narcissus</a></h1>
-      <div class="date"><cite>Nov 30, 2009</cite></div>
-      <div class="summary">The band with myopic love</div>
-      <div class="clear"></div>
+      <div id="info">
+        <span class="date"><cite>Nov 30, 2009</cite></span>
+        <span class="summary"><em>The band with myopic love</em></span>
+      </div>
     </div>
     <p>I&#8217;ve been thinking this little thought for a long, long time. Probably as long as I&#8217;ve known my wife. Actually, I believe it is that long, but she&#8217;ll have to confirm because she has proclaimed her memory to be of mightier ilk than mine. So this thought is <em>&#8220;Wouldn&#8217;t it be fun to start a cover band who&#8217;s songs are all twisted to sound narcisstic?&#8221;</em></p>
 
@@ -61,15 +68,15 @@
 
 <li><a href='http://www.youtube.com/watch?v=6MMcLEdkY68'>All For Me</a> - <em>Sister Hazel</em></li>
 
-<li><a href='http://www.youtube.com/watch?v=zTneO6UgRuM'>I Touch Myself</a> - <em>The Divinyls</em> - What a perfect song; no changes necessary. Well &#8230; that&#8217;s not true. <em>When I think about me I &#8230;</em></li>
+<li><a href='http://www.youtube.com/watch?v=zTneO6UgRuM'>I Touch Myself</a> - <em>The Divinyls</em> - What a perfect song; no changes necessary. Well &#8230; that&#8217;s not true. <em>&#8220;When I think about me I &#8230;&#8221;</em></li>
 </ol>
 
 <p>8 songs should be enough for a demo I think. 8 also seems to come up a lot in my life, even though 7 is my favorite number and 12:34 shows up on the clock a lot - or I notice it a lot - and the sum of 12:34 is 1 (10 then 1 + 0).</p>
 
 <p>Maaaayyybe - and this is just a maybe - my lucky number is 187. Thoughts?</p>
-  </li>
+  </div>
 
-  <ul class="recent_articles">
+  <ul id="recent_articles">
     <h4>Recent Posts</h4>
     
       <li>
@@ -98,16 +105,16 @@
       </li>
       
   </ul>
-</ul>
+</div>
 
-<ul id="sidebar" class="flickr" data-url="http://api.flickr.com/services/feeds/photoset.gne?set=72157620922420806&amp;nsid=11308528@N05&amp;lang=en-us&amp;format=json">
-  <h3>Sketches</h3>
-</ul>
+<div class="grid_4 omega">
+  <ul id="sidebar" class="flickr" data-url="http://api.flickr.com/services/feeds/photoset.gne?set=72157620922420806&amp;nsid=11308528@N05&amp;lang=en-us&amp;format=json">
+    <h3>Sketches</h3>
+  </ul>
+</div>
+      </div>
 
-
-    </div>
-    <div class='container'>
-      <div class='clear' id='footer'>
+      <div class='grid_12 alpha omega' id='footer'>
         &copy; 2007 - 2009 Justin Knowlden,
         <span class='email'>gus at gusg dot us</span>
         <span class='powered'>

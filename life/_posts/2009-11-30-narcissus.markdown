@@ -20,7 +20,7 @@ What songs would we sing? Here's a spontaneous list I've been working on for a w
 1. [You Miss Me](http://www.youtube.com/watch?v=PzYlj41YVzA) - *Björk*
 1. [I'm So Vain](http://www.youtube.com/watch?v=0hclkb76IvY) - *Carly Simon* - Probably not what you expected :) BAM! It's like one of those pop-in-and-ruin-your-photo-persons but in the form of a video.
 1. [All For Me](http://www.youtube.com/watch?v=6MMcLEdkY68) - *Sister Hazel*
-1. [I Touch Myself](http://www.youtube.com/watch?v=zTneO6UgRuM) - *The Divinyls* - What a perfect song; no changes necessary. Well ... that's not true. *When I think about me I ...*
+1. [I Touch Myself](http://www.youtube.com/watch?v=zTneO6UgRuM) - *The Divinyls* - What a perfect song; no changes necessary. Well ... that's not true. *"When I think about me I ..."*
 
 8 songs should be enough for a demo I think. 8 also seems to come up a lot in my life, even though 7 is my favorite number and 12:34 shows up on the clock a lot - or I notice it a lot - and the sum of 12:34 is 1 (10 then 1 + 0).
 

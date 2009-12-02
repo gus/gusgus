@@ -8,32 +8,39 @@
     <link href='/images/gusgus_icon.gif' rel='icon' />
     <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
     <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
-    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/reset.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/960.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/text.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
   </head>
 
   <body>
-    <div class='container'>
-      <div id='header'>
-        <div id='nav'>
+
+    <div class='container_12'>
+      <div id='header' class='grid_12 alpha omega'>
+        <div id='logo'>
+          <img src="/images/gus-logo.png" alt="gusg.us">
+        </div>
+        <div id='nav' class="prefix_5 alpha grid_7 omega">
           <ul>
-            <li><a href='/'>Home</a></li>
-            <li class=""><a href='/life'>Life</a></li>
-            <li><a href='/work'>Work</a></li>
             <li><a href='/code'>Code</a></li>
             <li><a href='/code/ruby'>Ruby</a></li>
+            <li><a href='/work'>Work</a></li>
+            <li><a href='/life'>Life</a></li>
+            <li><a href='/'>Home</a></li>
           </ul>
         </div>
-        <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
       </div>
 
-      <div id="article">
-  <div class="header">
+      <div class='grid_12 alpha omega'>
+        <div id="article">
+  <div class="header clearfix">
     <h1>Joy is no Cubicles</h1>
-    <div class="date"><cite>Jun 02, 2008</cite></div>
-    <div class="summary">Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</div>
-    <div class="clear"></div>
+    <div id="info">
+      <span class="date"><cite>Jun 02, 2008</cite></span>
+      <span class="summary"><em>Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</em></span>
+    </div>
   </div>
   <img class='article' src='/images/articles/work/red-stapler.jpg' align='right' height='300' width='400' />
 <p>So &#8230; I&#8217;m sitting on the train, top shelf of a two &#8220;story&#8221; train. It&#8217;s the end of the day and I&#8217;m waiting for the train to move out of <a href='http://tinyurl.com/3lnpl7'>Union Station</a> so I can go home.</p>
@@ -153,10 +160,9 @@
   <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+      </div>
 
-    </div>
-    <div class='container'>
-      <div class='clear' id='footer'>
+      <div class='grid_12 alpha omega' id='footer'>
         &copy; 2007 - 2009 Justin Knowlden,
         <span class='email'>gus at gusg dot us</span>
         <span class='powered'>

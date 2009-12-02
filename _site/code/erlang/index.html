@@ -4,43 +4,220 @@
   <head>
     <meta content='GROW UP' http-equiv='X-UA-Compatible' />
     <meta content='width=850' name='viewport' />
-    <title>GusG.us - Svengoolie says "Errrrrrrrr-lang"</title>
+    <title>GusG.us - Svengoolie says Errrrrrrrr-lang</title>
     <link href='/images/gusgus_icon.gif' rel='icon' />
     <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
     <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
-    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/reset.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/960.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/text.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
   </head>
 
   <body>
-    <div class='container'>
-      <div id='header'>
-        <div id='nav'>
+
+    <div class='container_12'>
+      <div id='header' class='grid_12 alpha omega'>
+        <div id='logo'>
+          <img src="/images/gus-logo.png" alt="gusg.us">
+        </div>
+        <div id='nav' class="prefix_5 alpha grid_7 omega">
           <ul>
-            <li><a href='/'>Home</a></li>
-            <li class=""><a href='/life'>Life</a></li>
-            <li><a href='/work'>Work</a></li>
             <li><a href='/code'>Code</a></li>
             <li><a href='/code/ruby'>Ruby</a></li>
+            <li><a href='/work'>Work</a></li>
+            <li><a href='/life'>Life</a></li>
+            <li><a href='/'>Home</a></li>
           </ul>
         </div>
-        <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
       </div>
 
-      
-<ul id="articles">
-  
-    <li>
-      <a href="/code/erlang/erlang-diaries-vol1.html">Erlang Diaries - Vol 1</a>
-      <p>Brought to you by the lower-case letter 'c'</p>
-    </li>
-  
+      <div class='grid_12 alpha omega'>
+        
+
+
+<div id="articles" class="grid_8 alpha">
+  <div id="article">
+    <div class="header cleafix">
+      <h1><a href="/code/erlang/erlang-diaries-vol1.html">Erlang Diaries - Vol 1</a></h1>
+      <div id="info">
+        <span class="date"><cite>Nov 12, 2008</cite></span>
+        <span class="summary"><em>Brought to you by the lower-case letter 'c'</em></span>
+      </div>
+    </div>
+    <p>I&#8217;m starting a new diary for my forays into learning Erlang. Below are my first entries. I basically want to learn Erlang for a couple of reasons:</p>
+
+<ul>
+<li>It&#8217;s a new language I don&#8217;t know</li>
+
+<li>Functional languages interest me</li>
+
+<li>I enjoy agent-based modeling and simulation</li>
+
+<li>I want to write a Wator simulation in Erlang</li>
 </ul>
 
-    </div>
-    <div class='container'>
-      <div class='clear' id='footer'>
+<p>The reason for the final note can be traced back to a <a href='http://groups.softwarecraftsmanship.org/'>Software Craftsmanship</a> meeting on November 10, 2008. Uncle Bob was talking about the <em>Total Cost of a Mess</em> and showing off his old Java crapplet code for a Wator implementation. Dean Wampler then said, and I&#8217;m paraphrasing, it would be interesting [for Gus] to implement Wator in Erlang.</p>
+
+<h3 id='1111__1200'>11/11 @ 12:00</h3>
+
+<p>Some tests were running while I was at work so I installed the Erlang Mac port. The install didn&#8217;t work :( I had to modify the port to remove the <code>- hipe</code> line. Thanks to <a href='http://syntatic.wordpress.com/2008/06/12/macports-erlang-bus-error-due-to-mac-os-x-1053-update/'>Brian Tatnall</a>.</p>
+
+<p>I also downloaded some documentation. Namely:</p>
+
+<ul>
+<li>Erlang Book - Part 1; [EB]</li>
+
+<li>Design Patterns for Simulations in Erlang/OTP; [PhD]</li>
+
+<li>Program Development Using Erlang - Programming Rules and Conventions, from Ericsson; [Zzzz]</li>
+
+<li>HTML Documentation provided with the port, same as on the site; [erl]</li>
+</ul>
+
+<p>I haven&#8217;t written or compiled a lick of code yet, haven&#8217;t even really looked at the language. I know from past experiences that getting started is the slowest part of learning a language and that having documentation at your fingertips is the key to resolving it.</p>
+
+<p>See you later. Love you. <em>Golly &#8230; I sure am excited</em></p>
+
+<h3 id='1112__810'>11/12 @ 8:10</h3>
+
+<p>I didn&#8217;t get much sleep last night. Nothing to do with Erlang. I hit snooze like 3 or 4 times. I was already running late and sent an email to the team about it. Apparently my son had the same problem. I had to drive him to school, which made me late for my late train.</p>
+
+<p>Thusly, I had about 50 minutes to spare before the 8:55a train, which you know is not going to get there on time because American train systems suck and never get anywhere when they&#8217;re supposed to; unless I&#8217;m running almost late and get to the train a few minutes ahead only to find that that the smart train conductors were thinking kindly and got the train there ahead of me.</p>
+
+<p>All that said, time to spare. I &#8220;opened&#8221; [EB] and read through the Introduction. I really did this time. I&#8217;ll prove it: Erlang was designed for use in concurrent, real-time systems. It was designed pragmatically while some phone geeks were putting together a phone system. The language only contains what is needed and it doesn&#8217;t contain any of that gobbelty-gook sugar that sequential logic programming languages have. And it&#8217;s fast.</p>
+
+<p>Next, I started chapter 1 entitled <em>Programming</em>. Awwweeesuuummm. First page, code; to wit:</p>
+
+<pre><code>-module(math1).
+-export([factorial/1]).
+
+factorial(0) -&gt; 1;
+factorial(N) -&gt; N * factorial(N-1).</code></pre>
+
+<p>I can type that into my editor, and did (actually, I copied it). Saved it as <code>ch1.erl</code>. I added the <code>erl</code> because I noticed there was a command of the same name and I figured I would be smart. <code>ch1</code> means &#8220;chapter 1&#8221;. Oh, you betcha *wink*.</p>
+
+<p>Alright. Now to run it.</p>
+
+<p>Ok.</p>
+
+<p>Want to run it.</p>
+
+<p>Looking around for the next step; the running-it step.</p>
+
+<p>Still looking.</p>
+
+<p>[EB], help! Anything? What&#8217;s that you say [EB]?</p>
+
+<blockquote>
+<p>[EB]: How the code for factorial was compiled and loaded into the Erlang system is a local issue.</p>
+</blockquote>
+
+<blockquote>
+<p>Gus: WTF does that mean?</p>
+</blockquote>
+
+<blockquote>
+<p>[EB]: By ‘local issue’ we mean that the details of how a particular operation is performed is system-dependent and is not covered in this book.</p>
+</blockquote>
+
+<blockquote>
+<p>Gus: Uh huh &#8230;</p>
+</blockquote>
+
+<p><em>[EB; page 10]</em></p>
+
+<p>Well &#8230; that&#8217;s not very helpful. What the hell is NOT system-dependent? Diary, Erlang made me so mad! I could have just poked it in the eye; but not too hard.</p>
+
+<p>I hacked around for while, farting with <code>erl</code>. Got a lot of this:</p>
+
+<pre><code>** exception error: bad argument in an arithmetic expression
+     in operator  &#39;/&#39;/2
+        called as factorial / 1</code></pre>
+
+<p>and this:</p>
+
+<pre><code>&gt; import(&#39;./ch1&#39;).
+exception exit: { {bad_module_name,&quot;./ch1&quot;},[{shell,import,1}]}</code></pre>
+
+<p>and this:</p>
+
+<pre><code>&gt; module(math1).
+** exception error: undefined function shell_default:module/1</code></pre>
+
+<p>and this</p>
+
+<pre><code>&gt; import(ch1).
+ok
+&gt; math1:factorial(1).
+** exception error: undefined function math1:factorial/1</code></pre>
+
+<p>Doh! That last one with the <code>ok</code> really got me. I swear to god I thought I had it. <a href='http://www.youtube.com/watch?v=UJTi7KJPx_E'>Khhhhaaaaannnnnnn</a>!</p>
+
+<p>Tried compiling with <code>erlc</code>. It created a file called <code>ch1.beam</code>. But &#8230; didn&#8217;t help. Don&#8217;t know what to do with it and I have no stinking internet access because I&#8217;m still at the train station and I don&#8217;t have one of those cool cards that lets me connect over satellite or cellular signals. Wah!</p>
+
+<p>I have over 300 pages of documentation on Erlang. No lie. Where is the little bit of documentation that says, <em>&#8220;If you&#8217;d like to actually use this turd you just wrote, do this you big dumby &#8230;&#8221;</em>? Or maybe <em>&#8220;If on a machine that is inferior to one of the real-time embedded systems we wrote this language for, do this &#8230;&#8221;</em>. Seriously! Is it truly that terrible? Does it make the documentation that is linked off the site so muddied up and offend so many of others&#8217; sensibilities? I think not.</p>
+
+<p>Gobbelty-gook sugar sure would be <em>sweet</em> right now :( If I ever get something running and then learn this language, I will feel soooooo elite .. barf.</p>
+
+<p>Done for now. Crying. I&#8217;m sad and it&#8217;s cold outside.</p>
+
+<h3 id='1112__958'>11/12 @ 9:58</h3>
+
+<p>Almost to the train station. Had a thought:</p>
+
+<blockquote>
+<p>Note: When <a href='http://annealer.org'>Gabriel</a> said he didn&#8217;t like Erlang because of the syntax, what was I thinking about? Probably had something to do with unicorns, band-aids, and rock candy.</p>
+</blockquote>
+
+<h3 id='1112__1942'>11/12 @ 19:42</h3>
+
+<p>Diary,</p>
+
+<p>I finally got Erlang to compile something. It was our little factorial program and I did it on the way home today &#8230; on the train not in the car. It all started when I did some digging into the docs that can be found with the port and ran across &#8220;Getting Started With Erlang&#8221; [GS]. With an unlikely name like that, it&#8217;s no wonder I couldn&#8217;t figure it out.</p>
+
+<p>Anyways, seems like I was almost there. I was missing one f&#8217;ing character in this whole mess. The lower-case letter &#8216;c&#8217;. What does it do? Well, look at this:</p>
+
+<pre><code>justin@gus ~ &gt; erl
+Erlang (BEAM) emulator version 5.6.2 [source] [async-threads:0] [kernel-poll:false]
+
+Eshell V5.6.2  (abort with ^G)
+1&gt; c(math1).
+{ok,math1}
+2&gt; math1:factorial(1).
+1
+3&gt; math1:factorial(10).
+3628800
+4&gt; math1:factorial(100).
+93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000</code></pre>
+
+<p>Yeah, it worked. I&#8217;m happy again.</p>
+
+<p>Look! A unicorn with a band-aid on its corn and it&#8217;s crapping rock candy throughout the land.</p>
+
+<p>Love you! Ok, ba bye.</p>
+
+<p>PS: I added a great picture.</p>
+<img src='/images/articles/code/erlang/erlang-vol1-unicorn-bandaid.jpg' />
+<h2 id='update'>Update</h2>
+
+<ol>
+<li>I no longer work at the place I did when I wrote this article.</li>
+</ol>
+  </div>
+</div>
+
+<div id="sidebar" class="grid_4 omega">
+  <ul id="recent_articles">
+    <h3>Other Articles</h3>
+    
+  </ul>
+</div>
+
+      </div>
+
+      <div class='grid_12 alpha omega' id='footer'>
         &copy; 2007 - 2009 Justin Knowlden,
         <span class='email'>gus at gusg dot us</span>
         <span class='powered'>
@@ -52,9 +229,31 @@
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
       </div>
     </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
     <script src="/javascripts/jquery-1.2.6.min.js" type="text/javascript"></script>
-    <script src="http://grumble.annealer.org/javascripts/grumbler/api.js" type="text/javascript"></script>
-    <script src="/javascripts/grumble_support.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+      (function() {
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+          query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        }
+        }
+        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/gusgus/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+    //]]>
+    </script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-10626188-1");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
   </body>
 </html>

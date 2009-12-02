@@ -8,32 +8,39 @@
     <link href='/images/gusgus_icon.gif' rel='icon' />
     <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
     <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
-    <link href="/stylesheets/reset-min.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/reset.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/960.css" type="text/css" media="screen" rel="stylesheet"/>
+    <link href="/stylesheets/text.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/application.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/pygment-native.css" type="text/css" media="screen" rel="stylesheet"/>
   </head>
 
   <body>
-    <div class='container'>
-      <div id='header'>
-        <div id='nav'>
+
+    <div class='container_12'>
+      <div id='header' class='grid_12 alpha omega'>
+        <div id='logo'>
+          <img src="/images/gus-logo.png" alt="gusg.us">
+        </div>
+        <div id='nav' class="prefix_5 alpha grid_7 omega">
           <ul>
-            <li><a href='/'>Home</a></li>
-            <li class=""><a href='/life'>Life</a></li>
-            <li><a href='/work'>Work</a></li>
             <li><a href='/code'>Code</a></li>
             <li><a href='/code/ruby'>Ruby</a></li>
+            <li><a href='/work'>Work</a></li>
+            <li><a href='/life'>Life</a></li>
+            <li><a href='/'>Home</a></li>
           </ul>
         </div>
-        <div id="slogan" class="clear"><img src="/images/gus-slogan.png" align="center"></div>
       </div>
 
-      <div id="article">
-  <div class="header">
+      <div class='grid_12 alpha omega'>
+        <div id="article">
+  <div class="header clearfix">
     <h1>Summer Reading '08: Better Together</h1>
-    <div class="date"><cite>Jul 29, 2008</cite></div>
-    <div class="summary">If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</div>
-    <div class="clear"></div>
+    <div id="info">
+      <span class="date"><cite>Jul 29, 2008</cite></span>
+      <span class="summary"><em>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</em></span>
+    </div>
   </div>
   <img class='article' src='/images/articles/life/summer-reading-cover.jpg' align='right' />
 <p>Hey! Have you ever gone to the book store and - I don&#8217;t know - stopped in the self-help section?</p>
@@ -117,10 +124,9 @@
   <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+      </div>
 
-    </div>
-    <div class='container'>
-      <div class='clear' id='footer'>
+      <div class='grid_12 alpha omega' id='footer'>
         &copy; 2007 - 2009 Justin Knowlden,
         <span class='email'>gus at gusg dot us</span>
         <span class='powered'>

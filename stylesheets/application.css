@@ -1,10 +1,8 @@
 /*
  * DARK PURPLE: rgb(71, 56, 79)
  */
-body {
-  text-align: center;
-  padding: 0em;
-  font: normal 11pt Arial, sans-serif; }
+
+body { font-size: 110%; }
 
 .clear { clear: both; }
 
@@ -15,192 +13,85 @@ a:hover {
   text-decoration: underline; }
 
 strong { font-weight: bold; }
+em { font-family: Georgia, serif;}
 
-.container {
-  width: 900px;
-  margin: 0 auto;
-  text-align: left;
-  padding: 0; }
+h4 { margin: 1ex 0; color: #555; }
+  h4 a { color: #555; }
 
-  .container h4 {
-    font: bold 11pt Arial, sans-serif;
-    margin: 1ex 0;
-    color: #555; }
-    .container h4 a {
-      color: #555; }
+/* Header */
 
-  .container #header {
-    background: transparent url('/images/gus-logo.png') no-repeat top left;
-    margin-bottom: 20px;
-    color: rgb(71, 56, 79);
-    font-family: Georgia, serif;
-    font-size: 12pt;
-    font-style: italic; }
-  .container #header #nav {
-    float: right;
-    margin-bottom: 5px; }
-    .container #header #nav ul { list-style-type: none; }
-      .container #header #nav ul li {
-        float: left;
-        padding: 20px 15px 5px 15px; }
-        .container #header #nav ul li:hover {
-          background-color: rgb(71, 56, 79);
-          color: #fff;}
-        .container #header #nav ul li:hover a { color: #fff;}
-    .container #header #nav a { color: rgb(71, 56, 79) }
-  .container #header #slogan { text-align: right; }
+#header { margin-bottom: 20px; color: rgb(71, 56, 79); }
+  #header #logo img { position: absolute; top: 0; left: 0; }
+  #header #nav { margin-bottom: 5px; }
+    #header #nav ul { list-style: none; padding: 0; margin: 0; }
+      #header #nav ul li {
+        float: right; padding: 20px 15px 5px 15px; margin: 0;
+        -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px;
+        }
+        #header #nav ul li:hover { background-color: rgb(71, 56, 79); color: #fff;}
+          #header #nav ul li:hover a { color: #fff; }
+    #header #nav a { color: rgb(71, 56, 79); font-size: 125%; }
 
-  /* Footer */
+/* Footer */
 
-  .container #footer {
-    margin: 1em 0 0 0;
-    padding: 1ex 0 1ex 0;
-    border-top: 4px double #ccc;
-    font: normal 10pt Arial, sans-serif;
-    color: #aaa; }
-    .container #footer .email {
-      color: #458; }
+#footer { margin: 1em 0 0 0; padding: 1em 0 1em 0; border-top: 4px double #ccc; color: #aaa; }
+  #footer .email { color: #458; }
 
-  /* Main view */
+/* Main view */
 
-  .container .recent_articles li { padding: 1ex 0; }
-    .container .recent_articles li p { font-style: italic; }
+ul#recent_articles { margin: 0; padding: 0; list-style: none; }
+  #recent_articles li { list-style-type: none; margin: 0; }
+    #recent_articles li p { font-style: italic; }
 
-  .container #articles {
-    float: left;
-    width: 600px; }
-    .container #articles .recent_articles { border-top: 2px solid #ddd; }
+#articles { }
+  #articles ul#recent_articles { border-top: 2px solid #ddd; }
 
-  .container #sidebar {
-    float: left;
-    margin-left: 15px;
-    width: 285px; }
-    .container #sidebar h3 {
-      font: normal italic 14pt Georgia, serif;
-      background-color: rgb(71, 56, 79);
-      color: #fff;
-      padding: 1ex;
-      margin: 1em 0; } 
-    .container #sidebar.flickr li {
-      float: left; padding: 10px;}
-      .container #sidebar.flickr li img {
-        width: 75px; height: 75px;}
+#sidebar { }
+  #sidebar h3 {
+    background-color: rgb(71, 56, 79);
+    -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;
+    color: #fff; padding: 1ex; margin: 1em 0; } 
+  #sidebar.flickr li { padding: 1ex 0.75ex; }
+    #sidebar.flickr li img { width: 75px; height: 75px; }
 
-  /* Article */
+/* Article */
 
-  .container #article li {
-    list-style: circle inside;
-    color: #333;
-    padding: 0 0 0 1ex; }
-  .container #article h1 {
-    margin: 0;
-    font: normal 22pt Georgia, serif;
-    color: rgb(71, 56, 79);
-    font-weight: bold; }
-    .container #article h1 a { color: rgb(71, 56, 79); }
-    .container #article .header {
-      font-family: Georgia, serif;
-      margin: 1em 0; }
-      .container #article .header h1 { padding-bottom: .5ex; }
-    .container #article .header .date {
-      float: left;
-      width: 120px;
-      color: #777;
-      padding: 1ex 0; }
-    .container #article .header .summary {
-      float: left;
-      width: auto;
-      padding: 1ex 0 1ex 1ex;
-      border-left: 1px solid #ccc;
-      font-style: italic;
-      color: #222; }
-  .container #article h2 {
-    font: normal 18pt Arial, sans-serif;
-    font-weight: bold;
-    margin: 1em 0;
-    color: #111;
-    border-bottom: 1px solid #ddd; }
-    .container #article h2 a {
-      color: #248; }
-  .container #article h3 {
-    font: normal 14pt Arial, sans-serif;
-    font-weight: bold;
-    margin: 1em 0;
-    color: #333; }
-    .container #article h3 a {
-      color: #295; }
-  .container #article p {
-    margin: 2ex 0; }
-  .container #article blockquote {
-    border-left: 4px solid #eee;
-    margin: 0;
-    padding: 0 0 0 1ex;
-    color: #555; }
-  .container #article em {
-    font-style: italic; }
-  .container #article img.article {
-    margin: 1ex;
-    padding: 1ex;
-    border: 1px solid #ccc; }
-  .container #article hr {
-    border: 1px dotted #ccc; }
-  .container #article pre {
-    white-space: pre-wrap;
-    white-space: -moz-pre-wrap !important;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    word-wrap: break-word;
-    background-color: #222;
-    overflow: auto;
-    color: #63FF00;
-    padding: 1ex;
-    display: block; }
-    .container #article pre code {
-      font: normal 9pt "bitstream vera sans mono", "monaco", "lucida console", "courier new", courier, serif;
-      display: inline; }
-
-/* Grumble */
-
-#grumble {
-  margin: 1em 0;
-  padding: 1em;
-  background-color: #f5f5f5; }
-  #grumble h4 {
-    font: bold 12pt "Helvetica Neue", Arial, sans-serif;
-    text-transform: uppercase;
-    margin: 1ex 0;
-    color: #555; }
-  #grumble li.comment {
-    list-style: none;
-    padding: 0;
-    padding: 1em 0;
-    font-family: "georgia", "times", serif; }
-    #grumble li.comment .subject {
-      font-size: 14pt; }
-    #grumble li.comment .grumbler {
-      float: left;
-      width: 125px;
-      padding: 8px 0 1em 0;
-      border-top: 2px solid #86d125; }
-      #grumble li.comment .grumbler:after {
-        color: #888;
-        content: " says:"; }
-    #grumble li.comment .body {
-      border-top: 2px solid #ddd;
-      width: 740px;
-      float: left;
-      text-align: left;
-      padding: 10px 0 1em 1ex; }
-  #grumble form {
-    clear: both;
-    font-size: 10pt;
-    border-top: 3px solid #ddd; }
-    #grumble form div {
-      padding: 1ex 0; }
-    #grumble form label {
-      color: #555;
-      display: block;
-      font-size: 9pt;
-      padding: 0 0 .5ex 0; }
-    #grumble form input, #grumble form textarea {
-      font-size: 12pt; }
+#article li { color: #333; padding: 0 0 0 1ex; }
+  #article ul li { list-style: circle inside; }
+#article .header { margin: 1em 0; }
+  #article .header h1 { padding-bottom: .5ex; }
+  #article .header #info { border: 1px dotted #ccc; padding: 1ex;
+      -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
+    #article .header #info .date { color: #777; }
+    #article .header #info .summary { color: #222; }
+#article h1 {
+  margin: 0; color: rgb(71, 56, 79); font-weight: bold; }
+  #article h1 a { color: rgb(71, 56, 79); }
+#article h2 {
+  color: #111;
+  border-bottom: 1px solid #ddd; }
+  #article h2 a {
+    color: #248; }
+#article h3 {
+  color: #333; }
+  #article h3 a { color: #295; }
+#article p { margin: 2ex 0; }
+#article blockquote {
+  border-left: 4px solid #eee; margin: 0; padding: 0 0 0 1ex; color: #555; }
+#article img.article { margin: 1ex; padding: 1ex; border: 1px solid #ccc; }
+#article hr { border: 1px dotted #ccc; }
+#article pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap !important;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  background-color: #222;
+  overflow: auto;
+  color: #63FF00;
+  padding: 1ex;
+  display: block; }
+  #article pre code {
+    font: normal 9pt "bitstream vera sans mono", "monaco", "lucida console", "courier new", courier, serif;
+    display: inline; }
