@@ -52,7 +52,7 @@
 <h4 id='assertion_macros'>Assertion macros</h4>
 
 <p>The biggest observable change by far is in the way you write assertion macros, such as: <code>equals</code>, <code>raises</code>, <code>kind_of</code>, etc. You won&#8217;t need to do this very often, but when you do you won&#8217;t be defining a new method that can be included into <code>Riot::Assertion</code>. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the <code>kind_of</code> macros like this:</p>
-<div class='highlight'><pre><span class='k'>module</span> <span class='nn'>My</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>module</span> <span class='nn'>My</span>
   <span class='k'>module</span> <span class='nn'>AssertionMacros</span>
 
     <span class='k'>def</span> <span class='nf'>kind_of</span><span class='p'>(</span><span class='n'>expected</span><span class='p'>)</span>
@@ -63,17 +63,17 @@
 <span class='k'>end</span>
 
 <span class='no'>Riot</span><span class='o'>::</span><span class='no'>Assertion</span><span class='o'>.</span><span class='n'>instance_eval</span> <span class='p'>{</span> <span class='kp'>include</span> <span class='no'>My</span><span class='o'>::</span><span class='no'>AssertionMacros</span> <span class='p'>}</span>
-</pre>
+</code></pre>
 </div>
 <p>you&#8217;re going to write them like this:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>Riot</span><span class='o'>::</span><span class='no'>Assertion</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>Riot</span><span class='o'>::</span><span class='no'>Assertion</span>
 
   <span class='n'>assertion</span><span class='p'>(</span><span class='ss'>:kind_of</span><span class='p'>)</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>actual</span><span class='p'>,</span> <span class='n'>expected</span><span class='o'>|</span>
     <span class='n'>actual</span><span class='o'>.</span><span class='n'>kind_of?</span><span class='p'>(</span><span class='n'>expected</span><span class='p'>)</span> <span class='p'>?</span> <span class='n'>pass</span> <span class='p'>:</span> <span class='nb'>fail</span><span class='p'>(</span><span class='s2'>&quot;expected kind of </span><span class='si'>#{</span><span class='n'>expected</span><span class='si'>}</span><span class='s2'>, not </span><span class='si'>#{</span><span class='n'>actual</span><span class='o'>.</span><span class='n'>inspect</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>)</span>
   <span class='k'>end</span>
 
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Why? That has a lot to do with the under-the-hood changes. Important to note are a few things:</p>
 
@@ -90,25 +90,25 @@
 <h4 id='shortcut_assertion_for_the_topic'>Shortcut assertion for the topic</h4>
 
 <p>The assertion shortcut <code>topic</code> has been renamed to <code>asserts_topic</code>, which brianc so elegantly suggested as a better name. Thus, instead of this:</p>
-<div class='highlight'><pre><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
   <span class='n'>setup</span> <span class='p'>{</span> <span class='s2'>&quot;mom&quot;</span> <span class='p'>}</span>
   <span class='n'>topic</span><span class='o'>.</span><span class='n'>kind_of</span><span class='p'>(</span><span class='nb'>String</span><span class='p'>)</span> <span class='c1'># This will no longer work</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>you would now do the following:</p>
-<div class='highlight'><pre><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
   <span class='n'>setup</span> <span class='p'>{</span> <span class='s2'>&quot;mom&quot;</span> <span class='p'>}</span>
   <span class='n'>asserts_topic</span><span class='o'>.</span><span class='n'>kind_of</span><span class='p'>(</span><span class='nb'>String</span><span class='p'>)</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>brianc added another shortcut for doing the same thing, which also allows you to have a custom description. You could write the above example like so:</p>
-<div class='highlight'><pre><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
   <span class='n'>setup</span> <span class='p'>{</span> <span class='s2'>&quot;mom&quot;</span> <span class='p'>}</span>
   <span class='n'>asserts</span><span class='p'>(</span><span class='s2'>&quot;the topic is&quot;</span><span class='p'>)</span><span class='o'>.</span><span class='n'>kind_of</span><span class='p'>(</span><span class='nb'>String</span><span class='p'>)</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <h4 id='story_output'>Story output</h4>
 

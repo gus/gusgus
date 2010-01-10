@@ -46,11 +46,11 @@
 <p>What I didn&#8217;t want was an easy way for a user to be able to by-pass the invite-accept and go straight to invite-update. To prevent this, I wanted the invite-code to be available to invite-update, but not via a parameter. The quickest and safest way I could think was to require that it be in the session, which would theoretically force the user to first visit invite-accept. This way, only invited people can accept invites and they must go through invite-accept.</p>
 
 <p>I also really liked the convention of using <code>assert_request</code> at the head of each of my actions (I even implemented an <code>assert_request_has_no_params</code> helper for most of them) and I didn&#8217;t want to break from it to do a:</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>some_action</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>some_action</span>
   <span class='k'>raise</span> <span class='no'>Exception</span> <span class='k'>unless</span> <span class='n'>session</span><span class='o'>[</span><span class='ss'>:invite_code</span><span class='o'>]</span>
   <span class='c1'># ...</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <h2 id='interpretation'>Interpretation</h2>
 
@@ -63,19 +63,19 @@
 </ul>
 
 <p>The following code example shows how one might require the existence of three session variables for the given request: <code>:baz</code>, <code>:bum</code>, and <code>:bar</code></p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FooController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>FooController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='k'>def</span> <span class='nf'>bar</span>
     <span class='n'>assert_session</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>rule</span><span class='o'>|</span> <span class='n'>rule</span><span class='o'>.</span><span class='n'>must_have</span> <span class='ss'>:baz</span><span class='p'>,</span> <span class='ss'>:bum</span><span class='p'>,</span> <span class='ss'>:bar</span><span class='p'>}</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>If any one of the session variables does not exist in the session at the time the request is processed, a <code>AssertRequest::RequestError</code> exception is raised with a meaningful error message; like:</p>
-<div class='highlight'><pre><span class='s2'>&quot;:baz and :bar expected to be in session&quot;</span>
-</pre>
+<div class='highlight'><pre><code class='ruby'><span class='s2'>&quot;:baz and :bar expected to be in session&quot;</span>
+</code></pre>
 </div>
 <p>What if you only wanted to require <code>:baz</code>, but you wanted to allow for <code>:boo</code> and <code>:bar</code>?</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FooController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>FooController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='k'>def</span> <span class='nf'>bar</span>
     <span class='n'>assert_session</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>rule</span><span class='o'>|</span>
       <span class='n'>rule</span><span class='o'>.</span><span class='n'>must_have</span> <span class='ss'>:baz</span>
@@ -83,13 +83,13 @@
     <span class='k'>end</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>For this example, an error will only be thrown if <code>:baz</code> is not defined at the time of the request. <code>:boo</code> and <code>:bar</code> may or may not be defined. This was useful for me to allow session variables that might have been stored during login actions, like a <code>return_to</code> <em>(though, in this case, it might be more prudent to allow a global ignore style declaration)</em>.</p>
 
 <p>In addition, any variable found in the session that is not declared as a <code>must_have</code> or a <code>may_have</code> is considered malicious and a <code>AssertRequest::RequestError</code> exception is raised with a meaningful error message. For instance, given either of the above examples, the request will be halted and an error with the following message raised if a session variable is defined named <code>:toothrot</code>.</p>
-<div class='highlight'><pre><span class='s2'>&quot;:toothrot not expected to be in session&quot;</span>
-</pre>
+<div class='highlight'><pre><code class='ruby'><span class='s2'>&quot;:toothrot not expected to be in session&quot;</span>
+</code></pre>
 </div>
 <p>By default, <code>AssertSession</code> will ignore the variable named <code>flash</code> in the session.</p>
 
@@ -98,7 +98,7 @@
 <h2 id='application'>Application</h2>
 
 <p>Back to the original motivation; the invitations controller. After having implemented <code>assert_session</code>, I was able to use it in the controller like so:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>InvitesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>InvitesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='c1'># ...</span>
   <span class='k'>def</span> <span class='nf'>accept</span>
     <span class='n'>assert_request</span> <span class='p'>{</span> <span class='o'>|</span><span class='n'>r</span><span class='o'>|</span> <span class='n'>r</span><span class='o'>.</span><span class='n'>params</span><span class='o'>.</span><span class='n'>must_have</span> <span class='ss'>:invite_code</span> <span class='p'>}</span>
@@ -117,35 +117,35 @@
     <span class='c1'># ...</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>The <code>:return_to</code> should really only be present if you&#8217;ve ever tried to login, but since I do a lot of playing in the interface, I would routinely hit the problem where <code>:return_to</code> existed and I didn&#8217;t really feel like clearing my sessions (<code>:return_to</code> comes with <code>acts_as_authenticated</code>).</p>
 
 <p><code>assert_post</code> is another helper I wrote which simply does an <code>assert_request</code>, requires the method to be a POST, and then yields. Like this:</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>assert_post</span><span class='p'>(</span><span class='o'>&amp;</span><span class='n'>block</span><span class='p'>)</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>assert_post</span><span class='p'>(</span><span class='o'>&amp;</span><span class='n'>block</span><span class='p'>)</span>
   <span class='n'>assert_request</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>rules</span><span class='o'>|</span>
     <span class='n'>rules</span><span class='o'>.</span><span class='n'>method</span> <span class='ss'>:post</span>
     <span class='k'>yield</span> <span class='n'>rules</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>A cooler approach would be if <code>assert_request</code> itself was modified to accept the required HTTP method as an argument. An example of use would be:</p>
-<div class='highlight'><pre><span class='n'>assert_request</span><span class='p'>(</span><span class='ss'>:post</span><span class='p'>)</span> <span class='p'>{</span><span class='o'>.</span><span class='n'>.</span><span class='o'>.</span><span class='p'>}</span> <span class='c1'># What do you think, Scott?</span>
-</pre>
+<div class='highlight'><pre><code class='ruby'><span class='n'>assert_request</span><span class='p'>(</span><span class='ss'>:post</span><span class='p'>)</span> <span class='p'>{</span><span class='o'>.</span><span class='n'>.</span><span class='o'>.</span><span class='p'>}</span> <span class='c1'># What do you think, Scott?</span>
+</code></pre>
 </div>
 <h2 id='installation'>Installation</h2>
 
 <p>First, install the <code>AssertRequest</code> plugin.</p>
-<div class='highlight'><pre><span class='n'>ruby</span> <span class='n'>script</span><span class='o'>/</span><span class='n'>plugin</span> <span class='n'>install</span> <span class='n'>svn</span><span class='ss'>:/</span><span class='o'>/</span><span class='n'>rubyforge</span><span class='o'>.</span><span class='n'>org</span><span class='o'>/</span><span class='n'>var</span><span class='o'>/</span><span class='n'>svn</span><span class='o'>/</span><span class='n'>validaterequest</span><span class='o'>/</span><span class='n'>plugins</span><span class='o'>/</span><span class='n'>assert_request</span>
-</pre>
+<div class='highlight'><pre><code class='ruby'><span class='n'>ruby</span> <span class='n'>script</span><span class='o'>/</span><span class='n'>plugin</span> <span class='n'>install</span> <span class='n'>svn</span><span class='ss'>:/</span><span class='o'>/</span><span class='n'>rubyforge</span><span class='o'>.</span><span class='n'>org</span><span class='o'>/</span><span class='n'>var</span><span class='o'>/</span><span class='n'>svn</span><span class='o'>/</span><span class='n'>validaterequest</span><span class='o'>/</span><span class='n'>plugins</span><span class='o'>/</span><span class='n'>assert_request</span>
+</code></pre>
 </div>
 <p>Second, create a file using the code below in your Rails application and require it in your <code>environment.rb</code> file. When Scott Woods accepts the patch, you can simply install/update the plugin you have installed.</p>
 
 <h2 id='code'>Code</h2>
 
 <p>Until Scott Woods adds the code into the plugin, the code only exists here.</p>
-<div class='highlight'><pre><span class='k'>module</span> <span class='nn'>Glomp</span> <span class='c1'>#:nodoc:</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>module</span> <span class='nn'>Glomp</span> <span class='c1'>#:nodoc:</span>
   <span class='k'>module</span> <span class='nn'>AssertRequest</span> <span class='c1'>#:nodoc:</span>
     <span class='k'>module</span> <span class='nn'>PublicMethods</span> <span class='c1'>#:nodoc:</span>
       <span class='k'>def</span> <span class='nf'>assert_session</span>
@@ -192,7 +192,7 @@
 <span class='k'>end</span> <span class='c1'># Glomp</span>
 
 <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>send</span><span class='p'>(</span><span class='ss'>:include</span><span class='p'>,</span> <span class='no'>Glomp</span><span class='o'>::</span><span class='no'>AssertRequest</span><span class='o'>::</span><span class='no'>PublicMethods</span><span class='p'>)</span>
-</pre>
+</code></pre>
 </div>
 <p>Tests are available upon request.</p>
 </div>

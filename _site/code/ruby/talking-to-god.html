@@ -44,8 +44,8 @@
   <p>I recently started writing my <a href='http://github.com/thumblemonks/evoke'>Evoke</a> service (a nice, little <a href='http://sinatra.rubyforge.org/'>Sinatra</a> app). Part of the Evoke service is actually delivering on the promise of calling a stored URL back, which I achieved by storing a runner as a <a href='http://github.com/tobi/delayed_job'>delayed job</a>. Only half the battle is writing the consumer, though. The other half is ensuring that the runner is daemonized and that the daemon is restarted if ever it were to die. This is where <a href='http://god.rubyforge.org/'>god</a> enters the picture.</p>
 
 <p>For the Evoke consumer, I wrote a little god script that I package with the Evoke bundle. This script is easily configured to run from the command like so (relative to the evoke source code):</p>
-<div class='highlight'><pre>god -c config/evoke.god
-</pre>
+<div class='highlight'><pre><code class='bash'>god -c config/evoke.god
+</code></pre>
 </div>
 <p>With that, the consumer is running and will be restarted if ever it dies. With Evoke, I added a status page which can be accessed via the world-wide-web. Status just shows me a few things about the particular Evoke instance, like: a view of the last 10 callbacks, how many callbacks in total, how many coming up, are any callbacks still pending that should not be, etc.</p>
 
@@ -56,15 +56,15 @@
 <h3 id='one_would_think'>One would think</h3>
 
 <p>One would think that they could just require in the <code>god</code> library and use the API to ask for the state of a particular job. In my head, I would do this from IRB:</p>
-<div class='highlight'><pre><span class='nb'>require</span> <span class='s1'>&#39;god&#39;</span>
+<div class='highlight'><pre><code class='ruby'><span class='nb'>require</span> <span class='s1'>&#39;god&#39;</span>
 <span class='no'>God</span><span class='o'>.</span><span class='n'>status</span><span class='p'>(</span><span class='s1'>&#39;evoke_consumer&#39;</span><span class='p'>)</span>
 <span class='o'>=&gt;</span> <span class='p'>{</span><span class='ss'>:state</span> <span class='o'>=&gt;</span> <span class='ss'>:up</span><span class='p'>}</span>
-</pre>
+</code></pre>
 </div>
 <p>But &#8230; nope. No way that I could see that is. So I went digging through the source and eventually had to find my way to the god shell script that gets executed from the command line. Which then led me to <code>God::CLI::CommandLine</code>. This is the only place where we can see the mysteries of god. <code>DRb</code> droppings. The info I need being printed to standard out. Everything I need to make one call, but all wrapped into a command line interface. I clearly cannot call any methods here.</p>
 
 <p>It&#8217;s also clear that god was not intended to be accessed through more than one interface, without a lot of redundant code. Basically, I am forced into command line mode or parsing the results of an execution, unless I want some hackery. Hackery it is. After a little playing around and dealing with permissions and such (which is very cool of DRb and god to take care of for me), I wrote this little method into my <code>Status</code> class:</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>consumer_running?</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>consumer_running?</span>
   <span class='no'>DRb</span><span class='o'>.</span><span class='n'>start_service</span><span class='p'>(</span><span class='s2'>&quot;druby://127.0.0.1:0&quot;</span><span class='p'>)</span>
   <span class='n'>server</span> <span class='o'>=</span> <span class='no'>DRbObject</span><span class='o'>.</span><span class='n'>new</span><span class='p'>(</span><span class='kp'>nil</span><span class='p'>,</span> <span class='no'>God</span><span class='o'>::</span><span class='no'>Socket</span><span class='o'>.</span><span class='n'>socket</span><span class='p'>(</span><span class='mi'>17165</span><span class='p'>))</span>
 
@@ -74,11 +74,11 @@
 <span class='k'>ensure</span>
   <span class='no'>DRb</span><span class='o'>.</span><span class='n'>stop_service</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Most of that is straight up jacked from god (except for the <code>DRb.stop_service</code> :o ). I don&#8217;t see why that would be so hard for god to let me do with what I intended earlier:</p>
-<div class='highlight'><pre><span class='no'>God</span><span class='o'>.</span><span class='n'>status</span><span class='p'>(</span><span class='s1'>&#39;evoke_consumer&#39;</span><span class='p'>)</span>
-</pre>
+<div class='highlight'><pre><code class='ruby'><span class='no'>God</span><span class='o'>.</span><span class='n'>status</span><span class='p'>(</span><span class='s1'>&#39;evoke_consumer&#39;</span><span class='p'>)</span>
+</code></pre>
 </div>
 <p>Come on god! Get with the program!</p>
 

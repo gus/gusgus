@@ -54,40 +54,40 @@
 <p>However, there was one little hitch in my tests that I was not expecting. One of my controller tests was adding a session variable and the controller was looking for that value. Problem was, it kept failing. But &#8230; it used to pass.</p>
 
 <p>Here&#8217;s what my test code did look like:</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_update_should_clear_invite_code_from_session_on_success</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>test_update_should_clear_invite_code_from_session_on_success</span>
   <span class='vi'>@request</span><span class='o'>.</span><span class='n'>session</span><span class='o'>[</span><span class='ss'>:invite_code</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>invite_code</span>
   <span class='n'>post</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
   <span class='n'>assert_nil</span> <span class='n'>session</span><span class='o'>[</span><span class='ss'>:invite_code</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>And then I was using it with my <a href='/2008/1/9/assertsession'>AssertSession</a> plugin that I&#8217;m waiting for <a href='http://workingwithrails.com/person/5938-scott-woods'>Scott Woods</a> to add into <a href='http://validaterequest.rubyforge.org/'>AssertRequest</a> (since he emailed me that he would &#8230; ahem):</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>update</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>update</span>
   <span class='n'>assert_session</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>s</span><span class='o'>|</span> <span class='n'>s</span><span class='o'>.</span><span class='n'>must_have</span><span class='p'>(</span><span class='ss'>:invite_code</span><span class='p'>);</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span> <span class='p'>}</span>
   <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
   <span class='vi'>@user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find_invited</span><span class='p'>(</span><span class='n'>session</span><span class='o'>[</span><span class='ss'>:invite_code</span><span class='o'>]</span><span class='p'>)</span>
   <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Notice here that the reference to <code>invite_code</code> is a symbol. As long I only try to access <code>invite_code</code> using <code>Session</code>&#8217;s square-bracket method (<code>def \[\]\(key\)</code>) &#8230; then no problems; thanks to <code>HashWithIndifferentAccess</code>. My <code>AssertSession</code> plugin, however accesses <code>Session</code>&#8217;s <code>data</code> function. It seems that <code>Session</code> (or maybe just <code>TestSession</code>) has turned all keys to strings. Thus, <code>AssertSession</code> cannot match a symbol to a string.</p>
 
 <p>Well okay. I switched every one of the session keys to strings and - sadly - my tests are passing. Ho hum.</p>
 
 <p>For clarity&#8217;s sake, here is the new code:</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_update_should_clear_invite_code_from_session_on_success</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>test_update_should_clear_invite_code_from_session_on_success</span>
   <span class='vi'>@request</span><span class='o'>.</span><span class='n'>session</span><span class='o'>[</span><span class='s2'>&quot;invite_code&quot;</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>invite_code</span>
   <span class='n'>post</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
   <span class='n'>assert_nil</span> <span class='n'>session</span><span class='o'>[</span><span class='s2'>&quot;invite_code&quot;</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
-</div><div class='highlight'><pre><span class='k'>def</span> <span class='nf'>update</span>
+</code></pre>
+</div><div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>update</span>
   <span class='n'>assert_session</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>s</span><span class='o'>|</span> <span class='n'>s</span><span class='o'>.</span><span class='n'>must_have</span><span class='p'>(</span><span class='s2'>&quot;invite_code&quot;</span><span class='p'>);</span> <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span> <span class='p'>}</span>
   <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
   <span class='vi'>@user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find_invited</span><span class='p'>(</span><span class='n'>session</span><span class='o'>[</span><span class='s2'>&quot;invite_code&quot;</span><span class='o'>]</span><span class='p'>)</span>
   <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 </div>
 

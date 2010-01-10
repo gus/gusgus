@@ -4,7 +4,7 @@
   <head>
     <meta content='GROW UP' http-equiv='X-UA-Compatible' />
     <meta content='width=850' name='viewport' />
-    <title>GusG.us - Rails 2: Inflection for Address</title>
+    <title>GusG.us - Random Thoughts, ed. 3 - Can't Spell Waterfall</title>
     <link href='/images/gusgus_icon.gif' rel='icon' />
     <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
     <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
@@ -35,43 +35,63 @@
       <div class='grid_12 alpha omega'>
         <div id="article">
   <div class="header clearfix">
-    <h1>Rails 2: Inflection for Address</h1>
+    <h1>Random Thoughts, ed. 3 - Can't Spell Waterfall</h1>
     <div id="info">
-      <span class="date"><cite>Oct 16, 2008</cite></span>
-      <span class="summary"><em>Learning something new about Rails everyday</em></span>
+      <span class="date"><cite>Jan 10, 2010</cite></span>
+      <span class="summary"><em>At least not without these other spellings</em></span>
     </div>
   </div>
-  <p>Hey! I added an ActiveRecord model to a project today named <code>Address</code>. It&#8217;s exactly what you think it is and I want my Contacts in this project to have many addresses.</p>
+  <p>Hey! Here&#8217;s another in the series of random thoughts &#8230;</p>
 
-<p>Because we&#8217;re so hip and cool on this project, we&#8217;re using Thoughbot&#8217;s <a href='http://github.com/thoughtbot/factory_girl/tree/master'>Factory Girl</a> gem. Yeah. So, I ran my tests and BAM! got this error:</p>
+<p>You can&#8217;t spell <strong><a href='http://en.wikipedia.org/wiki/Waterfall_model'>Waterfall</a></strong> without these words :)</p>
 
-<pre><code>1) Error:
-    test: when something something something something &quot;Address.count&quot; from 1 to 0. (ContactTest):
-    NameError: uninitialized constant Addres</code></pre>
+<ul>
+<li>ew</li>
 
-<p>Which can be traced to line 226 of Factory Girl&#8217;s <a href='http://github.com/thoughtbot/factory_girl/tree/master/lib/factory_girl/factory.rb'>factory.rb</a> file, which does the following:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>class_or_to_s</span><span class='o'>.</span><span class='n'>respond_to?</span><span class='p'>(</span><span class='ss'>:to_sym</span><span class='p'>)</span>
-  <span class='n'>class_or_to_s</span><span class='o'>.</span><span class='n'>to_s</span><span class='o'>.</span><span class='n'>classify</span><span class='o'>.</span><span class='n'>constantize</span>
-<span class='k'>else</span>
-  <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
-</code></pre>
-</div>
-<p>Seems simple enough to solve. Perhaps we should change the inflector rules to &#8230; say &#8230; this:</p>
-<div class='highlight'><pre><code class='ruby'><span class='no'>ActiveSupport</span><span class='o'>::</span><span class='no'>Inflector</span><span class='o'>.</span><span class='n'>inflections</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>inflect</span><span class='o'>|</span>
-  <span class='n'>inflect</span><span class='o'>.</span><span class='n'>plural</span><span class='sr'> /(ss)$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1es&#39;</span>
-  <span class='n'>inflect</span><span class='o'>.</span><span class='n'>singular</span><span class='sr'> /(ss)es$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1&#39;</span>
-<span class='k'>end</span>
-</code></pre>
-</div>
-<p>Yeah &#8230; no! Still didn&#8217;t work. Went out to eat. Came back. Tried this stupid, stupid, stupid thing and &#8230; well &#8230; it worked:</p>
-<div class='highlight'><pre><code class='ruby'><span class='no'>ActiveSupport</span><span class='o'>::</span><span class='no'>Inflector</span><span class='o'>.</span><span class='n'>inflections</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>inflect</span><span class='o'>|</span>
-  <span class='n'>inflect</span><span class='o'>.</span><span class='n'>singular</span><span class='sr'> /(ss)$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1&#39;</span>
-<span class='k'>end</span>
-</code></pre>
-</div>
-<p>Barf again!</p>
+<li>fatal</li>
 
-<p>Hopefully nothing else is broken now.</p>
+<li>real flaw</li>
+
+<li>fear wall</li>
+
+<li>fear <a href='http://en.wikipedia.org/wiki/Walt_Disney'>Walt</a> - <em>It&#8217;s a damned mickey-mouse methodology</em></li>
+
+<li>we fall</li>
+
+<li>all wet</li>
+
+<li>late war</li>
+
+<li><a href='http://en.wiktionary.org/wiki/faal'>faal</a> - <em>Languages are tools, not boundaries</em></li>
+
+<li><a href='http://en.wiktionary.org/wiki/fey'>fae</a> law</li>
+
+<li>a tall few</li>
+
+<li>wart ale</li>
+
+<li>flea trawl</li>
+
+<li>fat aw</li>
+
+<li><a href='http://en.wiktionary.org/wiki/lar'>Lar</a> tale</li>
+
+<li>a lew fart</li>
+
+<li>wall art</li>
+
+<li>a flare</li>
+
+<li><a href='http://en.wiktionary.org/wiki/rale'>rale</a></li>
+
+<li>later</li>
+
+<li><a href='http://en.wiktionary.org/wiki/lawfare'>lawfare</a> - <em>you can make it mean something</em></li>
+
+<li>after wall - <em>it&#8217;s just an anagram</em></li>
+</ul>
+
+<p>Other points of note are that some of the words that can be made from &#8220;waterfall&#8221; relate to authority in some language or another, for instance: Lar, frea, and walt.</p>
 </div>
 
 <div id="grumble">

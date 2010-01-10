@@ -42,11 +42,11 @@
     </div>
   </div>
   <p>A quick observation I made about how <code>ActiveRecord</code> can be used to model life.</p>
-<div class='highlight'><pre>class Life &lt; ActiveRecord::Base
+<div class='highlight'><pre><code class='bash'>class Life &lt; ActiveRecord::Base
   has_many :causes
   has_many :effects, :through <span class='o'>=</span>&gt; :causes
 end
-</pre>
+</code></pre>
 </div>
 </div>
 

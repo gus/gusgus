@@ -35,128 +35,77 @@
       <div class='grid_12 alpha omega'>
         
 
-
 <div id="articles" class="grid_8 alpha">
   <div id="article">
     <div class="header cleafix">
-      <h1><a href="/code/ruby/changes-in-riot-0-10-0.html">Changes in Riot 0.10</a></h1>
+      <h1><a href="/code/cant-spell-waterfall.html">Random Thoughts, ed. 3 - Can't Spell Waterfall</a></h1>
       <div id="info">
-        <span class="date"><cite>Nov 23, 2009</cite></span>
-        <span class="summary"><em>Changes to the Ruby, Riot testing framework in version 0.10</em></span>
+        <span class="date"><cite>Jan 10, 2010</cite></span>
+        <span class="summary"><em>At least not without these other spellings</em></span>
       </div>
     </div>
-    <p>Though I&#8217;ve never blogged about <a href='http://github.com/thumblemonks/riot'>Riot</a>, it received some awesome and much unexpected attention from <a href='http://alexyoung.org/2009/10/26/riot-testing/'>Alex Young</a> (a super-awesome dude), <a href='http://www.rubyinside.com/riot-for-fast-expressive-and-focused-unit-tests-2669.html'>Ruby Inside</a> via <a href='http://www.ricroberts.com/'>Ric Roberts</a> (another super-awesome dude), <a href='http://railsenvy.com/2009/10/28/episode-098'>Rails Envy</a>, and <a href='http://ruby5.envylabs.com/episodes/24-episode-23-october-30-2009/stories/186-riot-testing-framework'>Ruby5</a>. I was overcome to say the least, partly because I wasn&#8217;t happy with where Riot was at that moment, but mostly because I wrote Riot for me and didn&#8217;t think anyone (except for <a href='http://toothrot.net/'>toothrot</a> and <a href='http://github.com/jonpliske'>jonpliske</a>) would actually think Riot was for them.</p>
+    <p>Hey! Here&#8217;s another in the series of random thoughts &#8230;</p>
 
-<p>I was wrong.</p>
+<p>You can&#8217;t spell <strong><a href='http://en.wikipedia.org/wiki/Waterfall_model'>Waterfall</a></strong> without these words :)</p>
 
-<p>In the short period of time between then and now I have received a lot of positive feedback and only vicariously have seen some negative feedback &#8230; which I will ignore because - as I said before - I wrote Riot for me. Also in that time I have received some of that famous help from the open-source community. <a href='http://annealer.org'>annealer</a> and <a href='http://github.com/brianc'>brianc</a> (also the lead singer of <a href='http://deadblackhearts.com/'>Dead Black Hearts</a> - which is awesome) helped me to narrow in on what Riot was trying to accomplish and to do it with a more efficient engine. I&#8217;m happy to say I&#8217;m much happier with how Riot is implemented today than I was when <a href='http://gemcutter.org/gems/riot/versions/0.9.12'>0.9.12</a> was released.</p>
+<ul>
+<li>ew</li>
 
-<p>&#8220;Whatever! The changes, Jabberjaw&#8221;, you exclaim. Fine. In terms of DSL, there aren&#8217;t many changes.</p>
+<li>fatal</li>
 
-<h4 id='assertion_macros'>Assertion macros</h4>
+<li>real flaw</li>
 
-<p>The biggest observable change by far is in the way you write assertion macros, such as: <code>equals</code>, <code>raises</code>, <code>kind_of</code>, etc. You won&#8217;t need to do this very often, but when you do you won&#8217;t be defining a new method that can be included into <code>Riot::Assertion</code>. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the <code>kind_of</code> macros like this:</p>
-<div class='highlight'><pre><span class='k'>module</span> <span class='nn'>My</span>
-  <span class='k'>module</span> <span class='nn'>AssertionMacros</span>
+<li>fear wall</li>
 
-    <span class='k'>def</span> <span class='nf'>kind_of</span><span class='p'>(</span><span class='n'>expected</span><span class='p'>)</span>
-      <span class='n'>actual</span><span class='o'>.</span><span class='n'>kind_of?</span><span class='p'>(</span><span class='n'>expected</span><span class='p'>)</span> <span class='o'>||</span> <span class='nb'>fail</span><span class='p'>(</span><span class='s2'>&quot;expected kind of </span><span class='si'>#{</span><span class='n'>expected</span><span class='si'>}</span><span class='s2'>, not </span><span class='si'>#{</span><span class='n'>actual</span><span class='o'>.</span><span class='n'>inspect</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>)</span>
-    <span class='k'>end</span>
+<li>fear <a href='http://en.wikipedia.org/wiki/Walt_Disney'>Walt</a> - <em>It&#8217;s a damned mickey-mouse methodology</em></li>
 
-  <span class='k'>end</span>
-<span class='k'>end</span>
+<li>we fall</li>
 
-<span class='no'>Riot</span><span class='o'>::</span><span class='no'>Assertion</span><span class='o'>.</span><span class='n'>instance_eval</span> <span class='p'>{</span> <span class='kp'>include</span> <span class='no'>My</span><span class='o'>::</span><span class='no'>AssertionMacros</span> <span class='p'>}</span>
-</pre>
-</div>
-<p>you&#8217;re going to write them like this:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>Riot</span><span class='o'>::</span><span class='no'>Assertion</span>
+<li>all wet</li>
 
-  <span class='n'>assertion</span><span class='p'>(</span><span class='ss'>:kind_of</span><span class='p'>)</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>actual</span><span class='p'>,</span> <span class='n'>expected</span><span class='o'>|</span>
-    <span class='n'>actual</span><span class='o'>.</span><span class='n'>kind_of?</span><span class='p'>(</span><span class='n'>expected</span><span class='p'>)</span> <span class='p'>?</span> <span class='n'>pass</span> <span class='p'>:</span> <span class='nb'>fail</span><span class='p'>(</span><span class='s2'>&quot;expected kind of </span><span class='si'>#{</span><span class='n'>expected</span><span class='si'>}</span><span class='s2'>, not </span><span class='si'>#{</span><span class='n'>actual</span><span class='o'>.</span><span class='n'>inspect</span><span class='si'>}</span><span class='s2'>&quot;</span><span class='p'>)</span>
-  <span class='k'>end</span>
+<li>late war</li>
 
-<span class='k'>end</span>
-</pre>
-</div>
-<p>Why? That has a lot to do with the under-the-hood changes. Important to note are a few things:</p>
+<li><a href='http://en.wiktionary.org/wiki/faal'>faal</a> - <em>Languages are tools, not boundaries</em></li>
 
-<ol>
-<li>The obvious closure</li>
+<li><a href='http://en.wiktionary.org/wiki/fey'>fae</a> law</li>
 
-<li>The <code>actual</code> value is getting provided-to and no longer requested-by the assertion macro</li>
+<li>a tall few</li>
 
-<li>The <code>pass</code> and <code>fail</code> signals which are required to be returned from any assertion macro</li>
-</ol>
+<li>wart ale</li>
 
-<p>Not listed here is an <code>error</code> signal, but you shouldn&#8217;t need to worry about that.</p>
+<li>flea trawl</li>
 
-<h4 id='shortcut_assertion_for_the_topic'>Shortcut assertion for the topic</h4>
+<li>fat aw</li>
 
-<p>The assertion shortcut <code>topic</code> has been renamed to <code>asserts_topic</code>, which brianc so elegantly suggested as a better name. Thus, instead of this:</p>
-<div class='highlight'><pre><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
-  <span class='n'>setup</span> <span class='p'>{</span> <span class='s2'>&quot;mom&quot;</span> <span class='p'>}</span>
-  <span class='n'>topic</span><span class='o'>.</span><span class='n'>kind_of</span><span class='p'>(</span><span class='nb'>String</span><span class='p'>)</span> <span class='c1'># This will no longer work</span>
-<span class='k'>end</span>
-</pre>
-</div>
-<p>you would now do the following:</p>
-<div class='highlight'><pre><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
-  <span class='n'>setup</span> <span class='p'>{</span> <span class='s2'>&quot;mom&quot;</span> <span class='p'>}</span>
-  <span class='n'>asserts_topic</span><span class='o'>.</span><span class='n'>kind_of</span><span class='p'>(</span><span class='nb'>String</span><span class='p'>)</span>
-<span class='k'>end</span>
-</pre>
-</div>
-<p>brianc added another shortcut for doing the same thing, which also allows you to have a custom description. You could write the above example like so:</p>
-<div class='highlight'><pre><span class='n'>context</span> <span class='s2'>&quot;foo&quot;</span> <span class='k'>do</span>
-  <span class='n'>setup</span> <span class='p'>{</span> <span class='s2'>&quot;mom&quot;</span> <span class='p'>}</span>
-  <span class='n'>asserts</span><span class='p'>(</span><span class='s2'>&quot;the topic is&quot;</span><span class='p'>)</span><span class='o'>.</span><span class='n'>kind_of</span><span class='p'>(</span><span class='nb'>String</span><span class='p'>)</span>
-<span class='k'>end</span>
-</pre>
-</div>
-<h4 id='story_output'>Story output</h4>
+<li><a href='http://en.wiktionary.org/wiki/lar'>Lar</a> tale</li>
 
-<p>After looking at what Alex Young <a href='http://alexyoung.org/2009/11/04/riotjs/'>did for output</a> in his implementation of <a href='http://github.com/alexyoung/riotjs'>Riot for JavaScript</a>, I fell in love. So, this is now the default output format for Riot and what I&#8217;m calling the Story Report since the output kind of reads like a story.</p>
-<img src='/images/articles/code/ruby/riot-0-10-1-story-terminal.png' alt='Riot terminal output, story report' />
-<p>Who doesn&#8217;t like pictures?</p>
+<li>a lew fart</li>
 
-<h4 id='under_the_hood'>Under the hood</h4>
+<li>wall art</li>
 
-<p>Oh man, everything is a little different. In essence, it&#8217;s a complete re-write. This re-write was going after a few things:</p>
+<li>a flare</li>
 
-<ol>
-<li>Riot needed to be faster. Twice as fast as Shoulda is not compelling.</li>
+<li><a href='http://en.wiktionary.org/wiki/rale'>rale</a></li>
 
-<li>Riot should keep less state (be more functional), because state is a terrible thing to change</li>
+<li>later</li>
 
-<li>Riot should not run the tests while also parsing the DSL (this REALLY bugged me)</li>
-</ol>
+<li><a href='http://en.wiktionary.org/wiki/lawfare'>lawfare</a> - <em>you can make it mean something</em></li>
 
-<p>In order to accomplish (1) and (3), annealer actually did some <a href='http://github.com/thumblemonks/riot/blob/7cf674c257fbb2e465116ad31b7721c5cba9b23a/lib/riot/experiment.rb'>crazy spiking</a> on what we called the experimental approach. Essentially, anonymous classes, <code>define_method</code>s, and meta-programming galore. And it was good.</p>
+<li>after wall - <em>it&#8217;s just an anagram</em></li>
+</ul>
 
-<p>But, it did not get me (2) in a way that I thought was most readable. Experimental was a bit too magical for even me and that&#8217;s probably because I&#8217;m not that smart. So, we applied the learnings from experimental with an approach that never changed the state of a Context, Assertion, or Situation and we came up with the hybrid approach. I should say that Context, Assertion, and Situation have state, but the intention is for it not to change while the tests are running. Instead, state should be defined when initializing (or setting up) the respective element.</p>
-
-<p>All of this combined into some really readable code that is now Riot <code>0.10</code>. There are more changes, but you should read the code to discover them. The <a href='http://gist.github.com/240353'>benchmarks</a> are pretty awesome, too. Especially those for Ruby 1.9. If you ask me, there&#8217;s no reason to use mini-test when writing new tests for 1.9. Just switch to Riot ;)</p>
-
-<p>As an aside, the instance that does change state over the course of running a test-suite is the test reporter. I can live with it for now, but it&#8217;d be pretty awesome if the reporter could go stateless. It would also be pretty sweet if someone would run Riot contexts through one of the parallel test distributors out there. The performance gains would be outrageous. If annealer ever finishes his implementation of Jenga, I wouldn&#8217;t have to ask. Ahem!</p>
-
-<h2 id='riot_rails'>Riot Rails</h2>
-
-<p>I would really like some help building out Riot to have custom support for Rails. I started <a href='http://github.com/thumblemonks/riot_rails'>Riot Rails</a> and am slowly adding things as I&#8217;m working on a custom Rails app, but the progress is slow. The progress is slow mainly because I have also side-tracked myself with learning Clojure. I want to learn Clojure because a) I like Lisp, b) I like functional languages, and c) I want to re-write <a href='http://github.com/thumblemonks/evoke'>Evoke</a> with <a href='http://github.com/weavejester/compojure'>Compojure</a>.</p>
-
-<p>Now, re-writing Evoke in Clojure is a simple enough task (except for the delayed job processing which I&#8217;ll have port over), but Clojure is a JVM language. This means Compojure is dependent on Java libraries like: jetty, apache commons, clojure-contrib, etc. Being dependent on so many libraries is just begging for package management and I suppose Maven provides that, but I dislike Maven and Ant for all of their XML horrificness (I used to be a Java programmer). I just hate it. Makes me want to barf. What I do like is Ruby Gems. I really like Ruby Gems. Turns out, annealer hates Maven and likes Ruby Gems as well. So &#8230; what do you think we did?</p>
-
-<p><a href='http://javagems.org'>JavaGems</a>, that&#8217;s what. We up and <a href='http://github.com/javagems'>did it</a> and there will be a LOT more to say about that. However, all of this side-trackiness has kept me from finishing Riot Rails which is not all that hard of a thing to do, it just takes time and as I have already shown I can lose that very quickly.</p>
-
-<p>Thusly and therefore, I&#8217;m calling all arms. Let&#8217;s get Riot Rails finished. It&#8217;ll accomplish what I set out to do, make functional tests in Rails faster. That&#8217;s right! Slowness of Shoulda + Factory Girl + functional-tests made me write Riot. That&#8217;s why Riot only calls <code>setup</code> once per Context. That&#8217;s why finishing Riot Rails will make me oh so very happy.</p>
-
-<p>If you&#8217;d like to help, but not sure how, hop into the <code>#riot</code> room on irc.freenode.net. Ohhhhh &#8230; the riot room, that&#8217;s funny. I know, it&#8217;s really a channel, but whatever! If you don&#8217;t want to do that, just fork and fix.</p>
+<p>Other points of note are that some of the words that can be made from &#8220;waterfall&#8221; relate to authority in some language or another, for instance: Lar, frea, and walt.</p>
   </div>
 </div>
 
 <div id="sidebar" class="grid_4 omega">
   <ul id="recent_articles">
     <h3>Other Articles</h3>
+    
+      <li>
+        <a href="/code/ruby/changes-in-riot-0-10-0.html">Changes in Riot 0.10</a>
+        <p>Changes to the Ruby, Riot testing framework in version 0.10</p>
+      </li>
     
       <li>
         <a href="/code/daily-js.html">DailyJS.com</a>

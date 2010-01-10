@@ -46,7 +46,7 @@
 <p>Seems as though there are some strong opinions from some that readability of code is secondary to the performance of code. I figured I would some up my thoughts and did so in the following matrix:</p>
 <img src='/images/articles/code/code-perf-read.png' />
 <p>To be clear, this is the code in question:</p>
-<div class='highlight'><pre><span class='k'>if</span> <span class='n'>foaf</span><span class='o'>.</span><span class='n'>has_key?</span> <span class='s1'>&#39;&lt;&gt;&#39;</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>foaf</span><span class='o'>.</span><span class='n'>has_key?</span> <span class='s1'>&#39;&lt;&gt;&#39;</span>
   <span class='n'>knows</span> <span class='o'>=</span> <span class='n'>foaf</span><span class='o'>[</span><span class='s1'>&#39;&lt;&gt;&#39;</span><span class='o'>][</span><span class='s2'>&quot;&lt;http://xmlns.com/foaf/0.1/knows&gt;&quot;</span><span class='o'>]</span>
   <span class='k'>if</span> <span class='o'>!</span><span class='n'>knows</span><span class='o'>.</span><span class='n'>nil?</span>
     <span class='n'>knows</span><span class='o'>.</span><span class='n'>each</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>know</span><span class='o'>|</span>
@@ -65,7 +65,7 @@
     <span class='k'>end</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Keep an eye on <a href='http://slickorslack.com'>Slick or Slack</a> for this little piece of code I threw up <a href='http://slickorslack.com/codes/100'>there</a>. If my assumption is right, it will be one of the slackest of all.</p>
 

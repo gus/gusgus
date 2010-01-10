@@ -48,41 +48,41 @@
 <h2 id='example'>Example</h2>
 
 <p>In fact, it&#8217;s so simple that examples are coming in the third paragraph. Let&#8217;s say you have a User model that looks like the following:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>User</span> <span class='o'>&lt;</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Base</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>User</span> <span class='o'>&lt;</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Base</span>
   <span class='n'>validates_presence_of</span> <span class='ss'>:name</span>
   <span class='n'>validates_presence_of</span> <span class='ss'>:email</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Ignoring the fact that you could one-line the validation, if you were to validate a new instance of User that does not provide <code>name</code> or <code>email</code>, you would receive two error messages. With <em><code>full\_messages</code></em>, what would return would look like the following:</p>
-<div class='highlight'><pre><span class='n'>user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>new</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>new</span>
 <span class='n'>user</span><span class='o'>.</span><span class='n'>valid?</span>
 <span class='o'>=&gt;</span> <span class='kp'>false</span>
 <span class='n'>user</span><span class='o'>.</span><span class='n'>errors</span><span class='o'>.</span><span class='n'>full_messages</span>
 <span class='o'>=&gt;</span> <span class='o'>[</span><span class='s2'>&quot;Name can&#39;t be blank&quot;</span><span class='p'>,</span> <span class='s2'>&quot;Email can&#39;t be blank&quot;</span><span class='o'>]</span>
-</pre>
+</code></pre>
 </div>
 <p>But, what if you wanted the full-messages for just the <code>name</code> attribute? You could look for those errors that start with name; you could live with <code>user.errors.on(:name)</code> returning an array of partial error message; or you could do the following:</p>
-<div class='highlight'><pre><span class='n'>user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>new</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>user</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>new</span>
 <span class='n'>user</span><span class='o'>.</span><span class='n'>valid?</span>
 <span class='o'>=&gt;</span> <span class='kp'>false</span>
 <span class='n'>user</span><span class='o'>.</span><span class='n'>errors</span><span class='o'>.</span><span class='n'>full_on</span><span class='p'>(</span><span class='ss'>:name</span><span class='p'>)</span>
 <span class='o'>=&gt;</span> <span class='o'>[</span><span class='s2'>&quot;Name can&#39;t be blank&quot;</span><span class='o'>]</span>
-</pre>
+</code></pre>
 </div>
 <h2 id='installation'>Installation</h2>
 
 <p><em>Step 1:</em> install the Rails plugin:</p>
-<div class='highlight'><pre>$RAILS_ROOT&gt; ./script/plugin install \
+<div class='highlight'><pre><code class='text'>$RAILS_ROOT&gt; ./script/plugin install \
   http://glomp.rubyforge.org/svn/plugins/full_on_errors
-</pre>
+</code></pre>
 </div>
 <p><em>Step 2:</em> Start using it</p>
 
 <h2 id='code'>Code</h2>
 
 <p>The code is extremely simple and is - oddly enough - based on <code>Errors.full\_messages</code>. I have simplified the <code>full\_messages</code> code to focus on one attribute, to do less, and to look better (according to Gus Aesthetics):</p>
-<div class='highlight'><pre><span class='k'>module</span> <span class='nn'>Glomp</span> <span class='c1'>#:nodoc:</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>module</span> <span class='nn'>Glomp</span> <span class='c1'>#:nodoc:</span>
   <span class='k'>module</span> <span class='nn'>FullOnErrors</span> <span class='c1'>#:nodoc:</span>
     <span class='k'>def</span> <span class='nf'>full_on</span><span class='p'>(</span><span class='n'>attr_name</span><span class='p'>)</span>
       <span class='kp'>attr</span> <span class='o'>=</span> <span class='n'>attr_name</span><span class='o'>.</span><span class='n'>to_s</span>
@@ -95,10 +95,10 @@
 <span class='k'>end</span> <span class='c1'># Glomp</span>
 
 <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Errors</span><span class='o'>.</span><span class='n'>send</span><span class='p'>(</span><span class='ss'>:include</span><span class='p'>,</span> <span class='no'>Glomp</span><span class='o'>::</span><span class='no'>FullOnErrors</span><span class='p'>)</span>
-</pre>
+</code></pre>
 </div>
 <p>For comparison&#8217;s sake, here is the <code>full\_messages</code> code from the Errors class:</p>
-<div class='highlight'><pre><span class='c1'># Returns all the full error messages in an array.</span>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># Returns all the full error messages in an array.</span>
 <span class='k'>def</span> <span class='nf'>full_messages</span>
   <span class='n'>full_messages</span> <span class='o'>=</span> <span class='o'>[]</span>
 
@@ -115,7 +115,7 @@
   <span class='k'>end</span>
   <span class='n'>full_messages</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 </div>
 

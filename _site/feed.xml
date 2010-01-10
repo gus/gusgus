@@ -4,13 +4,71 @@
  <title>GusG.us</title>
  <link href="http://gusg.us/feed.xml" rel="self"/>
  <link href="http://gusg.us/"/>
- <updated>2009-12-01T23:02:58-06:00</updated>
+ <updated>2010-01-10T14:20:16-06:00</updated>
  <id>http://gusg.us/</id>
  <author>
    <name>Justin Knowlden</name>
    <email>gus@gusg.us</email>
  </author>
 
+ 
+ <entry>
+   <title>Random Thoughts, ed. 3 - Can't Spell Waterfall</title>
+   <link href="http://gusg.us/code/cant-spell-waterfall.html"/>
+   <updated>2010-01-10T00:00:00-06:00</updated>
+   <id>http://gusg.us/code/cant-spell-waterfall</id>
+   <content type="html">&lt;p&gt;Hey! Here&amp;#8217;s another in the series of random thoughts &amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;You can&amp;#8217;t spell &lt;strong&gt;&lt;a href='http://en.wikipedia.org/wiki/Waterfall_model'&gt;Waterfall&lt;/a&gt;&lt;/strong&gt; without these words :)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ew&lt;/li&gt;
+
+&lt;li&gt;fatal&lt;/li&gt;
+
+&lt;li&gt;real flaw&lt;/li&gt;
+
+&lt;li&gt;fear wall&lt;/li&gt;
+
+&lt;li&gt;fear &lt;a href='http://en.wikipedia.org/wiki/Walt_Disney'&gt;Walt&lt;/a&gt; - &lt;em&gt;It&amp;#8217;s a damned mickey-mouse methodology&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;we fall&lt;/li&gt;
+
+&lt;li&gt;all wet&lt;/li&gt;
+
+&lt;li&gt;late war&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://en.wiktionary.org/wiki/faal'&gt;faal&lt;/a&gt; - &lt;em&gt;Languages are tools, not boundaries&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://en.wiktionary.org/wiki/fey'&gt;fae&lt;/a&gt; law&lt;/li&gt;
+
+&lt;li&gt;a tall few&lt;/li&gt;
+
+&lt;li&gt;wart ale&lt;/li&gt;
+
+&lt;li&gt;flea trawl&lt;/li&gt;
+
+&lt;li&gt;fat aw&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://en.wiktionary.org/wiki/lar'&gt;Lar&lt;/a&gt; tale&lt;/li&gt;
+
+&lt;li&gt;a lew fart&lt;/li&gt;
+
+&lt;li&gt;wall art&lt;/li&gt;
+
+&lt;li&gt;a flare&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://en.wiktionary.org/wiki/rale'&gt;rale&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;later&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://en.wiktionary.org/wiki/lawfare'&gt;lawfare&lt;/a&gt; - &lt;em&gt;you can make it mean something&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;after wall - &lt;em&gt;it&amp;#8217;s just an anagram&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other points of note are that some of the words that can be made from &amp;#8220;waterfall&amp;#8221; relate to authority in some language or another, for instance: Lar, frea, and walt.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Narcissus</title>
@@ -64,7 +122,7 @@
 &lt;h4 id='assertion_macros'&gt;Assertion macros&lt;/h4&gt;
 
 &lt;p&gt;The biggest observable change by far is in the way you write assertion macros, such as: &lt;code&gt;equals&lt;/code&gt;, &lt;code&gt;raises&lt;/code&gt;, &lt;code&gt;kind_of&lt;/code&gt;, etc. You won&amp;#8217;t need to do this very often, but when you do you won&amp;#8217;t be defining a new method that can be included into &lt;code&gt;Riot::Assertion&lt;/code&gt;. Now, you will be writing an assertion macro block. But, examples are the best way to show this. So, instead of writing the &lt;code&gt;kind_of&lt;/code&gt; macros like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;My&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;My&lt;/span&gt;
   &lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;AssertionMacros&lt;/span&gt;
 
     &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
@@ -75,17 +133,17 @@
 &lt;span class='k'&gt;end&lt;/span&gt;
 
 &lt;span class='no'&gt;Riot&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Assertion&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;instance_eval&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='kp'&gt;include&lt;/span&gt; &lt;span class='no'&gt;My&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;AssertionMacros&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;you&amp;#8217;re going to write them like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Riot&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Assertion&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Riot&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Assertion&lt;/span&gt;
 
   &lt;span class='n'&gt;assertion&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:kind_of&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
     &lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of?&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;?&lt;/span&gt; &lt;span class='n'&gt;pass&lt;/span&gt; &lt;span class='p'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;fail&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;expected kind of &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;expected&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;, not &lt;/span&gt;&lt;span class='si'&gt;#{&lt;/span&gt;&lt;span class='n'&gt;actual&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inspect&lt;/span&gt;&lt;span class='si'&gt;}&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Why? That has a lot to do with the under-the-hood changes. Important to note are a few things:&lt;/p&gt;
 
@@ -102,25 +160,25 @@
 &lt;h4 id='shortcut_assertion_for_the_topic'&gt;Shortcut assertion for the topic&lt;/h4&gt;
 
 &lt;p&gt;The assertion shortcut &lt;code&gt;topic&lt;/code&gt; has been renamed to &lt;code&gt;asserts_topic&lt;/code&gt;, which brianc so elegantly suggested as a better name. Thus, instead of this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
   &lt;span class='n'&gt;setup&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;mom&amp;quot;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='n'&gt;topic&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;String&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;# This will no longer work&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;you would now do the following:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
   &lt;span class='n'&gt;setup&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;mom&amp;quot;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='n'&gt;asserts_topic&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;String&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;brianc added another shortcut for doing the same thing, which also allows you to have a custom description. You could write the above example like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;context&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
   &lt;span class='n'&gt;setup&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;mom&amp;quot;&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='n'&gt;asserts&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;the topic is&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;kind_of&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nb'&gt;String&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h4 id='story_output'&gt;Story output&lt;/h4&gt;
 
@@ -417,22 +475,22 @@
 &lt;p&gt;It&amp;#8217;s not going to cook you breakfast in the morning, but it is going to make your job easier for something you probably do all the time in your controllers. Load Model basically provides a concise macro - a glorified &lt;code&gt;before_filter&lt;/code&gt; - for finding and loading a model object based on one of the request parameters and setting it to an instance variable. Load Model will do this almost automatically so long as you are following a restful convention in your controllers.&lt;/p&gt;
 
 &lt;p&gt;For instance:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;PeopleController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;PeopleController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:person&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;The above code will look for a parameter named &lt;code&gt;:id&lt;/code&gt; and use that to find a &lt;code&gt;Person&lt;/code&gt;. If &lt;code&gt;:id&lt;/code&gt; is provided and a &lt;code&gt;Person&lt;/code&gt; record is found (via a call like &lt;code&gt;Person.find_by_id(params[:id])&lt;/code&gt;), the record instance will be set to the &lt;code&gt;@person&lt;/code&gt; instance variable. It&amp;#8217;s that easy.&lt;/p&gt;
 
 &lt;p&gt;It&amp;#8217;s essentially the same as saying:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;PeopleController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;PeopleController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;before_filter&lt;/span&gt; &lt;span class='ss'&gt;:load_person&lt;/span&gt;
 &lt;span class='kp'&gt;private&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;load_person&lt;/span&gt;
     &lt;span class='vi'&gt;@person&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Person&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find_by_id&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:id&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;But wait, there&amp;#8217;s waaaaayyyyy more! Including an easy approach to dealing with the privilege escalation use case.&lt;/p&gt;
 
@@ -465,7 +523,7 @@
 &lt;p&gt;I&amp;#8217;m not going to wait around. I&amp;#8217;m going to jump to straight into privilege escalation and blow the whole enchilada right now. There&amp;#8217;s no point in building you up to this. You&amp;#8217;re smart! People like you! And anyways, it may be the only reason you&amp;#8217;ve read this far.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s say you have a nested resource; like Images which nests under People. You&amp;#8217;re routes and Image controller may look like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='c1'&gt;# Routes&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='c1'&gt;# Routes&lt;/span&gt;
 
 &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routing&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routes&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;draw&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;map&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
   &lt;span class='n'&gt;map&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;resources&lt;/span&gt; &lt;span class='ss'&gt;:people&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;people&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
@@ -478,7 +536,7 @@
 &lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='c1'&gt;# Oh boy, some code!&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Now, when someone wants to see an image for a specific person, a typical URL would look something like:&lt;/p&gt;
 
@@ -487,38 +545,38 @@
 &lt;p&gt;You don&amp;#8217;t want some stranger just changing that 3 to some other integer and getting a peek at another user&amp;#8217;s bottle-cap collection photos. So, you only want to limit the set of photos that are searchable to the specified user&amp;#8217;s (who has an id of 1).&lt;/p&gt;
 
 &lt;p&gt;With Load Model you can do this in two lines and it will work for all actions of the Images controller.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:person&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:parameter_key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:person_id&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:image&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:through&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:person&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Yes, order of macro definition does matter. And yes, &lt;code&gt;:through =&amp;gt; :person&lt;/code&gt; assumes there will be an instance variable named &lt;code&gt;@person&lt;/code&gt; for Load Model to find the image from. In this case, Load Model will do the following at run time:&lt;/p&gt;
 
-&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='vi'&gt;@image&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='vi'&gt;@person&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;images&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find_by_image_id&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:id&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='vi'&gt;@image&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='vi'&gt;@person&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;images&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find_by_image_id&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:id&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;What&amp;#8217;s that you say? You only want to load images for actions that will actually provide the &lt;code&gt;:id&lt;/code&gt;? Oh, okay.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:person&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:parameter_key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:person_id&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:image&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:through&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:person&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:only&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:show&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:edit&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:update&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:destroy&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;What? You don&amp;#8217;t want to do anything unless you find the Person instance first and you want to bail out if no image is found? Well &amp;#8230; fine!&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:person&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:parameter_key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:person_id&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:require&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:image&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:through&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:person&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:require&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:only&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:show&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:edit&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:update&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:destroy&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Notice the addition of the &lt;code&gt;:require&lt;/code&gt; options.&lt;/p&gt;
 
 &lt;p&gt;I think you get the point. In fact, that&amp;#8217;s how we at Thumble Monks do it and how Load Model wants you to do it.&lt;/p&gt;
 
 &lt;p&gt;If you add the following to your &lt;code&gt;ApplicationController&lt;/code&gt;, you can handle the case when a required record is not found by Load Model or any other action/filter (when &lt;code&gt;:require =&amp;gt; true&lt;/code&gt;):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ApplicationController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ApplicationController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;
   &lt;span class='n'&gt;rescue_from&lt;/span&gt; &lt;span class='no'&gt;ActiveRecord&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;RecordNotFound&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:with&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:record_not_found&lt;/span&gt;
 &lt;span class='kp'&gt;private&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;record_not_found&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;exception&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
@@ -527,44 +585,44 @@
     &lt;span class='n'&gt;redirect_to&lt;/span&gt; &lt;span class='n'&gt;your_default_controller_url&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h3 id='advanced'&gt;Advanced&lt;/h3&gt;
 
 &lt;p&gt;I bet you didn&amp;#8217;t think it could get more advanced. You were wrong.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#8217;s say you have a Communities resource, which has a nested Events resource, which has a nested Attendees resource. Oh boy! The route definition would look something like:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routing&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routes&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;draw&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;map&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routing&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Routes&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;draw&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;map&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
   &lt;span class='n'&gt;map&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;resources&lt;/span&gt; &lt;span class='ss'&gt;:communities&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;communities&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
     &lt;span class='n'&gt;communities&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;resources&lt;/span&gt; &lt;span class='ss'&gt;:events&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;events&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
       &lt;span class='n'&gt;events&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;resources&lt;/span&gt; &lt;span class='ss'&gt;:attendees&lt;/span&gt;
     &lt;span class='k'&gt;end&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;The URL would probably look like the following when doing something with a specific attendee:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;http://example.com/communities/1/events/3/attendees/5&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Let&amp;#8217;s also assume you require users to login and when logged in, you set an instance variable called &lt;code&gt;@current_person&lt;/code&gt;. Here&amp;#8217;s how you could setup your Attendees controller to only find attendees of events of communities that the logged-in user has access to:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;AttendeesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;AttendeesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:community&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:through&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:current_person&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:require&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
     &lt;span class='ss'&gt;:parameter_key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:community_id&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:event&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:through&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:community&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:require&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
     &lt;span class='ss'&gt;:parameter_key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:event_id&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:attendee&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:through&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:event&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:require&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:only&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:show&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:edit&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:update&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:destroy&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Yes it works and yes we are using this recipe. I have some ideas for how to make this even more concise/automatic, just haven&amp;#8217;t gotten around to implementing them yet. As you can imagine, there is a pattern.&lt;/p&gt;
 
 &lt;p&gt;For example, it would be a lot cooler if I could do this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;AttendeesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;AttendeesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:attendee&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:through&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='ss'&gt;:event&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='ss'&gt;:community&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:current_person&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='p'&gt;},&lt;/span&gt;
     &lt;span class='ss'&gt;:require&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:only&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:show&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:edit&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:update&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:destroy&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Load Model could also just assume that &lt;code&gt;:show, :edit, :update, :destroy&lt;/code&gt; will get an &lt;code&gt;:id&lt;/code&gt; by default.&lt;/p&gt;
 
@@ -575,15 +633,15 @@
 &lt;pre&gt;&lt;code&gt;http://example.com/invites/550e8400-e29b-41d4-a716-446655440000&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;With Load Model, you would load up this invite like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;InvitesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;InvitesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:invite&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:foreign_key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:uuid&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;This is the equivalent to doing the following in your actions:&lt;/p&gt;
 
-&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='vi'&gt;@invite&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Invite&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find_by_uuid&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:id&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;p&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='vi'&gt;@invite&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Invite&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find_by_uuid&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:id&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;All of the other options still work; like: &lt;code&gt;:require&lt;/code&gt;, &lt;code&gt;:only&lt;/code&gt;, etc.&lt;/p&gt;
@@ -593,10 +651,10 @@
 &lt;p&gt;You may not like to use the &lt;code&gt;:only&lt;/code&gt; option for being explicit about the actions that need model loading. Maybe you have a whole bunch of actions in your morally bankrupt controller and it would be crazy to try and include them all. Fine. Load Model provides the &lt;code&gt;:exclude&lt;/code&gt; option.&lt;/p&gt;
 
 &lt;p&gt;Here is an example that excludes actions that would not need to accept the :id parameter.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:image&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:except&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:index&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:new&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:create&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;It should be noted that since we&amp;#8217;re not using the :require option, we&amp;#8217;re saying more than we need to. But, that&amp;#8217;s why this is an example.&lt;/p&gt;
 
@@ -605,10 +663,10 @@
 &lt;p&gt;Finally, and probably least common, is the case when you want to load a record into an instance variable, but the class/model name for loading the record from cannot be inferred. For these cases, you use the &lt;code&gt;:class&lt;/code&gt; option and provide the class name that should be used.&lt;/p&gt;
 
 &lt;p&gt;Example, and this one is way contrived at the moment, you want to load a user account in an Admin controller and you want to call the instance variable &lt;code&gt;@admin&lt;/code&gt;. You would simply do the following in Load Model:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;ImagesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='n'&gt;load_model&lt;/span&gt; &lt;span class='ss'&gt;:admin&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:class&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;User&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:require&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;true&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;I threw the &lt;code&gt;:require =&amp;gt; true&lt;/code&gt; since it&amp;#8217;s the administration controller ;)&lt;/p&gt;
 
@@ -627,8 +685,8 @@
    <content type="html">&lt;p&gt;I recently started writing my &lt;a href='http://github.com/thumblemonks/evoke'&gt;Evoke&lt;/a&gt; service (a nice, little &lt;a href='http://sinatra.rubyforge.org/'&gt;Sinatra&lt;/a&gt; app). Part of the Evoke service is actually delivering on the promise of calling a stored URL back, which I achieved by storing a runner as a &lt;a href='http://github.com/tobi/delayed_job'&gt;delayed job&lt;/a&gt;. Only half the battle is writing the consumer, though. The other half is ensuring that the runner is daemonized and that the daemon is restarted if ever it were to die. This is where &lt;a href='http://god.rubyforge.org/'&gt;god&lt;/a&gt; enters the picture.&lt;/p&gt;
 
 &lt;p&gt;For the Evoke consumer, I wrote a little god script that I package with the Evoke bundle. This script is easily configured to run from the command like so (relative to the evoke source code):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;god -c config/evoke.god
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;god -c config/evoke.god
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;With that, the consumer is running and will be restarted if ever it dies. With Evoke, I added a status page which can be accessed via the world-wide-web. Status just shows me a few things about the particular Evoke instance, like: a view of the last 10 callbacks, how many callbacks in total, how many coming up, are any callbacks still pending that should not be, etc.&lt;/p&gt;
 
@@ -639,15 +697,15 @@
 &lt;h3 id='one_would_think'&gt;One would think&lt;/h3&gt;
 
 &lt;p&gt;One would think that they could just require in the &lt;code&gt;god&lt;/code&gt; library and use the API to ask for the state of a particular job. In my head, I would do this from IRB:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;god&amp;#39;&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;god&amp;#39;&lt;/span&gt;
 &lt;span class='no'&gt;God&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;status&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;evoke_consumer&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='ss'&gt;:state&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='ss'&gt;:up&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;But &amp;#8230; nope. No way that I could see that is. So I went digging through the source and eventually had to find my way to the god shell script that gets executed from the command line. Which then led me to &lt;code&gt;God::CLI::CommandLine&lt;/code&gt;. This is the only place where we can see the mysteries of god. &lt;code&gt;DRb&lt;/code&gt; droppings. The info I need being printed to standard out. Everything I need to make one call, but all wrapped into a command line interface. I clearly cannot call any methods here.&lt;/p&gt;
 
 &lt;p&gt;It&amp;#8217;s also clear that god was not intended to be accessed through more than one interface, without a lot of redundant code. Basically, I am forced into command line mode or parsing the results of an execution, unless I want some hackery. Hackery it is. After a little playing around and dealing with permissions and such (which is very cool of DRb and god to take care of for me), I wrote this little method into my &lt;code&gt;Status&lt;/code&gt; class:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;consumer_running?&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;consumer_running?&lt;/span&gt;
   &lt;span class='no'&gt;DRb&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;start_service&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;druby://127.0.0.1:0&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='n'&gt;server&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;DRbObject&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='kp'&gt;nil&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='no'&gt;God&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Socket&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;socket&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='mi'&gt;17165&lt;/span&gt;&lt;span class='p'&gt;))&lt;/span&gt;
 
@@ -657,11 +715,11 @@
 &lt;span class='k'&gt;ensure&lt;/span&gt;
   &lt;span class='no'&gt;DRb&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;stop_service&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Most of that is straight up jacked from god (except for the &lt;code&gt;DRb.stop_service&lt;/code&gt; :o ). I don&amp;#8217;t see why that would be so hard for god to let me do with what I intended earlier:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='no'&gt;God&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;status&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;evoke_consumer&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='no'&gt;God&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;status&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;evoke_consumer&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Come on god! Get with the program!&lt;/p&gt;
 
@@ -1039,7 +1097,7 @@ Eshell V5.6.2  (abort with ^G)
 &lt;p&gt;Now, If I&amp;#8217;m writing some sort of web-app - like with Rails or Sinatra - a lot of my model and controller tests tend to look the same. By the same, I mean there is an obvious pattern. Our refactoring brainwashing tells us we need to DRY this up. One obvious way of doing this is to write our own Shoulda macros by extending &lt;code&gt;Test::Unit::TestCase&lt;/code&gt;, &lt;code&gt;ActionController::TestCase&lt;/code&gt;, etc.&lt;/p&gt;
 
 &lt;p&gt;I prefer to extend/mix-into things by writing my own module with the methods I want and extending or including that module into the class/module the methods are intended for. Like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Thumblemonks&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Thumblemonks&lt;/span&gt;
   &lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;User&lt;/span&gt;
     &lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Shoulda&lt;/span&gt;
 
@@ -1051,7 +1109,7 @@ Eshell V5.6.2  (abort with ^G)
   &lt;span class='k'&gt;end&lt;/span&gt; &lt;span class='c1'&gt;# User&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt; &lt;span class='c1'&gt;# Thumblemonks&lt;/span&gt;
 &lt;span class='no'&gt;Test&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Unit&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;TestCase&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;extend&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='no'&gt;Thumblemonks&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Shoulda&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;I like this approach because it&amp;#8217;s easy to find out - in like a debugger session - all of the modules that are mixed-in into a specific class/module that give said class/module it&amp;#8217;s methods. I like this approach every time, not just for extending things for Shoulda. &lt;em&gt;Props to &lt;a href='http://github.com/danhodos'&gt;Dan Hodos&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
@@ -1064,12 +1122,12 @@ Eshell V5.6.2  (abort with ^G)
 &lt;/ol&gt;
 
 &lt;p&gt;Today, however I hit upon something I liked. I created a folder under &lt;code&gt;test&lt;/code&gt; in my Rails app which I called &amp;#8230; wait for it &amp;#8230; &lt;code&gt;shoulda&lt;/code&gt;. That&amp;#8217;s right, &lt;code&gt;$RAILS_HOME/test/shoulda&lt;/code&gt;. Then, I did the following in my &lt;code&gt;test_helper.rb&lt;/code&gt;:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='c1'&gt;# including require_local_lib just because I use it everywhere&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='c1'&gt;# including require_local_lib just because I use it everywhere&lt;/span&gt;
 &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;require_local_lib&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;pattern&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='no'&gt;Dir&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;glob&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='no'&gt;File&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;join&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='no'&gt;File&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;dirname&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='bp'&gt;__FILE__&lt;/span&gt;&lt;span class='p'&gt;),&lt;/span&gt; &lt;span class='n'&gt;pattern&lt;/span&gt;&lt;span class='p'&gt;))&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;each&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;f&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='n'&gt;f&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='n'&gt;require_local_lib&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;shoulda/*.rb&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Then, I started creating a new file in shoulda - as I needed it - for each model I was testing. For instance, I was testing a &lt;code&gt;Membership&lt;/code&gt; model and ended up creating &lt;code&gt;test/shoulda/membership.rb&lt;/code&gt;. Seems simple, but I did sooooo much test refactoring in the process and my test cases ended up looking insanely clean and readable.&lt;/p&gt;
 
@@ -1191,7 +1249,7 @@ Eshell V5.6.2  (abort with ^G)
 &lt;p&gt;In response, I&amp;#8217;m attaching the code for a dumb SMTP server that I wrote in less than two hours that I have used in my Rails applications to test what and to whom was getting mailed. All this little server does is respond with kind words; as in, it says &lt;code&gt;OK&lt;/code&gt; to everything it can. It&amp;#8217;s an eager server that will reaffirm everything you may have thought about SMTP.&lt;/p&gt;
 
 &lt;p&gt;It also wouldn&amp;#8217;t be to hard to ask it to store the emails for grabbing later. It would certainly be a lot less code and a lot friggin&amp;#8217; easier to read.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='c1'&gt;#!/usr/bin/env ruby&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='c1'&gt;#!/usr/bin/env ruby&lt;/span&gt;
 
 &lt;span class='c1'&gt;# I am a stupid SMTP server. Though I speak SMTP, all I do is regurgitate what&lt;/span&gt;
 &lt;span class='c1'&gt;# the sender sends me. Use me for doing manual testing of SMTP clients that have&lt;/span&gt;
@@ -1272,14 +1330,14 @@ Eshell V5.6.2  (abort with ^G)
   &lt;span class='n'&gt;socket&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;close&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='n'&gt;server&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;close&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;If you do as the comments say, you&amp;#8217;re golden. You can even tell your appropriate Rails configuration file to talk to the port you reference and it will work. You could do that like so in your &lt;code&gt;development.rb&lt;/code&gt;:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='no'&gt;ActionMailer&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;delivery_method&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='ss'&gt;:smtp&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='no'&gt;ActionMailer&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;delivery_method&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='ss'&gt;:smtp&lt;/span&gt;
 &lt;span class='no'&gt;ActionMailer&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;smtp_settings&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
   &lt;span class='ss'&gt;:address&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:port&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='mi'&gt;25252&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:domain&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;foo.bar&amp;#39;&lt;/span&gt;
 &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Now, I should note that I wrote this while &lt;a href='http://centro.net'&gt;working for Centro&lt;/a&gt; &amp;#8230; my ex-employer, silly.&lt;/p&gt;</content>
  </entry>
@@ -1377,24 +1435,24 @@ Eshell V5.6.2  (abort with ^G)
     NameError: uninitialized constant Addres&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Which can be traced to line 226 of Factory Girl&amp;#8217;s &lt;a href='http://github.com/thoughtbot/factory_girl/tree/master/lib/factory_girl/factory.rb'&gt;factory.rb&lt;/a&gt; file, which does the following:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;class_or_to_s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;respond_to?&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:to_sym&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;class_or_to_s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;respond_to?&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:to_sym&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='n'&gt;class_or_to_s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;to_s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;classify&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;constantize&lt;/span&gt;
 &lt;span class='k'&gt;else&lt;/span&gt;
   &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Seems simple enough to solve. Perhaps we should change the inflector rules to &amp;#8230; say &amp;#8230; this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='no'&gt;ActiveSupport&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Inflector&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inflections&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;inflect&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='no'&gt;ActiveSupport&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Inflector&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inflections&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;inflect&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
   &lt;span class='n'&gt;inflect&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;plural&lt;/span&gt;&lt;span class='sr'&gt; /(ss)$/i&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;\1es&amp;#39;&lt;/span&gt;
   &lt;span class='n'&gt;inflect&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;singular&lt;/span&gt;&lt;span class='sr'&gt; /(ss)es$/i&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;\1&amp;#39;&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Yeah &amp;#8230; no! Still didn&amp;#8217;t work. Went out to eat. Came back. Tried this stupid, stupid, stupid thing and &amp;#8230; well &amp;#8230; it worked:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='no'&gt;ActiveSupport&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Inflector&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inflections&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;inflect&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='no'&gt;ActiveSupport&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Inflector&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inflections&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;inflect&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
   &lt;span class='n'&gt;inflect&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;singular&lt;/span&gt;&lt;span class='sr'&gt; /(ss)$/i&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;\1&amp;#39;&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Barf again!&lt;/p&gt;
 
@@ -1529,56 +1587,56 @@ Eshell V5.6.2  (abort with ^G)
 &lt;p&gt;Talk about simple. &lt;a href='http://sinatrarb.com'&gt;Sinatra&lt;/a&gt; rocks. But, that&amp;#8217;s still not the point of this article. The point of this article is to highlight this little thing. Remember?&lt;/p&gt;
 
 &lt;p&gt;The little thing, and I do mean little, was to add a handler for CSS that can handle any stylesheet request. See, most of the examples for handling CSS in Sinatra look like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;get&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/stylesheet.css&amp;#39;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;get&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/stylesheet.css&amp;#39;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
   &lt;span class='n'&gt;content_type&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/css&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:charset&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;
   &lt;span class='n'&gt;sass&lt;/span&gt; &lt;span class='ss'&gt;:stylesheet&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Or, they render the CSS directly in the app.&lt;/p&gt;
 
 &lt;p&gt;I. Don&amp;#8217;t. Like. That.&lt;/p&gt;
 
 &lt;p&gt;I want all my view related code in one place and I know that all my CSS will be handled the same way. In my app, I want to do this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;sinatra&amp;#39;&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;sinatra&amp;#39;&lt;/span&gt;
 
 &lt;span class='n'&gt;catch_all_css&lt;/span&gt;
 
 &lt;span class='c1'&gt;# handle everything else&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Which should run any resource that matches &lt;code&gt;*.css&lt;/code&gt; through a Sass builder. Easy peasy:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;catch_all_css&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;catch_all_css&lt;/span&gt;
   &lt;span class='n'&gt;get&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/*.css&amp;#39;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
     &lt;span class='n'&gt;header&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/css; charset=utf-8&amp;#39;&lt;/span&gt;
     &lt;span class='n'&gt;sass&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;env&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;PATH_INFO&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;].&lt;/span&gt;&lt;span class='n'&gt;match&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='sr'&gt;%r[\/(.+)\.css]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='o'&gt;].&lt;/span&gt;&lt;span class='n'&gt;to_sym&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Yep; it works. But, this solution only works well when the stylesheet is requested off the doc-root. If you want to handle &lt;code&gt;/stylesheets/*.css&lt;/code&gt;, you&amp;#8217;ll just have to modify the regular expression a little or get it through URI.&lt;/p&gt;
 
 &lt;h3 id='possible_changes'&gt;Possible changes&lt;/h3&gt;
 
 &lt;p&gt;You may not want to use Sass. Why you wouldn&amp;#8217;t want to I don&amp;#8217;t understand, but you just may not want to. Here is a possible modification to the above that may work.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;sinatra&amp;#39;&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='nb'&gt;require&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;sinatra&amp;#39;&lt;/span&gt;
 
 &lt;span class='n'&gt;catch_all_css&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:sass&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;catch_all_css&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;handler&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='ss'&gt;:render&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;catch_all_css&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;handler&lt;/span&gt;&lt;span class='o'&gt;=&lt;/span&gt;&lt;span class='ss'&gt;:render&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='n'&gt;get&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;/*.css&amp;#39;&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt;
     &lt;span class='n'&gt;header&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;text/css; charset=utf-8&amp;#39;&lt;/span&gt;
     &lt;span class='n'&gt;resource&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;env&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;PATH_INFO&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;].&lt;/span&gt;&lt;span class='n'&gt;match&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='sr'&gt;%r[\/(.+)\.css]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='o'&gt;].&lt;/span&gt;&lt;span class='n'&gt;to_sym&lt;/span&gt;
     &lt;span class='nb'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;handler&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;resource&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h3 id='something_ive_heard'&gt;Something I&amp;#8217;ve Heard&lt;/h3&gt;
 
 &lt;p&gt;I&amp;#8217;ve &lt;a href='http://www.gittr.com/index.php/archive/sinatra-splat-routes/'&gt;heard&lt;/a&gt; that a future version of Sinatra will allow me to get the value of the splats (the values matched by the asterisks of a route) from &lt;code&gt;params[&amp;#39;splats&amp;#39;]&lt;/code&gt;. If this is true, we could modify &lt;code&gt;catch\_all\_css&lt;/code&gt; to look like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;get&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;/*.css&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='n'&gt;sass&lt;/span&gt; &lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;splat&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;].&lt;/span&gt;&lt;span class='n'&gt;first&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;to_sym&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;get&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;/*.css&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='n'&gt;sass&lt;/span&gt; &lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;splat&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;].&lt;/span&gt;&lt;span class='n'&gt;first&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;to_sym&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;</content>
  </entry>
  
@@ -1600,40 +1658,40 @@ Eshell V5.6.2  (abort with ^G)
 &lt;p&gt;However, there was one little hitch in my tests that I was not expecting. One of my controller tests was adding a session variable and the controller was looking for that value. Problem was, it kept failing. But &amp;#8230; it used to pass.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;#8217;s what my test code did look like:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_update_should_clear_invite_code_from_session_on_success&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_update_should_clear_invite_code_from_session_on_success&lt;/span&gt;
   &lt;span class='vi'&gt;@request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:invite_code&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;invite_code&lt;/span&gt;
   &lt;span class='n'&gt;post&lt;/span&gt; &lt;span class='ss'&gt;:update&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
   &lt;span class='n'&gt;assert_nil&lt;/span&gt; &lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:invite_code&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;And then I was using it with my &lt;a href='/2008/1/9/assertsession'&gt;AssertSession&lt;/a&gt; plugin that I&amp;#8217;m waiting for &lt;a href='http://workingwithrails.com/person/5938-scott-woods'&gt;Scott Woods&lt;/a&gt; to add into &lt;a href='http://validaterequest.rubyforge.org/'&gt;AssertRequest&lt;/a&gt; (since he emailed me that he would &amp;#8230; ahem):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;update&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;update&lt;/span&gt;
   &lt;span class='n'&gt;assert_session&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;must_have&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:invite_code&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
   &lt;span class='vi'&gt;@user&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find_invited&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:invite_code&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Notice here that the reference to &lt;code&gt;invite_code&lt;/code&gt; is a symbol. As long I only try to access &lt;code&gt;invite_code&lt;/code&gt; using &lt;code&gt;Session&lt;/code&gt;&amp;#8217;s square-bracket method (&lt;code&gt;def \[\]\(key\)&lt;/code&gt;) &amp;#8230; then no problems; thanks to &lt;code&gt;HashWithIndifferentAccess&lt;/code&gt;. My &lt;code&gt;AssertSession&lt;/code&gt; plugin, however accesses &lt;code&gt;Session&lt;/code&gt;&amp;#8217;s &lt;code&gt;data&lt;/code&gt; function. It seems that &lt;code&gt;Session&lt;/code&gt; (or maybe just &lt;code&gt;TestSession&lt;/code&gt;) has turned all keys to strings. Thus, &lt;code&gt;AssertSession&lt;/code&gt; cannot match a symbol to a string.&lt;/p&gt;
 
 &lt;p&gt;Well okay. I switched every one of the session keys to strings and - sadly - my tests are passing. Ho hum.&lt;/p&gt;
 
 &lt;p&gt;For clarity&amp;#8217;s sake, here is the new code:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_update_should_clear_invite_code_from_session_on_success&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_update_should_clear_invite_code_from_session_on_success&lt;/span&gt;
   &lt;span class='vi'&gt;@request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;invite_code&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;invite_code&lt;/span&gt;
   &lt;span class='n'&gt;post&lt;/span&gt; &lt;span class='ss'&gt;:update&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
   &lt;span class='n'&gt;assert_nil&lt;/span&gt; &lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;invite_code&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
-&lt;/div&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;update&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;update&lt;/span&gt;
   &lt;span class='n'&gt;assert_session&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='n'&gt;s&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;must_have&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;invite_code&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt; &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
   &lt;span class='vi'&gt;@user&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find_invited&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;invite_code&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;</content>
  </entry>
  
@@ -1837,29 +1895,29 @@ Eshell V5.6.2  (abort with ^G)
 &lt;p&gt;From time-to-time, though, I need to convert some list of object into a hash. Ergo, I need to &lt;code&gt;map-to-hash&lt;/code&gt; or &lt;code&gt;mash&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;For instance, let&amp;#8217;s say I want to map an array of User records to a hash with email addresses pointing to the User records? Without much thought I could write it this way:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;users&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:all&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;# Not smart :)&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;users&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:all&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;# Not smart :)&lt;/span&gt;
 &lt;span class='n'&gt;hashed_users&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;users&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inject&lt;/span&gt;&lt;span class='p'&gt;({})&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;acc&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='n'&gt;u&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; 
   &lt;span class='n'&gt;acc&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='n'&gt;u&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;email&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;u&lt;/span&gt;
   &lt;span class='n'&gt;acc&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;I would rather do the following:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;users&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:all&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;# Still not smart :)&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;users&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;find&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:all&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='c1'&gt;# Still not smart :)&lt;/span&gt;
 &lt;span class='n'&gt;hashed_users&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;users&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;mash&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;u&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='n'&gt;u&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;email&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;u&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;It&amp;#8217;s not a &lt;strong&gt;HUGE&lt;/strong&gt; change, but it does let me &lt;em&gt;say&lt;/em&gt; what I want to &lt;em&gt;say&lt;/em&gt; without all the &lt;strong&gt;acc&lt;/strong&gt;umulator cruft.&lt;/p&gt;
 
 &lt;h2 id='implementation'&gt;Implementation&lt;/h2&gt;
 
 &lt;p&gt;Simple, straight forward, and usable by anything that is Enumerable.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Enumerable&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Enumerable&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;mash&lt;/span&gt;
     &lt;span class='nb'&gt;self&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;inject&lt;/span&gt;&lt;span class='p'&gt;({})&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;a&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;&lt;span class='n'&gt;i&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='n'&gt;a&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;merge&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt; &lt;span class='k'&gt;yield&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;i&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='acknowledgements'&gt;Acknowledgements&lt;/h2&gt;
 
@@ -1886,17 +1944,17 @@ Eshell V5.6.2  (abort with ^G)
 &lt;p&gt;Ok, I&amp;#8217;ve got this &lt;code&gt;ActiveRecord&lt;/code&gt; model called &lt;code&gt;Fact&lt;/code&gt;. &lt;code&gt;Fact&lt;/code&gt; has attributes &lt;code&gt;:key&lt;/code&gt; and &lt;code&gt;:value&lt;/code&gt; along with the other normal columns (i.e. &lt;code&gt;:id&lt;/code&gt;, &lt;code&gt;:created_at&lt;/code&gt;, etc.).&lt;/p&gt;
 
 &lt;p&gt;I want to use &lt;code&gt;Fact&lt;/code&gt; in one of my views and I export it to JSON. I only care about the &lt;code&gt;:key&lt;/code&gt; and &lt;code&gt;:value&lt;/code&gt; and the obvious solution is to:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;fact&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Fact&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;create&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:value&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;fact&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Fact&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;create&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:key&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;foo&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:value&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;bar&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 &lt;span class='n'&gt;fact&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;to_json&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:only&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:key&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:value&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Which returns something like:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;key&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;key&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Ok &amp;#8230; fine. I can do something with that, but &lt;code&gt;Fact&lt;/code&gt; is really an extension of some other model, which can have many &lt;code&gt;Facts&lt;/code&gt;. And I want to reference these facts by their name in a JavaScript object. I don&amp;#8217;t want to search through the objects looking for a matching key. I want a JavaScript Object that looks something like:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;You might say, &lt;em&gt;&amp;#8220;Get over it!&amp;#8221;&lt;/em&gt;&lt;/p&gt;
 
@@ -1935,22 +1993,22 @@ Eshell V5.6.2  (abort with ^G)
 &lt;p&gt;&lt;em&gt;&amp;#8220;Duke sucks&amp;#8221;&lt;/em&gt; was the consistent mantra of the group. And lonely me; sitting there &amp;#8230; having to take it &amp;#8230; because I&amp;#8217;m just oh so humble and non-confrontational.&lt;/p&gt;
 
 &lt;p&gt;They went so far as to tell me in code how they felt about it:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='c'&gt;# This test is guaranteed to pass! &lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;&lt;span class='c'&gt;# This test is guaranteed to pass! &lt;/span&gt;
 def test_justin_is_a_nancy
   &lt;span class='nv'&gt;justin&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; HoopsFan.find&lt;span class='o'&gt;(&lt;/span&gt;:nancy &lt;span class='o'&gt;=&lt;/span&gt;&amp;gt; &lt;span class='nb'&gt;true&lt;/span&gt;&lt;span class='o'&gt;)&lt;/span&gt; 
   assert_equal “Fairweather Nancy”, justin.real_name 
 end
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;So, of course it is my Pride&amp;#8217;s duty to respond. Here is the proof that all UNC fans are also losers:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;def test_only_losers_are_unc_fans
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;def test_only_losers_are_unc_fans
   &lt;span class='nv'&gt;losers&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; HoopNuts.find&lt;span class='o'&gt;(&lt;/span&gt;:all, :conditions &lt;span class='o'&gt;=&lt;/span&gt;&amp;gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;kast = ?&amp;#39;&lt;/span&gt;, &lt;span class='s1'&gt;&amp;#39;loser&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;])&lt;/span&gt;
   &lt;span class='nv'&gt;unc_fans&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; HoopNuts.find&lt;span class='o'&gt;(&lt;/span&gt;:all, :conditions &lt;span class='o'&gt;=&lt;/span&gt;&amp;gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;team = ?&amp;#39;&lt;/span&gt;, &lt;span class='s1'&gt;&amp;#39;UNC&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;])&lt;/span&gt;
 
   assert_same losers, unc_fans
   assert losers.length &amp;gt; 0
 end
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;If you don&amp;#8217;t know already, it&amp;#8217;s Ruby with ActiveRecord sprinklings.&lt;/em&gt;&lt;/p&gt;</content>
  </entry>
@@ -1961,7 +2019,7 @@ end
    <updated>2008-01-27T00:00:00-06:00</updated>
    <id>http://gusg.us/code/ruby/multiplexing-delegator</id>
    <content type="html">&lt;p&gt;I&amp;#8217;ve got a &lt;code&gt;User&lt;/code&gt;, see, and this &lt;code&gt;User&lt;/code&gt; has a fever. And the only prescription for this fever is more &lt;code&gt;Network&lt;/code&gt; (get &lt;a href='http://www.vimeo.com/17746'&gt;even more fever&lt;/a&gt;). In fact, this &lt;code&gt;User&lt;/code&gt; already has two &lt;code&gt;Networks&lt;/code&gt;.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Network&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Network&lt;/span&gt;
   &lt;span class='c1'&gt;# The idea is that each of the accessors has an array of Users&lt;/span&gt;
   &lt;span class='kp'&gt;attr_accessor&lt;/span&gt; &lt;span class='ss'&gt;:active&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:pending&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:rejected&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
@@ -1973,24 +2031,24 @@ end
     &lt;span class='vi'&gt;@public_network&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;This is, of course, a very simplified implementation of a solution that might be built in Rails with ActiveRecord.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;That&amp;#8217;s awesome. I can work with each of these &lt;code&gt;Networks&lt;/code&gt; by adding to and removing from each of them individually. But, what if I wanted the list of all &lt;code&gt;Users&lt;/code&gt; that a particular User is linked to and I don&amp;#8217;t care which Network they are in?&lt;/p&gt;
 
 &lt;p&gt;I could do this if I wanted all of the active users:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;friend_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;public_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;friend_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;public_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Or, I could push the logic into the model as would be expected; like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;User&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;User&lt;/span&gt;
   &lt;span class='c1'&gt;# ...&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;all_active_users&lt;/span&gt;
     &lt;span class='vi'&gt;@friend_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt; &lt;span class='o'&gt;+&lt;/span&gt; &lt;span class='vi'&gt;@public_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;That&amp;#8217;s fine. But what if I wanted the list of all rejected &lt;code&gt;Users&lt;/code&gt;? What if I wanted to add more feverish &lt;code&gt;Networks&lt;/code&gt;? A lot more code, that&amp;#8217;s what!&lt;/p&gt;
 
@@ -1999,13 +2057,13 @@ end
 &lt;p&gt;So, of course, a solution is forthcoming. What I really want to do is delegate a single message across multiple receivers and aggregate the results into a single response. Kind of like I&amp;#8217;m multiplexing messages and demultiplexing the response.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;#8217;s an example of what I would like to do given a User instance:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;entire_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;entire_network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;active&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;What should happen in this call is that &lt;code&gt;entire_network&lt;/code&gt; should know how to call &lt;code&gt;active&lt;/code&gt; on both the &lt;code&gt;friend_network&lt;/code&gt; and &lt;code&gt;public_network&lt;/code&gt; accessors, and then collect the results into a single collection of Users.&lt;/p&gt;
 
 &lt;p&gt;Thusly and so forth, the &lt;code&gt;Multiplexing Delegator&lt;/code&gt; has been born. Let the dust settle a little &amp;#8230; and here is how I would define the &lt;code&gt;User&lt;/code&gt; class:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;User&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;User&lt;/span&gt;
   &lt;span class='kp'&gt;attr_accessor&lt;/span&gt; &lt;span class='ss'&gt;:friend_network&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:public_network&lt;/span&gt;
 
   &lt;span class='n'&gt;multiplex&lt;/span&gt; &lt;span class='ss'&gt;:entire_network&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:across&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:friend_network&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:public_network&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
@@ -2015,7 +2073,7 @@ end
     &lt;span class='vi'&gt;@public_network&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Network&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Assuming &lt;code&gt;friend_network&lt;/code&gt; contains 3 &lt;code&gt;Users&lt;/code&gt; and &lt;code&gt;public_network&lt;/code&gt; contains 5 &lt;code&gt;Users&lt;/code&gt;, a call to &lt;code&gt;entire_network&lt;/code&gt; will return an array with 7 &lt;code&gt;Users&lt;/code&gt;.&lt;/p&gt;
 
@@ -2028,23 +2086,23 @@ end
 &lt;p&gt;But really, that&amp;#8217;s not true. I do care; lest I wouldn&amp;#8217;t have gone through all this effort to impress you. I see can &lt;code&gt;mutliplex&lt;/code&gt; as being useful for aggregating any and many collections easily into one stream of results. Generally, the types of Objects being delegated to will be the same, but this does not have to be true.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;#8217;s something fun I did:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Object&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;Object&lt;/span&gt;
   &lt;span class='n'&gt;multiplex&lt;/span&gt; &lt;span class='ss'&gt;:all_methods&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt;
     &lt;span class='ss'&gt;:across&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:public_methods&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:protected_methods&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:private_methods&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='n'&gt;obj&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;Object&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
 &lt;span class='n'&gt;obj&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;all_methods&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.]&lt;/span&gt; &lt;span class='c1'&gt;# Produced an array of all of the methods&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;No &amp;#8230; it does not match what is returned from &lt;code&gt;Object.methods&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id='installation'&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;Simple and easy:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;gem&lt;/span&gt; &lt;span class='n'&gt;install&lt;/span&gt; &lt;span class='n'&gt;multiplexing_delegator&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;gem&lt;/span&gt; &lt;span class='n'&gt;install&lt;/span&gt; &lt;span class='n'&gt;multiplexing_delegator&lt;/span&gt;
 &lt;span class='c1'&gt;# or if you&amp;#39;re boring&lt;/span&gt;
 &lt;span class='n'&gt;sudo&lt;/span&gt; &lt;span class='n'&gt;gem&lt;/span&gt; &lt;span class='n'&gt;install&lt;/span&gt; &lt;span class='n'&gt;multiplexing_delegator&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;a href='http://glomp.rubyforge.org/multiplexing_delegator'&gt;Documentation&lt;/a&gt; is served from &lt;a href='http://rubyforge.org/projects/glomp'&gt;RubyForge&lt;/a&gt;, just like the &lt;a href='http://glomp.rubyforge.org/svn/multiplexing_delegator'&gt;source code&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
@@ -2059,7 +2117,7 @@ end
 &lt;p&gt;Seems as though there are some strong opinions from some that readability of code is secondary to the performance of code. I figured I would some up my thoughts and did so in the following matrix:&lt;/p&gt;
 &lt;img src='/images/articles/code/code-perf-read.png' /&gt;
 &lt;p&gt;To be clear, this is the code in question:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;foaf&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;has_key?&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;&amp;lt;&amp;gt;&amp;#39;&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='n'&gt;foaf&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;has_key?&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;&amp;lt;&amp;gt;&amp;#39;&lt;/span&gt;
   &lt;span class='n'&gt;knows&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;foaf&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;&amp;lt;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;][&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;&amp;lt;http://xmlns.com/foaf/0.1/knows&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
   &lt;span class='k'&gt;if&lt;/span&gt; &lt;span class='o'&gt;!&lt;/span&gt;&lt;span class='n'&gt;knows&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;nil?&lt;/span&gt;
     &lt;span class='n'&gt;knows&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;each&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;know&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
@@ -2078,7 +2136,7 @@ end
     &lt;span class='k'&gt;end&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Keep an eye on &lt;a href='http://slickorslack.com'&gt;Slick or Slack&lt;/a&gt; for this little piece of code I threw up &lt;a href='http://slickorslack.com/codes/100'&gt;there&lt;/a&gt;. If my assumption is right, it will be one of the slackest of all.&lt;/p&gt;
 
@@ -2095,11 +2153,11 @@ end
    <updated>2008-01-18T00:00:00-06:00</updated>
    <id>http://gusg.us/life/active-record-modeling-life</id>
    <content type="html">&lt;p&gt;A quick observation I made about how &lt;code&gt;ActiveRecord&lt;/code&gt; can be used to model life.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;class Life &amp;lt; ActiveRecord::Base
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='bash'&gt;class Life &amp;lt; ActiveRecord::Base
   has_many :causes
   has_many :effects, :through &lt;span class='o'&gt;=&lt;/span&gt;&amp;gt; :causes
 end
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;</content>
  </entry>
  
@@ -2149,7 +2207,7 @@ end
 &lt;/ol&gt;
 
 &lt;p&gt;With that in mind, I hit the court and started playing. Of course, I knew it was going to be a plugin, so I just went ahead and created the plugin. Being a tester, I wrote several functional tests for how I wanted it to work. They looked something like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FlashersControllerTest&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;TestCase&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FlashersControllerTest&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;TestCase&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_flash_available_after_request&lt;/span&gt;
     &lt;span class='n'&gt;get&lt;/span&gt; &lt;span class='ss'&gt;:index&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:actual_flash&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;
     &lt;span class='n'&gt;assert_equal&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;flash&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:actual_flash&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
@@ -2165,22 +2223,22 @@ end
     &lt;span class='n'&gt;assert_equal&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;world&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;flash&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;flashed&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:actual_flash_now&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Three erroring tests. Oh, joy! I love errors when they come immediately after writing my test code. Notice the &lt;code&gt;flashed&lt;/code&gt; method call in test 3. That&amp;#8217;s my contribution to the world of &lt;code&gt;Flash&lt;/code&gt;. I want it to mean, give me the variables that were flashed (or flushed) during the request. Like a flash of light; fizzled and forgotten.&lt;/p&gt;
 
 &lt;p&gt;Guess I should implement the faux Controller:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FlashersController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FlashersController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;index&lt;/span&gt;
     &lt;span class='n'&gt;flash&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:actual_flash&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:actual_flash&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
     &lt;span class='n'&gt;flash&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;now&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:actual_flash_now&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:actual_flash_now&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
     &lt;span class='n'&gt;render&lt;/span&gt; &lt;span class='ss'&gt;:text&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Two passing tests, and an erroring test. Yippee! Just need to make that &lt;code&gt;flashed&lt;/code&gt; do something. Here, I went through many, many trials and tribulations. For like, almost 30 minutes. That is, until I figured, &lt;em&gt;&amp;#8220;Why not just insert my own Flash hash into the session for the request?&amp;#8221;&lt;/em&gt; Like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FlashedHash&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Flash&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;FlashHash&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FlashedHash&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Flash&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;FlashHash&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;flashed&lt;/span&gt;
     &lt;span class='vi'&gt;@flashed&lt;/span&gt; &lt;span class='o'&gt;||=&lt;/span&gt; &lt;span class='p'&gt;{}&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
@@ -2190,22 +2248,22 @@ end
     &lt;span class='k'&gt;super&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;k&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Hmmm &amp;#8230; and to accomplish objective (2), I would need to set that up somehow. Objective (3) says it should be easy to use. So, I settled on a little method that would be available in &lt;code&gt;Test::Unit::TestCase&lt;/code&gt;, that is dependent on there being a &lt;code&gt;TestRequest&lt;/code&gt; instance assigned to a &lt;code&gt;@request&lt;/code&gt; instance variable (which there always is for functional tests), and that would be named &amp;#8230; &lt;code&gt;flashback&lt;/code&gt;.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;flashback&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;flashback&lt;/span&gt;
   &lt;span class='vi'&gt;@request&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;flash&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;FlashedHash&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;This, however, required a drastic change in my test; which went from two lines, to three.&lt;/p&gt;
 
 &lt;p&gt;And, I had to write another test to be sure that &lt;code&gt;flashed&lt;/code&gt; was not available when &lt;code&gt;flashback&lt;/code&gt; wasn&amp;#8217;t called:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_no_flashback_means_flash_now_not_available_after_request_via_flashed&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_no_flashback_means_flash_now_not_available_after_request_via_flashed&lt;/span&gt;
   &lt;span class='n'&gt;get&lt;/span&gt; &lt;span class='ss'&gt;:index&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:actual_flash_now&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;world&amp;#39;&lt;/span&gt;
   &lt;span class='n'&gt;assert_raise&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='no'&gt;NoMethodError&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='n'&gt;flash&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;flashed&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:actual_flash_now&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;I wrote a couple of other tests, but you get the point. Call &lt;code&gt;flashback&lt;/code&gt; before you test your action and after &lt;code&gt;@request&lt;/code&gt; is defined, and Bob&amp;#8217;s your uncle!&lt;/p&gt;
 
@@ -2220,7 +2278,7 @@ end
 &lt;p&gt;So, I want to test my &lt;code&gt;flash.now&lt;/code&gt; variables. I like the idea of setting &lt;code&gt;flashback&lt;/code&gt; when I need it, versus all the time with a &lt;code&gt;setup&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here&amp;#8217;s the first place I used it; an action for creating &lt;code&gt;Stickies&lt;/code&gt;, which are kind of like user-to-user comments, but different &amp;#8230; sort of.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_create_should_flash_error_on_failure&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;test_create_should_flash_error_on_failure&lt;/span&gt;
   &lt;span class='n'&gt;user&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;users&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:quentin&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='n'&gt;sticker&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;users&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:aaron&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='n'&gt;login_as&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;sticker&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
@@ -2228,10 +2286,10 @@ end
   &lt;span class='n'&gt;post&lt;/span&gt; &lt;span class='ss'&gt;:create&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:user_id&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;id&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:sticky&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='ss'&gt;:message&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;blah&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='n'&gt;assert_match&lt;/span&gt;&lt;span class='sr'&gt; /Problems .+ Sticky/&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='n'&gt;flash&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;flashed&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:error&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Here&amp;#8217;s what the important part of create looks like in the controller:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;StickiesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;StickiesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;create&lt;/span&gt;
     &lt;span class='c1'&gt;# ...&lt;/span&gt;
   &lt;span class='k'&gt;rescue&lt;/span&gt; &lt;span class='no'&gt;ActiveRecord&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;RecordInvalid&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='n'&gt;e&lt;/span&gt;
@@ -2239,7 +2297,7 @@ end
     &lt;span class='n'&gt;render&lt;/span&gt; &lt;span class='ss'&gt;:action&lt;/span&gt; &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;new&amp;#39;&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='installation'&gt;Installation&lt;/h2&gt;
 
@@ -2258,11 +2316,11 @@ end
 &lt;p&gt;What I didn&amp;#8217;t want was an easy way for a user to be able to by-pass the invite-accept and go straight to invite-update. To prevent this, I wanted the invite-code to be available to invite-update, but not via a parameter. The quickest and safest way I could think was to require that it be in the session, which would theoretically force the user to first visit invite-accept. This way, only invited people can accept invites and they must go through invite-accept.&lt;/p&gt;
 
 &lt;p&gt;I also really liked the convention of using &lt;code&gt;assert_request&lt;/code&gt; at the head of each of my actions (I even implemented an &lt;code&gt;assert_request_has_no_params&lt;/code&gt; helper for most of them) and I didn&amp;#8217;t want to break from it to do a:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;some_action&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;some_action&lt;/span&gt;
   &lt;span class='k'&gt;raise&lt;/span&gt; &lt;span class='no'&gt;Exception&lt;/span&gt; &lt;span class='k'&gt;unless&lt;/span&gt; &lt;span class='n'&gt;session&lt;/span&gt;&lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='ss'&gt;:invite_code&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
   &lt;span class='c1'&gt;# ...&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='interpretation'&gt;Interpretation&lt;/h2&gt;
 
@@ -2275,19 +2333,19 @@ end
 &lt;/ul&gt;
 
 &lt;p&gt;The following code example shows how one might require the existence of three session variables for the given request: &lt;code&gt;:baz&lt;/code&gt;, &lt;code&gt;:bum&lt;/code&gt;, and &lt;code&gt;:bar&lt;/code&gt;&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FooController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FooController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;bar&lt;/span&gt;
     &lt;span class='n'&gt;assert_session&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;rule&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='n'&gt;rule&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;must_have&lt;/span&gt; &lt;span class='ss'&gt;:baz&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:bum&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='ss'&gt;:bar&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;If any one of the session variables does not exist in the session at the time the request is processed, a &lt;code&gt;AssertRequest::RequestError&lt;/code&gt; exception is raised with a meaningful error message; like:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='s2'&gt;&amp;quot;:baz and :bar expected to be in session&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='s2'&gt;&amp;quot;:baz and :bar expected to be in session&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;What if you only wanted to require &lt;code&gt;:baz&lt;/code&gt;, but you wanted to allow for &lt;code&gt;:boo&lt;/code&gt; and &lt;code&gt;:bar&lt;/code&gt;?&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FooController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;FooController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;bar&lt;/span&gt;
     &lt;span class='n'&gt;assert_session&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;rule&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
       &lt;span class='n'&gt;rule&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;must_have&lt;/span&gt; &lt;span class='ss'&gt;:baz&lt;/span&gt;
@@ -2295,13 +2353,13 @@ end
     &lt;span class='k'&gt;end&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;For this example, an error will only be thrown if &lt;code&gt;:baz&lt;/code&gt; is not defined at the time of the request. &lt;code&gt;:boo&lt;/code&gt; and &lt;code&gt;:bar&lt;/code&gt; may or may not be defined. This was useful for me to allow session variables that might have been stored during login actions, like a &lt;code&gt;return_to&lt;/code&gt; &lt;em&gt;(though, in this case, it might be more prudent to allow a global ignore style declaration)&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;In addition, any variable found in the session that is not declared as a &lt;code&gt;must_have&lt;/code&gt; or a &lt;code&gt;may_have&lt;/code&gt; is considered malicious and a &lt;code&gt;AssertRequest::RequestError&lt;/code&gt; exception is raised with a meaningful error message. For instance, given either of the above examples, the request will be halted and an error with the following message raised if a session variable is defined named &lt;code&gt;:toothrot&lt;/code&gt;.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='s2'&gt;&amp;quot;:toothrot not expected to be in session&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='s2'&gt;&amp;quot;:toothrot not expected to be in session&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;By default, &lt;code&gt;AssertSession&lt;/code&gt; will ignore the variable named &lt;code&gt;flash&lt;/code&gt; in the session.&lt;/p&gt;
 
@@ -2310,7 +2368,7 @@ end
 &lt;h2 id='application'&gt;Application&lt;/h2&gt;
 
 &lt;p&gt;Back to the original motivation; the invitations controller. After having implemented &lt;code&gt;assert_session&lt;/code&gt;, I was able to use it in the controller like so:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;InvitesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;InvitesController&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ApplicationController&lt;/span&gt;
   &lt;span class='c1'&gt;# ...&lt;/span&gt;
   &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;accept&lt;/span&gt;
     &lt;span class='n'&gt;assert_request&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;r&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt; &lt;span class='n'&gt;r&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;params&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;must_have&lt;/span&gt; &lt;span class='ss'&gt;:invite_code&lt;/span&gt; &lt;span class='p'&gt;}&lt;/span&gt;
@@ -2329,35 +2387,35 @@ end
     &lt;span class='c1'&gt;# ...&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;The &lt;code&gt;:return_to&lt;/code&gt; should really only be present if you&amp;#8217;ve ever tried to login, but since I do a lot of playing in the interface, I would routinely hit the problem where &lt;code&gt;:return_to&lt;/code&gt; existed and I didn&amp;#8217;t really feel like clearing my sessions (&lt;code&gt;:return_to&lt;/code&gt; comes with &lt;code&gt;acts_as_authenticated&lt;/code&gt;).&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;assert_post&lt;/code&gt; is another helper I wrote which simply does an &lt;code&gt;assert_request&lt;/code&gt;, requires the method to be a POST, and then yields. Like this:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;assert_post&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='o'&gt;&amp;amp;&lt;/span&gt;&lt;span class='n'&gt;block&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;assert_post&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='o'&gt;&amp;amp;&lt;/span&gt;&lt;span class='n'&gt;block&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
   &lt;span class='n'&gt;assert_request&lt;/span&gt; &lt;span class='k'&gt;do&lt;/span&gt; &lt;span class='o'&gt;|&lt;/span&gt;&lt;span class='n'&gt;rules&lt;/span&gt;&lt;span class='o'&gt;|&lt;/span&gt;
     &lt;span class='n'&gt;rules&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;method&lt;/span&gt; &lt;span class='ss'&gt;:post&lt;/span&gt;
     &lt;span class='k'&gt;yield&lt;/span&gt; &lt;span class='n'&gt;rules&lt;/span&gt;
   &lt;span class='k'&gt;end&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;A cooler approach would be if &lt;code&gt;assert_request&lt;/code&gt; itself was modified to accept the required HTTP method as an argument. An example of use would be:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;assert_request&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:post&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='c1'&gt;# What do you think, Scott?&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;assert_request&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:post&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;.&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='p'&gt;}&lt;/span&gt; &lt;span class='c1'&gt;# What do you think, Scott?&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='installation'&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;First, install the &lt;code&gt;AssertRequest&lt;/code&gt; plugin.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;ruby&lt;/span&gt; &lt;span class='n'&gt;script&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;plugin&lt;/span&gt; &lt;span class='n'&gt;install&lt;/span&gt; &lt;span class='n'&gt;svn&lt;/span&gt;&lt;span class='ss'&gt;:/&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;rubyforge&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;org&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;var&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;svn&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;validaterequest&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;plugins&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;assert_request&lt;/span&gt;
-&lt;/pre&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;ruby&lt;/span&gt; &lt;span class='n'&gt;script&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;plugin&lt;/span&gt; &lt;span class='n'&gt;install&lt;/span&gt; &lt;span class='n'&gt;svn&lt;/span&gt;&lt;span class='ss'&gt;:/&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;rubyforge&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;org&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;var&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;svn&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;validaterequest&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;plugins&lt;/span&gt;&lt;span class='o'&gt;/&lt;/span&gt;&lt;span class='n'&gt;assert_request&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Second, create a file using the code below in your Rails application and require it in your &lt;code&gt;environment.rb&lt;/code&gt; file. When Scott Woods accepts the patch, you can simply install/update the plugin you have installed.&lt;/p&gt;
 
 &lt;h2 id='code'&gt;Code&lt;/h2&gt;
 
 &lt;p&gt;Until Scott Woods adds the code into the plugin, the code only exists here.&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Glomp&lt;/span&gt; &lt;span class='c1'&gt;#:nodoc:&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Glomp&lt;/span&gt; &lt;span class='c1'&gt;#:nodoc:&lt;/span&gt;
   &lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;AssertRequest&lt;/span&gt; &lt;span class='c1'&gt;#:nodoc:&lt;/span&gt;
     &lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;PublicMethods&lt;/span&gt; &lt;span class='c1'&gt;#:nodoc:&lt;/span&gt;
       &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;assert_session&lt;/span&gt;
@@ -2404,7 +2462,7 @@ end
 &lt;span class='k'&gt;end&lt;/span&gt; &lt;span class='c1'&gt;# Glomp&lt;/span&gt;
 
 &lt;span class='no'&gt;ActionController&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:include&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='no'&gt;Glomp&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;AssertRequest&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;PublicMethods&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Tests are available upon request.&lt;/p&gt;</content>
  </entry>
@@ -2421,41 +2479,41 @@ end
 &lt;h2 id='example'&gt;Example&lt;/h2&gt;
 
 &lt;p&gt;In fact, it&amp;#8217;s so simple that examples are coming in the third paragraph. Let&amp;#8217;s say you have a User model that looks like the following:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;User&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActiveRecord&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;class&lt;/span&gt; &lt;span class='nc'&gt;User&lt;/span&gt; &lt;span class='o'&gt;&amp;lt;&lt;/span&gt; &lt;span class='no'&gt;ActiveRecord&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Base&lt;/span&gt;
   &lt;span class='n'&gt;validates_presence_of&lt;/span&gt; &lt;span class='ss'&gt;:name&lt;/span&gt;
   &lt;span class='n'&gt;validates_presence_of&lt;/span&gt; &lt;span class='ss'&gt;:email&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Ignoring the fact that you could one-line the validation, if you were to validate a new instance of User that does not provide &lt;code&gt;name&lt;/code&gt; or &lt;code&gt;email&lt;/code&gt;, you would receive two error messages. With &lt;em&gt;&lt;code&gt;full\_messages&lt;/code&gt;&lt;/em&gt;, what would return would look like the following:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;user&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;user&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
 &lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;valid?&lt;/span&gt;
 &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;false&lt;/span&gt;
 &lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;errors&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;full_messages&lt;/span&gt;
 &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;Name can&amp;#39;t be blank&amp;quot;&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='s2'&gt;&amp;quot;Email can&amp;#39;t be blank&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;But, what if you wanted the full-messages for just the &lt;code&gt;name&lt;/code&gt; attribute? You could look for those errors that start with name; you could live with &lt;code&gt;user.errors.on(:name)&lt;/code&gt; returning an array of partial error message; or you could do the following:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='n'&gt;user&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='n'&gt;user&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='no'&gt;User&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;new&lt;/span&gt;
 &lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;valid?&lt;/span&gt;
 &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='kp'&gt;false&lt;/span&gt;
 &lt;span class='n'&gt;user&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;errors&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;full_on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:name&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
 &lt;span class='o'&gt;=&amp;gt;&lt;/span&gt; &lt;span class='o'&gt;[&lt;/span&gt;&lt;span class='s2'&gt;&amp;quot;Name can&amp;#39;t be blank&amp;quot;&lt;/span&gt;&lt;span class='o'&gt;]&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;h2 id='installation'&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Step 1:&lt;/em&gt; install the Rails plugin:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;$RAILS_ROOT&amp;gt; ./script/plugin install \
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='text'&gt;$RAILS_ROOT&amp;gt; ./script/plugin install \
   http://glomp.rubyforge.org/svn/plugins/full_on_errors
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;em&gt;Step 2:&lt;/em&gt; Start using it&lt;/p&gt;
 
 &lt;h2 id='code'&gt;Code&lt;/h2&gt;
 
 &lt;p&gt;The code is extremely simple and is - oddly enough - based on &lt;code&gt;Errors.full\_messages&lt;/code&gt;. I have simplified the &lt;code&gt;full\_messages&lt;/code&gt; code to focus on one attribute, to do less, and to look better (according to Gus Aesthetics):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Glomp&lt;/span&gt; &lt;span class='c1'&gt;#:nodoc:&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;Glomp&lt;/span&gt; &lt;span class='c1'&gt;#:nodoc:&lt;/span&gt;
   &lt;span class='k'&gt;module&lt;/span&gt; &lt;span class='nn'&gt;FullOnErrors&lt;/span&gt; &lt;span class='c1'&gt;#:nodoc:&lt;/span&gt;
     &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;full_on&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='n'&gt;attr_name&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
       &lt;span class='kp'&gt;attr&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='n'&gt;attr_name&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;to_s&lt;/span&gt;
@@ -2468,10 +2526,10 @@ end
 &lt;span class='k'&gt;end&lt;/span&gt; &lt;span class='c1'&gt;# Glomp&lt;/span&gt;
 
 &lt;span class='no'&gt;ActiveRecord&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;Errors&lt;/span&gt;&lt;span class='o'&gt;.&lt;/span&gt;&lt;span class='n'&gt;send&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='ss'&gt;:include&lt;/span&gt;&lt;span class='p'&gt;,&lt;/span&gt; &lt;span class='no'&gt;Glomp&lt;/span&gt;&lt;span class='o'&gt;::&lt;/span&gt;&lt;span class='no'&gt;FullOnErrors&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;For comparison&amp;#8217;s sake, here is the &lt;code&gt;full\_messages&lt;/code&gt; code from the Errors class:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='c1'&gt;# Returns all the full error messages in an array.&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='ruby'&gt;&lt;span class='c1'&gt;# Returns all the full error messages in an array.&lt;/span&gt;
 &lt;span class='k'&gt;def&lt;/span&gt; &lt;span class='nf'&gt;full_messages&lt;/span&gt;
   &lt;span class='n'&gt;full_messages&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='o'&gt;[]&lt;/span&gt;
 
@@ -2488,7 +2546,7 @@ end
   &lt;span class='k'&gt;end&lt;/span&gt;
   &lt;span class='n'&gt;full_messages&lt;/span&gt;
 &lt;span class='k'&gt;end&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;</content>
  </entry>
  
@@ -2588,7 +2646,7 @@ end
 &lt;p&gt;My initial implementation was essentially the implementation from Code &amp;amp; Coffee with the algorithm of Geek Wisdom; but what I really wanted was a nice OO thing. I also wanted to be able to define colors in CSS.&lt;/p&gt;
 
 &lt;p&gt;My final JavaScript looks like the following (passwd.js):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nx'&gt;PasswordSophistication&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Class&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;create&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='javascript'&gt;&lt;span class='nx'&gt;PasswordSophistication&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;Class&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;create&lt;/span&gt;&lt;span class='p'&gt;();&lt;/span&gt;
 &lt;span class='nb'&gt;Object&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;extend&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;PasswordSophistication&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;prototype&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
   &lt;span class='nx'&gt;initialize&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='k'&gt;function&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;passwordFieldId&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='nx'&gt;fieldIdPrefix&lt;/span&gt;&lt;span class='p'&gt;)&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;
     &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;passwordField&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nb'&gt;document&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;getElementById&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='nx'&gt;passwordFieldId&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
@@ -2655,10 +2713,10 @@ end
     &lt;span class='k'&gt;this&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;textElement&lt;/span&gt;&lt;span class='p'&gt;.&lt;/span&gt;&lt;span class='nx'&gt;innerHTML&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='nx'&gt;rate&lt;/span&gt;&lt;span class='p'&gt;[&lt;/span&gt;&lt;span class='mi'&gt;1&lt;/span&gt;&lt;span class='p'&gt;];&lt;/span&gt;
   &lt;span class='p'&gt;}&lt;/span&gt;
 &lt;span class='p'&gt;});&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;Following is an excerpt of how to use it:&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nt'&gt;&amp;lt;script &lt;/span&gt;&lt;span class='na'&gt;src=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;/javascripts/passwd.js&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='html'&gt;&lt;span class='nt'&gt;&amp;lt;script &lt;/span&gt;&lt;span class='na'&gt;src=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;/javascripts/passwd.js&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;link&lt;/span&gt; &lt;span class='na'&gt;href=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;/stylesheets/passwd.css&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;media=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;screen&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;rel=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;Stylesheet&amp;quot;&lt;/span&gt; &lt;span class='na'&gt;type=&lt;/span&gt;&lt;span class='s'&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt; &lt;span class='nt'&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
   &lt;span class='nt'&gt;&amp;lt;div&lt;/span&gt; &lt;span class='na'&gt;class=&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;label&amp;#39;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&amp;lt;label&lt;/span&gt; &lt;span class='na'&gt;for=&lt;/span&gt;&lt;span class='s'&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class='nt'&gt;&amp;gt;&lt;/span&gt;Password&lt;span class='nt'&gt;&amp;lt;/label&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
@@ -2674,7 +2732,7 @@ end
 &lt;span class='nt'&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
   &lt;span class='nx'&gt;passwdMeter&lt;/span&gt; &lt;span class='o'&gt;=&lt;/span&gt; &lt;span class='k'&gt;new&lt;/span&gt; &lt;span class='nx'&gt;PasswordSophistication&lt;/span&gt;&lt;span class='p'&gt;(&lt;/span&gt;&lt;span class='s1'&gt;&amp;#39;user_password&amp;#39;&lt;/span&gt;&lt;span class='o'&gt;,&lt;/span&gt; &lt;span class='s1'&gt;&amp;#39;passwd&amp;#39;&lt;/span&gt;&lt;span class='p'&gt;);&lt;/span&gt;
 &lt;span class='nt'&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;So, the important part is the initialization of the meter via the PasswordSophistication object. The PasswordSophistication constructor expects two DOM Id&amp;#8217;s:&lt;/p&gt;
 
@@ -2689,14 +2747,14 @@ end
 &lt;p&gt;The other important piece is the &lt;strong&gt;onkeyup&lt;/strong&gt; defined in the password field, which calls &lt;em&gt;update()&lt;/em&gt; on the password meter object.&lt;/p&gt;
 
 &lt;p&gt;Now, colors come in via CSS (passwd.css):&lt;/p&gt;
-&lt;div class='highlight'&gt;&lt;pre&gt;&lt;span class='nf'&gt;#passwd_text&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;font-size&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;70%&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;#777&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
+&lt;div class='highlight'&gt;&lt;pre&gt;&lt;code class='css'&gt;&lt;span class='nf'&gt;#passwd_text&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;font-size&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;70%&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;#777&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
 &lt;span class='nf'&gt;#passwd_meter&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;.5ex&lt;/span&gt;&lt;span class='p'&gt;;&lt;/span&gt; &lt;span class='k'&gt;border&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;1px&lt;/span&gt; &lt;span class='k'&gt;solid&lt;/span&gt; &lt;span class='m'&gt;#ddd&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
 &lt;span class='nf'&gt;#passwd_bar&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;height&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;.5ex&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
 &lt;span class='nf'&gt;#passwd_bar&lt;/span&gt;&lt;span class='nc'&gt;.sophisticated&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;green&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
 &lt;span class='nf'&gt;#passwd_bar&lt;/span&gt;&lt;span class='nc'&gt;.smart&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='m'&gt;#a0ff01&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
 &lt;span class='nf'&gt;#passwd_bar&lt;/span&gt;&lt;span class='nc'&gt;.weak&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;orange&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
 &lt;span class='nf'&gt;#passwd_bar&lt;/span&gt;&lt;span class='nc'&gt;.risky&lt;/span&gt; &lt;span class='p'&gt;{&lt;/span&gt;&lt;span class='k'&gt;background-color&lt;/span&gt;&lt;span class='o'&gt;:&lt;/span&gt; &lt;span class='nb'&gt;red&lt;/span&gt;&lt;span class='p'&gt;;}&lt;/span&gt;
-&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;That&amp;#8217;s pretty simple. Here&amp;#8217;s what it looks like with my &lt;strong&gt;smart&lt;/strong&gt; password:&lt;/p&gt;
 &lt;img src='/images/articles/code/smart-passwd.png' /&gt;

@@ -82,7 +82,7 @@
 </ol>
 
 <p>With that in mind, I hit the court and started playing. Of course, I knew it was going to be a plugin, so I just went ahead and created the plugin. Being a tester, I wrote several functional tests for how I wanted it to work. They looked something like this:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FlashersControllerTest</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>TestCase</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>FlashersControllerTest</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>TestCase</span>
   <span class='k'>def</span> <span class='nf'>test_flash_available_after_request</span>
     <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;hello&#39;</span>
     <span class='n'>assert_equal</span> <span class='s1'>&#39;hello&#39;</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>[</span><span class='ss'>:actual_flash</span><span class='o'>]</span>
@@ -98,22 +98,22 @@
     <span class='n'>assert_equal</span> <span class='s1'>&#39;world&#39;</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Three erroring tests. Oh, joy! I love errors when they come immediately after writing my test code. Notice the <code>flashed</code> method call in test 3. That&#8217;s my contribution to the world of <code>Flash</code>. I want it to mean, give me the variables that were flashed (or flushed) during the request. Like a flash of light; fizzled and forgotten.</p>
 
 <p>Guess I should implement the faux Controller:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FlashersController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>FlashersController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='k'>def</span> <span class='nf'>index</span>
     <span class='n'>flash</span><span class='o'>[</span><span class='ss'>:actual_flash</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>params</span><span class='o'>[</span><span class='ss'>:actual_flash</span><span class='o'>]</span>
     <span class='n'>flash</span><span class='o'>.</span><span class='n'>now</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>params</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span>
     <span class='n'>render</span> <span class='ss'>:text</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;blah&#39;</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Two passing tests, and an erroring test. Yippee! Just need to make that <code>flashed</code> do something. Here, I went through many, many trials and tribulations. For like, almost 30 minutes. That is, until I figured, <em>&#8220;Why not just insert my own Flash hash into the session for the request?&#8221;</em> Like so:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>FlashedHash</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Flash</span><span class='o'>::</span><span class='no'>FlashHash</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>FlashedHash</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Flash</span><span class='o'>::</span><span class='no'>FlashHash</span>
   <span class='k'>def</span> <span class='nf'>flashed</span>
     <span class='vi'>@flashed</span> <span class='o'>||=</span> <span class='p'>{}</span>
   <span class='k'>end</span>
@@ -123,22 +123,22 @@
     <span class='k'>super</span><span class='p'>(</span><span class='n'>k</span><span class='p'>)</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Hmmm &#8230; and to accomplish objective (2), I would need to set that up somehow. Objective (3) says it should be easy to use. So, I settled on a little method that would be available in <code>Test::Unit::TestCase</code>, that is dependent on there being a <code>TestRequest</code> instance assigned to a <code>@request</code> instance variable (which there always is for functional tests), and that would be named &#8230; <code>flashback</code>.</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>flashback</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>flashback</span>
   <span class='vi'>@request</span><span class='o'>.</span><span class='n'>session</span><span class='o'>[</span><span class='s1'>&#39;flash&#39;</span><span class='o'>]</span> <span class='o'>=</span> <span class='no'>FlashedHash</span><span class='o'>.</span><span class='n'>new</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>This, however, required a drastic change in my test; which went from two lines, to three.</p>
 
 <p>And, I had to write another test to be sure that <code>flashed</code> was not available when <code>flashback</code> wasn&#8217;t called:</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_no_flashback_means_flash_now_not_available_after_request_via_flashed</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>test_no_flashback_means_flash_now_not_available_after_request_via_flashed</span>
   <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash_now</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;world&#39;</span>
   <span class='n'>assert_raise</span><span class='p'>(</span><span class='no'>NoMethodError</span><span class='p'>)</span> <span class='p'>{</span><span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span><span class='p'>}</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>I wrote a couple of other tests, but you get the point. Call <code>flashback</code> before you test your action and after <code>@request</code> is defined, and Bob&#8217;s your uncle!</p>
 
@@ -153,7 +153,7 @@
 <p>So, I want to test my <code>flash.now</code> variables. I like the idea of setting <code>flashback</code> when I need it, versus all the time with a <code>setup</code>.</p>
 
 <p>Here&#8217;s the first place I used it; an action for creating <code>Stickies</code>, which are kind of like user-to-user comments, but different &#8230; sort of.</p>
-<div class='highlight'><pre><span class='k'>def</span> <span class='nf'>test_create_should_flash_error_on_failure</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>test_create_should_flash_error_on_failure</span>
   <span class='n'>user</span> <span class='o'>=</span> <span class='n'>users</span><span class='p'>(</span><span class='ss'>:quentin</span><span class='p'>)</span>
   <span class='n'>sticker</span> <span class='o'>=</span> <span class='n'>users</span><span class='p'>(</span><span class='ss'>:aaron</span><span class='p'>)</span>
   <span class='n'>login_as</span><span class='p'>(</span><span class='n'>sticker</span><span class='p'>)</span>
@@ -161,10 +161,10 @@
   <span class='n'>post</span> <span class='ss'>:create</span><span class='p'>,</span> <span class='ss'>:user_id</span> <span class='o'>=&gt;</span> <span class='n'>user</span><span class='o'>.</span><span class='n'>id</span><span class='p'>,</span> <span class='ss'>:sticky</span> <span class='o'>=&gt;</span> <span class='p'>{</span><span class='ss'>:message</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;blah&#39;</span><span class='p'>}</span>
   <span class='n'>assert_match</span><span class='sr'> /Problems .+ Sticky/</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:error</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Here&#8217;s what the important part of create looks like in the controller:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>StickiesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>StickiesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='k'>def</span> <span class='nf'>create</span>
     <span class='c1'># ...</span>
   <span class='k'>rescue</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>RecordInvalid</span> <span class='o'>=&gt;</span> <span class='n'>e</span>
@@ -172,7 +172,7 @@
     <span class='n'>render</span> <span class='ss'>:action</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;new&#39;</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <h2 id='installation'>Installation</h2>
 

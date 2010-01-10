@@ -46,7 +46,7 @@
 <p>In response, I&#8217;m attaching the code for a dumb SMTP server that I wrote in less than two hours that I have used in my Rails applications to test what and to whom was getting mailed. All this little server does is respond with kind words; as in, it says <code>OK</code> to everything it can. It&#8217;s an eager server that will reaffirm everything you may have thought about SMTP.</p>
 
 <p>It also wouldn&#8217;t be to hard to ask it to store the emails for grabbing later. It would certainly be a lot less code and a lot friggin&#8217; easier to read.</p>
-<div class='highlight'><pre><span class='c1'>#!/usr/bin/env ruby</span>
+<div class='highlight'><pre><code class='ruby'><span class='c1'>#!/usr/bin/env ruby</span>
 
 <span class='c1'># I am a stupid SMTP server. Though I speak SMTP, all I do is regurgitate what</span>
 <span class='c1'># the sender sends me. Use me for doing manual testing of SMTP clients that have</span>
@@ -127,14 +127,14 @@
   <span class='n'>socket</span><span class='o'>.</span><span class='n'>close</span>
 <span class='k'>end</span>
 <span class='n'>server</span><span class='o'>.</span><span class='n'>close</span>
-</pre>
+</code></pre>
 </div>
 <p>If you do as the comments say, you&#8217;re golden. You can even tell your appropriate Rails configuration file to talk to the port you reference and it will work. You could do that like so in your <code>development.rb</code>:</p>
-<div class='highlight'><pre><span class='no'>ActionMailer</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>delivery_method</span> <span class='o'>=</span> <span class='ss'>:smtp</span>
+<div class='highlight'><pre><code class='ruby'><span class='no'>ActionMailer</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>delivery_method</span> <span class='o'>=</span> <span class='ss'>:smtp</span>
 <span class='no'>ActionMailer</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>smtp_settings</span> <span class='o'>=</span> <span class='p'>{</span>
   <span class='ss'>:address</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;localhost&#39;</span><span class='p'>,</span> <span class='ss'>:port</span> <span class='o'>=&gt;</span> <span class='mi'>25252</span><span class='p'>,</span> <span class='ss'>:domain</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;foo.bar&#39;</span>
 <span class='p'>}</span>
-</pre>
+</code></pre>
 </div>
 <p>Now, I should note that I wrote this while <a href='http://centro.net'>working for Centro</a> &#8230; my ex-employer, silly.</p>
 </div>
