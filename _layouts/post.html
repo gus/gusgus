@@ -40,6 +40,7 @@ layout: default
     <div class="content">{{ content }}</div>
   </div>
 
+  {% unless page.no_comment %}
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
@@ -49,19 +50,34 @@ layout: default
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>
+  {% endunless %}
 </div>
 
 <div id="right" class="grid_3 omega column">
   <ul>
     <h3>Into the Past</h3>
-    {% assign related = page.previous %}{% if related %}<li>
+    {% assign related = page.previous %}<li>{% if related %}
       <a href="{{ related.url }}">{{ related.title }}</a>
       <p><em>{{ related.summary }}</em></p>
-    </li>{% endif %}
+    {% else %}
+      {% for a_post in site.posts limit:2 %} 
+        <li>
+          <a href="{{ a_post.url }}">{{ a_post.title }}</a>
+          <p><em>{{ a_post.summary }}</em></p>
+        </li>
+      {% endfor %}
+    {% endif %}</li>
 
     {% assign related = page.previous.previous %}{% if related %}<li>
       <a href="{{ related.url }}">{{ related.title }}</a>
       <p><em>{{ related.summary }}</em></p>
     </li>{% endif %}
+
+    <p><em>
+      Check out these fine products:
+      <a href="http://dailyjs.com/">DailyJS</a>,
+      <a href="http://helicoid.net/">Helicoid</a>,
+      <a href="http://swirrl.com/">Swirrl</a>
+    </em></p>
   </ul>
 </div>
