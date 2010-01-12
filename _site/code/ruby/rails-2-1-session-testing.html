@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Session Testing in Rails 2.1</h1>
+  <div class="summary"><em>This hash gives a crap</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/life/universal-quotes.html">Universal Quotes - Going Way Back</a>
-      <p>Some old universal quotes I compiled in college and some new ones compiled along the way</p>
+      <p><em>Some old universal quotes I compiled in college and some new ones compiled along the way</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/sinatra-autohandling-css.html">Sinatra: auto-handling any CSS</a>
-      <p>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</p>
+      <p><em>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Session Testing in Rails 2.1</h1>
-    <div id="info">
-      <span class="date"><cite>Aug 18, 2008</cite></span>
-      <span class="summary"><em>This hash gives a crap</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Aug 18, 2008</cite></div>
   </div>
-  <p>I upgraded one of my Rails apps recently from Rails pre 2.1 to Rails 2.1. I had a couple of expected caveats that needed my attention; like:</p>
+
+  <div class="content"><p>I upgraded one of my Rails apps recently from Rails pre 2.1 to Rails 2.1. I had a couple of expected caveats that needed my attention; like:</p>
 
 <ul>
 <li>I was able to remove the use of my <a href='/2008/1/18/flashback-to-flash-now'>Flashback</a> plugin because <code>Flash.now</code> became testable</li>
@@ -115,7 +116,7 @@
   <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
 <span class='k'>end</span>
 </code></pre>
-</div>
+</div></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -133,12 +134,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/life/summer-reading-08.html">Summer Reading '08: Better Together</a>
-      <p>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</p>
+      <p><em>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</em></p>
     </li>
 
     <li>
       <a href="/work/joy-is-no-cubicles.html">Joy is no Cubicles</a>
-      <p>Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</p>
+      <p><em>Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</em></p>
     </li>
   </ul>
 </div>
@@ -146,15 +147,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

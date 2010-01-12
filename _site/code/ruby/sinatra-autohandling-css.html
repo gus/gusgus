@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Sinatra: auto-handling any CSS</h1>
+  <div class="summary"><em>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/ruby/install-mysql-gem-on-mac.html">Installing the MySql gem on a Mac</a>
-      <p>The command I always forget to type</p>
+      <p><em>The command I always forget to type</em></p>
     </li>
 
     <li>
       <a href="/life/universal-quotes.html">Universal Quotes - Going Way Back</a>
-      <p>Some old universal quotes I compiled in college and some new ones compiled along the way</p>
+      <p><em>Some old universal quotes I compiled in college and some new ones compiled along the way</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Sinatra: auto-handling any CSS</h1>
-    <div id="info">
-      <span class="date"><cite>Aug 28, 2008</cite></span>
-      <span class="summary"><em>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Aug 28, 2008</cite></div>
   </div>
-  <h4 id='update'>Update</h4>
+
+  <div class="content"><h4 id='update'>Update</h4>
 
 <ol>
 <li>I have included this functionality in my <a href='http://github.com/thumblemonks/chicago'>Chicago</a> gem</li>
@@ -135,7 +136,7 @@
 <p>I&#8217;ve <a href='http://www.gittr.com/index.php/archive/sinatra-splat-routes/'>heard</a> that a future version of Sinatra will allow me to get the value of the splats (the values matched by the asterisks of a route) from <code>params[&#39;splats&#39;]</code>. If this is true, we could modify <code>catch\_all\_css</code> to look like this:</p>
 <div class='highlight'><pre><code class='ruby'><span class='n'>get</span><span class='p'>(</span><span class='s1'>&#39;/*.css&#39;</span><span class='p'>)</span> <span class='p'>{</span> <span class='n'>sass</span> <span class='n'>params</span><span class='o'>[</span><span class='s2'>&quot;splat&quot;</span><span class='o'>].</span><span class='n'>first</span><span class='o'>.</span><span class='n'>to_sym</span> <span class='p'>}</span>
 </code></pre>
-</div>
+</div></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -153,12 +154,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/code/ruby/rails-2-1-session-testing.html">Session Testing in Rails 2.1</a>
-      <p>This hash gives a crap</p>
+      <p><em>This hash gives a crap</em></p>
     </li>
 
     <li>
       <a href="/life/summer-reading-08.html">Summer Reading '08: Better Together</a>
-      <p>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</p>
+      <p><em>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</em></p>
     </li>
   </ul>
 </div>
@@ -166,15 +167,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

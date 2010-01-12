@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Assert Session</h1>
+  <div class="summary"><em>Extending Assert Request</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/life/active-record-modeling-life.html">Active Record Modeling Life</a>
-      <p>Code and Life intertwined ... ewwwwww</p>
+      <p><em>Code and Life intertwined ... ewwwwww</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/flashback.html">Flashback</a>
-      <p>Test your flash and I mean .now</p>
+      <p><em>Test your flash and I mean .now</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Assert Session</h1>
-    <div id="info">
-      <span class="date"><cite>Jan 08, 2008</cite></span>
-      <span class="summary"><em>Extending Assert Request</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Jan 08, 2008</cite></div>
   </div>
-  <p>I was coding along in Rails with security in mind using the simple <a href='http://validaterequest.rubyforge.org/'>Assert Request</a> plugin from <a href='http://workingwithrails.com/person/5938-scott-woods'>Scott A Woods</a> in my controllers and ran into a spot where I wanted to require the presence of a session variable before allowing the rest of an action to execute. The specific motivation was conceived when coding a controller for an invitation mechanism. Normally, a user invites another user to a system, the invited user comes to the system with their invite-code (probably from a link in an email), completes some form (let&#8217;s call it invite-accept), and then submits the final request (invite-update).</p>
+
+  <div class="content"><p>I was coding along in Rails with security in mind using the simple <a href='http://validaterequest.rubyforge.org/'>Assert Request</a> plugin from <a href='http://workingwithrails.com/person/5938-scott-woods'>Scott A Woods</a> in my controllers and ran into a spot where I wanted to require the presence of a session variable before allowing the rest of an action to execute. The specific motivation was conceived when coding a controller for an invitation mechanism. Normally, a user invites another user to a system, the invited user comes to the system with their invite-code (probably from a link in an email), completes some form (let&#8217;s call it invite-accept), and then submits the final request (invite-update).</p>
 
 <p>What I didn&#8217;t want was an easy way for a user to be able to by-pass the invite-accept and go straight to invite-update. To prevent this, I wanted the invite-code to be available to invite-update, but not via a parameter. The quickest and safest way I could think was to require that it be in the session, which would theoretically force the user to first visit invite-accept. This way, only invited people can accept invites and they must go through invite-accept.</p>
 
@@ -221,7 +222,7 @@
 <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Base</span><span class='o'>.</span><span class='n'>send</span><span class='p'>(</span><span class='ss'>:include</span><span class='p'>,</span> <span class='no'>Glomp</span><span class='o'>::</span><span class='no'>AssertRequest</span><span class='o'>::</span><span class='no'>PublicMethods</span><span class='p'>)</span>
 </code></pre>
 </div>
-<p>Tests are available upon request.</p>
+<p>Tests are available upon request.</p></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -239,12 +240,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/code/ruby/full-on-errors.html">Full on Errors</a>
-      <p>Rails plugin to get the full error message for a specific ActiveRecord attribute</p>
+      <p><em>Rails plugin to get the full error message for a specific ActiveRecord attribute</em></p>
     </li>
 
     <li>
       <a href="/code/password-sophistication.html">Password Sophistication</a>
-      <p>My implementation of a web-based password strength meter</p>
+      <p><em>My implementation of a web-based password strength meter</em></p>
     </li>
   </ul>
 </div>
@@ -252,15 +253,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

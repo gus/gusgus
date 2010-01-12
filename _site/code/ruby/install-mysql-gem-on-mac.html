@@ -18,63 +18,64 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Installing the MySql gem on a Mac</h1>
+  <div class="summary"><em>The command I always forget to type</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/life/psa-illinois-sticker-renewal.html">PSA: Renewing Illinois Registration without Renewal Notice</a>
-      <p>A note to Illinois drivers</p>
+      <p><em>A note to Illinois drivers</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/rails-2-1-1-address-inflection.html">Rails 2: Inflection for Address</a>
-      <p>Learning something new about Rails everyday</p>
+      <p><em>Learning something new about Rails everyday</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Installing the MySql gem on a Mac</h1>
-    <div id="info">
-      <span class="date"><cite>Oct 10, 2008</cite></span>
-      <span class="summary"><em>The command I always forget to type</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Oct 10, 2008</cite></div>
   </div>
-  <p>Installing the mysql gem on my Mac today was not so easy; or obvious. Probably because I have Mysql installed as a port (currently on version 5.0.51).</p>
+
+  <div class="content"><p>Installing the mysql gem on my Mac today was not so easy; or obvious. Probably because I have Mysql installed as a port (currently on version 5.0.51).</p>
 
 <p>Here&#8217;s what I had to do:</p>
 
 <pre><code>ARCHFLAGS=&quot;-arch i386&quot; sudo gem install mysql -- --with-mysql-config=/opt/local/lib/mysql5/bin/mysql_config </code></pre>
 
-<p>Barf!</p>
+<p>Barf!</p></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -92,12 +93,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/life/universal-quotes.html">Universal Quotes - Going Way Back</a>
-      <p>Some old universal quotes I compiled in college and some new ones compiled along the way</p>
+      <p><em>Some old universal quotes I compiled in college and some new ones compiled along the way</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/sinatra-autohandling-css.html">Sinatra: auto-handling any CSS</a>
-      <p>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</p>
+      <p><em>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</em></p>
     </li>
   </ul>
 </div>
@@ -105,15 +106,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

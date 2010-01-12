@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Makin' Mash</h1>
+  <div class="summary"><em>A Map to Hash implementation in Ruby</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/life/summer-reading-08.html">Summer Reading '08: Better Together</a>
-      <p>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</p>
+      <p><em>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</em></p>
     </li>
 
     <li>
       <a href="/work/joy-is-no-cubicles.html">Joy is no Cubicles</a>
-      <p>Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</p>
+      <p><em>Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Makin' Mash</h1>
-    <div id="info">
-      <span class="date"><cite>May 31, 2008</cite></span>
-      <span class="summary"><em>A Map to Hash implementation in Ruby</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>May 31, 2008</cite></div>
   </div>
-  <p>We all know and love the <code>map</code> method in Ruby (and other functional-ish languages). Given some list of objects, we get back an equal-sized array of potentially different objects. In Ruby we can <code>map</code> against arrays, hashes, sets, etc.; basically, anything that is <code>Enumerable</code>.</p>
+
+  <div class="content"><p>We all know and love the <code>map</code> method in Ruby (and other functional-ish languages). Given some list of objects, we get back an equal-sized array of potentially different objects. In Ruby we can <code>map</code> against arrays, hashes, sets, etc.; basically, anything that is <code>Enumerable</code>.</p>
 
 <p>From time-to-time, though, I need to convert some list of object into a hash. Ergo, I need to <code>map-to-hash</code> or <code>mash</code>.</p>
 
@@ -103,7 +104,7 @@
 
 <ol>
 <li><a href='http://snippets.dzone.com/posts/show/4805'>Map array to hash</a> - There are actually one too many loops in <a href='http://snippets.dzone.com/user/vinterbleg'>vinterbleg&#8217;s</a> implementation. And it&#8217;s Array specific where it should be Enumerable generic.</li>
-</ol>
+</ol></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -121,12 +122,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/code/ruby/json-in-rails-just-annoyed-me.html">JSON in Rails Just Annoyed Me</a>
-      <p>Seriously, things just shouldn't be as hard as they are</p>
+      <p><em>Seriously, things just shouldn't be as hard as they are</em></p>
     </li>
 
     <li>
       <a href="/life/only-losers-are-unc-fans.html">Only Losers are UNC Fans - With Tests</a>
-      <p>It's not JUST a game, man!</p>
+      <p><em>It's not JUST a game, man!</em></p>
     </li>
   </ul>
 </div>
@@ -134,15 +135,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

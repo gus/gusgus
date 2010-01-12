@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Multiplexing Delegator</h1>
+  <div class="summary"><em>One person's brainfart is another person's gas-powered wind balloon</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/ruby/json-in-rails-just-annoyed-me.html">JSON in Rails Just Annoyed Me</a>
-      <p>Seriously, things just shouldn't be as hard as they are</p>
+      <p><em>Seriously, things just shouldn't be as hard as they are</em></p>
     </li>
 
     <li>
       <a href="/life/only-losers-are-unc-fans.html">Only Losers are UNC Fans - With Tests</a>
-      <p>It's not JUST a game, man!</p>
+      <p><em>It's not JUST a game, man!</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Multiplexing Delegator</h1>
-    <div id="info">
-      <span class="date"><cite>Jan 27, 2008</cite></span>
-      <span class="summary"><em>One person's brainfart is another person's gas-powered wind balloon</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Jan 27, 2008</cite></div>
   </div>
-  <p>I&#8217;ve got a <code>User</code>, see, and this <code>User</code> has a fever. And the only prescription for this fever is more <code>Network</code> (get <a href='http://www.vimeo.com/17746'>even more fever</a>). In fact, this <code>User</code> already has two <code>Networks</code>.</p>
+
+  <div class="content"><p>I&#8217;ve got a <code>User</code>, see, and this <code>User</code> has a fever. And the only prescription for this fever is more <code>Network</code> (get <a href='http://www.vimeo.com/17746'>even more fever</a>). In fact, this <code>User</code> already has two <code>Networks</code>.</p>
 <div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>Network</span>
   <span class='c1'># The idea is that each of the accessors has an array of Users</span>
   <span class='kp'>attr_accessor</span> <span class='ss'>:active</span><span class='p'>,</span> <span class='ss'>:pending</span><span class='p'>,</span> <span class='ss'>:rejected</span>
@@ -154,7 +155,7 @@
 <span class='n'>sudo</span> <span class='n'>gem</span> <span class='n'>install</span> <span class='n'>multiplexing_delegator</span>
 </code></pre>
 </div>
-<p><a href='http://glomp.rubyforge.org/multiplexing_delegator'>Documentation</a> is served from <a href='http://rubyforge.org/projects/glomp'>RubyForge</a>, just like the <a href='http://glomp.rubyforge.org/svn/multiplexing_delegator'>source code</a>.</p>
+<p><a href='http://glomp.rubyforge.org/multiplexing_delegator'>Documentation</a> is served from <a href='http://rubyforge.org/projects/glomp'>RubyForge</a>, just like the <a href='http://glomp.rubyforge.org/svn/multiplexing_delegator'>source code</a>.</p></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -172,12 +173,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/code/beautiful-code-readability-performance.html">Readability and Performance is Beautiful Code</a>
-      <p>Thoughts on what makes code beautiful</p>
+      <p><em>Thoughts on what makes code beautiful</em></p>
     </li>
 
     <li>
       <a href="/life/active-record-modeling-life.html">Active Record Modeling Life</a>
-      <p>Code and Life intertwined ... ewwwwww</p>
+      <p><em>Code and Life intertwined ... ewwwwww</em></p>
     </li>
   </ul>
 </div>
@@ -185,15 +186,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Readability and Performance is Beautiful Code</h1>
+  <div class="summary"><em>Thoughts on what makes code beautiful</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/life/only-losers-are-unc-fans.html">Only Losers are UNC Fans - With Tests</a>
-      <p>It's not JUST a game, man!</p>
+      <p><em>It's not JUST a game, man!</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/multiplexing-delegator.html">Multiplexing Delegator</a>
-      <p>One person's brainfart is another person's gas-powered wind balloon</p>
+      <p><em>One person's brainfart is another person's gas-powered wind balloon</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Readability and Performance is Beautiful Code</h1>
-    <div id="info">
-      <span class="date"><cite>Jan 21, 2008</cite></span>
-      <span class="summary"><em>Thoughts on what makes code beautiful</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Jan 21, 2008</cite></div>
   </div>
-  <p>Had a <em>nice</em> email discussion amongst the <a href='http://techni.cal.ly'>Centronians</a> the other day about what beautiful code is. The discussion came about due to a challenge I put out to the team to improve a certain nested conditional branch in the <a href='http://identity-matcher.googlecode.com/svn/trunk/lib/identity_matcher.rb'>Identity Matcher</a> method, <code>match_foaf</code>.</p>
+
+  <div class="content"><p>Had a <em>nice</em> email discussion amongst the <a href='http://techni.cal.ly'>Centronians</a> the other day about what beautiful code is. The discussion came about due to a challenge I put out to the team to improve a certain nested conditional branch in the <a href='http://identity-matcher.googlecode.com/svn/trunk/lib/identity_matcher.rb'>Identity Matcher</a> method, <code>match_foaf</code>.</p>
 
 <p>Seems as though there are some strong opinions from some that readability of code is secondary to the performance of code. I figured I would some up my thoughts and did so in the following matrix:</p>
 <img src='/images/articles/code/code-perf-read.png' />
@@ -100,7 +101,7 @@
 
 <ol>
 <li>Slick or Slack no longer exists :(</li>
-</ol>
+</ol></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -118,12 +119,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/life/active-record-modeling-life.html">Active Record Modeling Life</a>
-      <p>Code and Life intertwined ... ewwwwww</p>
+      <p><em>Code and Life intertwined ... ewwwwww</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/flashback.html">Flashback</a>
-      <p>Test your flash and I mean .now</p>
+      <p><em>Test your flash and I mean .now</em></p>
     </li>
   </ul>
 </div>
@@ -131,15 +132,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Canonical</h1>
+  <div class="summary"><em>Rails ActionMailer extension for substituting inline email addresses</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/life/me-me-meme.html">The Me Me Meme</a>
-      <p>Me me meme memememe me mme meme</p>
+      <p><em>Me me meme memememe me mme meme</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/dumb-smtp.html">Dumb SMTP</a>
-      <p>The Reaffirming SMTP Server</p>
+      <p><em>The Reaffirming SMTP Server</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Canonical</h1>
-    <div id="info">
-      <span class="date"><cite>Nov 08, 2008</cite></span>
-      <span class="summary"><em>Rails ActionMailer extension for substituting inline email addresses</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Nov 08, 2008</cite></div>
   </div>
-  <p>I and a co-worker (Eric Schwartz) wrote <a href='http://github.com/centro/canonical/tree/master'>Canonical</a> for <a href='http://centro.net'>Centro</a> - my current employer. Canonical does for your Rails app what Postfix&#8217;s <a href='http://www.postfix.org/canonical.5.html'>canonical</a> would do for your sys-admin. But now, you have the control! Ha ha!</p>
+
+  <div class="content"><p>I and a co-worker (Eric Schwartz) wrote <a href='http://github.com/centro/canonical/tree/master'>Canonical</a> for <a href='http://centro.net'>Centro</a> - my current employer. Canonical does for your Rails app what Postfix&#8217;s <a href='http://www.postfix.org/canonical.5.html'>canonical</a> would do for your sys-admin. But now, you have the control! Ha ha!</p>
 
 <p>Check out the README for everything you need to know.</p>
 <hr />
@@ -84,7 +85,7 @@
 
 <p>What you should notice is that canonical expects to see a regular expression as the first argument. Passing in anything that does not respond to =~ will result in an error.</p>
 
-<p>Have fun!</p>
+<p>Have fun!</p></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -102,12 +103,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/life/i-voted-2008.html">I Voted!</a>
-      <p>I did it again</p>
+      <p><em>I did it again</em></p>
     </li>
 
     <li>
       <a href="/life/call-for-less-process.html">A Call for Less Process</a>
-      <p>Ranting - can't we all just get along</p>
+      <p><em>Ranting - can't we all just get along</em></p>
     </li>
   </ul>
 </div>
@@ -115,15 +116,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Shoulda: Making DRY even DRY-ier</h1>
+  <div class="summary"><em>A look at how I build shoulda macros</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/history-blog-meme.html">History Blog Meme</a>
-      <p>Just like it says; a meme focused on your most typed commands</p>
+      <p><em>Just like it says; a meme focused on your most typed commands</em></p>
     </li>
 
     <li>
       <a href="/code/erlang/erlang-diaries-vol1.html">Erlang Diaries - Vol 1</a>
-      <p>Brought to you by the lower-case letter 'c'</p>
+      <p><em>Brought to you by the lower-case letter 'c'</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Shoulda: Making DRY even DRY-ier</h1>
-    <div id="info">
-      <span class="date"><cite>Nov 09, 2008</cite></span>
-      <span class="summary"><em>A look at how I build shoulda macros</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Nov 09, 2008</cite></div>
   </div>
-  <p>I&#8217;m in love with <a href='http://thoughtbot.com/projects/shoulda'>Shoulda</a>. Not like that! Come on! I love Shoulda like a pedicurist loves sandpaper. My job would be do-able, but it would suck without it. My hands would be all crackly and stink a lot more. Not to mention I&#8217;d probably end up gouging the client and then hemorrhaging &#8230; oh god!</p>
+
+  <div class="content"><p>I&#8217;m in love with <a href='http://thoughtbot.com/projects/shoulda'>Shoulda</a>. Not like that! Come on! I love Shoulda like a pedicurist loves sandpaper. My job would be do-able, but it would suck without it. My hands would be all crackly and stink a lot more. Not to mention I&#8217;d probably end up gouging the client and then hemorrhaging &#8230; oh god!</p>
 
 <p>Anyways, Shoulda takes some of the pain of writing tests away by actually making the tests readable. Contexts let me scope setup and teardown the way I&#8217;ve always wanted to. It&#8217;s also very easy to generate <code>contexts</code> and <code>should</code> statements dynamically without all that <code>define_method</code> cruft.</p>
 
@@ -125,7 +126,7 @@
 
 <ol>
 <li>I wrote this before shoulda included a mechanism for loading macros from a pre-defined directory (I think)</li>
-</ol>
+</ol></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -143,12 +144,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/code/ruby/smurf-rails-autominifying-js-css-plugin.html">Smurf</a>
-      <p>Rails Javascript & CSS Auto-minifying plugin</p>
+      <p><em>Rails Javascript & CSS Auto-minifying plugin</em></p>
     </li>
 
     <li>
       <a href="/life/me-me-meme.html">The Me Me Meme</a>
-      <p>Me me meme memememe me mme meme</p>
+      <p><em>Me me meme memememe me mme meme</em></p>
     </li>
   </ul>
 </div>
@@ -156,15 +157,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

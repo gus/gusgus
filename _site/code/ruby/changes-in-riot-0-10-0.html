@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Changes in Riot 0.10</h1>
+  <div class="summary"><em>Changes to the Ruby, Riot testing framework in version 0.10</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/cant-spell-waterfall.html">Random Thoughts, ed. 3 - Can't Spell Waterfall</a>
-      <p>At least not without these other spellings</p>
+      <p><em>At least not without these other spellings</em></p>
     </li>
 
     <li>
       <a href="/life/narcissus.html">Narcissus</a>
-      <p>The band with myopic love</p>
+      <p><em>The band with myopic love</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Changes in Riot 0.10</h1>
-    <div id="info">
-      <span class="date"><cite>Nov 23, 2009</cite></span>
-      <span class="summary"><em>Changes to the Ruby, Riot testing framework in version 0.10</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Nov 23, 2009</cite></div>
   </div>
-  <p>Though I&#8217;ve never blogged about <a href='http://github.com/thumblemonks/riot'>Riot</a>, it received some awesome and much unexpected attention from <a href='http://alexyoung.org/2009/10/26/riot-testing/'>Alex Young</a> (a super-awesome dude), <a href='http://www.rubyinside.com/riot-for-fast-expressive-and-focused-unit-tests-2669.html'>Ruby Inside</a> via <a href='http://www.ricroberts.com/'>Ric Roberts</a> (another super-awesome dude), <a href='http://railsenvy.com/2009/10/28/episode-098'>Rails Envy</a>, and <a href='http://ruby5.envylabs.com/episodes/24-episode-23-october-30-2009/stories/186-riot-testing-framework'>Ruby5</a>. I was overcome to say the least, partly because I wasn&#8217;t happy with where Riot was at that moment, but mostly because I wrote Riot for me and didn&#8217;t think anyone (except for <a href='http://toothrot.net/'>toothrot</a> and <a href='http://github.com/jonpliske'>jonpliske</a>) would actually think Riot was for them.</p>
+
+  <div class="content"><p>Though I&#8217;ve never blogged about <a href='http://github.com/thumblemonks/riot'>Riot</a>, it received some awesome and much unexpected attention from <a href='http://alexyoung.org/2009/10/26/riot-testing/'>Alex Young</a> (a super-awesome dude), <a href='http://www.rubyinside.com/riot-for-fast-expressive-and-focused-unit-tests-2669.html'>Ruby Inside</a> via <a href='http://www.ricroberts.com/'>Ric Roberts</a> (another super-awesome dude), <a href='http://railsenvy.com/2009/10/28/episode-098'>Rails Envy</a>, and <a href='http://ruby5.envylabs.com/episodes/24-episode-23-october-30-2009/stories/186-riot-testing-framework'>Ruby5</a>. I was overcome to say the least, partly because I wasn&#8217;t happy with where Riot was at that moment, but mostly because I wrote Riot for me and didn&#8217;t think anyone (except for <a href='http://toothrot.net/'>toothrot</a> and <a href='http://github.com/jonpliske'>jonpliske</a>) would actually think Riot was for them.</p>
 
 <p>I was wrong.</p>
 
@@ -173,7 +174,7 @@
 
 <p>Thusly and therefore, I&#8217;m calling all arms. Let&#8217;s get Riot Rails finished. It&#8217;ll accomplish what I set out to do, make functional tests in Rails faster. That&#8217;s right! Slowness of Shoulda + Factory Girl + functional-tests made me write Riot. That&#8217;s why Riot only calls <code>setup</code> once per Context. That&#8217;s why finishing Riot Rails will make me oh so very happy.</p>
 
-<p>If you&#8217;d like to help, but not sure how, hop into the <code>#riot</code> room on irc.freenode.net. Ohhhhh &#8230; the riot room, that&#8217;s funny. I know, it&#8217;s really a channel, but whatever! If you don&#8217;t want to do that, just fork and fix.</p>
+<p>If you&#8217;d like to help, but not sure how, hop into the <code>#riot</code> room on irc.freenode.net. Ohhhhh &#8230; the riot room, that&#8217;s funny. I know, it&#8217;s really a channel, but whatever! If you don&#8217;t want to do that, just fork and fix.</p></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -191,12 +192,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/life/lucid-thoughts-ed2.html">Lucid Thoughts, ed. 1</a>
-      <p>I couldn't sleep again, again</p>
+      <p><em>I couldn't sleep again, again</em></p>
     </li>
 
     <li>
       <a href="/code/daily-js.html">DailyJS.com</a>
-      <p>A new (as of this writing) daily news blog for JavaScript stuff</p>
+      <p><em>A new (as of this writing) daily news blog for JavaScript stuff</em></p>
     </li>
   </ul>
 </div>
@@ -204,15 +205,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

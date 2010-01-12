@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Affirmation of a programmer</h1>
+  <div class="summary"><em>Thoughts on a friend who played programmer with me for a day</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/daily-js.html">DailyJS.com</a>
-      <p>A new (as of this writing) daily news blog for JavaScript stuff</p>
+      <p><em>A new (as of this writing) daily news blog for JavaScript stuff</em></p>
     </li>
 
     <li>
       <a href="/work/i-hired-him.html">I went and hired him</a>
-      <p>I hired that guy who helped me affirm myself</p>
+      <p><em>I hired that guy who helped me affirm myself</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Affirmation of a programmer</h1>
-    <div id="info">
-      <span class="date"><cite>Oct 06, 2009</cite></span>
-      <span class="summary"><em>Thoughts on a friend who played programmer with me for a day</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Oct 06, 2009</cite></div>
   </div>
-  <p>Yesterday, a friend of mine came to the <a href='http://github.com/thumblemonks'>Thumble Monks</a> office. His name is Kurt. His mission was to be a programmer for the day. This is an odd event because Kurt has no computer background. He only just recently received his BA with a major in music. So why is he coming in to play make believe programmer?</p>
+
+  <div class="content"><p>Yesterday, a friend of mine came to the <a href='http://github.com/thumblemonks'>Thumble Monks</a> office. His name is Kurt. His mission was to be a programmer for the day. This is an odd event because Kurt has no computer background. He only just recently received his BA with a major in music. So why is he coming in to play make believe programmer?</p>
 
 <p>Turns out, the job market sucks. And it&#8217;s especially sucking for new graduates. It&#8217;s an employers market at the moment. This doesn&#8217;t mean Kurt suddenly wants to be a programmer. He doesn&#8217;t. Instead, what Kurt is doing is <a href='http://my-unemployment-challenge.blogspot.com/'>trying something new every day</a> in the hopes that he has fun, takes his mind of the shit, and perhaps even attracts some attention. After all, Kurt&#8217;s not a dumby. He&#8217;s a really smart dude. Right now, however, there&#8217;s a global warming of unemployment. The ocean of employables is rising. And with so many different size fish out there, how can Kurt stand out?</p>
 
@@ -106,7 +107,7 @@
 
 <p>I&#8217;m not really certain what any of this means. I guess it could mean that if you&#8217;re at work and you can&#8217;t find a programmer to pair with then grab the office manager, grab the overworked accountant, grab the HR person who&#8217;s not doing anything anyways. Just grab someone and see if it makes a difference.</p>
 
-<p>It could also mean other things and for those, I&#8217;m open to discussion.</p>
+<p>It could also mean other things and for those, I&#8217;m open to discussion.</p></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -124,12 +125,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/life/the-path.html">Our Path</a>
-      <p>I couldn't sleep again</p>
+      <p><em>I couldn't sleep again</em></p>
     </li>
 
     <li>
       <a href="/life/random-thoughts-ed-1.html">Random Thoughts, ed. 1</a>
-      <p>Just random stuff that wants to come out</p>
+      <p><em>Just random stuff that wants to come out</em></p>
     </li>
   </ul>
 </div>
@@ -137,15 +138,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

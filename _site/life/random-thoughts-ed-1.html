@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Random Thoughts, ed. 1</h1>
+  <div class="summary"><em>Just random stuff that wants to come out</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/affirmation-of-a-programmer.html">Affirmation of a programmer</a>
-      <p>Thoughts on a friend who played programmer with me for a day</p>
+      <p><em>Thoughts on a friend who played programmer with me for a day</em></p>
     </li>
 
     <li>
       <a href="/life/the-path.html">Our Path</a>
-      <p>I couldn't sleep again</p>
+      <p><em>I couldn't sleep again</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Random Thoughts, ed. 1</h1>
-    <div id="info">
-      <span class="date"><cite>Aug 04, 2009</cite></span>
-      <span class="summary"><em>Just random stuff that wants to come out</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Aug 04, 2009</cite></div>
   </div>
-  <p>I&#8217;m not in the mood to write anything technical. I just don&#8217;t want to. I don&#8217;t know if I&#8217;m bored, burned out, disinterested, been-there-done-that, any of the above, none of the above. Sounds like apathy. I don&#8217;t think it is because I care about technical writing. I don&#8217;t care for silly, self-serving blog posts about how great I think I am because I wrote a piddly little gem. I don&#8217;t particularly want to sell my own brand even though the entire community of like-living individuals does that very thing.</p>
+
+  <div class="content"><p>I&#8217;m not in the mood to write anything technical. I just don&#8217;t want to. I don&#8217;t know if I&#8217;m bored, burned out, disinterested, been-there-done-that, any of the above, none of the above. Sounds like apathy. I don&#8217;t think it is because I care about technical writing. I don&#8217;t care for silly, self-serving blog posts about how great I think I am because I wrote a piddly little gem. I don&#8217;t particularly want to sell my own brand even though the entire community of like-living individuals does that very thing.</p>
 
 <p>I feel annoyed, anxious, frustrated, tired, or something. I feel annoyed that I don&#8217;t care about doing this. I did care about doing this. What happened? Where did it go? What is it that I really want to do? Do I want to do anything? I&#8217;m not really sure where I&#8217;m at. Am I just getting old? Did I already do everything I wanted to do? What color is my parachute? Why the fuck would I want to jump out of plane right now?</p>
 
@@ -100,7 +101,7 @@
 
 <p>Tomorrow I&#8217;ll probably feel like a dork for writing it and putting it out. But, I&#8217;m committing and deploying tonight so too late, you.</p>
 
-<p>Go to bed.</p>
+<p>Go to bed.</p></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -118,12 +119,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/life/genesis.html">Genesis</a>
-      <p>Book of Gus - 6:30 - Time to wake up</p>
+      <p><em>Book of Gus - 6:30 - Time to wake up</em></p>
     </li>
 
     <li>
       <a href="/life/gusbus-has-a-flat.html">The Gus Bus has a Flat</a>
-      <p>Recent life experience</p>
+      <p><em>Recent life experience</em></p>
     </li>
   </ul>
 </div>
@@ -131,15 +132,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

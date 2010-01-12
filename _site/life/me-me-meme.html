@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>The Me Me Meme</h1>
+  <div class="summary"><em>Me me meme memememe me mme meme</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/ruby/shoulda-making-dry-even-dryier.html">Shoulda: Making DRY even DRY-ier</a>
-      <p>A look at how I build shoulda macros</p>
+      <p><em>A look at how I build shoulda macros</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/smurf-rails-autominifying-js-css-plugin.html">Smurf</a>
-      <p>Rails Javascript & CSS Auto-minifying plugin</p>
+      <p><em>Rails Javascript & CSS Auto-minifying plugin</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>The Me Me Meme</h1>
-    <div id="info">
-      <span class="date"><cite>Nov 08, 2008</cite></span>
-      <span class="summary"><em>Me me meme memememe me mme meme</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Nov 08, 2008</cite></div>
   </div>
-  <img src='/images/articles/life/me-me-meme.jpg' height='375' width='500' />
+
+  <div class="content"><img src='/images/articles/life/me-me-meme.jpg' height='375' width='500' />
 <p>I was running around on the Internets just now and ran into <a href='http://blog.matt-darby.com/'>Matt Darby&#8217;s</a> <a href='http://blog.matt-darby.com/2008/10/04/the-me-meme/'>The Me Meme</a> post. Alright, I&#8217;ll do it.</p>
 <hr />
 <p>Pay it forward instructions:</p>
@@ -81,7 +82,7 @@
 <li>Post that picture with NO editing</li>
 
 <li>Post these instructions with your picture</li>
-</ol>
+</ol></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -99,12 +100,12 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/code/ruby/dumb-smtp.html">Dumb SMTP</a>
-      <p>The Reaffirming SMTP Server</p>
+      <p><em>The Reaffirming SMTP Server</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/canonical.html">Canonical</a>
-      <p>Rails ActionMailer extension for substituting inline email addresses</p>
+      <p><em>Rails ActionMailer extension for substituting inline email addresses</em></p>
     </li>
   </ul>
 </div>
@@ -112,15 +113,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

@@ -18,57 +18,58 @@
   <body>
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
-        <div id='logo'>
-          The Knowldenist
-          <span id="subtitle">Drink Up!</span>
+        <div id="title" class="grid_6 alpha">
+          <span class="article">The</span><span class="noun"><a href="/">Knowldenist</a></span>
         </div>
-        <div id='nav' class="prefix_5 alpha grid_7 omega">
+        <div id="nav" class="grid_6 omega">
           <ul>
+            <li><a href='/'>Read</a></li>
             <li>
-              <a href='#life'>Links</a>
+              Code
               <ul>
-                <li>Tumblr</li>
-                <li>Twittr</li>
-                <li>Flickr</li>
+                <li><a href="http://github.com/jaknowlden">jaknowlden</a></li>
+                <li><a href="http://github.com/thumblemonks">thumblemonks</a></li>
               </ul>
             </li>
             <li>
-              <a href='#code'>Code</a>
+              Links
               <ul>
-                <li>jaknowlden</li>
-                <li>thumblemonks</li>
+                <li><a href="http://tumblr.gusg.us/">Tumblr</a></li>
+                <li><a href="http://twitter.com/jaknowlden">Twittr</a></li>
+                <li><a href="http://flickr.com/jaknowlden">Flickr</a></li>
               </ul>
             </li>
-            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
-      <div class='grid_12 alpha omega'>
-        <div id="left" class="grid_3 alpha column">
+      <div id="main" class='grid_12 alpha omega'>
+        <div id="page_title">
+  <h1>Full on Errors</h1>
+  <div class="summary"><em>Rails plugin to get the full error message for a specific ActiveRecord attribute</em></div>
+</div>
+
+<div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     <li>
       <a href="/code/ruby/flashback.html">Flashback</a>
-      <p>Test your flash and I mean .now</p>
+      <p><em>Test your flash and I mean .now</em></p>
     </li>
 
     <li>
       <a href="/code/ruby/assert-session-extending-assert-request.html">Assert Session</a>
-      <p>Extending Assert Request</p>
+      <p><em>Extending Assert Request</em></p>
     </li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>Full on Errors</h1>
-    <div id="info">
-      <span class="date"><cite>Dec 21, 2007</cite></span>
-      <span class="summary"><em>Rails plugin to get the full error message for a specific ActiveRecord attribute</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>Dec 21, 2007</cite></div>
   </div>
-  <p>ActiveRecord&#8217;s <code>full\_messages</code> method is a useful one for many reasons. I like using it as a message for tests that fail for strange reasons. I like it for displaying error messages in a view, which is simpler than modifying how <code>error\_messages\_for</code> displays. However, I have always found it annoying that I cannot ask an <code>ActiveRecord</code> object for the full-messages on a specific attribute &#8230; until now.</p>
+
+  <div class="content"><p>ActiveRecord&#8217;s <code>full\_messages</code> method is a useful one for many reasons. I like using it as a message for tests that fail for strange reasons. I like it for displaying error messages in a view, which is simpler than modifying how <code>error\_messages\_for</code> displays. However, I have always found it annoying that I cannot ask an <code>ActiveRecord</code> object for the full-messages on a specific attribute &#8230; until now.</p>
 
 <p>To remedy this, I wrote the <strong><code>full\_on\_errors</code></strong> plugin which simply adds a <code>full\_on</code> method to the <code>Errors</code> class of an <code>ActiveRecord</code> instance. It&#8217;s use is simple; simply call <code>full_on</code> and pass the attribute for which you would like the full messages for.</p>
 
@@ -143,7 +144,7 @@
   <span class='n'>full_messages</span>
 <span class='k'>end</span>
 </code></pre>
-</div>
+</div></div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -161,7 +162,7 @@
     <h3>Into the Past</h3>
     <li>
       <a href="/code/password-sophistication.html">Password Sophistication</a>
-      <p>My implementation of a web-based password strength meter</p>
+      <p><em>My implementation of a web-based password strength meter</em></p>
     </li>
 
     
@@ -171,15 +172,17 @@
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 -  Justin Knowlden,
-        <span class='email'>gus at gusg dot us</span>
-        <span class='powered'>
-          - Powered by <a href=''>Jekyll</a>,
-          <a href='http://daringfireball.net/projects/markdown/'>Markdown</a>,
-          <a href='http://pygments.org/'>Pygments</a>, and me
-        </span>
         <a href="http://feeds2.feedburner.com/gusgus" rel="alternate" type="application/rss+xml">
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
+        &copy; 2007 -  Justin Knowlden /
+        <span id="other_thumble_monks">
+          Other Thumble Monks:
+          <a href="http://annealer.org/">Annealer</a>,
+          <a href="http://github.com/danhodos">Sandman</a>,
+          <a href="http://toothrot.net/">Toothrot</a>,
+          <a href="http://hjstudios.com/">JankStar</a>,
+          <a href="http://andrijevik.net/">Vladka</a>
+        </span>
       </div>
     </div>
 

@@ -1,30 +1,42 @@
 ---
 layout: default
 ---
+
+<div id="page_title">
+  <h1>{{ page.title }}</h1>
+  <div class="summary"><em>{{ page.summary }}</em></div>
+</div>
+
 <div id="left" class="grid_3 alpha column">
   <ul>
-    <h3>To the Future</h3>
+    <h3>Into the Future</h3>
     {% assign related = page.next.next %}{% if related %}<li>
       <a href="{{ related.url }}">{{ related.title }}</a>
-      <p>{{ related.summary }}</p>
+      <p><em>{{ related.summary }}</em></p>
     </li>{% endif %}
 
-    {% assign related = page.next %}{% if related %}<li>
+    {% assign related = page.next %}<li>{% if related %}
       <a href="{{ related.url }}">{{ related.title }}</a>
-      <p>{{ related.summary }}</p>
-    </li>{% endif %}
+      <p><em>{{ related.summary }}</em></p>
+    {% else %}
+      <p><em>
+        You're just going to have to wait, you know. In the meantime, checkout:
+        <a href="http://github.com/thumblemonks/riot">Riot</a>,
+        <a href="http://github.com/thumblemonks/riot_rails">Riot Rails</a>,
+        <a href="http://jubilator.thumblemonks.com">Jubilator</a>,
+        <a href="http://github.com/thumblemonks/inquisition">Inquisition</a>,
+        or just google for some random images (not helping with that).
+      </em></p>
+    {% endif %}</li>
   </ul>
 </div>
 
 <div id="article" class="grid_6">
-  <div class="header clearfix">
-    <h1>{{ page.title }}</h1>
-    <div id="info">
-      <span class="date"><cite>{{ page.date | date: "%b %d, %Y" }}</cite></span>
-      <span class="summary"><em>{{ page.summary }}</em></span>
-    </div>
+  <div id="info">
+    <div class="date"><cite>{{ page.date | date: "%b %d, %Y" }}</cite></div>
   </div>
-  {{ content }}
+
+  <div class="content">{{ content }}</div>
 
   <div id="grumble">
     <h4 class="count"></h4>
@@ -42,12 +54,12 @@ layout: default
     <h3>Into the Past</h3>
     {% assign related = page.previous %}{% if related %}<li>
       <a href="{{ related.url }}">{{ related.title }}</a>
-      <p>{{ related.summary }}</p>
+      <p><em>{{ related.summary }}</em></p>
     </li>{% endif %}
 
     {% assign related = page.previous.previous %}{% if related %}<li>
       <a href="{{ related.url }}">{{ related.title }}</a>
-      <p>{{ related.summary }}</p>
+      <p><em>{{ related.summary }}</em></p>
     </li>{% endif %}
   </ul>
 </div>

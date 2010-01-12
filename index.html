@@ -19,7 +19,7 @@ title: Call me the Bus Driver ...
         <span class="summary"><em>{{ latest_post.summary }}</em></span>
       </div>
     </div>
-    {{ latest_post.content }}
+    <div class="content">{{ latest_post.content }}</div>
   </div>
 </div>
 
@@ -29,7 +29,7 @@ title: Call me the Bus Driver ...
     {% for post in site.posts limit:2 offset:1 %}
       <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
-        <p>{{ post.summary }}</p>
+        <p><em>{{ post.summary }}</em></p>
       </li>
     {% endfor %}  
   </ul>
