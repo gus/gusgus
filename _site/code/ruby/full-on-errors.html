@@ -49,27 +49,28 @@
   <div class="summary"><em>Rails plugin to get the full error message for a specific ActiveRecord attribute</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    <li>
-      <a href="/code/ruby/flashback.html">Flashback</a>
-      <p><em>Test your flash and I mean .now</em></p>
-    </li>
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      <li>
+        <a href="/code/ruby/flashback.html">Flashback</a>
+        <p><em>Test your flash and I mean .now</em></p>
+      </li>
 
-    <li>
-      <a href="/code/ruby/assert-session-extending-assert-request.html">Assert Session</a>
-      <p><em>Extending Assert Request</em></p>
-    </li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>Dec 21, 2007</cite></div>
+      <li>
+        <a href="/code/ruby/assert-session-extending-assert-request.html">Assert Session</a>
+        <p><em>Extending Assert Request</em></p>
+      </li>
+    </ul>
   </div>
 
-  <div class="content"><p>ActiveRecord&#8217;s <code>full\_messages</code> method is a useful one for many reasons. I like using it as a message for tests that fail for strange reasons. I like it for displaying error messages in a view, which is simpler than modifying how <code>error\_messages\_for</code> displays. However, I have always found it annoying that I cannot ask an <code>ActiveRecord</code> object for the full-messages on a specific attribute &#8230; until now.</p>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>Dec 21, 2007</cite></div>
+    </div>
+
+    <div class="content"><p>ActiveRecord&#8217;s <code>full\_messages</code> method is a useful one for many reasons. I like using it as a message for tests that fail for strange reasons. I like it for displaying error messages in a view, which is simpler than modifying how <code>error\_messages\_for</code> displays. However, I have always found it annoying that I cannot ask an <code>ActiveRecord</code> object for the full-messages on a specific attribute &#8230; until now.</p>
 
 <p>To remedy this, I wrote the <strong><code>full\_on\_errors</code></strong> plugin which simply adds a <code>full\_on</code> method to the <code>Errors</code> class of an <code>ActiveRecord</code> instance. It&#8217;s use is simple; simply call <code>full_on</code> and pass the attribute for which you would like the full messages for.</p>
 
@@ -145,13 +146,14 @@
 <span class='k'>end</span>
 </code></pre>
 </div></div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>

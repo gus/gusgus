@@ -7,43 +7,45 @@ layout: default
   <div class="summary"><em>{{ page.summary }}</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    {% assign related = page.next.next %}{% if related %}<li>
-      <a href="{{ related.url }}">{{ related.title }}</a>
-      <p><em>{{ related.summary }}</em></p>
-    </li>{% endif %}
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      {% assign related = page.next.next %}{% if related %}<li>
+        <a href="{{ related.url }}">{{ related.title }}</a>
+        <p><em>{{ related.summary }}</em></p>
+      </li>{% endif %}
 
-    {% assign related = page.next %}<li>{% if related %}
-      <a href="{{ related.url }}">{{ related.title }}</a>
-      <p><em>{{ related.summary }}</em></p>
-    {% else %}
-      <p><em>
-        You're just going to have to wait, you know. In the meantime, checkout:
-        <a href="http://github.com/thumblemonks/riot">Riot</a>,
-        <a href="http://github.com/thumblemonks/riot_rails">Riot Rails</a>,
-        <a href="http://jubilator.thumblemonks.com">Jubilator</a>,
-        <a href="http://github.com/thumblemonks/inquisition">Inquisition</a>,
-        or just google for some random images (not helping with that).
-      </em></p>
-    {% endif %}</li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>{{ page.date | date: "%b %d, %Y" }}</cite></div>
+      {% assign related = page.next %}<li>{% if related %}
+        <a href="{{ related.url }}">{{ related.title }}</a>
+        <p><em>{{ related.summary }}</em></p>
+      {% else %}
+        <p><em>
+          You're just going to have to wait, you know. In the meantime, checkout:
+          <a href="http://github.com/thumblemonks/riot">Riot</a>,
+          <a href="http://github.com/thumblemonks/riot_rails">Riot Rails</a>,
+          <a href="http://jubilator.thumblemonks.com">Jubilator</a>,
+          <a href="http://github.com/thumblemonks/inquisition">Inquisition</a>,
+          or just google for some random images (not helping with that).
+        </em></p>
+      {% endif %}</li>
+    </ul>
   </div>
 
-  <div class="content">{{ content }}</div>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>{{ page.date | date: "%b %d, %Y" }}</cite></div>
+    </div>
+
+    <div class="content">{{ content }}</div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>

@@ -49,27 +49,28 @@
   <div class="summary"><em>It should just be easier</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    <li>
-      <a href="/life/thumbly-going-on.html">Thumbly Going On</a>
-      <p><em>Taking "break one off" to the next level</em></p>
-    </li>
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      <li>
+        <a href="/life/thumbly-going-on.html">Thumbly Going On</a>
+        <p><em>Taking "break one off" to the next level</em></p>
+      </li>
 
-    <li>
-      <a href="/code/ruby/load-model.html">Load Model</a>
-      <p><em>ActionController Extension to Automatically Load Model Instances</em></p>
-    </li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>Dec 20, 2008</cite></div>
+      <li>
+        <a href="/code/ruby/load-model.html">Load Model</a>
+        <p><em>ActionController Extension to Automatically Load Model Instances</em></p>
+      </li>
+    </ul>
   </div>
 
-  <div class="content"><p>I recently started writing my <a href='http://github.com/thumblemonks/evoke'>Evoke</a> service (a nice, little <a href='http://sinatra.rubyforge.org/'>Sinatra</a> app). Part of the Evoke service is actually delivering on the promise of calling a stored URL back, which I achieved by storing a runner as a <a href='http://github.com/tobi/delayed_job'>delayed job</a>. Only half the battle is writing the consumer, though. The other half is ensuring that the runner is daemonized and that the daemon is restarted if ever it were to die. This is where <a href='http://god.rubyforge.org/'>god</a> enters the picture.</p>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>Dec 20, 2008</cite></div>
+    </div>
+
+    <div class="content"><p>I recently started writing my <a href='http://github.com/thumblemonks/evoke'>Evoke</a> service (a nice, little <a href='http://sinatra.rubyforge.org/'>Sinatra</a> app). Part of the Evoke service is actually delivering on the promise of calling a stored URL back, which I achieved by storing a runner as a <a href='http://github.com/tobi/delayed_job'>delayed job</a>. Only half the battle is writing the consumer, though. The other half is ensuring that the runner is daemonized and that the daemon is restarted if ever it were to die. This is where <a href='http://god.rubyforge.org/'>god</a> enters the picture.</p>
 
 <p>For the Evoke consumer, I wrote a little god script that I package with the Evoke bundle. This script is easily configured to run from the command like so (relative to the evoke source code):</p>
 <div class='highlight'><pre><code class='bash'>god -c config/evoke.god
@@ -111,13 +112,14 @@
 <p>Come on god! Get with the program!</p>
 
 <p>Anyways, I intend to fix god so that I can do that. Hopefully, the master of god will accept?!?! I may be way out of my mind here and there may be a much easier way to do this. If so, shoot me an email (see address in the footer) with the solution.</p></div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>

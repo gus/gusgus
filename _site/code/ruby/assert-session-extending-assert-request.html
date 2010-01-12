@@ -49,27 +49,28 @@
   <div class="summary"><em>Extending Assert Request</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    <li>
-      <a href="/life/active-record-modeling-life.html">Active Record Modeling Life</a>
-      <p><em>Code and Life intertwined ... ewwwwww</em></p>
-    </li>
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      <li>
+        <a href="/life/active-record-modeling-life.html">Active Record Modeling Life</a>
+        <p><em>Code and Life intertwined ... ewwwwww</em></p>
+      </li>
 
-    <li>
-      <a href="/code/ruby/flashback.html">Flashback</a>
-      <p><em>Test your flash and I mean .now</em></p>
-    </li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>Jan 08, 2008</cite></div>
+      <li>
+        <a href="/code/ruby/flashback.html">Flashback</a>
+        <p><em>Test your flash and I mean .now</em></p>
+      </li>
+    </ul>
   </div>
 
-  <div class="content"><p>I was coding along in Rails with security in mind using the simple <a href='http://validaterequest.rubyforge.org/'>Assert Request</a> plugin from <a href='http://workingwithrails.com/person/5938-scott-woods'>Scott A Woods</a> in my controllers and ran into a spot where I wanted to require the presence of a session variable before allowing the rest of an action to execute. The specific motivation was conceived when coding a controller for an invitation mechanism. Normally, a user invites another user to a system, the invited user comes to the system with their invite-code (probably from a link in an email), completes some form (let&#8217;s call it invite-accept), and then submits the final request (invite-update).</p>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>Jan 08, 2008</cite></div>
+    </div>
+
+    <div class="content"><p>I was coding along in Rails with security in mind using the simple <a href='http://validaterequest.rubyforge.org/'>Assert Request</a> plugin from <a href='http://workingwithrails.com/person/5938-scott-woods'>Scott A Woods</a> in my controllers and ran into a spot where I wanted to require the presence of a session variable before allowing the rest of an action to execute. The specific motivation was conceived when coding a controller for an invitation mechanism. Normally, a user invites another user to a system, the invited user comes to the system with their invite-code (probably from a link in an email), completes some form (let&#8217;s call it invite-accept), and then submits the final request (invite-update).</p>
 
 <p>What I didn&#8217;t want was an easy way for a user to be able to by-pass the invite-accept and go straight to invite-update. To prevent this, I wanted the invite-code to be available to invite-update, but not via a parameter. The quickest and safest way I could think was to require that it be in the session, which would theoretically force the user to first visit invite-accept. This way, only invited people can accept invites and they must go through invite-accept.</p>
 
@@ -223,13 +224,14 @@
 </code></pre>
 </div>
 <p>Tests are available upon request.</p></div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>

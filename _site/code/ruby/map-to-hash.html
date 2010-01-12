@@ -49,27 +49,28 @@
   <div class="summary"><em>A Map to Hash implementation in Ruby</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    <li>
-      <a href="/life/summer-reading-08.html">Summer Reading '08: Better Together</a>
-      <p><em>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</em></p>
-    </li>
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      <li>
+        <a href="/life/summer-reading-08.html">Summer Reading '08: Better Together</a>
+        <p><em>If you see me in a bookstore and I'm taking pictures ... uh ... just leave me alone</em></p>
+      </li>
 
-    <li>
-      <a href="/work/joy-is-no-cubicles.html">Joy is no Cubicles</a>
-      <p><em>Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</em></p>
-    </li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>May 31, 2008</cite></div>
+      <li>
+        <a href="/work/joy-is-no-cubicles.html">Joy is no Cubicles</a>
+        <p><em>Why you shouldn't read over peoples shoulders, but really shouldn't be an ass</em></p>
+      </li>
+    </ul>
   </div>
 
-  <div class="content"><p>We all know and love the <code>map</code> method in Ruby (and other functional-ish languages). Given some list of objects, we get back an equal-sized array of potentially different objects. In Ruby we can <code>map</code> against arrays, hashes, sets, etc.; basically, anything that is <code>Enumerable</code>.</p>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>May 31, 2008</cite></div>
+    </div>
+
+    <div class="content"><p>We all know and love the <code>map</code> method in Ruby (and other functional-ish languages). Given some list of objects, we get back an equal-sized array of potentially different objects. In Ruby we can <code>map</code> against arrays, hashes, sets, etc.; basically, anything that is <code>Enumerable</code>.</p>
 
 <p>From time-to-time, though, I need to convert some list of object into a hash. Ergo, I need to <code>map-to-hash</code> or <code>mash</code>.</p>
 
@@ -105,13 +106,14 @@
 <ol>
 <li><a href='http://snippets.dzone.com/posts/show/4805'>Map array to hash</a> - There are actually one too many loops in <a href='http://snippets.dzone.com/user/vinterbleg'>vinterbleg&#8217;s</a> implementation. And it&#8217;s Array specific where it should be Enumerable generic.</li>
 </ol></div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>

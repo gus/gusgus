@@ -65,10 +65,8 @@ h4 { margin: 1ex 0; color: #555; }
 
 #articles { }
 
-#sidebar { }
-  #sidebar h3 { } 
-  #sidebar.flickr li { display: inline; padding: 0; margin: 0; }
-    #sidebar.flickr li img { width: 75px; height: 75px; }
+.flickr li { display: inline; padding: 0; margin: 0; }
+  .flickr li img { width: 75px; height: 75px; margin: 0 1ex 1ex 0; }
 
 /* Article */
 

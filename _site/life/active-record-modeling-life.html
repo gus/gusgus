@@ -49,40 +49,42 @@
   <div class="summary"><em>Code and Life intertwined ... ewwwwww</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    <li>
-      <a href="/code/ruby/multiplexing-delegator.html">Multiplexing Delegator</a>
-      <p><em>One person's brainfart is another person's gas-powered wind balloon</em></p>
-    </li>
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      <li>
+        <a href="/code/ruby/multiplexing-delegator.html">Multiplexing Delegator</a>
+        <p><em>One person's brainfart is another person's gas-powered wind balloon</em></p>
+      </li>
 
-    <li>
-      <a href="/code/beautiful-code-readability-performance.html">Readability and Performance is Beautiful Code</a>
-      <p><em>Thoughts on what makes code beautiful</em></p>
-    </li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>Jan 18, 2008</cite></div>
+      <li>
+        <a href="/code/beautiful-code-readability-performance.html">Readability and Performance is Beautiful Code</a>
+        <p><em>Thoughts on what makes code beautiful</em></p>
+      </li>
+    </ul>
   </div>
 
-  <div class="content"><p>A quick observation I made about how <code>ActiveRecord</code> can be used to model life.</p>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>Jan 18, 2008</cite></div>
+    </div>
+
+    <div class="content"><p>A quick observation I made about how <code>ActiveRecord</code> can be used to model life.</p>
 <div class='highlight'><pre><code class='bash'>class Life &lt; ActiveRecord::Base
   has_many :causes
   has_many :effects, :through <span class='o'>=</span>&gt; :causes
 end
 </code></pre>
 </div></div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>

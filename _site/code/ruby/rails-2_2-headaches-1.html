@@ -49,27 +49,28 @@
   <div class="summary"><em>Problems I ran into while upgrading to Rails 2.2.2</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    <li>
-      <a href="/life/larry-opens-bar.html">Douglas Street Sports Bar & Grill</a>
-      <p><em>My buddy opens a bar - and I go to it</em></p>
-    </li>
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      <li>
+        <a href="/life/larry-opens-bar.html">Douglas Street Sports Bar & Grill</a>
+        <p><em>My buddy opens a bar - and I go to it</em></p>
+      </li>
 
-    <li>
-      <a href="/life/obama-and-einstein.html">Obama & Einstein</a>
-      <p><em>A quote from the great and some follow-up references of my own</em></p>
-    </li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>Nov 23, 2008</cite></div>
+      <li>
+        <a href="/life/obama-and-einstein.html">Obama & Einstein</a>
+        <p><em>A quote from the great and some follow-up references of my own</em></p>
+      </li>
+    </ul>
   </div>
 
-  <div class="content"><p>I had an itch in my butt to move our little app to the latest and greatest version of Rails - <code>2.2.2</code>. It was really itching and against my better judgements, I dug right in there and went to picking at that itch.</p>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>Nov 23, 2008</cite></div>
+    </div>
+
+    <div class="content"><p>I had an itch in my butt to move our little app to the latest and greatest version of Rails - <code>2.2.2</code>. It was really itching and against my better judgements, I dug right in there and went to picking at that itch.</p>
 
 <p>I went about my normal business of doing a <code>sudo gem install rails</code> and then a <code>rake rails:freeze:gems</code>. Simple enough. Started my tests and holy crap &#8230; tests were failing left and right! I mean, come on now. This is silly. We are basically cutting edge without being on the Edge. We use all the latest and greatest plugins and stuff. What the hell&#8217;s going on here?</p>
 
@@ -179,13 +180,14 @@ end</code></pre>
 <ol>
 <li>We&#8217;re not using Mercurial anymore. We moved to git and are hosting on GitHub (private ya&#8217;ll).</li>
 </ol></div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>

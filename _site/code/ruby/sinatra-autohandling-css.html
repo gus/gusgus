@@ -49,27 +49,28 @@
   <div class="summary"><em>If you're like me, you don't want to explicitly define a handler for each CSS file in Sinatra</em></div>
 </div>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Into the Future</h3>
-    <li>
-      <a href="/code/ruby/install-mysql-gem-on-mac.html">Installing the MySql gem on a Mac</a>
-      <p><em>The command I always forget to type</em></p>
-    </li>
+<div class="grid_9 alpha">
+  <div id="left" class="grid_3 alpha column">
+    <ul>
+      <h3>Into the Future</h3>
+      <li>
+        <a href="/code/ruby/install-mysql-gem-on-mac.html">Installing the MySql gem on a Mac</a>
+        <p><em>The command I always forget to type</em></p>
+      </li>
 
-    <li>
-      <a href="/life/universal-quotes.html">Universal Quotes - Going Way Back</a>
-      <p><em>Some old universal quotes I compiled in college and some new ones compiled along the way</em></p>
-    </li>
-  </ul>
-</div>
-
-<div id="article" class="grid_6">
-  <div id="info">
-    <div class="date"><cite>Aug 28, 2008</cite></div>
+      <li>
+        <a href="/life/universal-quotes.html">Universal Quotes - Going Way Back</a>
+        <p><em>Some old universal quotes I compiled in college and some new ones compiled along the way</em></p>
+      </li>
+    </ul>
   </div>
 
-  <div class="content"><h4 id='update'>Update</h4>
+  <div id="article" class="grid_6 omega">
+    <div id="info">
+      <div class="date"><cite>Aug 28, 2008</cite></div>
+    </div>
+
+    <div class="content"><h4 id='update'>Update</h4>
 
 <ol>
 <li>I have included this functionality in my <a href='http://github.com/thumblemonks/chicago'>Chicago</a> gem</li>
@@ -137,13 +138,14 @@
 <div class='highlight'><pre><code class='ruby'><span class='n'>get</span><span class='p'>(</span><span class='s1'>&#39;/*.css&#39;</span><span class='p'>)</span> <span class='p'>{</span> <span class='n'>sass</span> <span class='n'>params</span><span class='o'>[</span><span class='s2'>&quot;splat&quot;</span><span class='o'>].</span><span class='n'>first</span><span class='o'>.</span><span class='n'>to_sym</span> <span class='p'>}</span>
 </code></pre>
 </div></div>
+  </div>
 
   <div id="grumble">
     <h4 class="count"></h4>
     <ul></ul>
 
     <div id="disqus_thread"></div>
-    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
     <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
   </div>
