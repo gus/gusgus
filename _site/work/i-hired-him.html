@@ -4,10 +4,10 @@
   <head>
     <meta content='GROW UP' http-equiv='X-UA-Compatible' />
     <meta content='width=850' name='viewport' />
-    <title>GusG.us - I went and hired him</title>
+    <title>The Knowldenist - Drink Up! - I went and hired him</title>
     <link href='/images/gusgus_icon.gif' rel='icon' />
-    <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="GusG.us" type="application/atom+xml" />
-    <link href='http://gusg.us/feed.xml' rel='alternate' title='GusG.us' type='application/atom+xml' />
+    <link href="http://feeds.feedburner.com/gusgus" rel="alternate" title="The Knowldenist" type="application/atom+xml" />
+    <link href='http://gusg.us/feed.xml' rel='alternate' title='The Knowldenist' type='application/atom+xml' />
     <link href="/stylesheets/reset.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/960.css" type="text/css" media="screen" rel="stylesheet"/>
     <link href="/stylesheets/text.css" type="text/css" media="screen" rel="stylesheet"/>
@@ -16,24 +16,51 @@
   </head>
 
   <body>
-
     <div class='container_12'>
       <div id='header' class='grid_12 alpha omega'>
         <div id='logo'>
-          <img src="/images/gus-logo.png" alt="gusg.us">
+          The Knowldenist
+          <span id="subtitle">Drink Up!</span>
         </div>
         <div id='nav' class="prefix_5 alpha grid_7 omega">
           <ul>
-            <li><a href='/work'>Work</a></li>
-            <li><a href='/code'>Code</a></li>
-            <li><a href='/life'>Life</a></li>
-            <li><a href='/'>Home</a></li>
+            <li>
+              <a href='#life'>Links</a>
+              <ul>
+                <li>Tumblr</li>
+                <li>Twittr</li>
+                <li>Flickr</li>
+              </ul>
+            </li>
+            <li>
+              <a href='#code'>Code</a>
+              <ul>
+                <li>jaknowlden</li>
+                <li>thumblemonks</li>
+              </ul>
+            </li>
+            <li><a href='/'>Write</a></li>
           </ul>
         </div>
       </div>
 
       <div class='grid_12 alpha omega'>
-        <div id="article">
+        <div id="left" class="grid_3 alpha column">
+  <ul>
+    <h3>To the Future</h3>
+    <li>
+      <a href="/life/lucid-thoughts-ed2.html">Lucid Thoughts, ed. 1</a>
+      <p>I couldn't sleep again, again</p>
+    </li>
+
+    <li>
+      <a href="/code/daily-js.html">DailyJS.com</a>
+      <p>A new (as of this writing) daily news blog for JavaScript stuff</p>
+    </li>
+  </ul>
+</div>
+
+<div id="article" class="grid_6">
   <div class="header clearfix">
     <h1>I went and hired him</h1>
     <div id="info">
@@ -44,22 +71,37 @@
   <p>So, do you remember when I <a href='/code/affirmation-of-a-programmer.html'>talked about my friend</a> <a href='http://my-unemployment-challenge.blogspot.com/'>Kurt</a> who came in to play programmer for a day? Well, I was so impressed with his skills, I figured &#8220;Why not hire him on part-time to do our QA at <a href='http://carerunner.com'>CareRunner</a>?&#8221; Because I&#8217;ve never mentioned it, I&#8217;m leading the technology department for CareRunner, which is a small start-up. Anyways, it&#8217;s been two weeks, he has no idea what QA exactly is yet, but he&#8217;s doing a great job of finding the superficial problems we developers are no good at. He&#8217;s already learning how unrelated actions in performed in tandem can create unexpected results. His keen eye doubles as a typo magnet as well.</p>
 
 <p>I&#8217;ve also tasked him with understanding what QA is, learning advanced testing techniques, and how he can go about automating his job. Selenium being the first obvious choice for automation. I&#8217;m really interested to see how well his music background helps in this area; specifically, that of composing a symphony of tests and suites. Finding patterns and what not. He&#8217;s also pretty aggravated that he can&#8217;t find any good educational material yet, which is great. Necessity is the mother of invention.</p>
+
+  <div id="grumble">
+    <h4 class="count"></h4>
+    <ul></ul>
+
+    <div id="disqus_thread"></div>
+    <!-- script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script -->
+    <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
 </div>
 
-<div id="grumble">
-  <h4 class="count"></h4>
-  <ul></ul>
+<div id="right" class="grid_3 omega column">
+  <ul>
+    <h3>Into the Past</h3>
+    <li>
+      <a href="/code/affirmation-of-a-programmer.html">Affirmation of a programmer</a>
+      <p>Thoughts on a friend who played programmer with me for a day</p>
+    </li>
 
-  <div id="disqus_thread"></div>
-  <script type="text/javascript" src="http://disqus.com/forums/gusgus/embed.js"></script>
-  <noscript><a href="http://disqus.com/forums/gusgus/?url=ref">View the discussion thread.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">powered by <span class="logo-disqus">Disqus</span></a>
+    <li>
+      <a href="/life/the-path.html">Our Path</a>
+      <p>I couldn't sleep again</p>
+    </li>
+  </ul>
 </div>
 
       </div>
 
       <div class='grid_12 alpha omega' id='footer'>
-        &copy; 2007 - 2009 Justin Knowlden,
+        &copy; 2007 -  Justin Knowlden,
         <span class='email'>gus at gusg dot us</span>
         <span class='powered'>
           - Powered by <a href=''>Jekyll</a>,
@@ -70,31 +112,10 @@
           <img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>
       </div>
     </div>
-    <script src="/javascripts/jquery-1.2.6.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    //<![CDATA[
-      (function() {
-        var links = document.getElementsByTagName('a');
-        var query = '?';
-        for(var i = 0; i < links.length; i++) {
-        if(links[i].href.indexOf('#disqus_thread') >= 0) {
-          query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-        }
-        }
-        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/gusgus/get_num_replies.js' + query + '"></' + 'script>');
-      })();
-    //]]>
-    </script>
-    <script src="/javascripts/application.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-10626188-1");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
+
+    <script src="/javascripts/jquery-1.3.2.min.js"></script>
+    <script src="/javascripts/disqus.js"></script>
+    <script src="/javascripts/application.js"></script>
+    <script src="/javascripts/ga.js"></script>
   </body>
 </html>
