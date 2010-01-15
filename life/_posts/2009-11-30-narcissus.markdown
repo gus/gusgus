@@ -18,7 +18,7 @@ What songs would we sing? Here's a spontaneous list I've been working on for a w
 1. [I'm Even Better than the Real Thing](http://www.youtube.com/watch?v=Yrch66gdjjk) - *U2* - This reminds me of when I was 16, just got my license, it's December but really sunny and no snow, and I'm driving past golden fields of unharvested corn stalks in rural Ohio. Perhaps one of my all time favorite songs. For real. I get tingles.
 1. [Nothing Compares 2 Me](http://www.youtube.com/watch?v=iUiTQvT0W_0) - *Sinead O'Connor* - Love the haircut. If it wasn't for space monkeys in Fight Club, I'd have to say she was my inspiration for choosing a hairstyle.
 1. [You Miss Me](http://www.youtube.com/watch?v=PzYlj41YVzA) - *Björk*
-1. [I'm So Vain](http://www.youtube.com/watch?v=0hclkb76IvY) - *Carly Simon* - Probably not what you expected :) BAM! It's like one of those pop-in-and-ruin-your-photo-persons but in the form of a video.
+1. [I'm So Vain](http://www.youtube.com/watch?v=omWQzYycyJk) - *Carly Simon* - Probably not what you expected :) BAM! It's like one of those pop-in-and-ruin-your-photo-persons but in the form of a video.
 1. [All For Me](http://www.youtube.com/watch?v=6MMcLEdkY68) - *Sister Hazel*
 1. [I Touch Myself](http://www.youtube.com/watch?v=zTneO6UgRuM) - *The Divinyls* - What a perfect song; no changes necessary. Well ... that's not true. *"When I think about me I ..."*
 
