@@ -4,13 +4,24 @@
  <title>GusG.us</title>
  <link href="http://gusg.us/feed.xml" rel="self"/>
  <link href="http://gusg.us/"/>
- <updated>2010-01-12T18:22:01-06:00</updated>
+ <updated>2010-01-14T18:02:34-06:00</updated>
  <id>http://gusg.us/</id>
  <author>
    <name>Justin Knowlden</name>
    <email>gus@gusg.us</email>
  </author>
 
+ 
+ <entry>
+   <title>Extended Tetris</title>
+   <link href="http://gusg.us/life/extended-tetris.html"/>
+   <updated>2010-01-14T00:00:00-06:00</updated>
+   <id>http://gusg.us/life/extended-tetris</id>
+   <content type="html">&lt;p&gt;&lt;a href='http://firstpersontetris.com/'&gt;First person tetris&lt;/a&gt;, what a trip (thanks &lt;a href='http://twitter.com/assaf'&gt;Assaf&lt;/a&gt;). I&amp;#8217;m glad I do not have to rotate my world around in order to put something on a shelf. Playing it got me thinking, though. The thought was, &lt;em&gt;&amp;#8220;What would the pieces look like if the individual blocks were not forced to meet along their edges?&amp;#8221;&lt;/em&gt; As in, what if the blocks could meet at their corners.&lt;/p&gt;
+
+&lt;p&gt;Whelp, here&amp;#8217;s how. I might be missing a few, but whatever. That would be one hell of game.&lt;/p&gt;
+&lt;img src='/images/articles/extended-tetris.png' alt='Extended tetris' /&gt;</content>
+ </entry>
  
  <entry>
    <title>Random Thoughts, ed. 3 - Can't Spell Waterfall</title>
