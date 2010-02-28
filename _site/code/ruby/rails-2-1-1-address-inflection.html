@@ -51,7 +51,8 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        <div id="page_title">
+        
+<div id="page_title">
   <h1>Rails 2: Inflection for Address</h1>
   <div class="summary"><em>Learning something new about Rails everyday</em></div>
 </div>
@@ -95,24 +96,24 @@
     NameError: uninitialized constant Addres</code></pre>
 
 <p>Which can be traced to line 226 of Factory Girl&#8217;s <a href='http://github.com/thoughtbot/factory_girl/tree/master/lib/factory_girl/factory.rb'>factory.rb</a> file, which does the following:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>if</span> <span class='n'>class_or_to_s</span><span class='o'>.</span><span class='n'>respond_to?</span><span class='p'>(</span><span class='ss'>:to_sym</span><span class='p'>)</span>
+<div class='highlight'><pre><span class='k'>if</span> <span class='n'>class_or_to_s</span><span class='o'>.</span><span class='n'>respond_to?</span><span class='p'>(</span><span class='ss'>:to_sym</span><span class='p'>)</span>
   <span class='n'>class_or_to_s</span><span class='o'>.</span><span class='n'>to_s</span><span class='o'>.</span><span class='n'>classify</span><span class='o'>.</span><span class='n'>constantize</span>
 <span class='k'>else</span>
   <span class='o'>.</span><span class='n'>.</span><span class='o'>.</span>
-</code></pre>
+</pre>
 </div>
 <p>Seems simple enough to solve. Perhaps we should change the inflector rules to &#8230; say &#8230; this:</p>
-<div class='highlight'><pre><code class='ruby'><span class='no'>ActiveSupport</span><span class='o'>::</span><span class='no'>Inflector</span><span class='o'>.</span><span class='n'>inflections</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>inflect</span><span class='o'>|</span>
+<div class='highlight'><pre><span class='no'>ActiveSupport</span><span class='o'>::</span><span class='no'>Inflector</span><span class='o'>.</span><span class='n'>inflections</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>inflect</span><span class='o'>|</span>
   <span class='n'>inflect</span><span class='o'>.</span><span class='n'>plural</span><span class='sr'> /(ss)$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1es&#39;</span>
   <span class='n'>inflect</span><span class='o'>.</span><span class='n'>singular</span><span class='sr'> /(ss)es$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1&#39;</span>
 <span class='k'>end</span>
-</code></pre>
+</pre>
 </div>
 <p>Yeah &#8230; no! Still didn&#8217;t work. Went out to eat. Came back. Tried this stupid, stupid, stupid thing and &#8230; well &#8230; it worked:</p>
-<div class='highlight'><pre><code class='ruby'><span class='no'>ActiveSupport</span><span class='o'>::</span><span class='no'>Inflector</span><span class='o'>.</span><span class='n'>inflections</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>inflect</span><span class='o'>|</span>
+<div class='highlight'><pre><span class='no'>ActiveSupport</span><span class='o'>::</span><span class='no'>Inflector</span><span class='o'>.</span><span class='n'>inflections</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>inflect</span><span class='o'>|</span>
   <span class='n'>inflect</span><span class='o'>.</span><span class='n'>singular</span><span class='sr'> /(ss)$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1&#39;</span>
 <span class='k'>end</span>
-</code></pre>
+</pre>
 </div>
 <p>Barf again!</p>
 

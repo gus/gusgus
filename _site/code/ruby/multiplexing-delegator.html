@@ -51,7 +51,8 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        <div id="page_title">
+        
+<div id="page_title">
   <h1>Multiplexing Delegator</h1>
   <div class="summary"><em>One person's brainfart is another person's gas-powered wind balloon</em></div>
 </div>
@@ -87,7 +88,7 @@
     </div>
 
     <div class="content"><p>I&#8217;ve got a <code>User</code>, see, and this <code>User</code> has a fever. And the only prescription for this fever is more <code>Network</code> (get <a href='http://www.vimeo.com/17746'>even more fever</a>). In fact, this <code>User</code> already has two <code>Networks</code>.</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>Network</span>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>Network</span>
   <span class='c1'># The idea is that each of the accessors has an array of Users</span>
   <span class='kp'>attr_accessor</span> <span class='ss'>:active</span><span class='p'>,</span> <span class='ss'>:pending</span><span class='p'>,</span> <span class='ss'>:rejected</span>
 <span class='k'>end</span>
@@ -99,24 +100,24 @@
     <span class='vi'>@public_network</span> <span class='o'>=</span> <span class='no'>Network</span><span class='o'>.</span><span class='n'>new</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</code></pre>
+</pre>
 </div>
 <p><em>This is, of course, a very simplified implementation of a solution that might be built in Rails with ActiveRecord.</em></p>
 
 <p>That&#8217;s awesome. I can work with each of these <code>Networks</code> by adding to and removing from each of them individually. But, what if I wanted the list of all <code>Users</code> that a particular User is linked to and I don&#8217;t care which Network they are in?</p>
 
 <p>I could do this if I wanted all of the active users:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>user</span><span class='o'>.</span><span class='n'>friend_network</span><span class='o'>.</span><span class='n'>active</span> <span class='o'>+</span> <span class='n'>user</span><span class='o'>.</span><span class='n'>public_network</span><span class='o'>.</span><span class='n'>active</span>
-</code></pre>
+<div class='highlight'><pre><span class='n'>user</span><span class='o'>.</span><span class='n'>friend_network</span><span class='o'>.</span><span class='n'>active</span> <span class='o'>+</span> <span class='n'>user</span><span class='o'>.</span><span class='n'>public_network</span><span class='o'>.</span><span class='n'>active</span>
+</pre>
 </div>
 <p>Or, I could push the logic into the model as would be expected; like so:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>User</span>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>User</span>
   <span class='c1'># ...</span>
   <span class='k'>def</span> <span class='nf'>all_active_users</span>
     <span class='vi'>@friend_network</span><span class='o'>.</span><span class='n'>active</span> <span class='o'>+</span> <span class='vi'>@public_network</span><span class='o'>.</span><span class='n'>active</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</code></pre>
+</pre>
 </div>
 <p>That&#8217;s fine. But what if I wanted the list of all rejected <code>Users</code>? What if I wanted to add more feverish <code>Networks</code>? A lot more code, that&#8217;s what!</p>
 
@@ -125,13 +126,13 @@
 <p>So, of course, a solution is forthcoming. What I really want to do is delegate a single message across multiple receivers and aggregate the results into a single response. Kind of like I&#8217;m multiplexing messages and demultiplexing the response.</p>
 
 <p>Here&#8217;s an example of what I would like to do given a User instance:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>user</span><span class='o'>.</span><span class='n'>entire_network</span><span class='o'>.</span><span class='n'>active</span>
-</code></pre>
+<div class='highlight'><pre><span class='n'>user</span><span class='o'>.</span><span class='n'>entire_network</span><span class='o'>.</span><span class='n'>active</span>
+</pre>
 </div>
 <p>What should happen in this call is that <code>entire_network</code> should know how to call <code>active</code> on both the <code>friend_network</code> and <code>public_network</code> accessors, and then collect the results into a single collection of Users.</p>
 
 <p>Thusly and so forth, the <code>Multiplexing Delegator</code> has been born. Let the dust settle a little &#8230; and here is how I would define the <code>User</code> class:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>User</span>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>User</span>
   <span class='kp'>attr_accessor</span> <span class='ss'>:friend_network</span><span class='p'>,</span> <span class='ss'>:public_network</span>
 
   <span class='n'>multiplex</span> <span class='ss'>:entire_network</span><span class='p'>,</span> <span class='ss'>:across</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:friend_network</span><span class='p'>,</span> <span class='ss'>:public_network</span><span class='o'>]</span>
@@ -141,7 +142,7 @@
     <span class='vi'>@public_network</span> <span class='o'>=</span> <span class='no'>Network</span><span class='o'>.</span><span class='n'>new</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</code></pre>
+</pre>
 </div>
 <p>Assuming <code>friend_network</code> contains 3 <code>Users</code> and <code>public_network</code> contains 5 <code>Users</code>, a call to <code>entire_network</code> will return an array with 7 <code>Users</code>.</p>
 
@@ -154,23 +155,23 @@
 <p>But really, that&#8217;s not true. I do care; lest I wouldn&#8217;t have gone through all this effort to impress you. I see can <code>mutliplex</code> as being useful for aggregating any and many collections easily into one stream of results. Generally, the types of Objects being delegated to will be the same, but this does not have to be true.</p>
 
 <p>Here&#8217;s something fun I did:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>Object</span>
+<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>Object</span>
   <span class='n'>multiplex</span> <span class='ss'>:all_methods</span><span class='p'>,</span>
     <span class='ss'>:across</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:public_methods</span><span class='p'>,</span> <span class='ss'>:protected_methods</span><span class='p'>,</span> <span class='ss'>:private_methods</span><span class='o'>]</span>
 <span class='k'>end</span>
 <span class='n'>obj</span> <span class='o'>=</span> <span class='no'>Object</span><span class='o'>.</span><span class='n'>new</span>
 <span class='n'>obj</span><span class='o'>.</span><span class='n'>all_methods</span> <span class='o'>=&gt;</span> <span class='o'>[.</span><span class='n'>.</span><span class='o'>.]</span> <span class='c1'># Produced an array of all of the methods</span>
-</code></pre>
+</pre>
 </div>
 <p>No &#8230; it does not match what is returned from <code>Object.methods</code>.</p>
 
 <h2 id='installation'>Installation</h2>
 
 <p>Simple and easy:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>gem</span> <span class='n'>install</span> <span class='n'>multiplexing_delegator</span>
+<div class='highlight'><pre><span class='n'>gem</span> <span class='n'>install</span> <span class='n'>multiplexing_delegator</span>
 <span class='c1'># or if you&#39;re boring</span>
 <span class='n'>sudo</span> <span class='n'>gem</span> <span class='n'>install</span> <span class='n'>multiplexing_delegator</span>
-</code></pre>
+</pre>
 </div>
 <p><a href='http://glomp.rubyforge.org/multiplexing_delegator'>Documentation</a> is served from <a href='http://rubyforge.org/projects/glomp'>RubyForge</a>, just like the <a href='http://glomp.rubyforge.org/svn/multiplexing_delegator'>source code</a>.</p></div>
   </div>
