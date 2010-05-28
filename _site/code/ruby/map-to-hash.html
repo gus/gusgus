@@ -51,8 +51,7 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        
-<div id="page_title">
+        <div id="page_title">
   <h1>Makin' Mash</h1>
   <div class="summary"><em>A Map to Hash implementation in Ruby</em></div>
 </div>
@@ -92,29 +91,29 @@
 <p>From time-to-time, though, I need to convert some list of object into a hash. Ergo, I need to <code>map-to-hash</code> or <code>mash</code>.</p>
 
 <p>For instance, let&#8217;s say I want to map an array of User records to a hash with email addresses pointing to the User records? Without much thought I could write it this way:</p>
-<div class='highlight'><pre><span class='n'>users</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find</span><span class='p'>(</span><span class='ss'>:all</span><span class='p'>)</span> <span class='c1'># Not smart :)</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>users</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find</span><span class='p'>(</span><span class='ss'>:all</span><span class='p'>)</span> <span class='c1'># Not smart :)</span>
 <span class='n'>hashed_users</span> <span class='o'>=</span> <span class='n'>users</span><span class='o'>.</span><span class='n'>inject</span><span class='p'>({})</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>acc</span><span class='p'>,</span><span class='n'>u</span><span class='o'>|</span> 
   <span class='n'>acc</span><span class='o'>[</span><span class='n'>u</span><span class='o'>.</span><span class='n'>email</span><span class='o'>]</span> <span class='o'>=</span> <span class='n'>u</span>
   <span class='n'>acc</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>I would rather do the following:</p>
-<div class='highlight'><pre><span class='n'>users</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find</span><span class='p'>(</span><span class='ss'>:all</span><span class='p'>)</span> <span class='c1'># Still not smart :)</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>users</span> <span class='o'>=</span> <span class='no'>User</span><span class='o'>.</span><span class='n'>find</span><span class='p'>(</span><span class='ss'>:all</span><span class='p'>)</span> <span class='c1'># Still not smart :)</span>
 <span class='n'>hashed_users</span> <span class='o'>=</span> <span class='n'>users</span><span class='o'>.</span><span class='n'>mash</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>u</span><span class='o'>|</span> <span class='p'>{</span><span class='n'>u</span><span class='o'>.</span><span class='n'>email</span> <span class='o'>=&gt;</span> <span class='n'>u</span><span class='p'>}</span> <span class='p'>}</span>
-</pre>
+</code></pre>
 </div>
 <p>It&#8217;s not a <strong>HUGE</strong> change, but it does let me <em>say</em> what I want to <em>say</em> without all the <strong>acc</strong>umulator cruft.</p>
 
 <h2 id='implementation'>Implementation</h2>
 
 <p>Simple, straight forward, and usable by anything that is Enumerable.</p>
-<div class='highlight'><pre><span class='k'>module</span> <span class='nn'>Enumerable</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>module</span> <span class='nn'>Enumerable</span>
   <span class='k'>def</span> <span class='nf'>mash</span>
     <span class='nb'>self</span><span class='o'>.</span><span class='n'>inject</span><span class='p'>({})</span> <span class='p'>{</span> <span class='o'>|</span><span class='n'>a</span><span class='p'>,</span><span class='n'>i</span><span class='o'>|</span> <span class='n'>a</span><span class='o'>.</span><span class='n'>merge</span><span class='p'>(</span> <span class='k'>yield</span><span class='p'>(</span><span class='n'>i</span><span class='p'>)</span> <span class='p'>)</span> <span class='p'>}</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <h2 id='acknowledgements'>Acknowledgements</h2>
 

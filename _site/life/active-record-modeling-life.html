@@ -51,8 +51,7 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        
-<div id="page_title">
+        <div id="page_title">
   <h1>Active Record Modeling Life</h1>
   <div class="summary"><em>Code and Life intertwined ... ewwwwww</em></div>
 </div>
@@ -88,11 +87,11 @@
     </div>
 
     <div class="content"><p>A quick observation I made about how <code>ActiveRecord</code> can be used to model life.</p>
-<div class='highlight'><pre>class Life &lt; ActiveRecord::Base
+<div class='highlight'><pre><code class='bash'>class Life &lt; ActiveRecord::Base
   has_many :causes
   has_many :effects, :through <span class='o'>=</span>&gt; :causes
 end
-</pre>
+</code></pre>
 </div></div>
   </div>
 

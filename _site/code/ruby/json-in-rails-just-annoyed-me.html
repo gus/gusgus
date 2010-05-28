@@ -51,8 +51,7 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        
-<div id="page_title">
+        <div id="page_title">
   <h1>JSON in Rails Just Annoyed Me</h1>
   <div class="summary"><em>Seriously, things just shouldn't be as hard as they are</em></div>
 </div>
@@ -98,17 +97,17 @@
 <p>Ok, I&#8217;ve got this <code>ActiveRecord</code> model called <code>Fact</code>. <code>Fact</code> has attributes <code>:key</code> and <code>:value</code> along with the other normal columns (i.e. <code>:id</code>, <code>:created_at</code>, etc.).</p>
 
 <p>I want to use <code>Fact</code> in one of my views and I export it to JSON. I only care about the <code>:key</code> and <code>:value</code> and the obvious solution is to:</p>
-<div class='highlight'><pre><span class='n'>fact</span> <span class='o'>=</span> <span class='no'>Fact</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='ss'>:key</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;foo&#39;</span><span class='p'>,</span> <span class='ss'>:value</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;bar&#39;</span><span class='p'>)</span>
+<div class='highlight'><pre><code class='ruby'><span class='n'>fact</span> <span class='o'>=</span> <span class='no'>Fact</span><span class='o'>.</span><span class='n'>create</span><span class='p'>(</span><span class='ss'>:key</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;foo&#39;</span><span class='p'>,</span> <span class='ss'>:value</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;bar&#39;</span><span class='p'>)</span>
 <span class='n'>fact</span><span class='o'>.</span><span class='n'>to_json</span><span class='p'>(</span><span class='ss'>:only</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:key</span><span class='p'>,</span> <span class='ss'>:value</span><span class='o'>]</span><span class='p'>)</span>
-</pre>
+</code></pre>
 </div>
 <p>Which returns something like:</p>
-<div class='highlight'><pre><span class='p'>{</span><span class='s2'>&quot;key&quot;</span><span class='o'>:</span> <span class='s2'>&quot;foo&quot;</span><span class='o'>,</span> <span class='s2'>&quot;value&quot;</span><span class='o'>:</span> <span class='s2'>&quot;bar&quot;</span><span class='p'>}</span>
-</pre>
+<div class='highlight'><pre><code class='javascript'><span class='p'>{</span><span class='s2'>&quot;key&quot;</span><span class='o'>:</span> <span class='s2'>&quot;foo&quot;</span><span class='o'>,</span> <span class='s2'>&quot;value&quot;</span><span class='o'>:</span> <span class='s2'>&quot;bar&quot;</span><span class='p'>}</span>
+</code></pre>
 </div>
 <p>Ok &#8230; fine. I can do something with that, but <code>Fact</code> is really an extension of some other model, which can have many <code>Facts</code>. And I want to reference these facts by their name in a JavaScript object. I don&#8217;t want to search through the objects looking for a matching key. I want a JavaScript Object that looks something like:</p>
-<div class='highlight'><pre><span class='p'>{</span><span class='s2'>&quot;foo&quot;</span><span class='o'>:</span> <span class='s2'>&quot;bar&quot;</span><span class='p'>}</span>
-</pre>
+<div class='highlight'><pre><code class='javascript'><span class='p'>{</span><span class='s2'>&quot;foo&quot;</span><span class='o'>:</span> <span class='s2'>&quot;bar&quot;</span><span class='p'>}</span>
+</code></pre>
 </div>
 <p>You might say, <em>&#8220;Get over it!&#8221;</em></p>
 

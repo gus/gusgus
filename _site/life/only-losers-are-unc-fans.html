@@ -51,8 +51,7 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        
-<div id="page_title">
+        <div id="page_title">
   <h1>Only Losers are UNC Fans - With Tests</h1>
   <div class="summary"><em>It's not JUST a game, man!</em></div>
 </div>
@@ -96,22 +95,22 @@
 <p><em>&#8220;Duke sucks&#8221;</em> was the consistent mantra of the group. And lonely me; sitting there &#8230; having to take it &#8230; because I&#8217;m just oh so humble and non-confrontational.</p>
 
 <p>They went so far as to tell me in code how they felt about it:</p>
-<div class='highlight'><pre><span class='c'># This test is guaranteed to pass! </span>
+<div class='highlight'><pre><code class='bash'><span class='c'># This test is guaranteed to pass! </span>
 def test_justin_is_a_nancy
   <span class='nv'>justin</span> <span class='o'>=</span> HoopsFan.find<span class='o'>(</span>:nancy <span class='o'>=</span>&gt; <span class='nb'>true</span><span class='o'>)</span> 
   assert_equal “Fairweather Nancy”, justin.real_name 
 end
-</pre>
+</code></pre>
 </div>
 <p>So, of course it is my Pride&#8217;s duty to respond. Here is the proof that all UNC fans are also losers:</p>
-<div class='highlight'><pre>def test_only_losers_are_unc_fans
+<div class='highlight'><pre><code class='bash'>def test_only_losers_are_unc_fans
   <span class='nv'>losers</span> <span class='o'>=</span> HoopNuts.find<span class='o'>(</span>:all, :conditions <span class='o'>=</span>&gt; <span class='o'>[</span><span class='s1'>&#39;kast = ?&#39;</span>, <span class='s1'>&#39;loser&#39;</span><span class='o'>])</span>
   <span class='nv'>unc_fans</span> <span class='o'>=</span> HoopNuts.find<span class='o'>(</span>:all, :conditions <span class='o'>=</span>&gt; <span class='o'>[</span><span class='s1'>&#39;team = ?&#39;</span>, <span class='s1'>&#39;UNC&#39;</span><span class='o'>])</span>
 
   assert_same losers, unc_fans
   assert losers.length &gt; 0
 end
-</pre>
+</code></pre>
 </div>
 <p><em>If you don&#8217;t know already, it&#8217;s Ruby with ActiveRecord sprinklings.</em></p></div>
   </div>

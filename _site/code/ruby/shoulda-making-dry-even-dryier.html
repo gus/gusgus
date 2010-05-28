@@ -51,8 +51,7 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        
-<div id="page_title">
+        <div id="page_title">
   <h1>Shoulda: Making DRY even DRY-ier</h1>
   <div class="summary"><em>A look at how I build shoulda macros</em></div>
 </div>
@@ -94,7 +93,7 @@
 <p>Now, If I&#8217;m writing some sort of web-app - like with Rails or Sinatra - a lot of my model and controller tests tend to look the same. By the same, I mean there is an obvious pattern. Our refactoring brainwashing tells us we need to DRY this up. One obvious way of doing this is to write our own Shoulda macros by extending <code>Test::Unit::TestCase</code>, <code>ActionController::TestCase</code>, etc.</p>
 
 <p>I prefer to extend/mix-into things by writing my own module with the methods I want and extending or including that module into the class/module the methods are intended for. Like so:</p>
-<div class='highlight'><pre><span class='k'>module</span> <span class='nn'>Thumblemonks</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>module</span> <span class='nn'>Thumblemonks</span>
   <span class='k'>module</span> <span class='nn'>User</span>
     <span class='k'>module</span> <span class='nn'>Shoulda</span>
 
@@ -106,7 +105,7 @@
   <span class='k'>end</span> <span class='c1'># User</span>
 <span class='k'>end</span> <span class='c1'># Thumblemonks</span>
 <span class='no'>Test</span><span class='o'>::</span><span class='no'>Unit</span><span class='o'>::</span><span class='no'>TestCase</span><span class='o'>.</span><span class='n'>extend</span><span class='p'>(</span><span class='no'>Thumblemonks</span><span class='o'>::</span><span class='no'>User</span><span class='o'>::</span><span class='no'>Shoulda</span><span class='p'>)</span>
-</pre>
+</code></pre>
 </div>
 <p>I like this approach because it&#8217;s easy to find out - in like a debugger session - all of the modules that are mixed-in into a specific class/module that give said class/module it&#8217;s methods. I like this approach every time, not just for extending things for Shoulda. <em>Props to <a href='http://github.com/danhodos'>Dan Hodos</a></em></p>
 
@@ -119,12 +118,12 @@
 </ol>
 
 <p>Today, however I hit upon something I liked. I created a folder under <code>test</code> in my Rails app which I called &#8230; wait for it &#8230; <code>shoulda</code>. That&#8217;s right, <code>$RAILS_HOME/test/shoulda</code>. Then, I did the following in my <code>test_helper.rb</code>:</p>
-<div class='highlight'><pre><span class='c1'># including require_local_lib just because I use it everywhere</span>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># including require_local_lib just because I use it everywhere</span>
 <span class='k'>def</span> <span class='nf'>require_local_lib</span><span class='p'>(</span><span class='n'>pattern</span><span class='p'>)</span>
   <span class='no'>Dir</span><span class='o'>.</span><span class='n'>glob</span><span class='p'>(</span><span class='no'>File</span><span class='o'>.</span><span class='n'>join</span><span class='p'>(</span><span class='no'>File</span><span class='o'>.</span><span class='n'>dirname</span><span class='p'>(</span><span class='bp'>__FILE__</span><span class='p'>),</span> <span class='n'>pattern</span><span class='p'>))</span><span class='o'>.</span><span class='n'>each</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>f</span><span class='o'>|</span> <span class='nb'>require</span> <span class='n'>f</span> <span class='p'>}</span>
 <span class='k'>end</span>
 <span class='n'>require_local_lib</span><span class='p'>(</span><span class='s1'>&#39;shoulda/*.rb&#39;</span><span class='p'>)</span>
-</pre>
+</code></pre>
 </div>
 <p>Then, I started creating a new file in shoulda - as I needed it - for each model I was testing. For instance, I was testing a <code>Membership</code> model and ended up creating <code>test/shoulda/membership.rb</code>. Seems simple, but I did sooooo much test refactoring in the process and my test cases ended up looking insanely clean and readable.</p>
 

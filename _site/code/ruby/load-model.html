@@ -51,8 +51,7 @@
       </div>
 
       <div id="main" class='grid_12 alpha omega'>
-        
-<div id="page_title">
+        <div id="page_title">
   <h1>Load Model</h1>
   <div class="summary"><em>ActionController Extension to Automatically Load Model Instances</em></div>
 </div>
@@ -98,22 +97,22 @@
 <p>It&#8217;s not going to cook you breakfast in the morning, but it is going to make your job easier for something you probably do all the time in your controllers. Load Model basically provides a concise macro - a glorified <code>before_filter</code> - for finding and loading a model object based on one of the request parameters and setting it to an instance variable. Load Model will do this almost automatically so long as you are following a restful convention in your controllers.</p>
 
 <p>For instance:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>PeopleController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>PeopleController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:person</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>The above code will look for a parameter named <code>:id</code> and use that to find a <code>Person</code>. If <code>:id</code> is provided and a <code>Person</code> record is found (via a call like <code>Person.find_by_id(params[:id])</code>), the record instance will be set to the <code>@person</code> instance variable. It&#8217;s that easy.</p>
 
 <p>It&#8217;s essentially the same as saying:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>PeopleController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>PeopleController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>before_filter</span> <span class='ss'>:load_person</span>
 <span class='kp'>private</span>
   <span class='k'>def</span> <span class='nf'>load_person</span>
     <span class='vi'>@person</span> <span class='o'>=</span> <span class='no'>Person</span><span class='o'>.</span><span class='n'>find_by_id</span><span class='p'>(</span><span class='n'>params</span><span class='o'>[</span><span class='ss'>:id</span><span class='o'>]</span><span class='p'>)</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>But wait, there&#8217;s waaaaayyyyy more! Including an easy approach to dealing with the privilege escalation use case.</p>
 
@@ -146,7 +145,7 @@
 <p>I&#8217;m not going to wait around. I&#8217;m going to jump to straight into privilege escalation and blow the whole enchilada right now. There&#8217;s no point in building you up to this. You&#8217;re smart! People like you! And anyways, it may be the only reason you&#8217;ve read this far.</p>
 
 <p>Let&#8217;s say you have a nested resource; like Images which nests under People. You&#8217;re routes and Image controller may look like this:</p>
-<div class='highlight'><pre><span class='c1'># Routes</span>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># Routes</span>
 
 <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Routing</span><span class='o'>::</span><span class='no'>Routes</span><span class='o'>.</span><span class='n'>draw</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>map</span><span class='o'>|</span>
   <span class='n'>map</span><span class='o'>.</span><span class='n'>resources</span> <span class='ss'>:people</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>people</span><span class='o'>|</span>
@@ -159,7 +158,7 @@
 <span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='c1'># Oh boy, some code!</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Now, when someone wants to see an image for a specific person, a typical URL would look something like:</p>
 
@@ -168,38 +167,38 @@
 <p>You don&#8217;t want some stranger just changing that 3 to some other integer and getting a peek at another user&#8217;s bottle-cap collection photos. So, you only want to limit the set of photos that are searchable to the specified user&#8217;s (who has an id of 1).</p>
 
 <p>With Load Model you can do this in two lines and it will work for all actions of the Images controller.</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:person_id</span>
   <span class='n'>load_model</span> <span class='ss'>:image</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:person</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Yes, order of macro definition does matter. And yes, <code>:through =&gt; :person</code> assumes there will be an instance variable named <code>@person</code> for Load Model to find the image from. In this case, Load Model will do the following at run time:</p>
 
-<p><div class='highlight'><pre><span class='vi'>@image</span> <span class='o'>=</span> <span class='vi'>@person</span><span class='o'>.</span><span class='n'>images</span><span class='o'>.</span><span class='n'>find_by_image_id</span><span class='p'>(</span><span class='n'>params</span><span class='o'>[</span><span class='ss'>:id</span><span class='o'>]</span><span class='p'>)</span>
-</pre>
+<p><div class='highlight'><pre><code class='ruby'><span class='vi'>@image</span> <span class='o'>=</span> <span class='vi'>@person</span><span class='o'>.</span><span class='n'>images</span><span class='o'>.</span><span class='n'>find_by_image_id</span><span class='p'>(</span><span class='n'>params</span><span class='o'>[</span><span class='ss'>:id</span><span class='o'>]</span><span class='p'>)</span>
+</code></pre>
 </div></p>
 
 <p>What&#8217;s that you say? You only want to load images for actions that will actually provide the <code>:id</code>? Oh, okay.</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:person_id</span>
   <span class='n'>load_model</span> <span class='ss'>:image</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:only</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:show</span><span class='p'>,</span> <span class='ss'>:edit</span><span class='p'>,</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='ss'>:destroy</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>What? You don&#8217;t want to do anything unless you find the Person instance first and you want to bail out if no image is found? Well &#8230; fine!</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:person_id</span><span class='p'>,</span> <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span>
   <span class='n'>load_model</span> <span class='ss'>:image</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span><span class='p'>,</span> <span class='ss'>:only</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:show</span><span class='p'>,</span> <span class='ss'>:edit</span><span class='p'>,</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='ss'>:destroy</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Notice the addition of the <code>:require</code> options.</p>
 
 <p>I think you get the point. In fact, that&#8217;s how we at Thumble Monks do it and how Load Model wants you to do it.</p>
 
 <p>If you add the following to your <code>ApplicationController</code>, you can handle the case when a required record is not found by Load Model or any other action/filter (when <code>:require =&gt; true</code>):</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>ApplicationController</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Base</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ApplicationController</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Base</span>
   <span class='n'>rescue_from</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>RecordNotFound</span><span class='p'>,</span> <span class='ss'>:with</span> <span class='o'>=&gt;</span> <span class='ss'>:record_not_found</span>
 <span class='kp'>private</span>
   <span class='k'>def</span> <span class='nf'>record_not_found</span><span class='p'>(</span><span class='n'>exception</span><span class='p'>)</span>
@@ -208,44 +207,44 @@
     <span class='n'>redirect_to</span> <span class='n'>your_default_controller_url</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <h3 id='advanced'>Advanced</h3>
 
 <p>I bet you didn&#8217;t think it could get more advanced. You were wrong.</p>
 
 <p>Let&#8217;s say you have a Communities resource, which has a nested Events resource, which has a nested Attendees resource. Oh boy! The route definition would look something like:</p>
-<div class='highlight'><pre><span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Routing</span><span class='o'>::</span><span class='no'>Routes</span><span class='o'>.</span><span class='n'>draw</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>map</span><span class='o'>|</span>
+<div class='highlight'><pre><code class='ruby'><span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Routing</span><span class='o'>::</span><span class='no'>Routes</span><span class='o'>.</span><span class='n'>draw</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>map</span><span class='o'>|</span>
   <span class='n'>map</span><span class='o'>.</span><span class='n'>resources</span> <span class='ss'>:communities</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>communities</span><span class='o'>|</span>
     <span class='n'>communities</span><span class='o'>.</span><span class='n'>resources</span> <span class='ss'>:events</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>events</span><span class='o'>|</span>
       <span class='n'>events</span><span class='o'>.</span><span class='n'>resources</span> <span class='ss'>:attendees</span>
     <span class='k'>end</span>
   <span class='k'>end</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>The URL would probably look like the following when doing something with a specific attendee:</p>
 
 <pre><code>http://example.com/communities/1/events/3/attendees/5</code></pre>
 
 <p>Let&#8217;s also assume you require users to login and when logged in, you set an instance variable called <code>@current_person</code>. Here&#8217;s how you could setup your Attendees controller to only find attendees of events of communities that the logged-in user has access to:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>AttendeesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>AttendeesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:community</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:current_person</span><span class='p'>,</span> <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span><span class='p'>,</span>
     <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:community_id</span>
   <span class='n'>load_model</span> <span class='ss'>:event</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:community</span><span class='p'>,</span> <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span><span class='p'>,</span>
     <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:event_id</span>
   <span class='n'>load_model</span> <span class='ss'>:attendee</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:event</span><span class='p'>,</span> <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span><span class='p'>,</span> <span class='ss'>:only</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:show</span><span class='p'>,</span> <span class='ss'>:edit</span><span class='p'>,</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='ss'>:destroy</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Yes it works and yes we are using this recipe. I have some ideas for how to make this even more concise/automatic, just haven&#8217;t gotten around to implementing them yet. As you can imagine, there is a pattern.</p>
 
 <p>For example, it would be a lot cooler if I could do this:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>AttendeesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>AttendeesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:attendee</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='p'>{</span> <span class='ss'>:event</span> <span class='o'>=&gt;</span> <span class='p'>{</span><span class='ss'>:community</span> <span class='o'>=&gt;</span> <span class='ss'>:current_person</span><span class='p'>}</span> <span class='p'>},</span>
     <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span><span class='p'>,</span> <span class='ss'>:only</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:show</span><span class='p'>,</span> <span class='ss'>:edit</span><span class='p'>,</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='ss'>:destroy</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>Load Model could also just assume that <code>:show, :edit, :update, :destroy</code> will get an <code>:id</code> by default.</p>
 
@@ -256,15 +255,15 @@
 <pre><code>http://example.com/invites/550e8400-e29b-41d4-a716-446655440000</code></pre>
 
 <p>With Load Model, you would load up this invite like so:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>InvitesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>InvitesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:invite</span><span class='p'>,</span> <span class='ss'>:foreign_key</span> <span class='o'>=&gt;</span> <span class='ss'>:uuid</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>This is the equivalent to doing the following in your actions:</p>
 
-<p><div class='highlight'><pre><span class='vi'>@invite</span> <span class='o'>=</span> <span class='no'>Invite</span><span class='o'>.</span><span class='n'>find_by_uuid</span><span class='p'>(</span><span class='n'>params</span><span class='o'>[</span><span class='ss'>:id</span><span class='o'>]</span><span class='p'>)</span>
-</pre>
+<p><div class='highlight'><pre><code class='ruby'><span class='vi'>@invite</span> <span class='o'>=</span> <span class='no'>Invite</span><span class='o'>.</span><span class='n'>find_by_uuid</span><span class='p'>(</span><span class='n'>params</span><span class='o'>[</span><span class='ss'>:id</span><span class='o'>]</span><span class='p'>)</span>
+</code></pre>
 </div></p>
 
 <p>All of the other options still work; like: <code>:require</code>, <code>:only</code>, etc.</p>
@@ -274,10 +273,10 @@
 <p>You may not like to use the <code>:only</code> option for being explicit about the actions that need model loading. Maybe you have a whole bunch of actions in your morally bankrupt controller and it would be crazy to try and include them all. Fine. Load Model provides the <code>:exclude</code> option.</p>
 
 <p>Here is an example that excludes actions that would not need to accept the :id parameter.</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:image</span><span class='p'>,</span> <span class='ss'>:except</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:new</span><span class='p'>,</span> <span class='ss'>:create</span><span class='o'>]</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>It should be noted that since we&#8217;re not using the :require option, we&#8217;re saying more than we need to. But, that&#8217;s why this is an example.</p>
 
@@ -286,10 +285,10 @@
 <p>Finally, and probably least common, is the case when you want to load a record into an instance variable, but the class/model name for loading the record from cannot be inferred. For these cases, you use the <code>:class</code> option and provide the class name that should be used.</p>
 
 <p>Example, and this one is way contrived at the moment, you want to load a user account in an Admin controller and you want to call the instance variable <code>@admin</code>. You would simply do the following in Load Model:</p>
-<div class='highlight'><pre><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:admin</span><span class='p'>,</span> <span class='ss'>:class</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;User&#39;</span><span class='p'>,</span> <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span>
 <span class='k'>end</span>
-</pre>
+</code></pre>
 </div>
 <p>I threw the <code>:require =&gt; true</code> since it&#8217;s the administration controller ;)</p>
 
