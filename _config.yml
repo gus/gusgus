@@ -1,10 +1,9 @@
-destination: ./_site
 auto:        false
 lsi:         false
 server_port: 4567
 pygments:    true
-markdown:    maruku
 permalink:   none
+markdown:    maruku
 maruku:
   use_tex:    false
   use_divs:   false

@@ -125,9 +125,7 @@
 <p>So, of course, a solution is forthcoming. What I really want to do is delegate a single message across multiple receivers and aggregate the results into a single response. Kind of like I&#8217;m multiplexing messages and demultiplexing the response.</p>
 
 <p>Here&#8217;s an example of what I would like to do given a User instance:</p>
-<div class='highlight'><pre><code class='ruby'><span class='n'>user</span><span class='o'>.</span><span class='n'>entire_network</span><span class='o'>.</span><span class='n'>active</span>
-</code></pre>
-</div>
+
 <p>What should happen in this call is that <code>entire_network</code> should know how to call <code>active</code> on both the <code>friend_network</code> and <code>public_network</code> accessors, and then collect the results into a single collection of Users.</p>
 
 <p>Thusly and so forth, the <code>Multiplexing Delegator</code> has been born. Let the dust settle a little &#8230; and here is how I would define the <code>User</code> class:</p>

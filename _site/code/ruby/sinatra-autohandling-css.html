@@ -135,11 +135,7 @@
 <h3 id='possible_changes'>Possible changes</h3>
 
 <p>You may not want to use Sass. Why you wouldn&#8217;t want to I don&#8217;t understand, but you just may not want to. Here is a possible modification to the above that may work.</p>
-<div class='highlight'><pre><code class='ruby'><span class='nb'>require</span> <span class='s1'>&#39;sinatra&#39;</span>
-
-<span class='n'>catch_all_css</span><span class='p'>(</span><span class='ss'>:sass</span><span class='p'>)</span>
-</code></pre>
-</div><div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>catch_all_css</span><span class='p'>(</span><span class='n'>handler</span><span class='o'>=</span><span class='ss'>:render</span><span class='p'>)</span>
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>catch_all_css</span><span class='p'>(</span><span class='n'>handler</span><span class='o'>=</span><span class='ss'>:render</span><span class='p'>)</span>
   <span class='n'>get</span> <span class='s1'>&#39;/*.css&#39;</span> <span class='k'>do</span>
     <span class='n'>header</span> <span class='s1'>&#39;Content-Type&#39;</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;text/css; charset=utf-8&#39;</span>
     <span class='n'>resource</span> <span class='o'>=</span> <span class='n'>request</span><span class='o'>.</span><span class='n'>env</span><span class='o'>[</span><span class='s2'>&quot;PATH_INFO&quot;</span><span class='o'>].</span><span class='n'>match</span><span class='p'>(</span><span class='sr'>%r[\/(.+)\.css]</span><span class='p'>)</span><span class='o'>[</span><span class='mi'>1</span><span class='o'>].</span><span class='n'>to_sym</span>
