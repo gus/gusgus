@@ -171,7 +171,11 @@
 </code></pre>
 </div>
 <p>Hmmm &#8230; and to accomplish objective (2), I would need to set that up somehow. Objective (3) says it should be easy to use. So, I settled on a little method that would be available in <code>Test::Unit::TestCase</code>, that is dependent on there being a <code>TestRequest</code> instance assigned to a <code>@request</code> instance variable (which there always is for functional tests), and that would be named &#8230; <code>flashback</code>.</p>
-
+<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>flashback</span>
+  <span class='vi'>@request</span><span class='o'>.</span><span class='n'>session</span><span class='o'>[</span><span class='s1'>&#39;flash&#39;</span><span class='o'>]</span> <span class='o'>=</span> <span class='no'>FlashedHash</span><span class='o'>.</span><span class='n'>new</span>
+<span class='k'>end</span>
+</code></pre>
+</div>
 <p>This, however, required a drastic change in my test; which went from two lines, to three.</p>
 
 <p>And, I had to write another test to be sure that <code>flashed</code> was not available when <code>flashback</code> wasn&#8217;t called:</p>

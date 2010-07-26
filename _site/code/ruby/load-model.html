@@ -145,7 +145,21 @@
 <p>I&#8217;m not going to wait around. I&#8217;m going to jump to straight into privilege escalation and blow the whole enchilada right now. There&#8217;s no point in building you up to this. You&#8217;re smart! People like you! And anyways, it may be the only reason you&#8217;ve read this far.</p>
 
 <p>Let&#8217;s say you have a nested resource; like Images which nests under People. You&#8217;re routes and Image controller may look like this:</p>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># Routes</span>
 
+<span class='no'>ActionController</span><span class='o'>::</span><span class='no'>Routing</span><span class='o'>::</span><span class='no'>Routes</span><span class='o'>.</span><span class='n'>draw</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>map</span><span class='o'>|</span>
+  <span class='n'>map</span><span class='o'>.</span><span class='n'>resources</span> <span class='ss'>:people</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>people</span><span class='o'>|</span>
+    <span class='n'>people</span><span class='o'>.</span><span class='n'>resources</span> <span class='ss'>:images</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+
+<span class='c1'># Images controller</span>
+
+<span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
+  <span class='c1'># Oh boy, some code!</span>
+<span class='k'>end</span>
+</code></pre>
+</div>
 <p>Now, when someone wants to see an image for a specific person, a typical URL would look something like:</p>
 
 <pre><code>http://example.com/people/1/images/3</code></pre>
@@ -153,12 +167,9 @@
 <p>You don&#8217;t want some stranger just changing that 3 to some other integer and getting a peek at another user&#8217;s bottle-cap collection photos. So, you only want to limit the set of photos that are searchable to the specified user&#8217;s (who has an id of 1).</p>
 
 <p>With Load Model you can do this in two lines and it will work for all actions of the Images controller.</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
-  <span class='n'>load_model</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:person_id</span>
-  <span class='n'>load_model</span> <span class='ss'>:image</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:person</span>
-<span class='k'>end</span>
-</code></pre>
-</div>
+
+<p>Liquid error: Broken pipe</p>
+
 <p>Yes, order of macro definition does matter. And yes, <code>:through =&gt; :person</code> assumes there will be an instance variable named <code>@person</code> for Load Model to find the image from. In this case, Load Model will do the following at run time:</p>
 
 <p><div class='highlight'><pre><code class='ruby'><span class='vi'>@image</span> <span class='o'>=</span> <span class='vi'>@person</span><span class='o'>.</span><span class='n'>images</span><span class='o'>.</span><span class='n'>find_by_image_id</span><span class='p'>(</span><span class='n'>params</span><span class='o'>[</span><span class='ss'>:id</span><span class='o'>]</span><span class='p'>)</span>
@@ -166,12 +177,9 @@
 </div></p>
 
 <p>What&#8217;s that you say? You only want to load images for actions that will actually provide the <code>:id</code>? Oh, okay.</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
-  <span class='n'>load_model</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:person_id</span>
-  <span class='n'>load_model</span> <span class='ss'>:image</span><span class='p'>,</span> <span class='ss'>:through</span> <span class='o'>=&gt;</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:only</span> <span class='o'>=&gt;</span> <span class='o'>[</span><span class='ss'>:show</span><span class='p'>,</span> <span class='ss'>:edit</span><span class='p'>,</span> <span class='ss'>:update</span><span class='p'>,</span> <span class='ss'>:destroy</span><span class='o'>]</span>
-<span class='k'>end</span>
-</code></pre>
-</div>
+
+<p>Liquid error: Broken pipe</p>
+
 <p>What? You don&#8217;t want to do anything unless you find the Person instance first and you want to bail out if no image is found? Well &#8230; fine!</p>
 <div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>ImagesController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='n'>load_model</span> <span class='ss'>:person</span><span class='p'>,</span> <span class='ss'>:parameter_key</span> <span class='o'>=&gt;</span> <span class='ss'>:person_id</span><span class='p'>,</span> <span class='ss'>:require</span> <span class='o'>=&gt;</span> <span class='kp'>true</span>
@@ -184,8 +192,6 @@
 <p>I think you get the point. In fact, that&#8217;s how we at Thumble Monks do it and how Load Model wants you to do it.</p>
 
 <p>If you add the following to your <code>ApplicationController</code>, you can handle the case when a required record is not found by Load Model or any other action/filter (when <code>:require =&gt; true</code>):</p>
-
-<p>Liquid error: Broken pipe</p>
 
 <h3 id='advanced'>Advanced</h3>
 
