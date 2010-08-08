@@ -118,7 +118,13 @@
 </ol>
 
 <p>Today, however I hit upon something I liked. I created a folder under <code>test</code> in my Rails app which I called &#8230; wait for it &#8230; <code>shoulda</code>. That&#8217;s right, <code>$RAILS_HOME/test/shoulda</code>. Then, I did the following in my <code>test_helper.rb</code>:</p>
-
+<div class='highlight'><pre><code class='ruby'><span class='c1'># including require_local_lib just because I use it everywhere</span>
+<span class='k'>def</span> <span class='nf'>require_local_lib</span><span class='p'>(</span><span class='n'>pattern</span><span class='p'>)</span>
+  <span class='no'>Dir</span><span class='o'>.</span><span class='n'>glob</span><span class='p'>(</span><span class='no'>File</span><span class='o'>.</span><span class='n'>join</span><span class='p'>(</span><span class='no'>File</span><span class='o'>.</span><span class='n'>dirname</span><span class='p'>(</span><span class='bp'>__FILE__</span><span class='p'>),</span> <span class='n'>pattern</span><span class='p'>))</span><span class='o'>.</span><span class='n'>each</span> <span class='p'>{</span><span class='o'>|</span><span class='n'>f</span><span class='o'>|</span> <span class='nb'>require</span> <span class='n'>f</span> <span class='p'>}</span>
+<span class='k'>end</span>
+<span class='n'>require_local_lib</span><span class='p'>(</span><span class='s1'>&#39;shoulda/*.rb&#39;</span><span class='p'>)</span>
+</code></pre>
+</div>
 <p>Then, I started creating a new file in shoulda - as I needed it - for each model I was testing. For instance, I was testing a <code>Membership</code> model and ended up creating <code>test/shoulda/membership.rb</code>. Seems simple, but I did sooooo much test refactoring in the process and my test cases ended up looking insanely clean and readable.</p>
 
 <p>So, morals of the story are:</p>

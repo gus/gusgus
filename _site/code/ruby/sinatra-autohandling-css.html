@@ -114,7 +114,13 @@
 <p>I. Don&#8217;t. Like. That.</p>
 
 <p>I want all my view related code in one place and I know that all my CSS will be handled the same way. In my app, I want to do this:</p>
+<div class='highlight'><pre><code class='ruby'><span class='nb'>require</span> <span class='s1'>&#39;sinatra&#39;</span>
 
+<span class='n'>catch_all_css</span>
+
+<span class='c1'># handle everything else</span>
+</code></pre>
+</div>
 <p>Which should run any resource that matches <code>*.css</code> through a Sass builder. Easy peasy:</p>
 <div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>catch_all_css</span>
   <span class='n'>get</span> <span class='s1'>&#39;/*.css&#39;</span> <span class='k'>do</span>

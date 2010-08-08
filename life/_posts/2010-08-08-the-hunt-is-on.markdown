@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Random Thoughts ed 3 - The hunt is on
-summary: My thougts. Sue me. Fuck off.
+summary: My thoughts. Sue me. Fuck off.
 ---
 A strange feeling is confusion; anger; guilt; hopelessness; despair; apathy. Empty. Wrong. This is not how you feel. This is how you react. This is not the case. This is the face. Where do I go, love? Why am I there?
 
