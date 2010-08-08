@@ -127,24 +127,7 @@
 </ol>
 
 <p>With that in mind, I hit the court and started playing. Of course, I knew it was going to be a plugin, so I just went ahead and created the plugin. Being a tester, I wrote several functional tests for how I wanted it to work. They looked something like this:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>FlashersControllerTest</span> <span class='o'>&lt;</span> <span class='no'>ActionController</span><span class='o'>::</span><span class='no'>TestCase</span>
-  <span class='k'>def</span> <span class='nf'>test_flash_available_after_request</span>
-    <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;hello&#39;</span>
-    <span class='n'>assert_equal</span> <span class='s1'>&#39;hello&#39;</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>[</span><span class='ss'>:actual_flash</span><span class='o'>]</span>
-  <span class='k'>end</span>
 
-  <span class='k'>def</span> <span class='nf'>test_flash_now_not_available_after_request</span>
-    <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash_now</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;world&#39;</span>
-    <span class='n'>assert_nil</span> <span class='n'>flash</span><span class='o'>.</span><span class='n'>now</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span>
-  <span class='k'>end</span>
-
-  <span class='k'>def</span> <span class='nf'>test_flash_now_is_available_after_request_via_flashed</span>
-    <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash_now</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;world&#39;</span>
-    <span class='n'>assert_equal</span> <span class='s1'>&#39;world&#39;</span><span class='p'>,</span> <span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span>
-  <span class='k'>end</span>
-<span class='k'>end</span>
-</code></pre>
-</div>
 <p>Three erroring tests. Oh, joy! I love errors when they come immediately after writing my test code. Notice the <code>flashed</code> method call in test 3. That&#8217;s my contribution to the world of <code>Flash</code>. I want it to mean, give me the variables that were flashed (or flushed) during the request. Like a flash of light; fizzled and forgotten.</p>
 
 <p>Guess I should implement the faux Controller:</p>
@@ -179,12 +162,7 @@
 <p>This, however, required a drastic change in my test; which went from two lines, to three.</p>
 
 <p>And, I had to write another test to be sure that <code>flashed</code> was not available when <code>flashback</code> wasn&#8217;t called:</p>
-<div class='highlight'><pre><code class='ruby'><span class='k'>def</span> <span class='nf'>test_no_flashback_means_flash_now_not_available_after_request_via_flashed</span>
-  <span class='n'>get</span> <span class='ss'>:index</span><span class='p'>,</span> <span class='ss'>:actual_flash_now</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;world&#39;</span>
-  <span class='n'>assert_raise</span><span class='p'>(</span><span class='no'>NoMethodError</span><span class='p'>)</span> <span class='p'>{</span><span class='n'>flash</span><span class='o'>.</span><span class='n'>flashed</span><span class='o'>[</span><span class='ss'>:actual_flash_now</span><span class='o'>]</span><span class='p'>}</span>
-<span class='k'>end</span>
-</code></pre>
-</div>
+
 <p>I wrote a couple of other tests, but you get the point. Call <code>flashback</code> before you test your action and after <code>@request</code> is defined, and Bob&#8217;s your uncle!</p>
 
 <h2 id='application'>Application</h2>

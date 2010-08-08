@@ -102,13 +102,14 @@
 </code></pre>
 </div>
 <p>Seems simple enough to solve. Perhaps we should change the inflector rules to &#8230; say &#8230; this:</p>
-
-<p>Yeah &#8230; no! Still didn&#8217;t work. Went out to eat. Came back. Tried this stupid, stupid, stupid thing and &#8230; well &#8230; it worked:</p>
 <div class='highlight'><pre><code class='ruby'><span class='no'>ActiveSupport</span><span class='o'>::</span><span class='no'>Inflector</span><span class='o'>.</span><span class='n'>inflections</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>inflect</span><span class='o'>|</span>
-  <span class='n'>inflect</span><span class='o'>.</span><span class='n'>singular</span><span class='sr'> /(ss)$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1&#39;</span>
+  <span class='n'>inflect</span><span class='o'>.</span><span class='n'>plural</span><span class='sr'> /(ss)$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1es&#39;</span>
+  <span class='n'>inflect</span><span class='o'>.</span><span class='n'>singular</span><span class='sr'> /(ss)es$/i</span><span class='p'>,</span> <span class='s1'>&#39;\1&#39;</span>
 <span class='k'>end</span>
 </code></pre>
 </div>
+<p>Yeah &#8230; no! Still didn&#8217;t work. Went out to eat. Came back. Tried this stupid, stupid, stupid thing and &#8230; well &#8230; it worked:</p>
+
 <p>Barf again!</p>
 
 <p>Hopefully nothing else is broken now.</p></div>

@@ -116,7 +116,9 @@
 </code></pre>
 </div>
 <p>If any one of the session variables does not exist in the session at the time the request is processed, a <code>AssertRequest::RequestError</code> exception is raised with a meaningful error message; like:</p>
-
+<div class='highlight'><pre><code class='ruby'><span class='s2'>&quot;:baz and :bar expected to be in session&quot;</span>
+</code></pre>
+</div>
 <p>What if you only wanted to require <code>:baz</code>, but you wanted to allow for <code>:boo</code> and <code>:bar</code>?</p>
 <div class='highlight'><pre><code class='ruby'><span class='k'>class</span> <span class='nc'>FooController</span> <span class='o'>&lt;</span> <span class='no'>ApplicationController</span>
   <span class='k'>def</span> <span class='nf'>bar</span>
@@ -174,9 +176,9 @@
 </code></pre>
 </div>
 <p>A cooler approach would be if <code>assert_request</code> itself was modified to accept the required HTTP method as an argument. An example of use would be:</p>
-
-<p>Liquid error: stack level too deep</p>
-
+<div class='highlight'><pre><code class='ruby'><span class='n'>assert_request</span><span class='p'>(</span><span class='ss'>:post</span><span class='p'>)</span> <span class='p'>{</span><span class='o'>.</span><span class='n'>.</span><span class='o'>.</span><span class='p'>}</span> <span class='c1'># What do you think, Scott?</span>
+</code></pre>
+</div>
 <h2 id='installation'>Installation</h2>
 
 <p>First, install the <code>AssertRequest</code> plugin.</p>
