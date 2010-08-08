@@ -160,3 +160,8 @@ Brindle, the cross-sectional coloring pattern of a Twix or the insides of a your
 ---
 
 Line 157: according to markdown.
+
+---
+
+DISCLAIMER: Nothing here is real. They are just random meanderings of the sub-conscious. A thought thought and path followed, just because. Take offense at the sake of your own sanity.
+  
