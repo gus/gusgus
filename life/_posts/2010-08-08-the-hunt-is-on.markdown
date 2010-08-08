@@ -171,7 +171,7 @@ Ugh.
 
 In some of these occasions, Tyler lets me know how insecure he is by telling me to re-enact certain scenes from the past in my mind. The difference between reality and unreality during these situations is that I'm playing a POV, first-person shooting game.
 
-Yes, that's right, I'm running around with the barrel of a shotgun in front of me and I'm aiming it at shit. But, I'm not really aiming it anything. I mean, I'm reliving embarrassing situations, but I'm doing it with a gun and I'm shooting people but I don't really shoot anyone and I'm not really seeing people from then.
+Yes, that's right, I'm running around with the barrel of a shotgun in front of me and I'm aiming it at shit. But, I'm not really aiming it at anything. I mean, I'm reliving embarrassing situations, but I'm doing it with a gun and I'm shooting people but I don't really shoot anyone and I'm not really seeing people from then.
 
 I explained this to my son once (who's 16 so just fuck off) and he said - no joke - "too much Quake as a teenager, eh?" Well, yes, but whatever. Not sure how that's important to the problem at hand, son.
 
