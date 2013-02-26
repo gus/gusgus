@@ -1,46 +1,15 @@
----
-layout: default
-title: Call me the Bus Driver ...
----
+<!DOCTYPE html>
 
-<div id="left" class="grid_3 alpha column">
-  <ul>
-    <h3>Check me out!</h3>
-    <p><em>
-      <a href="http://github.com/thumblemonks/riot">Riot</a> for fast ruby testing,
-      <a href="http://jubilator.thumblemonks.com/" title="Browse GitHub in style">Jubilator</a> for GitHub browsing
-    </em></p>
-  </ul>
-</div>
-
-<div id="articles" class="grid_6">
-  {% assign latest_post = site.posts.first %}
-  <div id="article">
-    <div class="header clearfix">
-      <h1><a href="{{ latest_post.url }}">{{ latest_post.title }}</a></h1>
-      <div id="info">
-        <span class="date"><cite>{{ latest_post.date | date: "%b %d, %Y" }}</cite></span>
-        <span class="summary"><em>{{ latest_post.summary }}</em></span>
-      </div>
-    </div>
-    <div class="content">{{ latest_post.content }}</div>
-  </div>
-</div>
-
-<div id="right" class="grid_3 omega column">
-  <ul>
-    <h3>Into the Past</h3>
-    {% for post in site.posts limit:2 offset:1 %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        <p><em>{{ post.summary }}</em></p>
-      </li>
-    {% endfor %}
-
-    <p><em>
-      Check out these fine products:
-      <a href="http://ackandnak.com/">Ack &amp; Nak</a> many-days-a-week web comic,
-      <a href="http://dailyjs.com/">DailyJS</a>
-    </em></p>
-  </ul>
-</div>
+<html>
+  <title>GusGus</title>
+  <style type="text/css">
+    html {
+      background: url("/images/bithead.png") no-repeat center bottom fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+  <body></body>
+</html>
