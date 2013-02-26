@@ -1,1 +1,0 @@
-http://www.pragprog.com/write-for-us
