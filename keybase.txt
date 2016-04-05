@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/gus
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://gusg.us
+  * I am gus (https://keybase.io/gus) on keybase.
+  * I have a public key ASCO7dFjqx8AwoU757Ewi4-g7bsEKsfqhSIFNUpMcCaYgAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01208eedd163ab1f00c2853be7b1308b8fa0edbb042ac7ea852205354a4c702698800a",
+            "host": "keybase.io",
+            "kid": "01208eedd163ab1f00c2853be7b1308b8fa0edbb042ac7ea852205354a4c702698800a",
+            "uid": "7ed85547d071362537e5e3d590d62a00",
+            "username": "gus"
+        },
+        "service": {
+            "hostname": "gusg.us",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.14"
+    },
+    "ctime": 1459886144,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1459885968,
+        "hash": "76de5c9192c8f68a1365481ff8404e90ff80a73486d806949d94b4a8c21d814f844878bcf5d3fc0df98defc44f5b203c02c47e609c40138822d047f5f365737c",
+        "seqno": 429704
+    },
+    "prev": "5e9419126afadaf6975ae7cb2a82f6d52af1df9f986b7aebffb52d339ee68d47",
+    "seqno": 20,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgju3RY6sfAMKFO+exMIuPoO27BCrH6oUiBTVKTHAmmIAKp3BheWxvYWTFAup7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwOGVlZGQxNjNhYjFmMDBjMjg1M2JlN2IxMzA4YjhmYTBlZGJiMDQyYWM3ZWE4NTIyMDUzNTRhNGM3MDI2OTg4MDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwOGVlZGQxNjNhYjFmMDBjMjg1M2JlN2IxMzA4YjhmYTBlZGJiMDQyYWM3ZWE4NTIyMDUzNTRhNGM3MDI2OTg4MDBhIiwidWlkIjoiN2VkODU1NDdkMDcxMzYyNTM3ZTVlM2Q1OTBkNjJhMDAiLCJ1c2VybmFtZSI6Imd1cyJ9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoiZ3VzZy51cyIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMTQifSwiY3RpbWUiOjE0NTk4ODYxNDQsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ1OTg4NTk2OCwiaGFzaCI6Ijc2ZGU1YzkxOTJjOGY2OGExMzY1NDgxZmY4NDA0ZTkwZmY4MGE3MzQ4NmQ4MDY5NDlkOTRiNGE4YzIxZDgxNGY4NDQ4NzhiY2Y1ZDNmYzBkZjk4ZGVmYzQ0ZjViMjAzYzAyYzQ3ZTYwOWM0MDEzODgyMmQwNDdmNWYzNjU3MzdjIiwic2Vxbm8iOjQyOTcwNH0sInByZXYiOiI1ZTk0MTkxMjZhZmFkYWY2OTc1YWU3Y2IyYTgyZjZkNTJhZjFkZjlmOTg2YjdhZWJmZmI1MmQzMzllZTY4ZDQ3Iiwic2Vxbm8iOjIwLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQAOYOMKegXQdF+owhSQ12kelecpKsgu+oBjm8IhAIWgU5ASUliGyRDrA/xEHi/CLSUcFyoNrOuu85MCxLANjQg6oc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/gus
+
+==================================================================
