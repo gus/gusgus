@@ -1,3 +1,5 @@
 User-Agent: *
 Disallow: /javascripts/
 Disallow: /stylesheets/
+Disallow: /resume/
+Disallow: /images/

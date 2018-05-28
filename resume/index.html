@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+	<link rel="stylesheet" type="text/css" href="../reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+	<style type="text/css">
+		body {
+			font-family: 'Roboto', sans-serif;
+			padding: 1em;
+		}
+		header {font-family: 'Roboto Condensed', sans-serif}
+		h1, h2, h3, h4, h5, h6 {
+			font-family: 'Roboto Condensed', sans-serif;
+			font-weight: bold;
+		}
+		h1 {font-size: 3ex}
+		h2 {font-size: 2.5ex; padding-top: 1em;}
+		p {padding-top: 1em}
+
+		.italic {font-style: italic}
+		.bold {font-weight: bold}
+		.section {margin-top: 1em}
+		.section+p {padding-left: 1em}
+		.clear {clear: both}
+		.left {float: left}
+		.right {
+			text-align: right;
+			float: right;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="left">
+			<h1>Justin Knowlden</h1>
+			<div class="italic">aka Gus</div>
+		</div>
+		<div class="right">
+			<div>
+				Github:&nbsp;<a href="http://github.com/gus">gus</a>
+				&nbsp;/<a href="https://github.com/thumblemonks">thumblemonks</a>
+			</div>
+			<div>Keybase: <a href="https://keybase.io/gus">gus</a></div>
+			<div><a href="mailto:" data-gstr="NjMsNzcsNzUsMjQsNjMsNzcsNzUsNjMsNiw3Nyw3NQ">:)</a></div>
+		</div>
+	</header>
+
+	<p class="clear">
+		I am a software engineer with over 20 years of experience in building platforms and teams that are stable and scalable. I strive for both efficiency and self-sufficiency in code and people. Throughout all of my experiences, I have occupied both leadership and developer roles and am especially excited by the work involved in getting startup engineering organizations off the ground.
+	</p>
+
+	<p class="clear">These days I particularly enjoy working on dev-tooling, reading, riding, and painting.</p>
+
+	<h2>Experience</h2>
+
+	<div class="section">
+		<div class="left">
+			<div>Signal Digital</div>
+			<div class="italic">Director of Platform Engineering</div>
+		</div>
+		<div class="right bold">2010 - 2018</div>
+	</div>
+
+	<p class="clear">
+		So many things. At its inception, I built Signal&rsquo;s tag-management system and I served many roles on multiple teams as it grew and transitioned into a data-management platform.
+	</p>
+
+	<div class="section">
+		<div class="left">
+			<div>CareRunner</div>
+			<div class="italic">Chief Architect</div>
+		</div>
+		<div class="right bold">2008 - 2010</div>
+	</div>
+
+	<p class="clear">
+		Built CareRunner&rsquo;s personal health record management platform from the company&rsquo;s inception to its acquisition.
+	</p>
+
+
+	<div class="section">
+		<div class="left">
+			<div>Centro</div>
+			<div class="italic">Engineering Manager</div>
+		</div>
+		<div class="right bold">2006 - 2008</div>
+	</div>
+
+	<p class="clear">
+		Managed and led teams as we formed Centro&rsquo;s initial engineering organization and developed the internal workflow system to assist staff in implementing local-level interactive advertising campaigns on behalf of national clients.
+	</p>
+
+	<div class="section">
+		<div class="left">
+			<div>MyPoints / United Airlines</div>
+			<div class="italic">Senior Software Engineer</div>
+		</div>
+		<div class="right bold">1997 - 2006</div>
+	</div>
+
+	<p class="clear">
+		Built initial online customer loyalty management system at MyPoints from its inception. After the purchase by United Airlines in 2001, I led the development of various backend systems for UAL&rsquo;s online ticketing and mile-tracking services.
+	</p>
+
+	<h2>Education</h2>
+
+	<div class="section">
+		<div class="left">
+			<div>Illinois Institute of Technology</div>
+			<div class="italic">Computer Science</div>
+			<div class="italic">Specialization in Information Security</div>
+		</div>
+		<div class="right bold">1995-1997, 2005-2007</div>
+	</div>
+
+	<script>
+		function gstrDecode(estr) {
+			return atob(estr).split(",").reduce((str, c) => str + String.fromCharCode(parseInt(c) + 40), "");
+		}
+
+		document.addEventListener("DOMContentLoaded", ev => {
+			let decodeNodes = document.querySelectorAll("[data-gstr]");
+			decodeNodes.forEach(node => {
+				let gstr = gstrDecode(node.dataset.gstr);
+				node.href += gstr;
+				node.innerText = gstr;
+			})
+		})
+	</script>
+</body>
+</html>
